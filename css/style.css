@@ -3,12 +3,13 @@ html {
 }
 
 body {
-    background-color: #1EC4DD;
+    background-color: rgb(54, 169, 223);
     color: #000;
     font-family: "Century Gothic", helvetica, arial, sans-serif;
     font-size: 1.4em;
     /* equiv 14px */
     line-height: 1.5;
+    text-align: center;
 
 }
 
@@ -17,4 +18,6 @@ h1 {
     font-size: 3.4em;
     display: inherit;
     clear: both;
+    margin-bottom: unset;
+
 }
