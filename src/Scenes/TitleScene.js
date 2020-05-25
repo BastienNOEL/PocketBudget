@@ -5,6 +5,7 @@ class TitleScene extends Phaser.Scene {
         super("Title");
     }
 
+
     create(){
         this.add.text(20,20,"Title");
         this.scene.start("Travel");

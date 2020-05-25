@@ -8,7 +8,16 @@ const config = {
     width: 1000,
     height: 600,
     type: Phaser.AUTO,
-    scene:[LoadScene,TitleScene,TravelScene]
+    scene:[LoadScene,TitleScene,TravelScene],
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: {
+                y: 300
+            },
+            debug: false
+        }
+    },
     
 }
 
