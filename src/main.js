@@ -2,7 +2,6 @@
 
 /** @type {import("../typings/phaser")} */
 
-console.log('%c%s', 'color: #07a71d', "Main.js");
 
 const config = {
     width: 1000,

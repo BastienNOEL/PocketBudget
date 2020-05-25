@@ -1,6 +1,5 @@
 //cette scene fait le lien entre le magasin et le pere noel
 
-
 class TravelScene extends Phaser.Scene {
     constructor() {
         super("Travel");
@@ -8,6 +7,8 @@ class TravelScene extends Phaser.Scene {
     }
 
     create() {
+        console.log('%c%s', 'color: #8400ff', "Travel scene");
+
         var bg = this.add.image(500, 250, 'BG');
         bg.setScale(0.6, 0.6);
 
@@ -59,5 +60,3 @@ class TravelScene extends Phaser.Scene {
     }
 
 }
-
-console.log('%c%s', 'color: #07a71d', "Travel.js");
