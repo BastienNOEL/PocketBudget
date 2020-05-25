@@ -2,7 +2,6 @@
 .vs/
 dist/
 .cache/
-typings/
 # Created by https://www.gitignore.io/api/web
 # Edit at https://www.gitignore.io/?templates=web
 
