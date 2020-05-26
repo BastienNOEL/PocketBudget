@@ -24,10 +24,20 @@ class TitleScene extends Phaser.Scene {
         });
         button.on('pointerdown', this.onPressed, this);
 
+        this.keyObj = this.input.keyboard.addKey('Enter');  // Get key object
+        this.isDown = this.keyObj.isDown;
+        
+    }
+
+    update(){
+        if(this.keyObj.isDown){
+            this.scene.start("Travel");
+        }
     }
 
     onPressed() {
         this.scene.start("Travel");
     }
+    
 
 }
