@@ -10,11 +10,19 @@ class LoadScene extends Phaser.Scene {
         this.load.image('bgTitre', 'assets/img/BG/bgTitre.png');
         this.load.image("buttons", "assets/img/Buttons/boutonJouer.png");
 
-        this.load.image('BG', 'assets/img/BG/BG.png');
+        this.load.image('BG', 'assets/img/BG/BG_02.png');
         this.load.image('ground', 'assets/img/Tiles/2.png');
         this.load.image('player', 'assets/img/Object/SnowMan.png');
         this.load.image('igloo1', 'assets/img/Object/Igloo1.png');
         this.load.image('igloo2', 'assets/img/Object/Igloo2.png');
+
+        this.load.image('murBois', 'assets/img/Object/woodenWall.png');
+        this.load.image('solBois', 'assets/img/Object/solEnBois.png');
+        this.load.image('cheminee', 'assets/img/Object/cheminee.png');
+        this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
+        this.load.image('santa', 'assets/img/Object/Santa.png');
+
+
     }
 
     create(){

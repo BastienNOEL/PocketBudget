@@ -43,11 +43,11 @@ class TravelScene extends Phaser.Scene {
 
 
         this.cursors = this.input.keyboard.createCursorKeys();
-        this.clavSpace = this.input.keyboard.addKey('SPACE'); 
+        this.clavSpace = this.input.keyboard.addKey('SPACE');
 
-        this.tig1 = this.add.text(800,325,"Appuyez sur ESPACE");
+        this.tig1 = this.add.text(800, 325, "Appuyez sur ESPACE", {fill:"black"});
         this.tig1.visible = false;
-        this.tig2 = this.add.text(25,325,"Appuyez sur ESPACE");
+        this.tig2 = this.add.text(25, 325, "Appuyez sur ESPACE", {fill:"black"});
         this.tig2.visible = false;
 
     }
@@ -56,7 +56,7 @@ class TravelScene extends Phaser.Scene {
         this.movePlayer();
         this.changeScene();
 
-        
+
 
     }
 
@@ -72,28 +72,26 @@ class TravelScene extends Phaser.Scene {
             this.player.setVelocityY(-330);
         }
     }
- 
+
 
     changeScene() {
-        if ((this.player.x > 725  && this.player.x < 845) && this.player.y > 423) {
+        if ((this.player.x > 725 && this.player.x < 845) && this.player.y > 423) {
             this.tig1.visible = true;
 
             if (this.clavSpace.isDown) {
                 this.scene.start("Boutique");
             }
-        } else{
+        } else {
             this.tig1.visible = false;
         }
-        
+
         if ((this.player.x < 300 && this.player.x > 150) && this.player.y > 423) {
             this.tig2.visible = true;
 
             if (this.clavSpace.isDown) {
                 this.scene.start("PereNoel");
             }
-        }
-
-        else{
+        } else {
             this.tig2.visible = false;
         }
     }
