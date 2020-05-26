@@ -47,10 +47,7 @@ class TravelScene extends Phaser.Scene {
 
     update() {
         this.movePlayer();
-
-
         this.changeScene();
-
     }
 
     movePlayer() {
@@ -69,9 +66,9 @@ class TravelScene extends Phaser.Scene {
 
     changeScene() {
         if (this.player.x > 690) {
-            this.scene.start("Title");
+            this.scene.start("Boutique");
         } else if (this.player.x < 310) {
-            this.scene.start("Title");
+            this.scene.start("PereNoel");
         }
     }
 
