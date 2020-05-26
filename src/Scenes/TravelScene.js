@@ -46,7 +46,14 @@ class TravelScene extends Phaser.Scene {
     }
 
     update() {
+        this.movePlayer();
 
+
+        this.changeScene();
+
+    }
+
+    movePlayer() {
         if (this.cursors.left.isDown) {
             this.player.setVelocityX(-300);
         } else if (this.cursors.right.isDown) {
@@ -58,5 +65,15 @@ class TravelScene extends Phaser.Scene {
             this.player.setVelocityY(-330);
         }
     }
+
+
+    changeScene() {
+        if (this.player.x > 690) {
+            this.scene.start("Title");
+        } else if (this.player.x < 310) {
+            this.scene.start("Title");
+        }
+    }
+
 
 }
