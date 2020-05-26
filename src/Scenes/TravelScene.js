@@ -22,13 +22,6 @@ class TravelScene extends Phaser.Scene {
             }
         });
 
-        this.player = this.physics.add.sprite(500, 300, 'player');
-        this.player.setBounce(0.2);
-        this.player.setScale(0.5, 0.5);
-        this.player.body.setGravityY(300)
-        this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.player, platforms);
-
         this.igloo1 = this.physics.add.sprite(870, 427, 'igloo1');
         this.igloo1.setScale(0.5, 0.5);
         this.physics.add.collider(this.igloo1, platforms);
@@ -41,13 +34,30 @@ class TravelScene extends Phaser.Scene {
         this.physics.add.collider(this.igloo2, this.player);
         this.igloo2.setCollideWorldBounds(true);
 
+        this.player = this.physics.add.sprite(500, 300, 'player');
+        this.player.setBounce(0.2);
+        this.player.setScale(0.5, 0.5);
+        this.player.body.setGravityY(300)
+        this.player.setCollideWorldBounds(true);
+        this.physics.add.collider(this.player, platforms);
+
+
         this.cursors = this.input.keyboard.createCursorKeys();
+        this.clavSpace = this.input.keyboard.addKey('SPACE'); 
+
+        this.tig1 = this.add.text(800,325,"Appuyez sur ESPACE");
+        this.tig1.visible = false;
+        this.tig2 = this.add.text(25,325,"Appuyez sur ESPACE");
+        this.tig2.visible = false;
 
     }
 
     update() {
         this.movePlayer();
         this.changeScene();
+
+        
+
     }
 
     movePlayer() {
@@ -62,13 +72,29 @@ class TravelScene extends Phaser.Scene {
             this.player.setVelocityY(-330);
         }
     }
-
+ 
 
     changeScene() {
-        if (this.player.x > 690) {
-            this.scene.start("Boutique");
-        } else if (this.player.x < 310) {
-            this.scene.start("PereNoel");
+        if ((this.player.x > 725  && this.player.x < 845) && this.player.y > 423) {
+            this.tig1.visible = true;
+
+            if (this.clavSpace.isDown) {
+                this.scene.start("Boutique");
+            }
+        } else{
+            this.tig1.visible = false;
+        }
+        
+        if ((this.player.x < 300 && this.player.x > 150) && this.player.y > 423) {
+            this.tig2.visible = true;
+
+            if (this.clavSpace.isDown) {
+                this.scene.start("PereNoel");
+            }
+        }
+
+        else{
+            this.tig2.visible = false;
         }
     }
 
