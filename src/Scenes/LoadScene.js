@@ -14,7 +14,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('ground', 'assets/img/Tiles/2.png');
         this.load.image('player', 'assets/img/Object/SnowMan.png');
         this.load.image('igloo1', 'assets/img/Object/Igloo1.png');
-        this.load.image('igloo2', 'assets/img/Object/Igloo2.png');
+        this.load.image('maison', 'assets/img/Object/maison.png');
 
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
         this.load.image('solBois', 'assets/img/Object/solEnBois.png');
@@ -22,6 +22,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
         this.load.image('santa', 'assets/img/Object/Santa.png');
 
+        this.load.image('dialogueBox', 'assets/img/Object/DialogueBox.png');
 
     }
 
@@ -29,6 +30,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("Title");
+        //this.scene.start("Title");
+        this.scene.start("PereNoel");
     }
 }

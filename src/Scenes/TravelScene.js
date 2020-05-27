@@ -28,13 +28,13 @@ class TravelScene extends Phaser.Scene {
         this.physics.add.collider(this.igloo1, this.player);
         this.igloo1.setCollideWorldBounds(true);
 
-        this.igloo2 = this.physics.add.sprite(130, 427, 'igloo2');
-        this.igloo2.setScale(0.5, 0.5);
-        this.physics.add.collider(this.igloo2, platforms);
-        this.physics.add.collider(this.igloo2, this.player);
-        this.igloo2.setCollideWorldBounds(true);
+        this.maison = this.physics.add.sprite(130, 285, 'maison');
+        this.maison.setScale(0.3, 0.3);
+        this.physics.add.collider(this.maison, platforms);
+        this.physics.add.collider(this.maison, this.player);
+        this.maison.setCollideWorldBounds(true);
 
-        this.player = this.physics.add.sprite(500, 300, 'player');
+        this.player = this.physics.add.sprite(500, 423.5, 'player');
         this.player.setBounce(0.2);
         this.player.setScale(0.5, 0.5);
         this.player.body.setGravityY(300)
@@ -47,8 +47,8 @@ class TravelScene extends Phaser.Scene {
 
         this.tig1 = this.add.text(800, 325, "Appuyez sur ESPACE", {fill:"black"});
         this.tig1.visible = false;
-        this.tig2 = this.add.text(25, 325, "Appuyez sur ESPACE", {fill:"black"});
-        this.tig2.visible = false;
+        this.texteEntrerMaison = this.add.text(150, 300, "Appuyez sur ESPACE", {fill:"black"});
+        this.texteEntrerMaison.visible = false;
 
     }
 
@@ -85,14 +85,14 @@ class TravelScene extends Phaser.Scene {
             this.tig1.visible = false;
         }
 
-        if ((this.player.x < 300 && this.player.x > 150) && this.player.y > 423) {
-            this.tig2.visible = true;
+        if ((this.player.x < 350 && this.player.x > 200) && this.player.y > 423) {
+            this.texteEntrerMaison.visible = true;
 
             if (this.clavSpace.isDown) {
                 this.scene.start("PereNoel");
             }
         } else {
-            this.tig2.visible = false;
+            this.texteEntrerMaison.visible = false;
         }
     }
 
