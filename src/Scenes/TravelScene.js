@@ -34,7 +34,7 @@ class TravelScene extends Phaser.Scene {
         this.physics.add.collider(this.maison, this.player);
         this.maison.setCollideWorldBounds(true);
 
-        this.player = this.physics.add.sprite(500, 423.5, 'player');
+        this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
         this.player.setBounce(0.2);
         this.player.setScale(0.5, 0.5);
         this.player.body.setGravityY(300)
@@ -90,6 +90,8 @@ class TravelScene extends Phaser.Scene {
 
             if (this.clavSpace.isDown) {
                 this.scene.start("PereNoel");
+                posYTravel = this.player.y;
+                posXTravel = this.player.x;
             }
         } else {
             this.texteEntrerMaison.visible = false;

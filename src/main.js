@@ -26,5 +26,6 @@ const config = {
 
 var game = new Phaser.Game(config);
 
-
+var posXTravel = 500;
+var posYTravel = 423.5;
 
