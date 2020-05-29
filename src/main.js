@@ -4,14 +4,14 @@
 
 
 const config = {
-   scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 1000,
-    height: 600
-},
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 1000,
+        height: 600
+    },
     type: Phaser.AUTO,
-    scene:[LoadScene,TitleScene,TravelScene,BoutiqueScene,PereNoelScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen],
     physics: {
         default: 'arcade',
         arcade: {
@@ -21,13 +21,14 @@ const config = {
             debug: false
         }
     },
-    
+
 }
 
 var game = new Phaser.Game(config);
 
 var posXTravel = 500;
 var posYTravel = 423.5;
-
-var mission = new Mission(1);
-
+var posXpn = 100;
+var posYpn = 502;
+sessionStorage.setItem('playerLv', 1);
+var mission = new Mission(sessionStorage.getItem('playerLv'));
