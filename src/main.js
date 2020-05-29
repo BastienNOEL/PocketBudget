@@ -29,3 +29,5 @@ var game = new Phaser.Game(config);
 var posXTravel = 500;
 var posYTravel = 423.5;
 
+var mission = new Mission(1);
+

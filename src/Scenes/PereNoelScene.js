@@ -51,17 +51,19 @@ class PereNoelScene extends Phaser.Scene {
         this.physics.add.collider(this.player, platforms);
         this.physics.add.collider(this.player, this.santa);
 
-        this.container = this.add.container(500,100);
+        this.container = this.add.container(500,300);
 
-        this.dialogueBox = this.add.image(0,0,'dialogueBox');
-        this.dialogueBox.setScale(0.8,0.3);
+        //this.dialogueBox = this.add.image(0,0,'dialogueBox');
+        this.window = this.add.image(0,0,'window');
+        this.window.setScale(1.1,0.5);
 
         this.texteDialogueBox = this.add.text(0,0, "hello world", {fill:"black"});
         this.texteDialogueBox.font = "Arial";
+        //this.texteDialogueBox.align = "left";
         this.texteDialogueBox.setFontSize(30);
         this.texteDialogueBox.setOrigin(0.5, 0.5);
 
-        this.container.add(this.dialogueBox);
+        this.container.add(this.window);
         this.container.add(this.texteDialogueBox);
 
         this.container.visible = false;
@@ -116,17 +118,20 @@ class PereNoelScene extends Phaser.Scene {
 
         
         if (this.player.x > 600  && this.player.y > 423) {
+
             this.textTalkSanta.visible = true;
 
+
             if (this.clavSpace.isDown) {
-                
                 this.container.visible = true;
+                mission.newMission();
+                this.texteDialogueBox.setText(mission.paroleSanta);
                
             } else{
                 this.container.visible = false;
             }
            
-        } else {
+       } else {
             this.textTalkSanta.visible = false;
 
         }

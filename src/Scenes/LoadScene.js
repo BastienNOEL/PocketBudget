@@ -23,6 +23,8 @@ class LoadScene extends Phaser.Scene {
         this.load.image('santa', 'assets/img/Object/Santa.png');
 
         this.load.image('dialogueBox', 'assets/img/Object/DialogueBox.png');
+        this.load.image('window', 'assets/img/Gui/Window.png');
+
 
     }
 
@@ -30,7 +32,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("Title");
-        //this.scene.start("PereNoel");
+       // this.scene.start("Title");
+        this.scene.start("PereNoel");
     }
 }

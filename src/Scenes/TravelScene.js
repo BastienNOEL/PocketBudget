@@ -28,7 +28,7 @@ class TravelScene extends Phaser.Scene {
         this.physics.add.collider(this.igloo1, this.player);
         this.igloo1.setCollideWorldBounds(true);
 
-        this.maison = this.physics.add.sprite(130, 285, 'maison');
+        this.maison = this.physics.add.sprite(200, 284, 'maison');
         this.maison.setScale(0.3, 0.3);
         this.physics.add.collider(this.maison, platforms);
         this.physics.add.collider(this.maison, this.player);
