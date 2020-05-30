@@ -5,10 +5,9 @@ class MissionScreen extends Phaser.Scene {
 
     create(){
 
-        this.container = this.add.container(500,300);
-
+        this.container = this.add.container(500,295);
         this.window = this.add.image(0,0,'window');
-        this.window.setScale(1.34,0.57);
+        this.window.setScale(0.95,0.7);
 
         this.texteDialogueBox = this.add.text(0,0, mission.paroleSanta, {fill:"black"});
         this.texteDialogueBox.font = "Arial";
@@ -21,8 +20,6 @@ class MissionScreen extends Phaser.Scene {
     }
 
     update(){
-
-
 
         if(this.clavSpace.isDown){
             this.scene.start('PereNoel');

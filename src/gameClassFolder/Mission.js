@@ -37,7 +37,7 @@ class Mission {
 
         sessionStorage.setItem('B100', nb100);
         sessionStorage.setItem('B50', nb50);
-        sessionStorage.setItem('B220', nb20);
+        sessionStorage.setItem('B20', nb20);
         sessionStorage.setItem('B10', nb10);
         sessionStorage.setItem('B5', nb5);
 

@@ -7,8 +7,9 @@ class LoadScene extends Phaser.Scene {
 
 
     preload() {
+        
         this.load.image('bgTitre', 'assets/img/BG/bgTitre.png');
-        this.load.image("buttons", "assets/img/Buttons/boutonJouer.png");
+        this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
         this.load.image('BG', 'assets/img/BG/BG_02.png');
         this.load.image('ground', 'assets/img/Tiles/2.png');
@@ -25,6 +26,26 @@ class LoadScene extends Phaser.Scene {
         this.load.image('dialogueBox', 'assets/img/Object/DialogueBox.png');
         this.load.image('window', 'assets/img/Gui/Window.png');
 
+        this.load.image('recBleu' , 'assets/img/Object/rectangleBleu.png');
+        this.load.image('recBlanc' , 'assets/img/Object/rectangleBlanc.png');
+        this.load.image('recRouge' , 'assets/img/Object/rectangleRouge.png');
+        this.load.image('recVert' , 'assets/img/Object/rectangleVert.png');
+        this.load.image('recJaune' , 'assets/img/Object/rectangleJaune.png');
+
+        this.load.image('billet5' , 'assets/img/argent/billet5.png');
+        this.load.image('billet10' , 'assets/img/argent/billet10.png');
+        this.load.image('billet20' , 'assets/img/argent/billet20.png');
+        this.load.image('billet50' , 'assets/img/argent/billet50.png');
+        this.load.image('billet100' , 'assets/img/argent/billet100.jpg');
+
+        this.load.image('flecheGauche', 'assets/img/Gui/Backward.png');
+
+
+        sessionStorage.setItem('B100', 0);
+        sessionStorage.setItem('B50', 0);
+        sessionStorage.setItem('B20', 0);
+        sessionStorage.setItem('B10', 0);
+        sessionStorage.setItem('B5', 0);
 
     }
 
@@ -33,5 +54,6 @@ class LoadScene extends Phaser.Scene {
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
         this.scene.start("Title");
+
     }
 }

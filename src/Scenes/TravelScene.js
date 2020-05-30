@@ -7,7 +7,6 @@ class TravelScene extends Phaser.Scene {
     }
 
     create() {
-        console.log('%c%s', 'color: #8400ff', "Travel scene");
 
         var bg = this.add.image(500, 250, 'BG');
         bg.setScale(0.6, 0.6);
@@ -80,6 +79,8 @@ class TravelScene extends Phaser.Scene {
 
             if (this.clavSpace.isDown) {
                 this.scene.start("Boutique");
+                posYTravel = this.player.y;
+                posXTravel = this.player.x;
             }
         } else {
             this.tig1.visible = false;

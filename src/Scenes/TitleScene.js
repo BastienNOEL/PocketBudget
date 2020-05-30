@@ -15,10 +15,7 @@ class TitleScene extends Phaser.Scene {
 
         var button = new Button({
             'scene': this,
-            'key': 'buttons',
-            'up': 0,
-            'over': 1,
-            'down': 2,
+            'key': 'buttonPlay',
             'x': 500,
             'y': 300
         });

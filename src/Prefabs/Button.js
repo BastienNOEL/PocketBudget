@@ -26,7 +26,7 @@ class Button extends Phaser.GameObjects.Sprite {
         //appelle le constructeur du parent et le place en coordonnées 0,0
         super(config.scene, 0, 0, config.key, config.up);
 
-        //fait une reference de classe de laconfig
+        //fait une reference de classe de la config
         this.config = config;
        
        	
