@@ -14,8 +14,11 @@ class BoutiqueScene extends Phaser.Scene {
                 sessionStorage.setItem('B50', 5);
                 sessionStorage.setItem('B100', 5);
                 sessionStorage.setItem('PrixMission' , 15);
+                sessionStorage.setItem('MissionEnCours',true) ;
+*/
+      
 
-      */
+        this.pileAction = new Array();
 
         this.nbBilletComptoir5 = 0;
         this.nbBilletComptoir10 = 0;
@@ -80,6 +83,30 @@ class BoutiqueScene extends Phaser.Scene {
             });
             this.btnValider.setScale(0.5, 0.5);
             this.btnValider.on('pointerdown', this.testValidite, this);
+
+            this.btnCancel = new Button({
+                'scene': this,
+                'key': 'cancelArrow',
+                'x': 325,
+                'y': 95
+            });
+            this.btnCancel.setScale(0.15, 0.15);
+            this.btnCancel.on('pointerdown', this.cancelAction, this);
+
+            this.btnReset = new Button({
+                'scene': this,
+                'key': 'resetArrow',
+                'x': 225,
+                'y': 95
+            });
+            this.btnReset.setScale(0.08, 0.08);
+            this.btnReset.on('pointerdown', function() {  this.scene.restart();}, this);
+
+            this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
+                fill: "white",
+                font: '50px Arial'
+
+            });
 
             this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
                 fill: "white",
@@ -179,6 +206,7 @@ class BoutiqueScene extends Phaser.Scene {
                     }
 
                     this.valeurDepose = this.valeurDepose + 5;
+                    this.pileAction.push(5);
                 }, this);
                 this.txtBourseBill5.visible = true;
 
@@ -212,7 +240,7 @@ class BoutiqueScene extends Phaser.Scene {
                         this.b10.visible = false;
                     }
                     this.valeurDepose = this.valeurDepose + 10;
-
+                    this.pileAction.push(10);
                 }, this);
                 this.txtBourseBill10.visible = true;
 
@@ -246,7 +274,7 @@ class BoutiqueScene extends Phaser.Scene {
                         this.b20.visible = false;
                     }
                     this.valeurDepose = this.valeurDepose + 20;
-
+                    this.pileAction.push(20);
                 }, this);
                 this.txtBourseBill20.visible = true;
 
@@ -280,7 +308,7 @@ class BoutiqueScene extends Phaser.Scene {
                         this.b50.visible = false;
                     }
                     this.valeurDepose = this.valeurDepose + 50;
-
+                    this.pileAction.push(50);
                 }, this);
                 this.txtBourseBill50.visible = true;
 
@@ -314,7 +342,7 @@ class BoutiqueScene extends Phaser.Scene {
                         this.b100.visible = false;
                     }
                     this.valeurDepose = this.valeurDepose + 100;
-
+                    this.pileAction.push(100);
                 }, this);
                 this.txtBourseBill100.visible = true;
 
@@ -324,6 +352,8 @@ class BoutiqueScene extends Phaser.Scene {
 
 
             this.maBourse.add(this.btnValider);
+            this.maBourse.add(this.btnCancel);
+            this.maBourse.add(this.btnReset);
             this.maBourse.add(this.txtBourseBill5);
             this.maBourse.add(this.txtBourseBill10);
             this.maBourse.add(this.txtBourseBill20);
@@ -359,7 +389,108 @@ class BoutiqueScene extends Phaser.Scene {
         this.scene.start("Travel");
     }
 
+    cancelAction(){
+
+        if(this.pileAction.length >0 ){
+
+            if(this.pileAction[this.pileAction.length - 1] == 5){
+
+                if(this.nbBilletComptoir5 <= 1 ){
+                    this.comptoirB5.visible = false;
+                    this.txtCountBill5.visible = false;
+                }
+                this.nbBilletComptoir5 --;
+                this.txtCountBill5.setText(this.nbBilletComptoir5);
+
+                this.nbBilletBourse5++;
+                this.txtBourseBill5.setText(this.nbBilletBourse5);
+
+                if(this.nbBilletBourse5 > 0){
+                    this.txtBourseBill5.visible = true;
+                    this.b5.visible = true;
+                }
+            }
+
+            
+            if(this.pileAction[this.pileAction.length - 1] == 10){
+
+                if(this.nbBilletComptoir10 <= 1 ){
+                    this.comptoirB10.visible = false;
+                    this.txtCountBill10.visible = false;
+                }
+                this.nbBilletComptoir10 --;
+                this.txtCountBill10.setText(this.nbBilletComptoir10);
+
+                this.nbBilletBourse10++;
+                this.txtBourseBill10.setText(this.nbBilletBourse10);
+
+                if(this.nbBilletBourse10 > 0){
+                    this.txtBourseBill10.visible = true;
+                    this.b10.visible = true;
+                }
+            }
+
+            if(this.pileAction[this.pileAction.length - 1] == 20){
+
+                if(this.nbBilletComptoir20 <= 1 ){
+                    this.comptoirB20.visible = false;
+                    this.txtCountBill20.visible = false;
+                }
+                this.nbBilletComptoir20 --;
+                this.txtCountBill20.setText(this.nbBilletComptoir20);
+
+                this.nbBilletBourse20++;
+                this.txtBourseBill20.setText(this.nbBilletBourse20);
+
+                if(this.nbBilletBourse20 > 0){
+                    this.txtBourseBill20.visible = true;
+                    this.b20.visible = true;
+                }
+            }
+
+            if(this.pileAction[this.pileAction.length - 1] == 50){
+
+                if(this.nbBilletComptoir50 <= 1 ){
+                    this.comptoirB50.visible = false;
+                    this.txtCountBill50.visible = false;
+                }
+                this.nbBilletComptoir50 --;
+                this.txtCountBill50.setText(this.nbBilletComptoir50);
+
+                this.nbBilletBourse50++;
+                this.txtBourseBill50.setText(this.nbBilletBourse50);
+
+                if(this.nbBilletBourse50 > 0){
+                    this.txtBourseBill50.visible = true;
+                    this.b50.visible = true;
+                }
+            }
+
+            if(this.pileAction[this.pileAction.length - 1] == 100){
+
+                if(this.nbBilletComptoir100 <= 1 ){
+                    this.comptoirB100.visible = false;
+                    this.txtCountBill100.visible = false;
+                }
+                this.nbBilletComptoir100 --;
+                this.txtCountBill100.setText(this.nbBilletComptoir100);
+
+                this.nbBilletBourse100++;
+                this.txtBourseBill100.setText(this.nbBilletBourse100);
+
+                if(this.nbBilletBourse100 > 0){
+                    this.txtBourseBill100.visible = true;
+                    this.b100.visible = true;
+                }
+            }
+
+            this.pileAction.pop();
+
+        }
+    }
+
     testValidite() {
+
         if (this.valeurDepose == this.prixMission) {
 
             console.log('%c%s', 'color: #097721', "Transaction Réussi");
@@ -402,6 +533,9 @@ class BoutiqueScene extends Phaser.Scene {
             this.txtPrix.visible = false;
 
             this.btnValider.visible=false;
+            this.btnCancel.visible=false;
+            this.btnReset.visible=false;
+
 
             sessionStorage.setItem('MissionEnCours', false);
 
