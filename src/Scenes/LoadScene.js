@@ -8,6 +8,7 @@ class LoadScene extends Phaser.Scene {
 
     preload() {
         
+        
         this.load.image('bgTitre', 'assets/img/BG/bgTitre.png');
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
@@ -38,7 +39,9 @@ class LoadScene extends Phaser.Scene {
         this.load.image('billet50' , 'assets/img/argent/billet50.png');
         this.load.image('billet100' , 'assets/img/argent/billet100.jpg');
 
-        this.load.image('flecheGauche', 'assets/img/Gui/Backward.png');
+        this.load.image('flecheGauche', 'assets/img/Buttons/Backward.png');
+        this.load.image('valider', 'assets/img/Buttons/btnOk.png');
+
 
 
         sessionStorage.setItem('B100', 0);

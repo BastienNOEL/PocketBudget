@@ -13,7 +13,9 @@ class BoutiqueScene extends Phaser.Scene {
                 sessionStorage.setItem('B20', 5);
                 sessionStorage.setItem('B50', 5);
                 sessionStorage.setItem('B100', 5);
-        */
+                sessionStorage.setItem('PrixMission' , 15);
+
+      */
 
         this.nbBilletComptoir5 = 0;
         this.nbBilletComptoir10 = 0;
@@ -27,6 +29,9 @@ class BoutiqueScene extends Phaser.Scene {
         this.nbBilletBourse50 = sessionStorage.getItem('B50');
         this.nbBilletBourse100 = sessionStorage.getItem('B100');
 
+        this.prixMission = sessionStorage.getItem('PrixMission');
+
+        this.valeurDepose = 0;
 
 
 
@@ -48,9 +53,29 @@ class BoutiqueScene extends Phaser.Scene {
             'x': -450,
             'y': 80
         });
-
         this.boutonRetour.setScale(0.5, 0.5);
         this.boutonRetour.on('pointerdown', this.backTravel, this);
+
+        this.btnValider = new Button({
+            'scene': this,
+            'key': 'valider',
+            'x': 425,
+            'y': 100
+        });
+        this.btnValider.setScale(0.5, 0.5);
+        this.btnValider.on('pointerdown', this.testValidite, this);
+
+        this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
+            fill: "white",
+            font: '50px Arial'
+
+        });
+
+        if(sessionStorage.getItem('MissionEnCours') == "false"){
+            this.txtPrix.visible = false;
+        } else {
+            this.txtPrix.visible = true;
+        }
 
 
         this.comptoirB5 = this.add.image(-400, 0, 'billet5');
@@ -123,6 +148,7 @@ class BoutiqueScene extends Phaser.Scene {
 
         this.maBourse.add(this.rectBleu);
         this.maBourse.add(this.boutonRetour);
+        this.maBourse.add(this.btnValider);
         this.maBourse.add(this.txtBourseBill5);
         this.maBourse.add(this.txtBourseBill10);
         this.maBourse.add(this.txtBourseBill20);
@@ -145,6 +171,7 @@ class BoutiqueScene extends Phaser.Scene {
 
 
         this.zonePrix.add(this.rectRouge);
+        this.zonePrix.add(this.txtPrix);
         this.zoneConsigne.add(this.rectVert);
 
 
@@ -180,6 +207,8 @@ class BoutiqueScene extends Phaser.Scene {
                 if (this.nbBilletComptoir5 == sessionStorage.getItem('B5')) {
                     this.b5.visible = false;
                 }
+
+                this.valeurDepose = this.valeurDepose + 5;
             }, this);
             this.txtBourseBill5.visible = true;
 
@@ -212,6 +241,8 @@ class BoutiqueScene extends Phaser.Scene {
                 if (this.nbBilletComptoir10 == sessionStorage.getItem('B10')) {
                     this.b10.visible = false;
                 }
+                this.valeurDepose = this.valeurDepose + 10;
+
             }, this);
             this.txtBourseBill10.visible = true;
 
@@ -244,6 +275,8 @@ class BoutiqueScene extends Phaser.Scene {
                 if (this.nbBilletComptoir20 == sessionStorage.getItem('B20')) {
                     this.b20.visible = false;
                 }
+                this.valeurDepose = this.valeurDepose + 20;
+
             }, this);
             this.txtBourseBill20.visible = true;
 
@@ -276,6 +309,8 @@ class BoutiqueScene extends Phaser.Scene {
                 if (this.nbBilletComptoir50 == sessionStorage.getItem('B50')) {
                     this.b50.visible = false;
                 }
+                this.valeurDepose = this.valeurDepose + 50;
+
             }, this);
             this.txtBourseBill50.visible = true;
 
@@ -308,6 +343,8 @@ class BoutiqueScene extends Phaser.Scene {
                 if (this.nbBilletComptoir100 == sessionStorage.getItem('B100')) {
                     this.b100.visible = false;
                 }
+                this.valeurDepose = this.valeurDepose + 100;
+
             }, this);
             this.txtBourseBill100.visible = true;
 
@@ -320,8 +357,8 @@ class BoutiqueScene extends Phaser.Scene {
 
     }
 
-    update(){
-        if(this.echapButton.isDown){
+    update() {
+        if (this.echapButton.isDown) {
             this.backTravel();
         }
     }
@@ -329,7 +366,59 @@ class BoutiqueScene extends Phaser.Scene {
     backTravel() {
         this.scene.start("Travel");
     }
-    
+
+    testValidite() {
+        if (this.valeurDepose == this.prixMission) {
+
+            console.log('%c%s', 'color: #097721', "Transaction Réussi");
+
+            if (sessionStorage.getItem('B5') > 0) {
+                this.b5.visible = false;
+            }
+            if (sessionStorage.getItem('B10') > 0) {
+                this.b10.visible = false;
+            }
+            if (sessionStorage.getItem('B20') > 0) {
+                this.b20.visible = false;
+            }
+            if (sessionStorage.getItem('B50') > 0) {
+                this.b50.visible = false;
+            }
+            if (sessionStorage.getItem('B100') > 0) {
+                this.b100.visible = false;
+            }
+            
+            this.comptoirB5.visible = false;
+            this.comptoirB10.visible = false;
+            this.comptoirB20.visible = false;
+            this.comptoirB50.visible = false;
+            this.comptoirB100.visible = false;
+
+
+            this.txtBourseBill5.visible = false;
+            this.txtBourseBill10.visible = false;
+            this.txtBourseBill20.visible = false;
+            this.txtBourseBill50.visible = false;
+            this.txtBourseBill100.visible = false;
+
+            this.txtCountBill5.visible = false;
+            this.txtCountBill10.visible = false;
+            this.txtCountBill20.visible = false;
+            this.txtCountBill50.visible = false;
+            this.txtCountBill100.visible = false;
+
+            this.txtPrix.visible = false;
+
+        } else {
+
+            this.scene.restart();
+            this.Tvalue = parseInt(sessionStorage.getItem("nbTentatives"));
+            sessionStorage.setItem('nbTentatives', this.Tvalue + 1);
+            console.log('%c%s', 'color: #097721', "Tentative = " + sessionStorage.getItem("nbTentatives"));
+
+        }
+
+    }
 
 
 }

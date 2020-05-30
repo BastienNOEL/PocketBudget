@@ -2,22 +2,19 @@ class Mission {
     constructor(lvPlayer) {
         this.lvPlayer = lvPlayer;
         this.paroleSanta = "ce message ne doit pas apparaitre";
-        this.missionEnCours = false;
+        sessionStorage.setItem('MissionEnCours', false);
 
     }
 
     newMission() {
         if (this.lvPlayer == 1)  {
-            if(this.missionEnCours == false){
+            if(sessionStorage.getItem('MissionEnCours') == "false"){
                 this.paroleSanta = "Prend cet argent et va me chercher\ndu bois dans l'igloo.";
                 this.mission1();
             }
             else{
                 this.paroleSanta = "La boutique se trouve dans l'igloo.";
             }
-           
-
-            console.log('%c%s', 'color: #003585', "valide" );
         } else {
             this.paroleSanta = "Une erreure s'est produite.";
 
@@ -26,12 +23,14 @@ class Mission {
     }
 
     mission1() {
-        this.missionEnCours = true;
-        this.gainMoney(1, 2, 3, 3, 5);
+        sessionStorage.setItem('MissionEnCours', true);
+        this.gainMoney(2, 1, 0, 0, 0);
+        sessionStorage.setItem('PrixMission' , 15);
+        sessionStorage.setItem('nbTentatives' , 1);
 
     }
 
-    gainMoney(nb100, nb50, nb20, nb10, nb5) {
+    gainMoney(nb5, nb10, nb20, nb50, nb100) {
 
         console.log('%c%s', 'color: #735656', "nombre de billet de 50 avant = " + sessionStorage.getItem('B50'));
 
