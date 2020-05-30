@@ -32,7 +32,7 @@ class Mission {
 
     gainMoney(nb5, nb10, nb20, nb50, nb100) {
 
-        console.log('%c%s', 'color: #735656', "nombre de billet de 50 avant = " + sessionStorage.getItem('B50'));
+        console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + sessionStorage.getItem('B5'));
 
         sessionStorage.setItem('B100', nb100);
         sessionStorage.setItem('B50', nb50);
@@ -40,6 +40,6 @@ class Mission {
         sessionStorage.setItem('B10', nb10);
         sessionStorage.setItem('B5', nb5);
 
-        console.log('%c%s', 'color: #735656', "nombre de billet de 50 apres = " + sessionStorage.getItem('B50'));
+        console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + sessionStorage.getItem('B5'));
     }
 }
