@@ -30,5 +30,5 @@ var posXTravel = 500;
 var posYTravel = 423.5;
 var posXpn = 100;
 var posYpn = 502;
-sessionStorage.setItem('playerLv', 1);
-var mission = new Mission(sessionStorage.getItem('playerLv'));
+sessionStorage.setItem('lvPlayer', 1);
+var mission = new Mission();

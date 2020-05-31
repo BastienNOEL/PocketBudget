@@ -7,7 +7,7 @@ class BoutiqueScene extends Phaser.Scene {
     create() {
 
         console.log('%c%s', 'color: #8400ff', "Boutique");
-        /*
+    /*    
                 sessionStorage.setItem('B5', 5);
                 sessionStorage.setItem('B10', 5);
                 sessionStorage.setItem('B20', 5);
@@ -15,8 +15,8 @@ class BoutiqueScene extends Phaser.Scene {
                 sessionStorage.setItem('B100', 5);
                 sessionStorage.setItem('PrixMission' , 15);
                 sessionStorage.setItem('MissionEnCours',true) ;
-*/
-      
+
+      */
 
         this.pileAction = new Array();
 
@@ -36,13 +36,9 @@ class BoutiqueScene extends Phaser.Scene {
 
         this.valeurDepose = 0;
 
-
-
-        this.rectBlanc = this.add.image(500, 300, 'recBlanc');
-
         this.maBourse = this.add.container(500, 453);
         this.comptoir = this.add.container(500, 230);
-        this.zonePrix = this.add.container(100, 80);
+        this.zonePrix = this.add.container(101, 81);
         this.zoneConsigne = this.add.container(597, 77);
 
         this.rectVert = this.add.image(0, 0, 'recVert');
@@ -59,11 +55,17 @@ class BoutiqueScene extends Phaser.Scene {
         this.boutonRetour.setScale(0.5, 0.5);
         this.boutonRetour.on('pointerdown', this.backTravel, this);
 
+        this.txtBoutique = this.add.text(-390,-60,sessionStorage.getItem('BoutiqueTexte'), {
+            fill : "black",
+            font : '25px Arial',
+        });
+
         this.maBourse.add(this.rectBleu);
         this.maBourse.add(this.boutonRetour);
         this.comptoir.add(this.rectJaune);
         this.zonePrix.add(this.rectRouge);
         this.zoneConsigne.add(this.rectVert);
+        this.zoneConsigne.add(this.txtBoutique);
 
 
         this.rectBleu.setScale(1.35, 0.7);
@@ -108,12 +110,6 @@ class BoutiqueScene extends Phaser.Scene {
 
             });
 
-            this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
-                fill: "white",
-                font: '50px Arial'
-
-            });
-
             this.comptoirB5 = this.add.image(-400, 0, 'billet5');
             this.comptoirB5.setScale(0.055, 0.055);
             this.comptoirB5.visible = false;
@@ -135,47 +131,60 @@ class BoutiqueScene extends Phaser.Scene {
             this.comptoirB100.visible = false;
 
 
-            this.txtBourseBill5 = this.add.text(-400, -130, this.nbBilletBourse5, {
-                fill: "black"
+            this.txtBourseBill5 = this.add.text(-410, -140, "x" + this.nbBilletBourse5, {
+                fill: 'black',
+                font : '25px Arial'
             });
             this.txtBourseBill5.visible = false;
-            this.txtBourseBill10 = this.add.text(-250, -130, this.nbBilletBourse10, {
-                fill: "black"
+            this.txtBourseBill10 = this.add.text(-260, -140, "x" +this.nbBilletBourse10, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtBourseBill10.visible = false;
-            this.txtBourseBill20 = this.add.text(-100, -130, this.nbBilletBourse20, {
-                fill: "black"
+            this.txtBourseBill20 = this.add.text(-110, -140,"x" + this.nbBilletBourse20, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtBourseBill20.visible = false;
-            this.txtBourseBill50 = this.add.text(50, -130, this.nbBilletBourse50, {
-                fill: "black"
+            this.txtBourseBill50 = this.add.text(40, -140, "x" +this.nbBilletBourse50, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtBourseBill50.visible = false;
-            this.txtBourseBill100 = this.add.text(200, -130, this.nbBilletBourse100, {
-                fill: "black"
+            this.txtBourseBill100 = this.add.text(190, -140, "x" +this.nbBilletBourse100, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtBourseBill100.visible = false;
 
 
 
-            this.txtCountBill5 = this.add.text(-400, -50, this.nbBilletComptoir5, {
-                fill: "black"
+            this.txtCountBill5 = this.add.text(-410, -60,"x" + this.nbBilletComptoir5, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtCountBill5.visible = false;
-            this.txtCountBill10 = this.add.text(-250, -50, this.nbBilletComptoir5, {
-                fill: "black"
+            this.txtCountBill10 = this.add.text(-260, -60, "x" +this.nbBilletComptoir5, {
+                fill: "black",
+                font : '25px Arial'
             });
             this.txtCountBill10.visible = false;
-            this.txtCountBill20 = this.add.text(-100, -50, this.nbBilletComptoir5, {
-                fill: "black"
+            this.txtCountBill20 = this.add.text(-110, -60, "x" +this.nbBilletComptoir5, {
+                fill: "black",
+                font : '25px Arial'
+
             });
             this.txtCountBill20.visible = false;
-            this.txtCountBill50 = this.add.text(50, -50, this.nbBilletComptoir5, {
-                fill: "black"
+            this.txtCountBill50 = this.add.text(40, -60,"x" + this.nbBilletComptoir5, {
+                fill: "black",
+                font : '25px Arial'
+
             });
             this.txtCountBill50.visible = false;
-            this.txtCountBill100 = this.add.text(200, -50, this.nbBilletComptoir5, {
-                fill: "black"
+            this.txtCountBill100 = this.add.text(190, -60,"x" + this.nbBilletComptoir5, {
+                fill: "black",
+                font : '25px Arial'
+
             });
             this.txtCountBill100.visible = false;
 
@@ -194,9 +203,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB5.visible = true;
                     this.nbBilletComptoir5++;
                     this.txtCountBill5.visible = true;
-                    this.txtCountBill5.text = this.nbBilletComptoir5;
+                    this.txtCountBill5.text = "x" +this.nbBilletComptoir5;
                     this.nbBilletBourse5--;
-                    this.txtBourseBill5.text = this.nbBilletBourse5;
+                    this.txtBourseBill5.text = "x" +this.nbBilletBourse5;
 
                     if (this.nbBilletBourse5 == 0) {
                         this.txtBourseBill5.visible = false;
@@ -228,9 +237,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB10.visible = true;
                     this.nbBilletComptoir10++;
                     this.txtCountBill10.visible = true;
-                    this.txtCountBill10.text = this.nbBilletComptoir10;
+                    this.txtCountBill10.text = "x" +this.nbBilletComptoir10;
                     this.nbBilletBourse10--;
-                    this.txtBourseBill10.text = this.nbBilletBourse10;
+                    this.txtBourseBill10.text = "x" +this.nbBilletBourse10;
 
                     if (this.nbBilletBourse10 == 0) {
                         this.txtBourseBill10.visible = false;
@@ -262,9 +271,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB20.visible = true;
                     this.nbBilletComptoir20++;
                     this.txtCountBill20.visible = true;
-                    this.txtCountBill20.text = this.nbBilletComptoir20;
+                    this.txtCountBill20.text = "x" +this.nbBilletComptoir20;
                     this.nbBilletBourse20--;
-                    this.txtBourseBill20.text = this.nbBilletBourse20;
+                    this.txtBourseBill20.text = "x" +this.nbBilletBourse20;
 
                     if (this.nbBilletBourse20 == 0) {
                         this.txtBourseBill20.visible = false;
@@ -296,9 +305,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB50.visible = true;
                     this.nbBilletComptoir50++;
                     this.txtCountBill50.visible = true;
-                    this.txtCountBill50.text = this.nbBilletComptoir50;
+                    this.txtCountBill50.text = "x" +this.nbBilletComptoir50;
                     this.nbBilletBourse50--;
-                    this.txtBourseBill50.text = this.nbBilletBourse50;
+                    this.txtBourseBill50.text = "x" +this.nbBilletBourse50;
 
                     if (this.nbBilletBourse50 == 0) {
                         this.txtBourseBill50.visible = false;
@@ -324,15 +333,15 @@ class BoutiqueScene extends Phaser.Scene {
                     'x': 200,
                     'y': -80
                 });
-                this.b100.setScale(0.025, 0.025);
+                this.b100.setScale(0.027, 0.027);
                 this.b100.on('pointerdown', function (pointer) {
                     console.log('click sur billet 100');
                     this.comptoirB100.visible = true;
                     this.nbBilletComptoir100++;
                     this.txtCountBill100.visible = true;
-                    this.txtCountBill100.text = this.nbBilletComptoir100;
+                    this.txtCountBill100.text = "x" +this.nbBilletComptoir100;
                     this.nbBilletBourse100--;
-                    this.txtBourseBill100.text = this.nbBilletBourse100;
+                    this.txtBourseBill100.text = "x" +this.nbBilletBourse100;
 
                     if (this.nbBilletBourse100 == 0) {
                         this.txtBourseBill100.visible = false;
@@ -386,6 +395,9 @@ class BoutiqueScene extends Phaser.Scene {
     }
 
     backTravel() {
+        if (this.valeurDepose == this.prixMission) {
+            sessionStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.");
+        }
         this.scene.start("Travel");
     }
 
@@ -400,10 +412,10 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtCountBill5.visible = false;
                 }
                 this.nbBilletComptoir5 --;
-                this.txtCountBill5.setText(this.nbBilletComptoir5);
+                this.txtCountBill5.setText("x" +this.nbBilletComptoir5);
 
                 this.nbBilletBourse5++;
-                this.txtBourseBill5.setText(this.nbBilletBourse5);
+                this.txtBourseBill5.setText("x" +this.nbBilletBourse5);
 
                 if(this.nbBilletBourse5 > 0){
                     this.txtBourseBill5.visible = true;
@@ -419,10 +431,10 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtCountBill10.visible = false;
                 }
                 this.nbBilletComptoir10 --;
-                this.txtCountBill10.setText(this.nbBilletComptoir10);
+                this.txtCountBill10.setText("x" +this.nbBilletComptoir10);
 
                 this.nbBilletBourse10++;
-                this.txtBourseBill10.setText(this.nbBilletBourse10);
+                this.txtBourseBill10.setText("x" +this.nbBilletBourse10);
 
                 if(this.nbBilletBourse10 > 0){
                     this.txtBourseBill10.visible = true;
@@ -437,10 +449,10 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtCountBill20.visible = false;
                 }
                 this.nbBilletComptoir20 --;
-                this.txtCountBill20.setText(this.nbBilletComptoir20);
+                this.txtCountBill20.setText("x" +this.nbBilletComptoir20);
 
                 this.nbBilletBourse20++;
-                this.txtBourseBill20.setText(this.nbBilletBourse20);
+                this.txtBourseBill20.setText("x" +this.nbBilletBourse20);
 
                 if(this.nbBilletBourse20 > 0){
                     this.txtBourseBill20.visible = true;
@@ -455,10 +467,10 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtCountBill50.visible = false;
                 }
                 this.nbBilletComptoir50 --;
-                this.txtCountBill50.setText(this.nbBilletComptoir50);
+                this.txtCountBill50.setText("x" +this.nbBilletComptoir50);
 
                 this.nbBilletBourse50++;
-                this.txtBourseBill50.setText(this.nbBilletBourse50);
+                this.txtBourseBill50.setText("x" +this.nbBilletBourse50);
 
                 if(this.nbBilletBourse50 > 0){
                     this.txtBourseBill50.visible = true;
@@ -473,10 +485,10 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtCountBill100.visible = false;
                 }
                 this.nbBilletComptoir100 --;
-                this.txtCountBill100.setText(this.nbBilletComptoir100);
+                this.txtCountBill100.setText("x" +this.nbBilletComptoir100);
 
                 this.nbBilletBourse100++;
-                this.txtBourseBill100.setText(this.nbBilletBourse100);
+                this.txtBourseBill100.setText("x" +this.nbBilletBourse100);
 
                 if(this.nbBilletBourse100 > 0){
                     this.txtBourseBill100.visible = true;
@@ -536,8 +548,16 @@ class BoutiqueScene extends Phaser.Scene {
             this.btnCancel.visible=false;
             this.btnReset.visible=false;
 
+            this.txtBoutique.setText("Tu as réussi!\nTu peut sortir en cliquant sur la flèche en bas à gauche,\nou en appuyant sur la touche \"échap\" de ton clavier.")
 
             sessionStorage.setItem('MissionEnCours', false);
+
+            if(sessionStorage.getItem("nbTentatives") < 2){
+                this.lvlValue = parseInt(sessionStorage.getItem("lvPlayer"));
+                sessionStorage.setItem('lvPlayer', this.lvlValue + 1);
+
+                console.log('%c%s', 'color: #ff6600', "niveau du joueur : "  + sessionStorage.getItem("lvPlayer"));
+            }
 
         } else {
 

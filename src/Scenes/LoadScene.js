@@ -26,9 +26,10 @@ class LoadScene extends Phaser.Scene {
 
         this.load.image('dialogueBox', 'assets/img/Object/DialogueBox.png');
         this.load.image('window', 'assets/img/Gui/Window.png');
+        this.load.image('starLvl', 'assets/img/Gui/Star.png');
+
 
         this.load.image('recBleu' , 'assets/img/Object/rectangleBleu.png');
-        this.load.image('recBlanc' , 'assets/img/Object/rectangleBlanc.png');
         this.load.image('recRouge' , 'assets/img/Object/rectangleRouge.png');
         this.load.image('recVert' , 'assets/img/Object/rectangleVert.png');
         this.load.image('recJaune' , 'assets/img/Object/rectangleJaune.png');
@@ -60,7 +61,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("Title");
+        this.scene.start("Travel");
 
     }
 }
