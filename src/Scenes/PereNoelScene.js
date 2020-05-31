@@ -78,8 +78,6 @@ class PereNoelScene extends Phaser.Scene {
         this.textTalkSanta.visible = false;
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
-        this.inMission = false;
-
     }
 
     update() {
@@ -129,13 +127,20 @@ class PereNoelScene extends Phaser.Scene {
             this.textTalkSanta.visible = true;
 
 
-            if (this.clavSpace.isDown && this.inMission === false) {
+            if (this.clavSpace.isDown  && sessionStorage.getItem('RetourMission') == "false" ) {
                 
                 mission.newMission();
                 posXpn = this.player.x;
                 posYpn = this.player.y;
                 this.scene.start("MissionScreen")
 
+            } else if (this.clavSpace.isDown  && sessionStorage.getItem('RetourMission') == "true") {
+
+                console.log('%c%s', 'color: #607339', "retour mission");
+                mission.newMission();
+                posXpn = this.player.x;
+                posYpn = this.player.y;
+                this.scene.start("MissionScreen")
             }
 
         } else {

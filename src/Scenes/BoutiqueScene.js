@@ -7,7 +7,7 @@ class BoutiqueScene extends Phaser.Scene {
     create() {
 
         console.log('%c%s', 'color: #8400ff', "Boutique");
-    /*    
+        /*
                 sessionStorage.setItem('B5', 5);
                 sessionStorage.setItem('B10', 5);
                 sessionStorage.setItem('B20', 5);
@@ -15,8 +15,9 @@ class BoutiqueScene extends Phaser.Scene {
                 sessionStorage.setItem('B100', 5);
                 sessionStorage.setItem('PrixMission' , 15);
                 sessionStorage.setItem('MissionEnCours',true) ;
+             //   sessionStorage.setItem('nbTentatives', 1);
+*/
 
-      */
 
         this.pileAction = new Array();
 
@@ -55,10 +56,13 @@ class BoutiqueScene extends Phaser.Scene {
         this.boutonRetour.setScale(0.5, 0.5);
         this.boutonRetour.on('pointerdown', this.backTravel, this);
 
-        this.txtBoutique = this.add.text(-390,-60,sessionStorage.getItem('BoutiqueTexte'), {
-            fill : "black",
-            font : '25px Arial',
+        this.txtBoutique = this.add.text(-390, -60, sessionStorage.getItem('BoutiqueTexte'), {
+            fill: "black",
+            font: '25px Arial',
         });
+        if (sessionStorage.getItem('nbTentatives') > 1 && sessionStorage.getItem('RetourMission') == "false") {
+            this.txtBoutique.setText("Tu t'es trompé, recommence.\nTentative numéro " + sessionStorage.getItem('nbTentatives'));
+        }
 
         this.maBourse.add(this.rectBleu);
         this.maBourse.add(this.boutonRetour);
@@ -102,7 +106,9 @@ class BoutiqueScene extends Phaser.Scene {
                 'y': 95
             });
             this.btnReset.setScale(0.08, 0.08);
-            this.btnReset.on('pointerdown', function() {  this.scene.restart();}, this);
+            this.btnReset.on('pointerdown', function () {
+                this.scene.restart();
+            }, this);
 
             this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
                 fill: "white",
@@ -133,57 +139,57 @@ class BoutiqueScene extends Phaser.Scene {
 
             this.txtBourseBill5 = this.add.text(-410, -140, "x" + this.nbBilletBourse5, {
                 fill: 'black',
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtBourseBill5.visible = false;
-            this.txtBourseBill10 = this.add.text(-260, -140, "x" +this.nbBilletBourse10, {
+            this.txtBourseBill10 = this.add.text(-260, -140, "x" + this.nbBilletBourse10, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtBourseBill10.visible = false;
-            this.txtBourseBill20 = this.add.text(-110, -140,"x" + this.nbBilletBourse20, {
+            this.txtBourseBill20 = this.add.text(-110, -140, "x" + this.nbBilletBourse20, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtBourseBill20.visible = false;
-            this.txtBourseBill50 = this.add.text(40, -140, "x" +this.nbBilletBourse50, {
+            this.txtBourseBill50 = this.add.text(40, -140, "x" + this.nbBilletBourse50, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtBourseBill50.visible = false;
-            this.txtBourseBill100 = this.add.text(190, -140, "x" +this.nbBilletBourse100, {
+            this.txtBourseBill100 = this.add.text(190, -140, "x" + this.nbBilletBourse100, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtBourseBill100.visible = false;
 
 
 
-            this.txtCountBill5 = this.add.text(-410, -60,"x" + this.nbBilletComptoir5, {
+            this.txtCountBill5 = this.add.text(-410, -60, "x" + this.nbBilletComptoir5, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtCountBill5.visible = false;
-            this.txtCountBill10 = this.add.text(-260, -60, "x" +this.nbBilletComptoir5, {
+            this.txtCountBill10 = this.add.text(-260, -60, "x" + this.nbBilletComptoir5, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
             });
             this.txtCountBill10.visible = false;
-            this.txtCountBill20 = this.add.text(-110, -60, "x" +this.nbBilletComptoir5, {
+            this.txtCountBill20 = this.add.text(-110, -60, "x" + this.nbBilletComptoir5, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
 
             });
             this.txtCountBill20.visible = false;
-            this.txtCountBill50 = this.add.text(40, -60,"x" + this.nbBilletComptoir5, {
+            this.txtCountBill50 = this.add.text(40, -60, "x" + this.nbBilletComptoir5, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
 
             });
             this.txtCountBill50.visible = false;
-            this.txtCountBill100 = this.add.text(190, -60,"x" + this.nbBilletComptoir5, {
+            this.txtCountBill100 = this.add.text(190, -60, "x" + this.nbBilletComptoir5, {
                 fill: "black",
-                font : '25px Arial'
+                font: '25px Arial'
 
             });
             this.txtCountBill100.visible = false;
@@ -203,9 +209,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB5.visible = true;
                     this.nbBilletComptoir5++;
                     this.txtCountBill5.visible = true;
-                    this.txtCountBill5.text = "x" +this.nbBilletComptoir5;
+                    this.txtCountBill5.text = "x" + this.nbBilletComptoir5;
                     this.nbBilletBourse5--;
-                    this.txtBourseBill5.text = "x" +this.nbBilletBourse5;
+                    this.txtBourseBill5.text = "x" + this.nbBilletBourse5;
 
                     if (this.nbBilletBourse5 == 0) {
                         this.txtBourseBill5.visible = false;
@@ -237,9 +243,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB10.visible = true;
                     this.nbBilletComptoir10++;
                     this.txtCountBill10.visible = true;
-                    this.txtCountBill10.text = "x" +this.nbBilletComptoir10;
+                    this.txtCountBill10.text = "x" + this.nbBilletComptoir10;
                     this.nbBilletBourse10--;
-                    this.txtBourseBill10.text = "x" +this.nbBilletBourse10;
+                    this.txtBourseBill10.text = "x" + this.nbBilletBourse10;
 
                     if (this.nbBilletBourse10 == 0) {
                         this.txtBourseBill10.visible = false;
@@ -271,9 +277,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB20.visible = true;
                     this.nbBilletComptoir20++;
                     this.txtCountBill20.visible = true;
-                    this.txtCountBill20.text = "x" +this.nbBilletComptoir20;
+                    this.txtCountBill20.text = "x" + this.nbBilletComptoir20;
                     this.nbBilletBourse20--;
-                    this.txtBourseBill20.text = "x" +this.nbBilletBourse20;
+                    this.txtBourseBill20.text = "x" + this.nbBilletBourse20;
 
                     if (this.nbBilletBourse20 == 0) {
                         this.txtBourseBill20.visible = false;
@@ -305,9 +311,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB50.visible = true;
                     this.nbBilletComptoir50++;
                     this.txtCountBill50.visible = true;
-                    this.txtCountBill50.text = "x" +this.nbBilletComptoir50;
+                    this.txtCountBill50.text = "x" + this.nbBilletComptoir50;
                     this.nbBilletBourse50--;
-                    this.txtBourseBill50.text = "x" +this.nbBilletBourse50;
+                    this.txtBourseBill50.text = "x" + this.nbBilletBourse50;
 
                     if (this.nbBilletBourse50 == 0) {
                         this.txtBourseBill50.visible = false;
@@ -339,9 +345,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.comptoirB100.visible = true;
                     this.nbBilletComptoir100++;
                     this.txtCountBill100.visible = true;
-                    this.txtCountBill100.text = "x" +this.nbBilletComptoir100;
+                    this.txtCountBill100.text = "x" + this.nbBilletComptoir100;
                     this.nbBilletBourse100--;
-                    this.txtBourseBill100.text = "x" +this.nbBilletBourse100;
+                    this.txtBourseBill100.text = "x" + this.nbBilletBourse100;
 
                     if (this.nbBilletBourse100 == 0) {
                         this.txtBourseBill100.visible = false;
@@ -401,96 +407,96 @@ class BoutiqueScene extends Phaser.Scene {
         this.scene.start("Travel");
     }
 
-    cancelAction(){
+    cancelAction() {
 
-        if(this.pileAction.length >0 ){
+        if (this.pileAction.length > 0) {
 
-            if(this.pileAction[this.pileAction.length - 1] == 5){
+            if (this.pileAction[this.pileAction.length - 1] == 5) {
 
-                if(this.nbBilletComptoir5 <= 1 ){
+                if (this.nbBilletComptoir5 <= 1) {
                     this.comptoirB5.visible = false;
                     this.txtCountBill5.visible = false;
                 }
-                this.nbBilletComptoir5 --;
-                this.txtCountBill5.setText("x" +this.nbBilletComptoir5);
+                this.nbBilletComptoir5--;
+                this.txtCountBill5.setText("x" + this.nbBilletComptoir5);
 
                 this.nbBilletBourse5++;
-                this.txtBourseBill5.setText("x" +this.nbBilletBourse5);
+                this.txtBourseBill5.setText("x" + this.nbBilletBourse5);
 
-                if(this.nbBilletBourse5 > 0){
+                if (this.nbBilletBourse5 > 0) {
                     this.txtBourseBill5.visible = true;
                     this.b5.visible = true;
                 }
             }
 
-            
-            if(this.pileAction[this.pileAction.length - 1] == 10){
 
-                if(this.nbBilletComptoir10 <= 1 ){
+            if (this.pileAction[this.pileAction.length - 1] == 10) {
+
+                if (this.nbBilletComptoir10 <= 1) {
                     this.comptoirB10.visible = false;
                     this.txtCountBill10.visible = false;
                 }
-                this.nbBilletComptoir10 --;
-                this.txtCountBill10.setText("x" +this.nbBilletComptoir10);
+                this.nbBilletComptoir10--;
+                this.txtCountBill10.setText("x" + this.nbBilletComptoir10);
 
                 this.nbBilletBourse10++;
-                this.txtBourseBill10.setText("x" +this.nbBilletBourse10);
+                this.txtBourseBill10.setText("x" + this.nbBilletBourse10);
 
-                if(this.nbBilletBourse10 > 0){
+                if (this.nbBilletBourse10 > 0) {
                     this.txtBourseBill10.visible = true;
                     this.b10.visible = true;
                 }
             }
 
-            if(this.pileAction[this.pileAction.length - 1] == 20){
+            if (this.pileAction[this.pileAction.length - 1] == 20) {
 
-                if(this.nbBilletComptoir20 <= 1 ){
+                if (this.nbBilletComptoir20 <= 1) {
                     this.comptoirB20.visible = false;
                     this.txtCountBill20.visible = false;
                 }
-                this.nbBilletComptoir20 --;
-                this.txtCountBill20.setText("x" +this.nbBilletComptoir20);
+                this.nbBilletComptoir20--;
+                this.txtCountBill20.setText("x" + this.nbBilletComptoir20);
 
                 this.nbBilletBourse20++;
-                this.txtBourseBill20.setText("x" +this.nbBilletBourse20);
+                this.txtBourseBill20.setText("x" + this.nbBilletBourse20);
 
-                if(this.nbBilletBourse20 > 0){
+                if (this.nbBilletBourse20 > 0) {
                     this.txtBourseBill20.visible = true;
                     this.b20.visible = true;
                 }
             }
 
-            if(this.pileAction[this.pileAction.length - 1] == 50){
+            if (this.pileAction[this.pileAction.length - 1] == 50) {
 
-                if(this.nbBilletComptoir50 <= 1 ){
+                if (this.nbBilletComptoir50 <= 1) {
                     this.comptoirB50.visible = false;
                     this.txtCountBill50.visible = false;
                 }
-                this.nbBilletComptoir50 --;
-                this.txtCountBill50.setText("x" +this.nbBilletComptoir50);
+                this.nbBilletComptoir50--;
+                this.txtCountBill50.setText("x" + this.nbBilletComptoir50);
 
                 this.nbBilletBourse50++;
-                this.txtBourseBill50.setText("x" +this.nbBilletBourse50);
+                this.txtBourseBill50.setText("x" + this.nbBilletBourse50);
 
-                if(this.nbBilletBourse50 > 0){
+                if (this.nbBilletBourse50 > 0) {
                     this.txtBourseBill50.visible = true;
                     this.b50.visible = true;
                 }
             }
 
-            if(this.pileAction[this.pileAction.length - 1] == 100){
+            if (this.pileAction[this.pileAction.length - 1] == 100) {
 
-                if(this.nbBilletComptoir100 <= 1 ){
+                if (this.nbBilletComptoir100 <= 1) {
                     this.comptoirB100.visible = false;
                     this.txtCountBill100.visible = false;
                 }
-                this.nbBilletComptoir100 --;
-                this.txtCountBill100.setText("x" +this.nbBilletComptoir100);
+                this.nbBilletComptoir100--;
+                this.txtCountBill100.setText("x" + this.nbBilletComptoir100);
 
                 this.nbBilletBourse100++;
-                this.txtBourseBill100.setText("x" +this.nbBilletBourse100);
+                this.txtBourseBill100.setText("x" + this.nbBilletBourse100);
 
-                if(this.nbBilletBourse100 > 0){
+                if (this.nbBilletBourse100 > 0) {
                     this.txtBourseBill100.visible = true;
                     this.b100.visible = true;
                 }
@@ -544,20 +550,15 @@ class BoutiqueScene extends Phaser.Scene {
 
             this.txtPrix.visible = false;
 
-            this.btnValider.visible=false;
-            this.btnCancel.visible=false;
-            this.btnReset.visible=false;
+            this.btnValider.visible = false;
+            this.btnCancel.visible = false;
+            this.btnReset.visible = false;
 
             this.txtBoutique.setText("Tu as réussi!\nTu peut sortir en cliquant sur la flèche en bas à gauche,\nou en appuyant sur la touche \"échap\" de ton clavier.")
 
             sessionStorage.setItem('MissionEnCours', false);
+            sessionStorage.setItem('RetourMission', true);
 
-            if(sessionStorage.getItem("nbTentatives") < 2){
-                this.lvlValue = parseInt(sessionStorage.getItem("lvPlayer"));
-                sessionStorage.setItem('lvPlayer', this.lvlValue + 1);
-
-                console.log('%c%s', 'color: #ff6600', "niveau du joueur : "  + sessionStorage.getItem("lvPlayer"));
-            }
 
         } else {
 
