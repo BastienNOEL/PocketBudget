@@ -12,7 +12,12 @@ class LoadScene extends Phaser.Scene {
         this.load.image('bgTitre', 'assets/img/BG/bgTitre.png');
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
-        this.load.image('BG', 'assets/img/BG/BG_02.png');
+        this.load.image('BG1', 'assets/img/BG/Sky.png');
+        this.load.image('BG2', 'assets/img/BG/backGround.png');
+        this.load.image('BG3', 'assets/img/BG/Middle.png');
+        this.load.image('BG4', 'assets/img/BG/Foreground.png');
+
+
         this.load.image('ground', 'assets/img/Tiles/2.png');
         this.load.image('player', 'assets/img/Object/SnowMan.png');
         this.load.image('igloo1', 'assets/img/Object/Igloo1.png');
@@ -44,10 +49,6 @@ class LoadScene extends Phaser.Scene {
         this.load.image('valider', 'assets/img/Buttons/btnOk.png');
         this.load.image('cancelArrow', 'assets/img/Buttons/cancelArrow.png');
         this.load.image('resetArrow', 'assets/img/Buttons/resetArrow.png');
-
-
-
-
 
         sessionStorage.setItem('B100', 0);
         sessionStorage.setItem('B50', 0);

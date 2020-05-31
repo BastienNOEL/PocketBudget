@@ -8,18 +8,34 @@ class TravelScene extends Phaser.Scene {
 
     create() {
 
-        var bg = this.add.image(500, 250, 'BG');
-        bg.setScale(0.6, 0.6);
 
-        var platforms = this.physics.add.staticGroup({
-            key: 'ground',
-            repeat: 11,
-            setXY: {
-                x: 60,
-                y: 540,
-                stepX: 127
-            }
-        });
+        this.bg1 = this.add.tileSprite(0, 0, game.config.width*2, game.config.height*2, "BG1");
+        this.bg1.setOrigin(0, 0);
+        this.bg1.setScrollFactor(0);
+        this.bg1.setScale(0.6,0.6);
+
+        this.bg2 = this.add.tileSprite(0, 0, game.config.width*2, game.config.height*2, "BG2");
+        this.bg2.setOrigin(0, 0);
+        this.bg2.setScrollFactor(0);
+        this.bg2.setScale(0.6,0.6);
+
+        this.bg3 = this.add.tileSprite(0, 0, game.config.width*2, game.config.height*2, "BG3");
+        this.bg3.setOrigin(0, 0);
+        this.bg3.setScrollFactor(0);
+        this.bg3.setScale(0.6,0.6);
+
+        this.bg4 = this.add.tileSprite(0, 0, game.config.width*2, game.config.height*2 , "BG4");
+        this.bg4.setOrigin(0, 0);
+        this.bg4.setScrollFactor(0);
+        this.bg4.setScale(0.63,0.63);
+
+
+        this.ground = this.add.tileSprite(0, 0, game.config.width * 3, 125, "ground");
+        this.ground.setOrigin(0, 0);
+        this.ground.setScrollFactor(0);
+        this.ground.y = 500;
+        this.physics.add.existing(this.ground, true);
+
 
         this.zoneLvl = this.add.container(930, 60);
 
@@ -36,48 +52,46 @@ class TravelScene extends Phaser.Scene {
         this.zoneLvl.add(this.txtLvl);
 
 
-        this.igloo1 = this.physics.add.sprite(870, 427, 'igloo1');
+        this.igloo1 = this.add.image(870, 450, 'igloo1');
         this.igloo1.setScale(0.5, 0.5);
-        this.physics.add.collider(this.igloo1, platforms);
-        this.physics.add.collider(this.igloo1, this.player);
-        this.igloo1.setCollideWorldBounds(true);
 
-        this.maison = this.physics.add.sprite(200, 284, 'maison');
+        this.maison = this.add.image(200, 307, 'maison');
         this.maison.setScale(0.3, 0.3);
-        this.physics.add.collider(this.maison, platforms);
-        this.physics.add.collider(this.maison, this.player);
-        this.maison.setCollideWorldBounds(true);
 
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
         this.player.setBounce(0.2);
         this.player.setScale(0.5, 0.5);
         this.player.body.setGravityY(300)
-        this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.player, platforms);
+        this.physics.add.collider(this.player, this.ground);
 
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
-        this.tig1 = this.add.text(800, 325, "Appuyez sur ESPACE", {fill:"black"});
+        this.tig1 = this.add.text(800, 348, "Appuyez sur ESPACE", {fill:"black"});
         this.tig1.visible = false;
-        this.texteEntrerMaison = this.add.text(150, 300, "Appuyez sur ESPACE", {fill:"black"});
+        this.texteEntrerMaison = this.add.text(150, 327, "Appuyez sur ESPACE", {fill:"black"});
         this.texteEntrerMaison.visible = false;
+
+        this.myCam = this.cameras.main;
+        this.myCam.setBounds(0, 0, game.config.width * 3, game.config.height);
+
+        this.myCam.startFollow(this.player);
 
     }
 
     update() {
         this.movePlayer();
         this.changeScene();
-
-
+        this.moveGui();
+        this.scrollBackground();
 
     }
 
     movePlayer() {
-        if (this.cursors.left.isDown) {
+        if (this.cursors.left.isDown && this.player.x > 0) {
             this.player.setVelocityX(-300);
-        } else if (this.cursors.right.isDown) {
+        } else if (this.cursors.right.isDown && this.player.x < game.config.width * 3) {
             this.player.setVelocityX(300);
         } else {
             this.player.setVelocityX(0);
@@ -87,6 +101,21 @@ class TravelScene extends Phaser.Scene {
         }
     }
 
+    moveGui(){
+
+        if(this.player.x >500 && this.player.x < 2500  ){
+            this.zoneLvl.x = this.player.x + 430;
+        }
+    }
+
+    scrollBackground(){
+        this.bg1.tilePositionX = this.myCam.scrollX * .2;
+        this.bg2.tilePositionX = this.myCam.scrollX * .4;
+        this.bg3.tilePositionX = this.myCam.scrollX * .6;
+        this.bg4.tilePositionX = this.myCam.scrollX * .8;
+
+        this.ground.tilePositionX = this.myCam.scrollX;
+    }
 
     changeScene() {
         if ((this.player.x > 725 && this.player.x < 845) && this.player.y > 423) {

@@ -27,7 +27,7 @@ const config = {
 var game = new Phaser.Game(config);
 
 var posXTravel = 500;
-var posYTravel = 423.5;
+var posYTravel = 447.5;
 var posXpn = 100;
 var posYpn = 502;
 sessionStorage.setItem('lvPlayer', 1);
