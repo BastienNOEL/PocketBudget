@@ -36,22 +36,6 @@ class TravelScene extends Phaser.Scene {
         this.ground.y = 500;
         this.physics.add.existing(this.ground, true);
 
-
-        this.zoneLvl = this.add.container(930, 60);
-
-        this.lvStar = this.add.image(0,0,'starLvl');
-        this.lvStar.setScale(0.5,0.5);
-
-        this.txtLvl = this.add.text(0,0,sessionStorage.getItem('lvPlayer'),{
-            fill : "black",
-            font : "40px Arial" 
-        })
-        this.txtLvl.setOrigin(0.5, 0.5);
-
-        this.zoneLvl.add(this.lvStar);
-        this.zoneLvl.add(this.txtLvl);
-
-
         this.igloo1 = this.add.image(870, 450, 'igloo1');
         this.igloo1.setScale(0.5, 0.5);
 
@@ -78,12 +62,13 @@ class TravelScene extends Phaser.Scene {
 
         this.myCam.startFollow(this.player);
 
+        this.scene.launch('Gui');
+
     }
 
     update() {
         this.movePlayer();
         this.changeScene();
-        this.moveGui();
         this.scrollBackground();
 
     }
@@ -98,13 +83,6 @@ class TravelScene extends Phaser.Scene {
         }
         if (this.cursors.up.isDown && this.player.body.touching.down) {
             this.player.setVelocityY(-330);
-        }
-    }
-
-    moveGui(){
-
-        if(this.player.x >500 && this.player.x < 2500  ){
-            this.zoneLvl.x = this.player.x + 430;
         }
     }
 
@@ -125,6 +103,7 @@ class TravelScene extends Phaser.Scene {
                 this.scene.start("Boutique");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
+                this.scene.stop('Gui');
             }
         } else {
             this.tig1.visible = false;
@@ -137,6 +116,7 @@ class TravelScene extends Phaser.Scene {
                 this.scene.start("PereNoel");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
+                this.scene.stop('Gui');
             }
         } else {
             this.texteEntrerMaison.visible = false;

@@ -30,20 +30,6 @@ class PereNoelScene extends Phaser.Scene {
             }
         });
 
-        this.zoneLvl = this.add.container(930, 60);
-
-        this.lvStar = this.add.image(0,0,'starLvl');
-        this.lvStar.setScale(0.5,0.5);
-
-        this.txtLvl = this.add.text(0,0,sessionStorage.getItem('lvPlayer'),{
-            fill : "black",
-            font : "40px Arial" 
-        })
-        this.txtLvl.setOrigin(0.5, 0.5);
-
-        this.zoneLvl.add(this.lvStar);
-        this.zoneLvl.add(this.txtLvl);
-
         var sol = this.add.image(500, 575, 'solBois');
 
         this.cheminee = this.add.image(500, 425, 'cheminee');
@@ -77,6 +63,8 @@ class PereNoelScene extends Phaser.Scene {
         });
         this.textTalkSanta.visible = false;
         this.clavSpace = this.input.keyboard.addKey('SPACE');
+
+        this.scene.launch('Gui');
 
     }
 
@@ -127,21 +115,16 @@ class PereNoelScene extends Phaser.Scene {
             this.textTalkSanta.visible = true;
 
 
-            if (this.clavSpace.isDown  && sessionStorage.getItem('RetourMission') == "false" ) {
+            if (this.clavSpace.isDown ) {
                 
                 mission.newMission();
                 posXpn = this.player.x;
                 posYpn = this.player.y;
                 this.scene.start("MissionScreen")
+                this.scene.stop('Gui');
 
-            } else if (this.clavSpace.isDown  && sessionStorage.getItem('RetourMission') == "true") {
 
-                console.log('%c%s', 'color: #607339', "retour mission");
-                mission.newMission();
-                posXpn = this.player.x;
-                posYpn = this.player.y;
-                this.scene.start("MissionScreen")
-            }
+            } 
 
         } else {
             this.textTalkSanta.visible = false;
