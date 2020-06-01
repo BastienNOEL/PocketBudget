@@ -21,7 +21,7 @@ class HomeScene extends Phaser.Scene {
 
         var platforms = this.physics.add.staticGroup({
             key: 'ground',
-            repeat: 11,
+            repeat: 6,
             setXY: {
                 x: 60,
                 y: 650,

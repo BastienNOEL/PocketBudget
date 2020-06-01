@@ -51,6 +51,10 @@ class LoadScene extends Phaser.Scene {
         this.load.image('billet20' , 'assets/img/argent/billet20.png');
         this.load.image('billet50' , 'assets/img/argent/billet50.png');
         this.load.image('billet100' , 'assets/img/argent/billet100.jpg');
+        this.load.image('piece1' , 'assets/img/argent/1euro.png');
+        this.load.image('piece2' , 'assets/img/argent/2euros.png');
+
+
 
         this.load.image('flecheGauche', 'assets/img/Buttons/Backward.png');
         this.load.image('valider', 'assets/img/Buttons/btnOk.png');

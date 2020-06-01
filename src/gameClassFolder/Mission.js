@@ -40,15 +40,17 @@ class Mission {
         }
     }
 
-    gainMoney(nb5, nb10, nb20, nb50, nb100) {
+    gainMoney(nb1,nb2,nb5, nb10, nb20, nb50, nb100) {
 
         console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + sessionStorage.getItem('B5'));
 
-        sessionStorage.setItem('B100', nb100);
-        sessionStorage.setItem('B50', nb50);
-        sessionStorage.setItem('B20', nb20);
-        sessionStorage.setItem('B10', nb10);
+        sessionStorage.setItem('P1', nb1);
+        sessionStorage.setItem('P2', nb2);
         sessionStorage.setItem('B5', nb5);
+        sessionStorage.setItem('B10', nb10);
+        sessionStorage.setItem('B20', nb20);
+        sessionStorage.setItem('B50', nb50);
+        sessionStorage.setItem('B100', nb100);
 
         console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + sessionStorage.getItem('B5'));
     }
@@ -67,7 +69,7 @@ class Mission {
 
     mission1() {
         sessionStorage.setItem('MissionEnCours', true);
-        this.gainMoney(2, 1, 0, 0, 0);
+        this.gainMoney(0,0,2, 1, 0, 0, 0);
         sessionStorage.setItem('PrixMission', 15);
         sessionStorage.setItem('nbTentatives', 1);
         sessionStorage.setItem('BoutiqueTexte', "Clique sur un billet de la zone bleu pour le mettre dans la zone jaune.\nQuand tu pense avoir mis le bon nombre de billet, valide avec le\nbouton rouge.\nClique sur les fleches pour revenir en arrière.")
@@ -76,7 +78,7 @@ class Mission {
 
     mission2() {
         sessionStorage.setItem('MissionEnCours', true);
-        this.gainMoney(2, 1, 1, 0, 0);
+        this.gainMoney(0,0,2, 1, 1, 0, 0);
         sessionStorage.setItem('PrixMission', 25);
         sessionStorage.setItem('nbTentatives', 1);
         sessionStorage.setItem('BoutiqueTexte', "25€ S'il vous plaît.")
