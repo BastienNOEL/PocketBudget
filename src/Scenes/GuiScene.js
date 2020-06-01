@@ -20,6 +20,24 @@ class GuiScene extends Phaser.Scene {
         this.zoneLvl.add(this.txtLvl);
 
 
+        if(sessionStorage.getItem('nbStarCoin')>0){
+            this.zoneCoin = this.add.container(800, 65);
+
+            this.starCoin = this.add.image(0,0,'starCoin');
+            this.starCoin.setScale(0.06,0.06);
+    
+            this.txtCoin = this.add.text(0,0,sessionStorage.getItem('nbStarCoin'),{
+                fill : "black",
+                font : "20px Arial" 
+            })
+            this.txtCoin.setOrigin(0.5, 0.5);
+    
+            this.zoneCoin.add(this.starCoin);
+            this.zoneCoin.add(this.txtCoin);
+        }
+
+
+
         console.log('%c%s', 'color: #9c66cc', "GUI");
     }
 }

@@ -39,8 +39,34 @@ class TravelScene extends Phaser.Scene {
         this.igloo1 = this.add.image(870, 450, 'igloo1');
         this.igloo1.setScale(0.5, 0.5);
 
+        this.containerPanneauBoutique = this.add.container(680,455);
+        this.panneauBoutique = this.add.image(0, 0, 'panneau');
+        this.textePanneauBoutique = this.add.text(0,0, "Boutique", {
+            fill:"black",
+            font : "19px Arial",
+        });
+        this.textePanneauBoutique.setOrigin(0.5,0.9);
+
+        this.containerPanneauBoutique.add(this.panneauBoutique);
+        this.containerPanneauBoutique.add(this.textePanneauBoutique);
+
+
         this.maison = this.add.image(200, 307, 'maison');
         this.maison.setScale(0.3, 0.3);
+
+        this.containerPanneauSanta = this.add.container(430,455);
+        this.panneauSanta = this.add.image(0, 0, 'panneau');
+        this.textePanneauSanta = this.add.text(0,0, "Père\nNoël", {
+            fill:"black",
+            font : "17px Arial",
+        });
+        this.textePanneauSanta.setOrigin(0.5,0.7);
+
+        this.containerPanneauSanta.add(this.panneauSanta);
+        this.containerPanneauSanta.add(this.textePanneauSanta);
+
+        
+
 
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
         this.player.setBounce(0.2);

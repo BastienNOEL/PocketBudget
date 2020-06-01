@@ -59,6 +59,9 @@ class Mission {
             this.lvlValue = parseInt(sessionStorage.getItem("lvPlayer"));
             sessionStorage.setItem('lvPlayer', this.lvlValue + 1);
             sessionStorage.setItem('nbTentatives', 1);
+            this.coinValue = parseInt(sessionStorage.getItem("nbStarCoin"));
+            sessionStorage.setItem('nbStarCoin', this.coinValue + 1);
+
         }
     }
 

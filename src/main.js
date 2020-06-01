@@ -31,4 +31,5 @@ var posYTravel = 447.5;
 var posXpn = 100;
 var posYpn = 502;
 sessionStorage.setItem('lvPlayer', 1);
+sessionStorage.setItem('nbStarCoin', 0);
 var mission = new Mission();
