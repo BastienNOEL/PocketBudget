@@ -1,9 +1,8 @@
-class PereNoelScene extends Phaser.Scene {
+class HomeScene extends Phaser.Scene {
     constructor() {
-        super("PereNoel");
+        super("Home");
+
     }
-
-
     create() {
         var i;
         var j = 0;
@@ -32,19 +31,7 @@ class PereNoelScene extends Phaser.Scene {
 
         var sol = this.add.image(500, 575, 'solBois');
 
-        this.cheminee = this.add.image(500, 425, 'cheminee');
-        this.cheminee.setScale(0.1, 0.1);
-
-        this.sapinNoel = this.add.image(200, 315, 'sapinNoel');
-        this.sapinNoel.setScale(0.4, 0.4);
-
-        this.santa = this.physics.add.sprite(900, 407, 'santa');
-        this.santa.setScale(0.5, 0.5);
-        this.physics.add.collider(this.santa, platforms);
-        this.santa.setCollideWorldBounds(true);
-
-
-        this.player = this.physics.add.sprite(posXpn, posYpn, 'player');
+        this.player = this.physics.add.sprite(posXHome, posYHome, 'player');
         this.player.setBounce(0.2);
         this.player.setScale(0.8, 0.8);
         this.player.body.setGravityY(300)
@@ -58,21 +45,19 @@ class PereNoelScene extends Phaser.Scene {
             fill: "white"
         });
         this.textSortie.visible = false;
-        this.textTalkSanta = this.add.text(450, 275, "Appuyez sur ESPACE", {
+        this.textTalkSanta = this.add.text(600, 325, "Appuyez sur ESPACE", {
             fill: "white"
         });
         this.textTalkSanta.visible = false;
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
         this.scene.launch('Gui');
-
     }
 
+    
     update() {
         this.movePlayer();
         this.changeScene();
-        this.talkSanta();
-
 
     }
 
@@ -98,38 +83,12 @@ class PereNoelScene extends Phaser.Scene {
             this.textSortie.visible = true;
 
             if (this.clavSpace.isDown) {
-                posXpn = this.player.x;
-                posYpn = this.player.y;
+                posXHome = this.player.x;
+                posYHome = this.player.y;
                 this.scene.start("Travel");
             }
         } else {
             this.textSortie.visible = false;
         }
-    }
-
-    talkSanta() {
-
-
-        if (this.player.x > 500 && this.player.y > 423) {
-
-            this.textTalkSanta.visible = true;
-
-
-            if (this.clavSpace.isDown ) {
-                
-                mission.newMission();
-                posXpn = this.player.x;
-                posYpn = this.player.y;
-                this.scene.start("MissionScreen")
-                this.scene.stop('Gui');
-
-
-            } 
-
-        } else {
-            this.textTalkSanta.visible = false;
-
-        }
-
     }
 }

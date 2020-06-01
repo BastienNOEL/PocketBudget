@@ -11,7 +11,7 @@ const config = {
         height: 600
     },
     type: Phaser.AUTO,
-    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,GuiScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,HomeScene,GuiScene],
     physics: {
         default: 'arcade',
         arcade: {
@@ -30,6 +30,8 @@ var posXTravel = 500;
 var posYTravel = 447.5;
 var posXpn = 100;
 var posYpn = 502;
+var posXHome = 100;
+var posYHome = 502;
 sessionStorage.setItem('lvPlayer', 1);
 sessionStorage.setItem('nbStarCoin', 0);
 var mission = new Mission();
