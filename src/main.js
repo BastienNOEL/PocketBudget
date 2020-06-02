@@ -11,7 +11,7 @@ const config = {
         height: 600
     },
     type: Phaser.AUTO,
-    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,HomeScene,GuiScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,HomeScene,LutinShopScene,GuiScene],
     physics: {
         default: 'arcade',
         arcade: {

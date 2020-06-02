@@ -42,6 +42,7 @@ class LoadScene extends Phaser.Scene {
 
 
         this.load.image('recBleu' , 'assets/img/Object/rectangleBleu.png');
+        this.load.image('recBleuMarine' , 'assets/img/Object/rectangleBleuMarine.png');
         this.load.image('recRouge' , 'assets/img/Object/rectangleRouge.png');
         this.load.image('recVert' , 'assets/img/Object/rectangleVert.png');
         this.load.image('recJaune' , 'assets/img/Object/rectangleJaune.png');
@@ -57,6 +58,7 @@ class LoadScene extends Phaser.Scene {
 
 
         this.load.image('flecheGauche', 'assets/img/Buttons/Backward.png');
+        this.load.image('flecheDroite', 'assets/img/Buttons/Forward.png');
         this.load.image('valider', 'assets/img/Buttons/btnOk.png');
         this.load.image('cancelArrow', 'assets/img/Buttons/cancelArrow.png');
         this.load.image('resetArrow', 'assets/img/Buttons/resetArrow.png');

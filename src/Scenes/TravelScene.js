@@ -198,7 +198,7 @@ class TravelScene extends Phaser.Scene {
             this.txtInteractionLutinMarchand.visible = true;
 
             if (this.clavSpace.isDown) {
-                this.scene.start("Home");
+                this.scene.start("LutinShop");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
                 this.scene.stop('Gui');
