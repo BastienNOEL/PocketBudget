@@ -1,46 +1,53 @@
-class Mission {
+class Mission extends DonneesMission {
     constructor() {
         //this.lvPlayer =  sessionStorage.getItem('lvPlayer');
+        super();
         this.paroleSanta = "ce message ne doit pas apparaitre";
         sessionStorage.setItem('MissionEnCours', false);
         sessionStorage.setItem('RetourMission', false);
+        sessionStorage.setItem('lastMissionIsDone', false);
         sessionStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.")
 
     }
 
     newMission() {
-        var lvPlayer = sessionStorage.getItem('lvPlayer');
-        if (lvPlayer == 1) {
-            if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "false") {
-                this.paroleSanta = "Prend cet argent et va me chercher du bois dans l'igloo.";
-                this.mission1();
-            } else if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "true") {
-                this.paroleSanta = "Merci pour ton aide! Reviens me voir quand tu peut!";
-                sessionStorage.setItem('RetourMission', false);
-                this.lvlUp();
-            } else {
-                this.paroleSanta = "La boutique se trouve dans l'igloo.";
-            }
-        } else if (lvPlayer == 2) {
-            if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "false") {
-                this.paroleSanta = "J'ai besoins que tu aille me chercher une clochette dans la boutique\navec cet argent.";
-                this.mission2();
-            } else if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "true") {
-                this.paroleSanta = "Merci pour cette clochette! Reviens me voir quand tu peut!";
-                sessionStorage.setItem('RetourMission', false);
-                this.lvlUp();
-            } else {
-                this.paroleSanta = "Va voir dans l'igloo pour acheter la clochette.";
-            }
 
+        if (sessionStorage.getItem('lastMissionIsDone') != "true") {
+            var lvPlayer = sessionStorage.getItem('lvPlayer');
+
+            this.stateMission = this.checkStateMission();
+
+            switch (this.stateMission) {
+                case 1:
+                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][3];
+                    this.mission(lvPlayer);
+                    break;
+
+                case 2:
+                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][4];
+                    sessionStorage.setItem('RetourMission', false);
+                    this.lvlUp();
+
+                    if (lvPlayer == this.arrayMissions.length) {
+                        sessionStorage.setItem('lastMissionIsDone', true);
+                    }
+
+                    break;
+
+                case 3:
+                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][5];
+                    break;
+
+                default:
+                    console.log("erreur mission");
+            }
         } else {
-            this.paroleSanta = "Tu as accomplis toutes les missions.";
-
-            console.log('%c%s', 'color: #f279ca', "pas valide");
+            this.paroleSanta = "Tu as fait toutes les missions disponibles."
         }
+
     }
 
-    gainMoney(nb1,nb2,nb5, nb10, nb20, nb50, nb100) {
+    gainMoney(nb1, nb2, nb5, nb10, nb20, nb50, nb100) {
 
         console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + sessionStorage.getItem('B5'));
 
@@ -55,7 +62,7 @@ class Mission {
         console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + sessionStorage.getItem('B5'));
     }
 
-    lvlUp(){
+    lvlUp() {
 
         if (sessionStorage.getItem("nbTentatives") < 3) {
             this.lvlValue = parseInt(sessionStorage.getItem("lvPlayer"));
@@ -67,22 +74,37 @@ class Mission {
         }
     }
 
-    mission1() {
-        sessionStorage.setItem('MissionEnCours', true);
-        this.gainMoney(0,0,2, 1, 0, 0, 0);
-        sessionStorage.setItem('PrixMission', 15);
-        sessionStorage.setItem('nbTentatives', 1);
-        sessionStorage.setItem('BoutiqueTexte', "Clique sur un billet de la zone bleu pour le mettre dans la zone jaune.\nQuand tu pense avoir mis le bon nombre de billet, valide avec le\nbouton rouge.\nClique sur les fleches pour revenir en arrière.")
+    checkStateMission() {
+
+        if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "false") {
+            return 1;
+        } else if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "true") {
+            return 2;
+        } else {
+            return 3;
+        }
 
     }
 
-    mission2() {
+    mission(lvPlayer) {
+
+        var numMission = lvPlayer - 1;
+
         sessionStorage.setItem('MissionEnCours', true);
-        this.gainMoney(0,0,2, 1, 1, 0, 0);
-        sessionStorage.setItem('PrixMission', 25);
         sessionStorage.setItem('nbTentatives', 1);
-        sessionStorage.setItem('BoutiqueTexte', "25€ S'il vous plaît.")
-        
+        sessionStorage.setItem('PrixMission', this.arrayMissions[numMission][1]);
+        sessionStorage.setItem('BoutiqueTexte', this.arrayMissions[numMission][2]);
+
+        this.gainMoney(
+            this.arrayMissions[numMission][0][0],
+            this.arrayMissions[numMission][0][1],
+            this.arrayMissions[numMission][0][2],
+            this.arrayMissions[numMission][0][3],
+            this.arrayMissions[numMission][0][4],
+            this.arrayMissions[numMission][0][5],
+            this.arrayMissions[numMission][0][6],
+        );
 
     }
+
 }

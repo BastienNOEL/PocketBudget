@@ -328,7 +328,7 @@ class LutinShopScene extends Phaser.Scene {
         this.arrayTexteButtons.push("Bouton15");
         this.arrayButtons.push(this.boutonObjet15);
         this.boutonObjet15.visible = false;
-
+/*
         this.boutonObjet16 = new Button({
             'scene': this,
             'key': 'recBleuMarine',
@@ -358,7 +358,7 @@ class LutinShopScene extends Phaser.Scene {
         this.arrayTexteButtons.push("Bouton17");
         this.arrayButtons.push(this.boutonObjet17);
         this.boutonObjet17.visible = false;
-
+*/
         ///////////
 
         this.txtContainerB0 = this.add.container(150, 320);

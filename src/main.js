@@ -34,4 +34,5 @@ var posXHome = 100;
 var posYHome = 502;
 sessionStorage.setItem('lvPlayer', 1);
 sessionStorage.setItem('nbStarCoin', 0);
+sessionStorage.setItem('nbTentatives',1);
 var mission = new Mission();

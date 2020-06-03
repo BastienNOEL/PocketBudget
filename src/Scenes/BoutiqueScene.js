@@ -558,6 +558,8 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBoursePiece1.visible = true;
                     this.p1.visible = true;
                 }
+                this.valeurDepose = this.valeurDepose - 1;
+
             }
 
             if (this.pileAction[this.pileAction.length - 1] == 2) {
@@ -576,6 +578,8 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBoursePiece2.visible = true;
                     this.p2.visible = true;
                 }
+                this.valeurDepose = this.valeurDepose - 2;
+
             }
 
             if (this.pileAction[this.pileAction.length - 1] == 5) {
@@ -594,6 +598,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBourseBill5.visible = true;
                     this.b5.visible = true;
                 }
+
+                this.valeurDepose = this.valeurDepose - 5;
+
             }
 
 
@@ -613,6 +620,8 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBourseBill10.visible = true;
                     this.b10.visible = true;
                 }
+
+                this.valeurDepose = this.valeurDepose - 10;
             }
 
             if (this.pileAction[this.pileAction.length - 1] == 20) {
@@ -631,6 +640,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBourseBill20.visible = true;
                     this.b20.visible = true;
                 }
+
+                this.valeurDepose = this.valeurDepose - 20;
+
             }
 
             if (this.pileAction[this.pileAction.length - 1] == 50) {
@@ -649,6 +661,9 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBourseBill50.visible = true;
                     this.b50.visible = true;
                 }
+
+                this.valeurDepose = this.valeurDepose - 50;
+
             }
 
             if (this.pileAction[this.pileAction.length - 1] == 100) {
@@ -667,11 +682,14 @@ class BoutiqueScene extends Phaser.Scene {
                     this.txtBourseBill100.visible = true;
                     this.b100.visible = true;
                 }
+
+                this.valeurDepose = this.valeurDepose - 100;
+
             }
 
 
-
             this.pileAction.pop();
+
 
         }
     }
