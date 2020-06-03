@@ -5,6 +5,8 @@ class LutinShopScene extends Phaser.Scene {
 
     create() {
 
+        this.dataShop = new DonneesLutinShop;
+
         this.zoneTexte = this.add.container(500, 70);
         this.zonePrix = this.add.container(400, 200);
         this.maZone = this.add.container(878, 195);
@@ -85,280 +87,58 @@ class LutinShopScene extends Phaser.Scene {
 
         /// OBJETS 
 
-        this.boutonObjet0 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 150,
-            'y': 320
-        });
-        this.boutonObjet0.setScale(0.2, 0.15);
-        this.boutonObjet0.on('pointerdown', function () {
+        this.xValue = 150; // 150 / 380 / 610 / 840
+        this.yValue = 320;
 
-            console.log('%c%s', 'color: #d90000', "bouton 0 ");
-        }, this);
-        this.arrayTexteButtons.push("Bouton0");
-        this.arrayButtons.push(this.boutonObjet0);
+        this.counter = 1;
+
+        for (var i = 0; i < this.dataShop.arrayObjetDeco.length; i++) {
 
 
-        this.boutonObjet1 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 380,
-            'y': 320
-        });
-        this.boutonObjet1.setScale(0.2, 0.15);
-        this.boutonObjet1.on('pointerdown', function () {
+            if ((i) % 8 == 0) {
+                this.yValue = 320;
+            } else if ((i) % 4 == 0) {
+                this.yValue = 420;
+            }
 
-            console.log('%c%s', 'color: #00b300', "click sur bouton 1");
-        }, this);
-        this.arrayTexteButtons.push("Bouton1");
-        this.arrayButtons.push(this.boutonObjet1);
+            if (this.counter == 1) {
+                this.xValue = 150;
+            } else if (this.counter == 2) {
+                this.xValue = 380;
+            } else if (this.counter == 3) {
+                this.xValue = 610;
+            } else if (this.counter == 4) {
+                this.xValue = 840;
+            }
 
+            this.counter++;
 
-        this.boutonObjet2 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 610,
-            'y': 320
-        });
-        this.boutonObjet2.setScale(0.2, 0.15);
-        this.boutonObjet2.on('pointerdown', function () {
+            if (this.counter == 5) {
+                this.counter = 1;
+            }
 
-            console.log('%c%s', 'color: #00b300', "click sur bouton 2");
-        }, this);
-        this.arrayTexteButtons.push("Bouton2");
-        this.arrayButtons.push(this.boutonObjet2);
+            this.boutonObjet = new Button({
+                'scene': this,
+                'key': 'recBleuMarine',
+                'x': this.xValue,
+                'y': this.yValue,
+            });
+            this.boutonObjet.setScale(0.2, 0.15);
+            this.boutonObjet.on('pointerdown', this.dataShop.arrayObjetDeco[i][1][0], this);
 
+            if (i <= 7) {
+                this.boutonObjet.visible = true;
+            } else {
+                this.boutonObjet.visible = false;
 
-        this.boutonObjet3 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 840,
-            'y': 320
-        });
-        this.boutonObjet3.setScale(0.2, 0.15);
-        this.boutonObjet3.on('pointerdown', function () {
+            }
+            this.arrayTexteButtons.push(this.dataShop.arrayObjetDeco[i][0]);
+            this.arrayButtons.push(this.boutonObjet);
 
-            console.log('%c%s', 'color: #00b300', "click sur bouton 3");
-        }, this);
-        this.arrayTexteButtons.push("Bouton3");
-        this.arrayButtons.push(this.boutonObjet3);
+        }
 
 
 
-        ///
-
-        this.boutonObjet4 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 150,
-            'y': 420
-        });
-        this.boutonObjet4.setScale(0.2, 0.15);
-        this.boutonObjet4.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 4");
-        }, this);
-        this.arrayTexteButtons.push("Bouton4");
-        this.arrayButtons.push(this.boutonObjet4);
-
-
-        this.boutonObjet5 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 380,
-            'y': 420
-        });
-        this.boutonObjet5.setScale(0.2, 0.15);
-        this.boutonObjet5.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 5");
-        }, this);
-        this.arrayTexteButtons.push("Bouton5");
-        this.arrayButtons.push(this.boutonObjet5);
-
-
-        this.boutonObjet6 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 610,
-            'y': 420
-        });
-        this.boutonObjet6.setScale(0.2, 0.15);
-        this.boutonObjet6.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 6");
-        }, this);
-        this.arrayTexteButtons.push("Bouton6");
-        this.arrayButtons.push(this.boutonObjet6);
-
-
-        this.boutonObjet7 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 840,
-            'y': 420
-        });
-        this.boutonObjet7.setScale(0.2, 0.15);
-        this.boutonObjet7.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 7");
-        }, this);
-        this.arrayTexteButtons.push("Bouton7");
-        this.arrayButtons.push(this.boutonObjet7);
-
-        this.boutonObjet8 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 150,
-            'y': 320
-        });
-        this.boutonObjet8.setScale(0.2, 0.15);
-        this.boutonObjet8.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 8");
-        }, this);
-        this.arrayTexteButtons.push("Bouton8");
-        this.arrayButtons.push(this.boutonObjet8);
-        this.boutonObjet8.visible = false;
-
-        ////
-
-        this.boutonObjet9 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 380,
-            'y': 320
-        });
-        this.boutonObjet9.setScale(0.2, 0.15);
-        this.boutonObjet9.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 9");
-        }, this);
-        this.arrayTexteButtons.push("Bouton9");
-        this.arrayButtons.push(this.boutonObjet9);
-        this.boutonObjet9.visible = false;
-
-        this.boutonObjet10 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 610,
-            'y': 320
-        });
-        this.boutonObjet10.setScale(0.2, 0.15);
-        this.boutonObjet10.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 10");
-        }, this);
-        this.arrayTexteButtons.push("Bouton10");
-        this.arrayButtons.push(this.boutonObjet10);
-        this.boutonObjet10.visible = false;
-
-        this.boutonObjet11 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 840,
-            'y': 320
-        });
-        this.boutonObjet11.setScale(0.2, 0.15);
-        this.boutonObjet11.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 11");
-        }, this);
-        this.arrayTexteButtons.push("Bouton11");
-        this.arrayButtons.push(this.boutonObjet11);
-        this.boutonObjet11.visible = false;
-
-        this.boutonObjet12 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 150,
-            'y': 420
-        });
-        this.boutonObjet12.setScale(0.2, 0.15);
-        this.boutonObjet12.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 12");
-        }, this);
-        this.arrayTexteButtons.push("Bouton12");
-        this.arrayButtons.push(this.boutonObjet12);
-        this.boutonObjet12.visible = false;
-
-        this.boutonObjet13 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 380,
-            'y': 420
-        });
-        this.boutonObjet13.setScale(0.2, 0.15);
-        this.boutonObjet13.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 13");
-        }, this);
-        this.arrayTexteButtons.push("Bouton13");
-        this.arrayButtons.push(this.boutonObjet13);
-        this.boutonObjet13.visible = false;
-
-        this.boutonObjet14 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 610,
-            'y': 420
-        });
-        this.boutonObjet14.setScale(0.2, 0.15);
-        this.boutonObjet14.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 14");
-        }, this);
-        this.arrayTexteButtons.push("Bouton14");
-        this.arrayButtons.push(this.boutonObjet14);
-        this.boutonObjet14.visible = false;
-
-        this.boutonObjet15 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 840,
-            'y': 420
-        });
-        this.boutonObjet15.setScale(0.2, 0.15);
-        this.boutonObjet15.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 15");
-        }, this);
-        this.arrayTexteButtons.push("Bouton15");
-        this.arrayButtons.push(this.boutonObjet15);
-        this.boutonObjet15.visible = false;
-/*
-        this.boutonObjet16 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 150,
-            'y': 320
-        });
-        this.boutonObjet16.setScale(0.2, 0.15);
-        this.boutonObjet16.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 16");
-        }, this);
-        this.arrayTexteButtons.push("Bouton16");
-        this.arrayButtons.push(this.boutonObjet16);
-        this.boutonObjet16.visible = false;
-
-        this.boutonObjet17 = new Button({
-            'scene': this,
-            'key': 'recBleuMarine',
-            'x': 380,
-            'y': 320
-        });
-        this.boutonObjet17.setScale(0.2, 0.15);
-        this.boutonObjet17.on('pointerdown', function () {
-
-            console.log('%c%s', 'color: #00b300', "click sur bouton 17");
-        }, this);
-        this.arrayTexteButtons.push("Bouton17");
-        this.arrayButtons.push(this.boutonObjet17);
-        this.boutonObjet17.visible = false;
-*/
         ///////////
 
         this.txtContainerB0 = this.add.container(150, 320);
