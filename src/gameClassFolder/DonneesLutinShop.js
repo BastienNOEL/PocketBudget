@@ -2,7 +2,7 @@ class DonneesLutinShop {
 
     constructor() {
 
-        this.arrayObjetDeco = new Array(16);
+        this.arrayObjetDeco = new Array(17);
 
         this.arrayNomObjet = new Array(this.arrayObjetDeco.length);
         this.arrayParamBoutonObjet = new Array(this.arrayObjetDeco.length);

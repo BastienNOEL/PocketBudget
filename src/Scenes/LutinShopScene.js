@@ -5,6 +5,19 @@ class LutinShopScene extends Phaser.Scene {
 
     create() {
 
+        this.xValue = 150;
+        this.yValue = 320;
+        this.counterX = 1;
+        this.counterElemInOnePage = 1;
+
+        this.arrayPages = [];
+        this.arrayOnePage = [];
+        this.arrayButtonsOnePage = [];
+        this.arrayTxtButtonsOnePage = [];
+
+        this.nbPages = Math.ceil(dataShop.arrayObjetDeco.length / 8);
+
+
         this.zoneTexte = this.add.container(500, 70);
         this.zonePrix = this.add.container(400, 200);
         this.maZone = this.add.container(878, 195);
@@ -78,18 +91,6 @@ class LutinShopScene extends Phaser.Scene {
 
         this.txtContainerIndexPage.add(this.txtIndexPage);
 
-
-        this.arrayTexteButtons = [];
-        this.arrayButtons = [];
-
-
-        /// OBJETS 
-
-        this.xValue = 150; // 150 / 380 / 610 / 840
-        this.yValue = 320;
-
-        this.counter = 1;
-
         for (var i = 0; i < dataShop.arrayObjetDeco.length; i++) {
 
 
@@ -99,20 +100,20 @@ class LutinShopScene extends Phaser.Scene {
                 this.yValue = 420;
             }
 
-            if (this.counter == 1) {
+            if (this.counterX == 1) {
                 this.xValue = 150;
-            } else if (this.counter == 2) {
+            } else if (this.counterX == 2) {
                 this.xValue = 380;
-            } else if (this.counter == 3) {
+            } else if (this.counterX == 3) {
                 this.xValue = 610;
-            } else if (this.counter == 4) {
+            } else if (this.counterX == 4) {
                 this.xValue = 840;
             }
 
-            this.counter++;
+            this.counterX++;
 
-            if (this.counter == 5) {
-                this.counter = 1;
+            if (this.counterX == 5) {
+                this.counterX = 1;
             }
 
             this.boutonObjet = new Button({
@@ -130,14 +131,30 @@ class LutinShopScene extends Phaser.Scene {
                 this.boutonObjet.visible = false;
 
             }
-            this.arrayTexteButtons.push(dataShop.arrayObjetDeco[i][0]);
-            this.arrayButtons.push(this.boutonObjet);
 
+            this.arrayButtonsOnePage.push(this.boutonObjet);
+            this.arrayTxtButtonsOnePage.push(dataShop.arrayObjetDeco[i][0]);
+
+            if (this.counterElemInOnePage == 8) {
+                this.arrayOnePage.push(this.arrayButtonsOnePage);
+                this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
+                this.arrayPages.push(this.arrayOnePage);
+
+                this.arrayButtonsOnePage = [];
+                this.arrayTxtButtonsOnePage = [];
+                this.arrayOnePage = [];
+            }
+
+            this.counterElemInOnePage++;
+
+            if (this.counterElemInOnePage == 9) {
+                this.counterElemInOnePage = 1;
+            }
         }
 
-
-
-        ///////////
+        this.arrayOnePage.push(this.arrayButtonsOnePage);
+        this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
+        this.arrayPages.push(this.arrayOnePage);
 
         this.txtContainerB0 = this.add.container(150, 320);
         this.txtContainerB1 = this.add.container(380, 320);
@@ -150,9 +167,9 @@ class LutinShopScene extends Phaser.Scene {
 
         this.arrayLocalTxtBouton = [];
 
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < this.arrayPages[0][1].length; i++) {
 
-            this.txtBouton = this.add.text(0, 0, this.arrayTexteButtons[i], {
+            this.txtBouton = this.add.text(0, 0, this.arrayPages[0][1][i], {
                 fill: "black",
                 font: '25px Arial'
             });
@@ -190,15 +207,7 @@ class LutinShopScene extends Phaser.Scene {
             }
         }
 
-
-        this.nbPages = Math.ceil(this.arrayTexteButtons.length / 8);
-
-        console.log('%c%s', 'color: #ffa640', this.nbPages);
-
-        this.beginLoop = 0;
-
         this.echapButton = this.input.keyboard.addKey('ESC');
-
 
     }
 
@@ -213,35 +222,14 @@ class LutinShopScene extends Phaser.Scene {
 
     pageSuivante() {
 
-        this.arriveeLoop = this.beginLoop + 8;
-        var j = 0;
-
-        for (var i = this.beginLoop; i < this.arriveeLoop; i++) {
-
-
-            this.arrayButtons[i].visible = false;
-
-            if (this.arrayButtons[i + 8] != null) {
-                this.arrayButtons[i + 8].visible = true;
-
-            }
-
-
-            if (this.arrayTexteButtons[i + 8] != null) {
-
-                this.arrayLocalTxtBouton[j].text = this.arrayTexteButtons[i + 8];
-
-            } else {
-                this.arrayLocalTxtBouton[j].visible = false;
-
-            }
-
-            j++;
-
-
+        for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
+            this.arrayPages[this.indexPage - 1][0][i].visible = false;
+            this.arrayLocalTxtBouton[i].text = this.arrayPages[this.indexPage][1][i];
         }
 
-
+        for (var i = 0; i < this.arrayPages[this.indexPage][0].length; i++) {
+            this.arrayPages[this.indexPage][0][i].visible = true;
+        }
 
         this.indexPage++;
         this.txtIndexPage.text = this.indexPage;
@@ -250,45 +238,17 @@ class LutinShopScene extends Phaser.Scene {
         if (this.indexPage == this.nbPages) {
             this.boutonSuivant.visible = false;
         }
-
-        this.beginLoop = this.beginLoop + 8;
-
-
     }
 
     pagePrecedente() {
 
+        for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
+            this.arrayPages[this.indexPage - 1][0][i].visible = false;
+        }
 
-        this.arriveeLoop = this.beginLoop - 8;
-        var j = 7;
-
-        for (var i = this.beginLoop - 1; i > this.arriveeLoop - 1; i--) {
-
-            console.log('%c%s', 'color: #051eac', "i = " + i);
-
-            if (this.arrayButtons[i + 8] != null) {
-                this.arrayButtons[i + 8].visible = false;
-
-            }
-
-            if (this.arrayButtons[i] != null) {
-                this.arrayButtons[i].visible = true;
-
-            }
-
-
-            if (this.arrayTexteButtons[i] != null) {
-
-                this.arrayLocalTxtBouton[j].text = this.arrayTexteButtons[i];
-
-            } else {
-                this.arrayLocalTxtBouton[j].visible = false;
-
-            }
-
-            j--;
-
-
+        for (var i = 0; i < this.arrayPages[this.indexPage - 2][0].length; i++) {
+            this.arrayPages[this.indexPage - 2][0][i].visible = true;
+            this.arrayLocalTxtBouton[i].text = this.arrayPages[this.indexPage - 2][1][i];
         }
 
         this.indexPage--;
@@ -298,13 +258,11 @@ class LutinShopScene extends Phaser.Scene {
         if (this.indexPage == 1) {
             this.boutonPrecedent.visible = false;
         }
-
-        this.beginLoop = this.beginLoop - 8;
-
     }
 
     validerTransaction() {
 
+        console.log("vous appuyez sur le bouton de validation");
     }
 
     backTravel() {
