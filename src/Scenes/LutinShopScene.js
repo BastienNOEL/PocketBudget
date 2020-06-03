@@ -5,8 +5,6 @@ class LutinShopScene extends Phaser.Scene {
 
     create() {
 
-        this.dataShop = new DonneesLutinShop;
-
         this.zoneTexte = this.add.container(500, 70);
         this.zonePrix = this.add.container(400, 200);
         this.maZone = this.add.container(878, 195);
@@ -92,7 +90,7 @@ class LutinShopScene extends Phaser.Scene {
 
         this.counter = 1;
 
-        for (var i = 0; i < this.dataShop.arrayObjetDeco.length; i++) {
+        for (var i = 0; i < dataShop.arrayObjetDeco.length; i++) {
 
 
             if ((i) % 8 == 0) {
@@ -124,7 +122,7 @@ class LutinShopScene extends Phaser.Scene {
                 'y': this.yValue,
             });
             this.boutonObjet.setScale(0.2, 0.15);
-            this.boutonObjet.on('pointerdown', this.dataShop.arrayObjetDeco[i][1][0], this);
+            this.boutonObjet.on('pointerdown', dataShop.arrayObjetDeco[i][1][0], this);
 
             if (i <= 7) {
                 this.boutonObjet.visible = true;
@@ -132,7 +130,7 @@ class LutinShopScene extends Phaser.Scene {
                 this.boutonObjet.visible = false;
 
             }
-            this.arrayTexteButtons.push(this.dataShop.arrayObjetDeco[i][0]);
+            this.arrayTexteButtons.push(dataShop.arrayObjetDeco[i][0]);
             this.arrayButtons.push(this.boutonObjet);
 
         }
@@ -152,79 +150,45 @@ class LutinShopScene extends Phaser.Scene {
 
         this.arrayLocalTxtBouton = [];
 
+        for (var i = 0; i < 8; i++) {
 
-        this.txtBouton0 = this.add.text(0, 0, this.arrayTexteButtons[0], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton0.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton0);
+            this.txtBouton = this.add.text(0, 0, this.arrayTexteButtons[i], {
+                fill: "black",
+                font: '25px Arial'
+            });
+            this.txtBouton.setOrigin(0.5, 0.5);
+            this.arrayLocalTxtBouton.push(this.txtBouton);
 
-        this.txtBouton1 = this.add.text(0, 0, this.arrayTexteButtons[1], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton1.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton1);
+            switch (i) {
+                case 0:
+                    this.txtContainerB0.add(this.txtBouton);
+                    break;
+                case 1:
+                    this.txtContainerB1.add(this.txtBouton);
+                    break;
+                case 2:
+                    this.txtContainerB2.add(this.txtBouton);
+                    break;
+                case 3:
+                    this.txtContainerB3.add(this.txtBouton);
+                    break;
+                case 4:
+                    this.txtContainerB4.add(this.txtBouton);
+                    break;
+                case 5:
+                    this.txtContainerB5.add(this.txtBouton);
+                    break;
+                case 6:
+                    this.txtContainerB6.add(this.txtBouton);
+                    break;
+                case 7:
+                    this.txtContainerB7.add(this.txtBouton);
+                    break;
 
-
-        this.txtBouton2 = this.add.text(0, 0, this.arrayTexteButtons[2], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton2.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton2);
-
-
-        this.txtBouton3 = this.add.text(0, 0, this.arrayTexteButtons[3], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton3.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton3);
-
-
-        this.txtBouton4 = this.add.text(0, 0, this.arrayTexteButtons[4], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton4.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton4);
-
-
-        this.txtBouton5 = this.add.text(0, 0, this.arrayTexteButtons[5], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton5.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton5);
-
-
-        this.txtBouton6 = this.add.text(0, 0, this.arrayTexteButtons[6], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton6.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton6);
-
-
-        this.txtBouton7 = this.add.text(0, 0, this.arrayTexteButtons[7], {
-            fill: "black",
-            font: '25px Arial'
-        });
-        this.txtBouton7.setOrigin(0.5, 0.5);
-        this.arrayLocalTxtBouton.push(this.txtBouton7);
-
-
-
-        this.txtContainerB0.add(this.txtBouton0);
-        this.txtContainerB1.add(this.txtBouton1);
-        this.txtContainerB2.add(this.txtBouton2);
-        this.txtContainerB3.add(this.txtBouton3);
-        this.txtContainerB4.add(this.txtBouton4);
-        this.txtContainerB5.add(this.txtBouton5);
-        this.txtContainerB6.add(this.txtBouton6);
-        this.txtContainerB7.add(this.txtBouton7);
+                default:
+                    console.log("ERREUR remplissage de txtContainer" + i);
+            }
+        }
 
 
         this.nbPages = Math.ceil(this.arrayTexteButtons.length / 8);
@@ -234,6 +198,8 @@ class LutinShopScene extends Phaser.Scene {
         this.beginLoop = 0;
 
         this.echapButton = this.input.keyboard.addKey('ESC');
+
+
     }
 
 

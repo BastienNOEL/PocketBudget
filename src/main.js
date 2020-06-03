@@ -36,3 +36,4 @@ sessionStorage.setItem('lvPlayer', 1);
 sessionStorage.setItem('nbStarCoin', 0);
 sessionStorage.setItem('nbTentatives',1);
 var mission = new Mission();
+var dataShop = new DonneesLutinShop();
