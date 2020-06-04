@@ -9,11 +9,17 @@ class LutinShopScene extends Phaser.Scene {
         this.yValue = 320;
         this.counterX = 1;
         this.counterElemInOnePage = 1;
+        this.echapButton = this.input.keyboard.addKey('ESC');
+
 
         this.arrayPages = [];
         this.arrayOnePage = [];
         this.arrayButtonsOnePage = [];
         this.arrayTxtButtonsOnePage = [];
+
+        this.arrayNameObject = [];
+        this.arrayPriceObject = [];
+        this.arrayDescriptionObject = [];
 
         this.nbPages = Math.ceil(dataShop.arrayObjetDeco.length / 8);
 
@@ -134,24 +140,31 @@ class LutinShopScene extends Phaser.Scene {
 
             this.arrayButtonsOnePage.push(this.boutonObjet);
             this.arrayTxtButtonsOnePage.push(dataShop.arrayObjetDeco[i][0]);
+            this.arrayNameObject.push(dataShop.arrayObjetDeco[i][0]);
+            this.arrayPriceObject.push(dataShop.arrayObjetDeco[i][2]);
+            this.arrayDescriptionObject.push(dataShop.arrayObjetDeco[i][3]);
+
 
             if (this.counterElemInOnePage == 8) {
                 this.arrayOnePage.push(this.arrayButtonsOnePage);
                 this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
+
                 this.arrayPages.push(this.arrayOnePage);
 
                 this.arrayButtonsOnePage = [];
                 this.arrayTxtButtonsOnePage = [];
+
                 this.arrayOnePage = [];
 
                 this.counterElemInOnePage = 0;
             }
-            
+
             this.counterElemInOnePage++;
         }
 
         this.arrayOnePage.push(this.arrayButtonsOnePage);
         this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
+
         this.arrayPages.push(this.arrayOnePage);
 
         this.txtContainerB0 = this.add.container(150, 320);
@@ -205,8 +218,56 @@ class LutinShopScene extends Phaser.Scene {
             }
         }
 
-        this.echapButton = this.input.keyboard.addKey('ESC');
+        if (dataShop.arrayObjetDeco.length <= 8) {
+            this.boutonSuivant.visible = false;
+            this.txtIndexPage.visible = false;
+        }
 
+        // zone bleu
+        this.MyStarCoin = this.add.image(0, 0, 'starCoin');
+        this.MyStarCoin.setScale(0.06, 0.06);
+
+        this.txtCoin = this.add.text(0, 0, localStorage.getItem('nbStarCoin'), {
+            fill: "black",
+            font: "20px Arial"
+        })
+        this.txtCoin.setOrigin(0.5, 0.5);
+
+        this.maZone.add(this.MyStarCoin);
+        this.maZone.add(this.txtCoin);
+
+
+        //zone rouge
+        this.zonePrixTxt = this.add.container(325, 195);
+        this.txtNameObject = this.add.text(0, 0, "Nom objet selectionné", {
+            fill: "white",
+            font: "50px Arial",
+        })
+        this.txtNameObject.setOrigin(0.5, 0.5);
+        this.zonePrixTxt.add(this.txtNameObject);
+        this.zonePrixTxt.visible = false;
+
+        this.zonePrixStarCoin = this.add.container(700, 195);
+        this.starCoinPrice = this.add.image(0, 0, 'starCoin');
+        this.starCoinPrice.setScale(0.06, 0.06);
+        this.txtCoinPrice = this.add.text(0, 0, localStorage.getItem('nbStarCoin'), {
+            fill: "black",
+            font: "20px Arial"
+        })
+        this.txtCoinPrice.setOrigin(0.5, 0.5);
+        this.zonePrixStarCoin.add(this.starCoinPrice);
+        this.zonePrixStarCoin.add(this.txtCoinPrice);
+        this.zonePrixStarCoin.visible = false;
+
+        //zone verte
+        this.txtDescriptionObjet = this.add.text(0, 0, "description objet selectionne." , {
+            fill: "black",
+            font: "25px Arial",
+        })
+        this.txtDescriptionObjet.setOrigin(0.5, 0.5);
+        this.zoneTexte.add(this.txtDescriptionObjet);
+        this.txtDescriptionObjet.visible = false;
+        
     }
 
 

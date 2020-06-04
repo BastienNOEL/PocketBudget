@@ -21,7 +21,7 @@ class TitleScene extends Phaser.Scene {
         });
         button.on('pointerdown', this.onPressed, this);
 
-        this.keyObj = this.input.keyboard.addKey('Enter');  // Get key object
+        this.keyObj = this.input.keyboard.addKey('Enter');
         this.isDown = this.keyObj.isDown;
         
     }

@@ -2,7 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
-//localStorage.clear();
+localStorage.clear(); // permet de faire des tests, a supprimer plus tard
 
 const config = {
     scale: {
