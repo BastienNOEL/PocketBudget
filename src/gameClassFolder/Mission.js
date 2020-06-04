@@ -1,19 +1,13 @@
 class Mission extends DonneesMission {
     constructor() {
-        //this.lvPlayer =  sessionStorage.getItem('lvPlayer');
         super();
         this.paroleSanta = "ce message ne doit pas apparaitre";
-        sessionStorage.setItem('MissionEnCours', false);
-        sessionStorage.setItem('RetourMission', false);
-        sessionStorage.setItem('lastMissionIsDone', false);
-        sessionStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.")
-
     }
 
     newMission() {
 
-        if (sessionStorage.getItem('lastMissionIsDone') != "true") {
-            var lvPlayer = sessionStorage.getItem('lvPlayer');
+        if (localStorage.getItem('lastMissionIsDone') != "true") {
+            var lvPlayer = localStorage.getItem('lvPlayer');
 
             this.stateMission = this.checkStateMission();
 
@@ -25,11 +19,11 @@ class Mission extends DonneesMission {
 
                 case 2:
                     this.paroleSanta = this.arrayMissions[lvPlayer - 1][4];
-                    sessionStorage.setItem('RetourMission', false);
+                    localStorage.setItem('RetourMission', false);
                     this.lvlUp();
 
                     if (lvPlayer == this.arrayMissions.length) {
-                        sessionStorage.setItem('lastMissionIsDone', true);
+                        localStorage.setItem('lastMissionIsDone', true);
                     }
 
                     break;
@@ -49,36 +43,36 @@ class Mission extends DonneesMission {
 
     gainMoney(nb1, nb2, nb5, nb10, nb20, nb50, nb100) {
 
-        console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + sessionStorage.getItem('B5'));
+        console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + localStorage.getItem('B5'));
 
-        sessionStorage.setItem('P1', nb1);
-        sessionStorage.setItem('P2', nb2);
-        sessionStorage.setItem('B5', nb5);
-        sessionStorage.setItem('B10', nb10);
-        sessionStorage.setItem('B20', nb20);
-        sessionStorage.setItem('B50', nb50);
-        sessionStorage.setItem('B100', nb100);
+        localStorage.setItem('P1', nb1);
+        localStorage.setItem('P2', nb2);
+        localStorage.setItem('B5', nb5);
+        localStorage.setItem('B10', nb10);
+        localStorage.setItem('B20', nb20);
+        localStorage.setItem('B50', nb50);
+        localStorage.setItem('B100', nb100);
 
-        console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + sessionStorage.getItem('B5'));
+        console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + localStorage.getItem('B5'));
     }
 
     lvlUp() {
 
-        if (sessionStorage.getItem("nbTentatives") < 3) {
-            this.lvlValue = parseInt(sessionStorage.getItem("lvPlayer"));
-            sessionStorage.setItem('lvPlayer', this.lvlValue + 1);
-            sessionStorage.setItem('nbTentatives', 1);
-            this.coinValue = parseInt(sessionStorage.getItem("nbStarCoin"));
-            sessionStorage.setItem('nbStarCoin', this.coinValue + 1);
+        if (localStorage.getItem("nbTentatives") < 3) {
+            this.lvlValue = parseInt(localStorage.getItem("lvPlayer"));
+            localStorage.setItem('lvPlayer', this.lvlValue + 1);
+            localStorage.setItem('nbTentatives', 1);
+            this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
+            localStorage.setItem('nbStarCoin', this.coinValue + 1);
 
         }
     }
 
     checkStateMission() {
 
-        if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "false") {
+        if (localStorage.getItem('MissionEnCours') == "false" && localStorage.getItem('RetourMission') == "false") {
             return 1;
-        } else if (sessionStorage.getItem('MissionEnCours') == "false" && sessionStorage.getItem('RetourMission') == "true") {
+        } else if (localStorage.getItem('MissionEnCours') == "false" && localStorage.getItem('RetourMission') == "true") {
             return 2;
         } else {
             return 3;
@@ -90,10 +84,10 @@ class Mission extends DonneesMission {
 
         var numMission = lvPlayer - 1;
 
-        sessionStorage.setItem('MissionEnCours', true);
-        sessionStorage.setItem('nbTentatives', 1);
-        sessionStorage.setItem('PrixMission', this.arrayMissions[numMission][1]);
-        sessionStorage.setItem('BoutiqueTexte', this.arrayMissions[numMission][2]);
+        localStorage.setItem('MissionEnCours', true);
+        localStorage.setItem('nbTentatives', 1);
+        localStorage.setItem('PrixMission', this.arrayMissions[numMission][1]);
+        localStorage.setItem('BoutiqueTexte', this.arrayMissions[numMission][2]);
 
         this.gainMoney(
             this.arrayMissions[numMission][0][0],

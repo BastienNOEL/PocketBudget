@@ -27,8 +27,6 @@ class LoadScene extends Phaser.Scene {
         this.load.image('lutinMarchand', 'assets/img/Object/lutinMarchand.png');
 
 
-
-
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
         this.load.image('solBois', 'assets/img/Object/solEnBois.png');
         this.load.image('cheminee', 'assets/img/Object/cheminee.png');
@@ -56,18 +54,11 @@ class LoadScene extends Phaser.Scene {
         this.load.image('piece2' , 'assets/img/argent/2euros.png');
 
 
-
         this.load.image('flecheGauche', 'assets/img/Buttons/Backward.png');
         this.load.image('flecheDroite', 'assets/img/Buttons/Forward.png');
         this.load.image('valider', 'assets/img/Buttons/btnOk.png');
         this.load.image('cancelArrow', 'assets/img/Buttons/cancelArrow.png');
         this.load.image('resetArrow', 'assets/img/Buttons/resetArrow.png');
-
-        sessionStorage.setItem('B100', 0);
-        sessionStorage.setItem('B50', 0);
-        sessionStorage.setItem('B20', 0);
-        sessionStorage.setItem('B10', 0);
-        sessionStorage.setItem('B5', 0);
 
     }
 
@@ -75,7 +66,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("LutinShop");
+        this.scene.start("Title");
 
         
     }

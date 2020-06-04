@@ -10,7 +10,7 @@ class GuiScene extends Phaser.Scene {
         this.lvStar = this.add.image(0,0,'starLvl');
         this.lvStar.setScale(0.5,0.5);
 
-        this.txtLvl = this.add.text(0,0,sessionStorage.getItem('lvPlayer'),{
+        this.txtLvl = this.add.text(0,0,localStorage.getItem('lvPlayer'),{
             fill : "black",
             font : "40px Arial" 
         })
@@ -20,13 +20,13 @@ class GuiScene extends Phaser.Scene {
         this.zoneLvl.add(this.txtLvl);
 
 
-        if(sessionStorage.getItem('nbStarCoin')>0){
+        if(localStorage.getItem('nbStarCoin')>0){
             this.zoneCoin = this.add.container(800, 65);
 
             this.starCoin = this.add.image(0,0,'starCoin');
             this.starCoin.setScale(0.06,0.06);
     
-            this.txtCoin = this.add.text(0,0,sessionStorage.getItem('nbStarCoin'),{
+            this.txtCoin = this.add.text(0,0,localStorage.getItem('nbStarCoin'),{
                 fill : "black",
                 font : "20px Arial" 
             })

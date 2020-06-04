@@ -143,13 +143,11 @@ class LutinShopScene extends Phaser.Scene {
                 this.arrayButtonsOnePage = [];
                 this.arrayTxtButtonsOnePage = [];
                 this.arrayOnePage = [];
-            }
 
+                this.counterElemInOnePage = 0;
+            }
+            
             this.counterElemInOnePage++;
-
-            if (this.counterElemInOnePage == 9) {
-                this.counterElemInOnePage = 1;
-            }
         }
 
         this.arrayOnePage.push(this.arrayButtonsOnePage);

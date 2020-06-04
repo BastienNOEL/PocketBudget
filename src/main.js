@@ -2,6 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
+//localStorage.clear();
 
 const config = {
     scale: {
@@ -24,7 +25,6 @@ const config = {
 
 }
 
-var game = new Phaser.Game(config);
 
 var posXTravel = 500;
 var posYTravel = 447.5;
@@ -32,8 +32,9 @@ var posXpn = 100;
 var posYpn = 502;
 var posXHome = 100;
 var posYHome = 502;
-sessionStorage.setItem('lvPlayer', 1);
-sessionStorage.setItem('nbStarCoin', 0);
-sessionStorage.setItem('nbTentatives',1);
+
+
+var game = new Phaser.Game(config);
+var LoadDatas = new LocalStorageSave();
 var mission = new Mission();
 var dataShop = new DonneesLutinShop();
