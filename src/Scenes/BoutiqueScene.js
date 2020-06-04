@@ -7,6 +7,7 @@ class BoutiqueScene extends Phaser.Scene {
     create() {
 
         console.log('%c%s', 'color: #8400ff', "Boutique");
+        //permet de faire des tests mais doit etre supprimé
         /*
                 localStorage.setItem('B5', 5);
                 localStorage.setItem('B10', 10);
@@ -44,7 +45,9 @@ class BoutiqueScene extends Phaser.Scene {
 
 
 
-        this.prixMission = localStorage.getItem('PrixMission');
+        this.prixMissionAffiche = localStorage.getItem('PrixMissionAffiche');
+        this.prixMissionAttendu = localStorage.getItem('PrixMissionAttendu');
+
 
         this.valeurDepose = 0;
 
@@ -71,8 +74,12 @@ class BoutiqueScene extends Phaser.Scene {
             fill: "black",
             font: '25px Arial',
         });
+        this.txtBoutiqueErreur = "\nTu t'es trompé, recommence. Tentative numéro " + localStorage.getItem('nbTentatives');
+
         if (localStorage.getItem('nbTentatives') > 1 && localStorage.getItem('RetourMission') == "false") {
-            this.txtBoutique.setText("Tu t'es trompé, recommence.\nTentative numéro " + localStorage.getItem('nbTentatives'));
+            this.txtBoutique.setText(localStorage.getItem('BoutiqueTexte') + this.txtBoutiqueErreur);
+        } else if (localStorage.getItem('RetourMission') == "true") {
+            this.txtBoutique.setText("Va voir le père noel pour avoir de l'argent.");
         }
 
         this.maBourse.add(this.rectBleu);
@@ -121,7 +128,7 @@ class BoutiqueScene extends Phaser.Scene {
                 this.scene.restart();
             }, this);
 
-            this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMission, {
+            this.txtPrix = this.add.text(-50, -50, "Prix : \n" + this.prixMissionAffiche, {
                 fill: "white",
                 font: '50px Arial'
 
@@ -531,7 +538,7 @@ class BoutiqueScene extends Phaser.Scene {
     }
 
     backTravel() {
-        if (this.valeurDepose == this.prixMission) {
+        if (this.valeurDepose == this.prixMissionAffiche) {
             localStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.");
         }
         this.scene.start("Travel");
@@ -696,7 +703,7 @@ class BoutiqueScene extends Phaser.Scene {
 
     testValidite() {
 
-        if (this.valeurDepose == this.prixMission) {
+        if (this.valeurDepose == this.prixMissionAttendu) {
 
             console.log('%c%s', 'color: #097721', "Transaction Réussi");
 

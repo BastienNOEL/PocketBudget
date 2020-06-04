@@ -43,8 +43,6 @@ class Mission extends DonneesMission {
 
     gainMoney(nb1, nb2, nb5, nb10, nb20, nb50, nb100) {
 
-        console.log('%c%s', 'color: #735656', "nombre de billet de 5 avant = " + localStorage.getItem('B5'));
-
         localStorage.setItem('P1', nb1);
         localStorage.setItem('P2', nb2);
         localStorage.setItem('B5', nb5);
@@ -52,20 +50,38 @@ class Mission extends DonneesMission {
         localStorage.setItem('B20', nb20);
         localStorage.setItem('B50', nb50);
         localStorage.setItem('B100', nb100);
-
-        console.log('%c%s', 'color: #735656', "nombre de billet de 5 apres = " + localStorage.getItem('B5'));
     }
 
     lvlUp() {
 
         if (localStorage.getItem("nbTentatives") < 3) {
+            this.gainStarCoins();
             this.lvlValue = parseInt(localStorage.getItem("lvPlayer"));
             localStorage.setItem('lvPlayer', this.lvlValue + 1);
             localStorage.setItem('nbTentatives', 1);
-            this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
-            localStorage.setItem('nbStarCoin', this.coinValue + 1);
-
         }
+    }
+
+    gainStarCoins() {
+        var lvPlayer = localStorage.getItem('lvPlayer');
+        this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
+
+        console.log('%c%s', 'color: #8c0038', lvPlayer);
+        var gain;
+
+        if (lvPlayer < 2) {
+            gain = 1;
+        } else if (lvPlayer < 3) {
+            gain = 2;
+        } else if (lvPlayer < 4) {
+            gain = 3;
+        } else if (lvPlayer < 5) {
+            gain = 4;
+        } else {
+            gain = 5;
+        }
+
+        localStorage.setItem('nbStarCoin', this.coinValue + gain);
     }
 
     checkStateMission() {
@@ -86,7 +102,8 @@ class Mission extends DonneesMission {
 
         localStorage.setItem('MissionEnCours', true);
         localStorage.setItem('nbTentatives', 1);
-        localStorage.setItem('PrixMission', this.arrayMissions[numMission][1]);
+        localStorage.setItem('PrixMissionAffiche', this.arrayMissions[numMission][1]);
+        localStorage.setItem('PrixMissionAttendu', this.arrayMissions[numMission][6]);
         localStorage.setItem('BoutiqueTexte', this.arrayMissions[numMission][2]);
 
         this.gainMoney(

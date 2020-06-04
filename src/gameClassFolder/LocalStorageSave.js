@@ -1,6 +1,8 @@
 class LocalStorageSave {
     constructor() {
 
+        //localStorage.setItem('lvPlayer', 2); // permet de faire des tests, mais doit etre supprimé 
+
 
         if ((localStorage.getItem('lvPlayer') == null)) {
             localStorage.setItem('lvPlayer', 1);
@@ -63,8 +65,12 @@ class LocalStorageSave {
             localStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.");
         }
 
-        if ((localStorage.getItem('PrixMission') == null)) {
-            localStorage.setItem('PrixMission', -1);
+        if ((localStorage.getItem('prixMissionAffiche') == null)) {
+            localStorage.setItem('prixMissionAffiche', -1);
+        }
+
+        if ((localStorage.getItem('prixMissionAttendu') == null)) {
+            localStorage.setItem('prixMissionAttendu', -1);
         }
 
     }
