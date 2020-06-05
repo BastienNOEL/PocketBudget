@@ -59,6 +59,10 @@ class LoadScene extends Phaser.Scene {
         this.load.image('valider', 'assets/img/Buttons/btnOk.png');
         this.load.image('cancelArrow', 'assets/img/Buttons/cancelArrow.png');
         this.load.image('resetArrow', 'assets/img/Buttons/resetArrow.png');
+        this.load.image('goLeft', 'assets/img/Buttons/goLeft.png');
+        this.load.image('goRight', 'assets/img/Buttons/goRight.png');
+        this.load.image('interactBtn', 'assets/img/Buttons/playBtn.png');
+
 
     }
 
@@ -66,7 +70,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("LutinShop");
+        this.scene.start("PereNoel");
 
         
     }

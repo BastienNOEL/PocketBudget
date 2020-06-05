@@ -36,6 +36,8 @@ class TravelScene extends Phaser.Scene {
         this.ground.y = 500;
         this.physics.add.existing(this.ground, true);
 
+
+
         this.igloo1 = this.add.image(870, 450, 'igloo1');
         this.igloo1.setScale(0.5, 0.5);
 
