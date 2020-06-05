@@ -127,6 +127,7 @@ class LutinShopScene extends Phaser.Scene {
                 'key': 'recBleuMarine',
                 'x': this.xValue,
                 'y': this.yValue,
+
             });
             this.boutonObjet.setScale(0.2, 0.15);
             this.boutonObjet.on('pointerdown', dataShop.arrayObjetDeco[i][1][0], this);
@@ -260,14 +261,14 @@ class LutinShopScene extends Phaser.Scene {
         this.zonePrixStarCoin.visible = false;
 
         //zone verte
-        this.txtDescriptionObjet = this.add.text(0, 0, "description objet selectionne." , {
+        this.txtDescriptionObjet = this.add.text(0, 0, "description objet selectionne.", {
             fill: "black",
             font: "25px Arial",
         })
         this.txtDescriptionObjet.setOrigin(0.5, 0.5);
         this.zoneTexte.add(this.txtDescriptionObjet);
         this.txtDescriptionObjet.visible = false;
-        
+
     }
 
 
@@ -322,6 +323,22 @@ class LutinShopScene extends Phaser.Scene {
     validerTransaction() {
 
         console.log("vous appuyez sur le bouton de validation");
+        if (dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] != "true") {
+
+            if (this.arrayPriceObject[localStorage.getItem("indexObjetSelectionne")] <= localStorage.getItem("nbStarCoin")) {
+
+                localStorage.setItem("nbStarCoin", localStorage.getItem("nbStarCoin") - this.arrayPriceObject[localStorage.getItem("indexObjetSelectionne")]);
+                this.txtCoin.text = localStorage.getItem("nbStarCoin");
+                dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] = "true";
+                dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0] = "VENDU";
+                this.scene.restart();
+                console.log('%c%s', 'color: #4507f1', "achat reussi");
+            } else {
+                console.log('%c%s', 'color: #cc0036', "achat impossible, pas assez de pieces ");
+            }
+        } else {
+            console.log('%c%s', 'color: #cc0036', "achat impossible, deja acheté");
+        }
     }
 
     backTravel() {

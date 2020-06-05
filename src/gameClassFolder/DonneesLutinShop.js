@@ -8,6 +8,8 @@ class DonneesLutinShop {
         this.arrayParamBoutonObjet = new Array(this.arrayObjetDeco.length);
         this.arrayPrixObjet = new Array(this.arrayObjetDeco.length);
         this.arrayDescriptionObjet = new Array(this.arrayObjetDeco.length);
+        this.arrayEtatVenteObjet = new Array(this.arrayObjetDeco.length);
+
 
 
         this.initTableaux();
@@ -18,12 +20,13 @@ class DonneesLutinShop {
     createDatas() {
 
         for (var i = 0; i < this.arrayObjetDeco.length; i++) {
-            this.arrayZoneBouton = new Array(4);
+            this.arrayZoneBouton = new Array(5);
 
             this.arrayZoneBouton[0] = this.arrayNomObjet[i];
             this.arrayZoneBouton[1] = this.arrayParamBoutonObjet[i];
             this.arrayZoneBouton[2] = this.arrayPrixObjet[i];
             this.arrayZoneBouton[3] = this.arrayDescriptionObjet[i];
+            this.arrayZoneBouton[4] = this.arrayEtatVenteObjet[i];
 
 
 
@@ -40,7 +43,7 @@ class DonneesLutinShop {
             this.remplirArrayParamBoutonObjet(i);
             this.remplirArrayPrixObjet(i);
             this.remplirArrayDescriptionObjet(i);
-
+            this.remplirArrayEtatVenteObjet(i);
 
         }
     }
@@ -51,18 +54,31 @@ class DonneesLutinShop {
 
             console.log('%c%s', 'color: #d90000', "bouton " + numCase);
 
+            localStorage.setItem('indexObjetSelectionne', numCase);
+
             this.txtNameObject.text = this.arrayNameObject[numCase];
             this.txtCoinPrice.text = this.arrayPriceObject[numCase];
             this.txtDescriptionObjet.text = this.arrayDescriptionObject[numCase];
 
-            this.zonePrixTxt.visible = true;
-            this.zonePrixStarCoin.visible = true;
-            this.txtDescriptionObjet.visible = true;
+            if (dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] != "true") {
 
+                this.zonePrixTxt.visible = true;
+                this.zonePrixStarCoin.visible = true;
+                this.txtDescriptionObjet.visible = true;
+            } else {
+                this.zonePrixTxt.visible = false;
+                this.zonePrixStarCoin.visible = false;
+                this.txtDescriptionObjet.visible = false;
+            }
 
         }];
 
     }
+
+    remplirArrayEtatVenteObjet(numCase) {
+        this.arrayEtatVenteObjet[numCase] = false;
+    }
+
 
     remplirArrayNomObjet(numCase) {
 
