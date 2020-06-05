@@ -70,7 +70,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20,20,"Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("PereNoel");
+        this.scene.start("Travel");
 
         
     }

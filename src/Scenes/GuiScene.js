@@ -50,7 +50,6 @@ class GuiScene extends Phaser.Scene {
             'x': 950,
             'y': 565
         });
-        this.goRight.setScale(0.8, 0.8);
         this.goRight.on('pointerdown', this.goRightFunction, this);
         this.goRight.on('pointerup', this.endGoRightFunction, this);
 
@@ -60,9 +59,17 @@ class GuiScene extends Phaser.Scene {
             'x': 50,
             'y': 565
         });
-        this.goLeft.setScale(0.8, 0.8);
         this.goLeft.on('pointerdown', this.goLeftFunction, this);
         this.goLeft.on('pointerup', this.endGoLeftFunction, this);
+
+        this.interactBtn = new Button({
+            'scene': this,
+            'key': 'interactBtn',
+            'x': 850,
+            'y': 565
+        });
+        this.interactBtn.on('pointerdown', this.interact, this);
+        //this.interractBtn.on('pointerup', this.endGoLeftFunction, this);
 
     }
 
@@ -73,13 +80,17 @@ class GuiScene extends Phaser.Scene {
     searchScenActive() {
 
         this.sceneEnCours;
+        this.nameSceneActive;
 
         if (this.scene.isActive('Travel') == true) {
             this.sceneEnCours = this.scene.get('Travel').player;
+            this.nameSceneActive = "Travel";
         } else if (this.scene.isActive('PereNoel') == true) {
             this.sceneEnCours = this.scene.get('PereNoel').player;
+            this.nameSceneActive = "PereNoel";
         } else if (this.scene.isActive('Home') == true) {
             this.sceneEnCours = this.scene.get('Home').player;
+            this.nameSceneActive = "Home";
         }
     }
 
@@ -106,5 +117,11 @@ class GuiScene extends Phaser.Scene {
 
     endGoLeftFunction() {
         this.boolMovingLeft = false;
+    }
+
+    interact(){
+
+        console.log('%c%s', 'color: #aa00ff', "vous appuyez sur le bouton d'interaction");
+
     }
 }
