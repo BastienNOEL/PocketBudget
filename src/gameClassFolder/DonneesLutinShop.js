@@ -8,9 +8,6 @@ class DonneesLutinShop {
         this.arrayParamBoutonObjet = new Array(this.arrayObjetDeco.length);
         this.arrayPrixObjet = new Array(this.arrayObjetDeco.length);
         this.arrayDescriptionObjet = new Array(this.arrayObjetDeco.length);
-        this.arrayEtatVenteObjet = new Array(this.arrayObjetDeco.length);
-
-
 
         this.initTableaux();
         this.createDatas();
@@ -26,9 +23,6 @@ class DonneesLutinShop {
             this.arrayZoneBouton[1] = this.arrayParamBoutonObjet[i];
             this.arrayZoneBouton[2] = this.arrayPrixObjet[i];
             this.arrayZoneBouton[3] = this.arrayDescriptionObjet[i];
-            this.arrayZoneBouton[4] = this.arrayEtatVenteObjet[i];
-
-
 
             this.arrayObjetDeco[i] = this.arrayZoneBouton;
         }
@@ -43,8 +37,6 @@ class DonneesLutinShop {
             this.remplirArrayParamBoutonObjet(i);
             this.remplirArrayPrixObjet(i);
             this.remplirArrayDescriptionObjet(i);
-            this.remplirArrayEtatVenteObjet(i);
-
         }
     }
 
@@ -60,7 +52,7 @@ class DonneesLutinShop {
             this.txtCoinPrice.text = this.arrayPriceObject[numCase];
             this.txtDescriptionObjet.text = this.arrayDescriptionObject[numCase];
 
-            if (dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] != "true") {
+            if (localStorage.getItem(dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0]) != "VENDU") {
 
                 this.zonePrixTxt.visible = true;
                 this.zonePrixStarCoin.visible = true;
@@ -74,11 +66,6 @@ class DonneesLutinShop {
         }];
 
     }
-
-    remplirArrayEtatVenteObjet(numCase) {
-        this.arrayEtatVenteObjet[numCase] = false;
-    }
-
 
     remplirArrayNomObjet(numCase) {
 

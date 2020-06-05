@@ -21,6 +21,7 @@ class LutinShopScene extends Phaser.Scene {
         this.arrayPriceObject = [];
         this.arrayDescriptionObject = [];
 
+
         this.nbPages = Math.ceil(dataShop.arrayObjetDeco.length / 8);
 
 
@@ -146,10 +147,13 @@ class LutinShopScene extends Phaser.Scene {
             this.arrayDescriptionObject.push(dataShop.arrayObjetDeco[i][3]);
 
 
+
+
+
+
             if (this.counterElemInOnePage == 8) {
                 this.arrayOnePage.push(this.arrayButtonsOnePage);
                 this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
-
                 this.arrayPages.push(this.arrayOnePage);
 
                 this.arrayButtonsOnePage = [];
@@ -162,6 +166,8 @@ class LutinShopScene extends Phaser.Scene {
 
             this.counterElemInOnePage++;
         }
+
+
 
         this.arrayOnePage.push(this.arrayButtonsOnePage);
         this.arrayOnePage.push(this.arrayTxtButtonsOnePage);
@@ -181,7 +187,7 @@ class LutinShopScene extends Phaser.Scene {
 
         for (var i = 0; i < this.arrayPages[0][1].length; i++) {
 
-            this.txtBouton = this.add.text(0, 0, this.arrayPages[0][1][i], {
+            this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[0][1][i]), {
                 fill: "black",
                 font: '25px Arial'
             });
@@ -284,7 +290,7 @@ class LutinShopScene extends Phaser.Scene {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
             this.arrayPages[this.indexPage - 1][0][i].visible = false;
-            this.arrayLocalTxtBouton[i].text = this.arrayPages[this.indexPage][1][i];
+            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage][1][i]); //this.arrayPages[this.indexPage][1][i];
         }
 
         for (var i = 0; i < this.arrayPages[this.indexPage][0].length; i++) {
@@ -308,7 +314,7 @@ class LutinShopScene extends Phaser.Scene {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 2][0].length; i++) {
             this.arrayPages[this.indexPage - 2][0][i].visible = true;
-            this.arrayLocalTxtBouton[i].text = this.arrayPages[this.indexPage - 2][1][i];
+            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage - 2][1][i]); //this.arrayPages[this.indexPage - 2][1][i];
         }
 
         this.indexPage--;
@@ -323,14 +329,15 @@ class LutinShopScene extends Phaser.Scene {
     validerTransaction() {
 
         console.log("vous appuyez sur le bouton de validation");
-        if (dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] != "true") {
+        if (localStorage.getItem(dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0]) != "VENDU") {
 
             if (this.arrayPriceObject[localStorage.getItem("indexObjetSelectionne")] <= localStorage.getItem("nbStarCoin")) {
 
                 localStorage.setItem("nbStarCoin", localStorage.getItem("nbStarCoin") - this.arrayPriceObject[localStorage.getItem("indexObjetSelectionne")]);
                 this.txtCoin.text = localStorage.getItem("nbStarCoin");
-                dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][4] = "true";
-                dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0] = "VENDU";
+
+                localStorage.setItem(dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0], "VENDU");
+
                 this.scene.restart();
                 console.log('%c%s', 'color: #4507f1', "achat reussi");
             } else {
@@ -344,5 +351,6 @@ class LutinShopScene extends Phaser.Scene {
     backTravel() {
         this.scene.start("Travel");
     }
+
 
 }
