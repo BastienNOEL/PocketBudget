@@ -76,6 +76,9 @@ class LocalStorageSave {
             localStorage.setItem('prixMissionAttendu', -1);
         }
 
+        if ((localStorage.getItem('indexPage') == null)) {
+            localStorage.setItem('indexPage', 1);
+        }
 
         /// Vente objets
 
