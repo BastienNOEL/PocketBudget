@@ -90,6 +90,10 @@ class TravelScene extends Phaser.Scene {
 
         this.lutinMarchand = this.add.image(1650, 430, 'lutinMarchand');
         this.lutinMarchand.setScale(0.15, 0.15);
+        //this.lutinMarchand.visible = false;
+        this.lutinMarchand2 = this.add.image(1650, 430, 'lutinMarchand2');
+        this.lutinMarchand2.setScale(0.15, 0.15);
+        //this.lutinMarchand.visible = false;
 
 
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
@@ -156,6 +160,7 @@ class TravelScene extends Phaser.Scene {
         this.changeScene();
         this.scrollBackground();
         this.checkInZoneInteraction();
+        this.lutinOrientation();
 
 
     }
@@ -261,6 +266,18 @@ class TravelScene extends Phaser.Scene {
             this.gui.interactBtn.visible = false;
 
         }
+    }
+
+    lutinOrientation(){
+        if(this.player.x < this.lutinMarchand.x){
+            this.lutinMarchand.visible = true;
+            this.lutinMarchand2.visible = false;
+        } else {
+            this.lutinMarchand.visible = false;
+            this.lutinMarchand2.visible = true;
+        }
+
+
     }
 
 

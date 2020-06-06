@@ -30,6 +30,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('panneau', 'assets/img/Object/panneau.png');
         this.load.image('panneauEntree', 'assets/img/Object/panneauEntree2.png');
         this.load.image('lutinMarchand', 'assets/img/Object/lutinMarchand.png');
+        this.load.image('lutinMarchand2', 'assets/img/Object/lutinMarchand2.png');
 
 
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
@@ -75,7 +76,7 @@ class LoadScene extends Phaser.Scene {
         this.add.text(20, 20, "Loading Game...");
 
         console.log('%c%s', 'color: #8400ff', "Loading game");
-        this.scene.start("Travel");
+        this.scene.start("Title");
 
 
     }
