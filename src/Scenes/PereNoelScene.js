@@ -58,6 +58,25 @@ class PereNoelScene extends Phaser.Scene {
         this.physics.add.collider(this.player, platforms);
         this.physics.add.collider(this.player, this.santa);
 
+        this.anims.create({
+            key: 'right',
+            frames: [{
+                key: 'player',
+                frame: 0
+            }],
+            frameRate: 10,
+        });
+
+
+        this.anims.create({
+            key: 'left',
+            frames: [{
+                key: 'player',
+                frame: 1
+            }],
+            frameRate: 10,
+        });
+
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.textSortie = this.add.text(dataInteractions.arrayScenes[1][0][1][0], dataInteractions.arrayScenes[1][0][1][1], dataInteractions.arrayScenes[1][0][1][2], {
@@ -86,8 +105,10 @@ class PereNoelScene extends Phaser.Scene {
     movePlayer() {
         if (this.cursors.left.isDown) {
             this.player.setVelocityX(-500);
+            this.player.anims.play('left', true);
         } else if (this.cursors.right.isDown) {
             this.player.setVelocityX(500);
+            this.player.anims.play('right', true);
         } else {
             this.player.setVelocityX(0);
         }
@@ -101,10 +122,10 @@ class PereNoelScene extends Phaser.Scene {
 
     changeScene() {
 
-        if (this.player.x < dataInteractions.arrayScenes[1][0][0][1] && this.player.y > 423 ) {
+        if (this.player.x < dataInteractions.arrayScenes[1][0][0][1] && this.player.y > 423) {
             this.textSortie.visible = true;
             this.boolInZoneInteraction1 = true;
-            
+
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 posXpn = this.player.x;
@@ -128,7 +149,7 @@ class PereNoelScene extends Phaser.Scene {
 
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
-                
+
                 mission.newMission();
                 posXpn = this.player.x;
                 posYpn = this.player.y;
@@ -136,7 +157,7 @@ class PereNoelScene extends Phaser.Scene {
                 this.scene.stop('Gui');
 
 
-            } 
+            }
 
         } else {
             this.textTalkSanta.visible = false;
@@ -147,10 +168,10 @@ class PereNoelScene extends Phaser.Scene {
 
     }
 
-    checkInZoneInteraction(){
-        if(this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true ){
+    checkInZoneInteraction() {
+        if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true) {
             this.gui.interactBtn.visible = true;
-        } else{
+        } else {
             this.gui.interactBtn.visible = false;
 
         }

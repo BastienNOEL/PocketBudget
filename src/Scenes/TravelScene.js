@@ -98,6 +98,24 @@ class TravelScene extends Phaser.Scene {
         this.player.body.setGravityY(300)
         this.physics.add.collider(this.player, this.ground);
 
+        this.anims.create({
+            key: 'right',
+            frames: [{
+                key: 'player',
+                frame: 0
+            }],
+            frameRate: 10,
+        });
+
+
+        this.anims.create({
+            key: 'left',
+            frames: [{
+                key: 'player',
+                frame: 1
+            }],
+            frameRate: 10,
+        });
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.clavSpace = this.input.keyboard.addKey('SPACE');
@@ -145,8 +163,10 @@ class TravelScene extends Phaser.Scene {
     movePlayer() {
         if (this.cursors.left.isDown && this.player.x > 0) {
             this.player.setVelocityX(-300);
+            this.player.anims.play('left', true);
         } else if (this.cursors.right.isDown && this.player.x < game.config.width * 3) {
             this.player.setVelocityX(300);
+            this.player.anims.play('right', true);
         } else {
             this.player.setVelocityX(0);
         }
