@@ -4,6 +4,9 @@ class HomeScene extends Phaser.Scene {
 
     }
     create() {
+
+        this.gui = this.scene.get('Gui');
+
         var i;
         var j = 0;
         for (i = 0; i < 3; i++) {
@@ -41,20 +44,18 @@ class HomeScene extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.textSortie = this.add.text(25, 325, "Appuyez sur ESPACE", {
+        this.textSortie = this.add.text(dataInteractions.arrayScenes[2][0][1][0], dataInteractions.arrayScenes[2][0][1][1], dataInteractions.arrayScenes[2][0][1][2], {
             fill: "white"
         });
         this.textSortie.visible = false;
-        this.textTalkSanta = this.add.text(600, 325, "Appuyez sur ESPACE", {
-            fill: "white"
-        });
-        this.textTalkSanta.visible = false;
+
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
         this.scene.launch('Gui');
+
     }
 
-    
+
     update() {
         this.movePlayer();
         this.changeScene();
@@ -79,15 +80,18 @@ class HomeScene extends Phaser.Scene {
 
     changeScene() {
 
-        if (this.player.x < 300 && this.player.y > 423) {
+        if (this.player.x < dataInteractions.arrayScenes[2][0][0][1] && this.player.y > 423) {
             this.textSortie.visible = true;
 
-            if (this.clavSpace.isDown) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
+                
                 posXHome = this.player.x;
                 posYHome = this.player.y;
                 this.scene.start("Travel");
+                
             }
         } else {
+
             this.textSortie.visible = false;
         }
     }

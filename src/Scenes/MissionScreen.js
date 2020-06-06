@@ -20,11 +20,22 @@ class MissionScreen extends Phaser.Scene {
             font : '20px Arial'
         });
 
+        this.interactBtn = new Button({
+            'scene': this,
+            'key': 'interactBtn',
+            'x': 380,
+            'y': 210
+        });
+        this.interactBtn.on('pointerdown', function() {this.scene.start('PereNoel')}, this);
+
         this.container.add(this.window);
         this.container.add(this.texteDialogueBox);
         this.container.add(this.txtSpace);
+        this.container.add(this.interactBtn);
 
         this.clavSpace = this.input.keyboard.addKey('SPACE')
+
+
     }
 
     update(){

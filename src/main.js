@@ -40,3 +40,5 @@ var game = new Phaser.Game(config);
 var LoadDatas = new LocalStorageSave();
 var mission = new Mission();
 var dataShop = new DonneesLutinShop();
+var dataInteractions = new DonneesInteractions();
+

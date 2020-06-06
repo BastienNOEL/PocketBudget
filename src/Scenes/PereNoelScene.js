@@ -5,6 +5,9 @@ class PereNoelScene extends Phaser.Scene {
 
 
     create() {
+
+        this.gui = this.scene.get('Gui');
+
         var i;
         var j = 0;
         for (i = 0; i < 3; i++) {
@@ -54,11 +57,11 @@ class PereNoelScene extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.textSortie = this.add.text(25, 325, "Appuyez sur ESPACE", {
+        this.textSortie = this.add.text(dataInteractions.arrayScenes[1][0][1][0], dataInteractions.arrayScenes[1][0][1][1], dataInteractions.arrayScenes[1][0][1][2], {
             fill: "white"
         });
         this.textSortie.visible = false;
-        this.textTalkSanta = this.add.text(450, 275, "Appuyez sur ESPACE", {
+        this.textTalkSanta = this.add.text(dataInteractions.arrayScenes[1][1][1][0], dataInteractions.arrayScenes[1][1][1][1], dataInteractions.arrayScenes[1][1][1][2], {
             fill: "white"
         });
         this.textTalkSanta.visible = false;
@@ -94,10 +97,10 @@ class PereNoelScene extends Phaser.Scene {
 
     changeScene() {
 
-        if (this.player.x < 300 && this.player.y > 423) {
+        if (this.player.x < dataInteractions.arrayScenes[1][0][0][1] && this.player.y > 423 ) {
             this.textSortie.visible = true;
 
-            if (this.clavSpace.isDown) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 posXpn = this.player.x;
                 posYpn = this.player.y;
                 this.scene.start("Travel");
@@ -110,12 +113,12 @@ class PereNoelScene extends Phaser.Scene {
     talkSanta() {
 
 
-        if (this.player.x > 500 && this.player.y > 423) {
+        if (this.player.x > dataInteractions.arrayScenes[1][1][0][0] && this.player.y > 423) {
 
             this.textTalkSanta.visible = true;
 
 
-            if (this.clavSpace.isDown ) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 
                 mission.newMission();
                 posXpn = this.player.x;

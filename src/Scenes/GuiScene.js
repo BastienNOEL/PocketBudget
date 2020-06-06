@@ -10,6 +10,7 @@ class GuiScene extends Phaser.Scene {
 
         this.boolMovingRight = false;
         this.boolMovingLeft = false;
+        this.boolInputInterctif = false;
 
 
         this.zoneLvl = this.add.container(930, 60);
@@ -69,7 +70,7 @@ class GuiScene extends Phaser.Scene {
             'y': 565
         });
         this.interactBtn.on('pointerdown', this.interact, this);
-        //this.interractBtn.on('pointerup', this.endGoLeftFunction, this);
+        this.interactBtn.on('pointerup', this.endInteract, this);
 
     }
 
@@ -121,7 +122,12 @@ class GuiScene extends Phaser.Scene {
 
     interact(){
 
+        this.boolInputInterctif = true ;
         console.log('%c%s', 'color: #aa00ff', "vous appuyez sur le bouton d'interaction");
 
+    }
+
+    endInteract(){
+        this.boolInputInterctif = false ;
     }
 }

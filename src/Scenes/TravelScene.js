@@ -8,6 +8,7 @@ class TravelScene extends Phaser.Scene {
 
     create() {
 
+        this.gui = this.scene.get('Gui');
 
         this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1");
         this.bg1.setOrigin(0, 0);
@@ -96,22 +97,24 @@ class TravelScene extends Phaser.Scene {
         this.cursors = this.input.keyboard.createCursorKeys();
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
-        this.txtInteractionBoutique = this.add.text(800, 348, "Appuyez sur ESPACE", {
-            fill: "black"
-        });
-        this.txtInteractionBoutique.visible = false;
 
-        this.txtInteractionMaisonSanta = this.add.text(150, 327, "Appuyez sur ESPACE", {
+        this.txtInteractionMaisonSanta = this.add.text(dataInteractions.arrayScenes[0][0][1][0], dataInteractions.arrayScenes[0][0][1][1], dataInteractions.arrayScenes[0][0][1][2], {
             fill: "black"
         });
         this.txtInteractionMaisonSanta.visible = false;
 
-        this.txtInteractionMaMaison = this.add.text(1250, 327, "Appuyez sur ESPACE", {
+        this.txtInteractionBoutique = this.add.text(dataInteractions.arrayScenes[0][1][1][0], dataInteractions.arrayScenes[0][1][1][1], dataInteractions.arrayScenes[0][1][1][2], {
+            fill: "black"
+        });
+        this.txtInteractionBoutique.visible = false;
+
+
+        this.txtInteractionMaMaison = this.add.text(dataInteractions.arrayScenes[0][2][1][0], dataInteractions.arrayScenes[0][2][1][1], dataInteractions.arrayScenes[0][2][1][2], {
             fill: "black"
         });
         this.txtInteractionMaMaison.visible = false;
 
-        this.txtInteractionLutinMarchand = this.add.text(1550, 327, "Appuyez sur ESPACE", {
+        this.txtInteractionLutinMarchand = this.add.text(dataInteractions.arrayScenes[0][3][1][0], dataInteractions.arrayScenes[0][3][1][1], dataInteractions.arrayScenes[0][3][1][2], {
             fill: "black"
         });
         this.txtInteractionLutinMarchand.visible = false;
@@ -157,21 +160,11 @@ class TravelScene extends Phaser.Scene {
     }
 
     changeScene() {
-        if ((this.player.x > 725 && this.player.x < 845) && this.player.y > 423) {
-            this.txtInteractionBoutique.visible = true;
-            if (this.clavSpace.isDown) {
-                this.scene.start("Boutique");
-                posYTravel = this.player.y;
-                posXTravel = this.player.x;
-                this.scene.stop('Gui');
-            }
-        } else {
-            this.txtInteractionBoutique.visible = false;
-        }
 
-        if ((this.player.x < 350 && this.player.x > 200) && this.player.y > 423) {
+
+        if ((this.player.x > dataInteractions.arrayScenes[0][0][0][0] && this.player.x < dataInteractions.arrayScenes[0][0][0][1]) && this.player.y > 423) {
             this.txtInteractionMaisonSanta.visible = true;
-            if (this.clavSpace.isDown) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("PereNoel");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
@@ -181,11 +174,23 @@ class TravelScene extends Phaser.Scene {
             this.txtInteractionMaisonSanta.visible = false;
         }
 
-        if ((this.player.x > 1300 && this.player.x < 1450) && this.player.y > 423) {
+        if ((this.player.x > dataInteractions.arrayScenes[0][1][0][0] && this.player.x < dataInteractions.arrayScenes[0][1][0][1]) && this.player.y > 423) {
+            this.txtInteractionBoutique.visible = true;
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
+                this.scene.start("Boutique");
+                posYTravel = this.player.y;
+                posXTravel = this.player.x;
+                this.scene.stop('Gui');
+            }
+        } else {
+            this.txtInteractionBoutique.visible = false;
+        }
+
+        if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][2][0][1]) && this.player.y > 423) {
 
             this.txtInteractionMaMaison.visible = true;
 
-            if (this.clavSpace.isDown) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("Home");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
@@ -195,11 +200,11 @@ class TravelScene extends Phaser.Scene {
             this.txtInteractionMaMaison.visible = false;
         }
 
-        if ((this.player.x > 1550 && this.player.x < 1750) && this.player.y > 423) {
+        if ((this.player.x > dataInteractions.arrayScenes[0][3][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1]) && this.player.y > 423) {
 
             this.txtInteractionLutinMarchand.visible = true;
 
-            if (this.clavSpace.isDown) {
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("LutinShop");
                 posYTravel = this.player.y;
                 posXTravel = this.player.x;
