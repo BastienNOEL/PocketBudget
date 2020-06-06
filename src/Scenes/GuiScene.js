@@ -71,6 +71,8 @@ class GuiScene extends Phaser.Scene {
         });
         this.interactBtn.on('pointerdown', this.interact, this);
         this.interactBtn.on('pointerup', this.endInteract, this);
+        this.interactBtn.visible = false;
+
 
     }
 

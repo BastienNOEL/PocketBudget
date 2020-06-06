@@ -9,6 +9,11 @@ class TravelScene extends Phaser.Scene {
     create() {
 
         this.gui = this.scene.get('Gui');
+        this.boolInZoneInteraction1 = false;
+        this.boolInZoneInteraction2 = false;
+        this.boolInZoneInteraction3 = false;
+        this.boolInZoneInteraction4 = false;
+
 
         this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1");
         this.bg1.setOrigin(0, 0);
@@ -132,7 +137,7 @@ class TravelScene extends Phaser.Scene {
         this.movePlayer();
         this.changeScene();
         this.scrollBackground();
-
+        this.checkInZoneInteraction();
 
 
     }
@@ -164,6 +169,8 @@ class TravelScene extends Phaser.Scene {
 
         if ((this.player.x > dataInteractions.arrayScenes[0][0][0][0] && this.player.x < dataInteractions.arrayScenes[0][0][0][1]) && this.player.y > 423) {
             this.txtInteractionMaisonSanta.visible = true;
+            this.boolInZoneInteraction1 = true;
+
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("PereNoel");
                 posYTravel = this.player.y;
@@ -172,10 +179,14 @@ class TravelScene extends Phaser.Scene {
             }
         } else {
             this.txtInteractionMaisonSanta.visible = false;
+            this.boolInZoneInteraction1 = false;
+
         }
 
         if ((this.player.x > dataInteractions.arrayScenes[0][1][0][0] && this.player.x < dataInteractions.arrayScenes[0][1][0][1]) && this.player.y > 423) {
             this.txtInteractionBoutique.visible = true;
+            this.boolInZoneInteraction2 = true;
+
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("Boutique");
                 posYTravel = this.player.y;
@@ -184,11 +195,14 @@ class TravelScene extends Phaser.Scene {
             }
         } else {
             this.txtInteractionBoutique.visible = false;
+            this.boolInZoneInteraction2 = false;
+
         }
 
         if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][2][0][1]) && this.player.y > 423) {
 
             this.txtInteractionMaMaison.visible = true;
+            this.boolInZoneInteraction3 = true;
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("Home");
@@ -198,11 +212,14 @@ class TravelScene extends Phaser.Scene {
             }
         } else {
             this.txtInteractionMaMaison.visible = false;
+            this.boolInZoneInteraction3 = false;
+
         }
 
         if ((this.player.x > dataInteractions.arrayScenes[0][3][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1]) && this.player.y > 423) {
 
             this.txtInteractionLutinMarchand.visible = true;
+            this.boolInZoneInteraction4 = true;
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 this.scene.start("LutinShop");
@@ -212,6 +229,17 @@ class TravelScene extends Phaser.Scene {
             }
         } else {
             this.txtInteractionLutinMarchand.visible = false;
+            this.boolInZoneInteraction4 = false;
+
+        }
+    }
+
+    checkInZoneInteraction() {
+        if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true || this.boolInZoneInteraction3 == true || this.boolInZoneInteraction4 == true) {
+            this.gui.interactBtn.visible = true;
+        } else {
+            this.gui.interactBtn.visible = false;
+
         }
     }
 

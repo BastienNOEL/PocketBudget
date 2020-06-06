@@ -7,6 +7,9 @@ class PereNoelScene extends Phaser.Scene {
     create() {
 
         this.gui = this.scene.get('Gui');
+        this.boolInZoneInteraction1 = false;
+        this.boolInZoneInteraction2 = false;
+
 
         var i;
         var j = 0;
@@ -75,6 +78,7 @@ class PereNoelScene extends Phaser.Scene {
         this.movePlayer();
         this.changeScene();
         this.talkSanta();
+        this.checkInZoneInteraction();
 
 
     }
@@ -99,6 +103,8 @@ class PereNoelScene extends Phaser.Scene {
 
         if (this.player.x < dataInteractions.arrayScenes[1][0][0][1] && this.player.y > 423 ) {
             this.textSortie.visible = true;
+            this.boolInZoneInteraction1 = true;
+            
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 posXpn = this.player.x;
@@ -107,6 +113,8 @@ class PereNoelScene extends Phaser.Scene {
             }
         } else {
             this.textSortie.visible = false;
+            this.boolInZoneInteraction1 = false;
+
         }
     }
 
@@ -115,6 +123,7 @@ class PereNoelScene extends Phaser.Scene {
 
         if (this.player.x > dataInteractions.arrayScenes[1][1][0][0] && this.player.y > 423) {
 
+            this.boolInZoneInteraction2 = true;
             this.textTalkSanta.visible = true;
 
 
@@ -131,8 +140,19 @@ class PereNoelScene extends Phaser.Scene {
 
         } else {
             this.textTalkSanta.visible = false;
+            this.boolInZoneInteraction2 = false;
+
 
         }
 
+    }
+
+    checkInZoneInteraction(){
+        if(this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true ){
+            this.gui.interactBtn.visible = true;
+        } else{
+            this.gui.interactBtn.visible = false;
+
+        }
     }
 }

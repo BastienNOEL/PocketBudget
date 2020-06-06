@@ -6,6 +6,7 @@ class HomeScene extends Phaser.Scene {
     create() {
 
         this.gui = this.scene.get('Gui');
+        this.boolInZoneInteraction1 = false;
 
         var i;
         var j = 0;
@@ -59,6 +60,7 @@ class HomeScene extends Phaser.Scene {
     update() {
         this.movePlayer();
         this.changeScene();
+        this.checkInZoneInteraction();
 
     }
 
@@ -82,6 +84,7 @@ class HomeScene extends Phaser.Scene {
 
         if (this.player.x < dataInteractions.arrayScenes[2][0][0][1] && this.player.y > 423) {
             this.textSortie.visible = true;
+            this.boolInZoneInteraction1 = true;
 
             if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
                 
@@ -91,8 +94,18 @@ class HomeScene extends Phaser.Scene {
                 
             }
         } else {
-
             this.textSortie.visible = false;
+            this.boolInZoneInteraction1 = false;
+
+        }
+    }
+
+    checkInZoneInteraction(){
+        if(this.boolInZoneInteraction1 == true ){
+            this.gui.interactBtn.visible = true;
+        } else{
+            this.gui.interactBtn.visible = false;
+
         }
     }
 }
