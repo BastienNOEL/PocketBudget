@@ -169,7 +169,16 @@ class LutinShopScene extends Phaser.Scene {
             this.arrayPages[this.indexPage - 1][0][j].visible = true;
         }
 
+        this.num =0;
+        for (var i = 0; i < this.arrayPages.length; i++) {
 
+            for(var j = 0; j < this.arrayPages[i][0].length; j++){
+                if(localStorage.getItem(dataShop.arrayObjetDeco[this.num][0]) == "VENDU"){
+                    this.arrayPages[i][0][j].setTint(0xFBFF00);
+                }
+                this.num ++;
+            }
+        }
 
         this.txtContainerB0 = this.add.container(150, 320);
         this.txtContainerB1 = this.add.container(380, 320);
@@ -183,7 +192,7 @@ class LutinShopScene extends Phaser.Scene {
         this.arrayLocalTxtBouton = [];
 
 
-        for (var i = 0; i < 8 /*this.arrayPages[this.indexPage - 1][1].length*/ ; i++) {
+        for (var i = 0; i < 8 ; i++) {
 
             this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
                 fill: "black",
@@ -222,7 +231,6 @@ class LutinShopScene extends Phaser.Scene {
                     console.log("ERREUR remplissage de txtContainer" + i);
             }
         }
-        console.log('%c%s', 'color: #1d5673', this.arrayLocalTxtBouton);
 
 
         if (dataShop.arrayObjetDeco.length <= 8) {
