@@ -48,27 +48,30 @@ class GuiScene extends Phaser.Scene {
         this.goRight = new Button({
             'scene': this,
             'key': 'goRight',
-            'x': 950,
-            'y': 565
+            'x': 930,
+            'y': 550
         });
+        this.goRight.setScale(0.7,0.7);
         this.goRight.on('pointerdown', this.goRightFunction, this);
         this.goRight.on('pointerup', this.endGoRightFunction, this);
 
         this.goLeft = new Button({
             'scene': this,
             'key': 'goLeft',
-            'x': 50,
-            'y': 565
+            'x': 70,
+            'y': 550
         });
+        this.goLeft.setScale(0.7,0.7);
         this.goLeft.on('pointerdown', this.goLeftFunction, this);
         this.goLeft.on('pointerup', this.endGoLeftFunction, this);
 
         this.interactBtn = new Button({
             'scene': this,
             'key': 'interactBtn',
-            'x': 850,
-            'y': 565
+            'x': 830,
+            'y': 550
         });
+        this.interactBtn.setScale(0.7,0.7);
         this.interactBtn.on('pointerdown', this.interact, this);
         this.interactBtn.on('pointerup', this.endInteract, this);
         this.interactBtn.visible = false;

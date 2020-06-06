@@ -23,9 +23,10 @@ class MissionScreen extends Phaser.Scene {
         this.interactBtn = new Button({
             'scene': this,
             'key': 'interactBtn',
-            'x': 380,
-            'y': 210
+            'x': 370,
+            'y': 200
         });
+        this.interactBtn.setScale(0.7,0.7);
         this.interactBtn.on('pointerdown', function() {this.scene.start('PereNoel')}, this);
 
         this.container.add(this.window);
