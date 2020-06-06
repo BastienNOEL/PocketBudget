@@ -103,9 +103,17 @@ class GuiScene extends Phaser.Scene {
 
     mooving() {
         if (this.boolMovingRight == true) {
-            this.sceneEnCours.setVelocityX(300);
+            if(this.scene.isActive('Travel') == true){
+                this.sceneEnCours.setVelocityX(300);
+            } else {
+                this.sceneEnCours.setVelocityX(500);
+            }
         } else if (this.boolMovingLeft == true) {
-            this.sceneEnCours.setVelocityX(-300);
+            if(this.scene.isActive('Travel') == true){
+                this.sceneEnCours.setVelocityX(-300);
+            } else {
+                this.sceneEnCours.setVelocityX(-500);
+            }
         }
     }
 
