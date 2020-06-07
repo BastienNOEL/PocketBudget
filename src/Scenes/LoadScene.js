@@ -12,11 +12,21 @@ class LoadScene extends Phaser.Scene {
         this.load.image('bgTitre', 'assets/img/Background/bgTitre.png');
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
-        this.load.image('BG1', 'assets/img/Background/Sky.png');
-        this.load.image('BG2', 'assets/img/Background/background.png');
-        this.load.image('BG3', 'assets/img/Background/Middle.png');
-        this.load.image('BG4', 'assets/img/Background/Foreground.png');
+        this.load.image('BG1.1', 'assets/img/Background/bg1/Sky.png');
+        this.load.image('BG1.2', 'assets/img/Background/bg1/background.png');
+        this.load.image('BG1.3', 'assets/img/Background/bg1/Middle.png');
+        this.load.image('BG1.4', 'assets/img/Background/bg1/Foreground.png');
+        this.load.image('BG1.Snow', 'assets/img/Background/bg1/Snow.png');
 
+        this.load.image('BG2.1', 'assets/img/Background/bg2/Sky.png');
+        this.load.image('BG2.2', 'assets/img/Background/bg2/Mountains.png');
+        this.load.image('BG2.3', 'assets/img/Background/bg2/Middle.png');
+        this.load.image('BG2.4', 'assets/img/Background/bg2/Foreground.png');
+        this.load.image('BG2.4', 'assets/img/Background/bg2/Foreground.png');
+        this.load.image('BG2.5', 'assets/img/Background/bg2/Ground_01.png');
+        this.load.image('BG2.6', 'assets/img/Background/bg2/Ground_02.png');
+        
+        this.load.image('BG2.Snow', 'assets/img/Background/bg2/Snow.png');
 
         this.load.image('ground', 'assets/img/Sol/solNeige.png');
         this.load.spritesheet('player',

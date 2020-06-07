@@ -15,22 +15,22 @@ class TravelScene extends Phaser.Scene {
         this.boolInZoneInteraction4 = false;
 
 
-        this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1");
+        this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.1");
         this.bg1.setOrigin(0, 0);
         this.bg1.setScrollFactor(0);
         this.bg1.setScale(0.6, 0.6);
 
-        this.bg2 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG2");
+        this.bg2 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.2");
         this.bg2.setOrigin(0, 0);
         this.bg2.setScrollFactor(0);
         this.bg2.setScale(0.6, 0.6);
 
-        this.bg3 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG3");
+        this.bg3 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.3");
         this.bg3.setOrigin(0, 0);
         this.bg3.setScrollFactor(0);
         this.bg3.setScale(0.6, 0.6);
 
-        this.bg4 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG4");
+        this.bg4 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.4");
         this.bg4.setOrigin(0, 0);
         this.bg4.setScrollFactor(0);
         this.bg4.setScale(0.63, 0.63);
@@ -90,10 +90,8 @@ class TravelScene extends Phaser.Scene {
 
         this.lutinMarchand = this.add.image(1650, 430, 'lutinMarchand');
         this.lutinMarchand.setScale(0.15, 0.15);
-        //this.lutinMarchand.visible = false;
         this.lutinMarchand2 = this.add.image(1650, 430, 'lutinMarchand2');
         this.lutinMarchand2.setScale(0.15, 0.15);
-        //this.lutinMarchand.visible = false;
 
 
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
