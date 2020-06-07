@@ -8,6 +8,71 @@ class LoadScene extends Phaser.Scene {
 
     preload() {
 
+        /*
+                this.load.on('progress', function (value) {
+                    console.log(value);
+                });
+
+                this.load.on('fileprogress', function (file) {
+                    //console.log(file.src);
+                    assetText.setText('Loading asset: ' + file.key);
+                });
+
+                this.load.on('complete', function () {
+                    console.log('complete');
+                });
+        */
+        var progressBar = this.add.graphics();
+        var progressBox = this.add.graphics();
+        progressBox.fillStyle(0x222222, 0.8);
+        progressBox.fillRect(340, 270, 320, 50);
+
+        var width = this.cameras.main.width;
+        var height = this.cameras.main.height;
+        var loadingText = this.make.text({
+            x: width / 2,
+            y: height / 2 - 50,
+            text: 'Chargement...',
+            style: {
+                font: '20px Arial',
+                fill: '#ffffff'
+            }
+        });
+        loadingText.setOrigin(0.5, 0.5);
+
+
+        var percentText = this.make.text({
+            x: width / 2,
+            y: height / 2 - 5,
+            text: '0%',
+            style: {
+                font: '18px Arial',
+                fill: '#ffffff'
+            }
+        });
+        percentText.setOrigin(0.5, 0.5);
+
+        var assetText = this.make.text({
+            x: width / 2,
+            y: height / 2 + 50,
+            text: '',
+            style: {
+                font: '18px Arial',
+                fill: '#ffffff'
+            }
+        });
+        assetText.setOrigin(0.5, 0.5);
+
+        this.load.on('progress', function (value) {
+            progressBar.clear();
+            progressBar.fillStyle(0xFF0000, 1);
+            progressBar.fillRect(350, 280, 300 * value, 30);
+            percentText.setText(parseInt(value * 100) + '%');
+
+        });
+
+
+        ////
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
         this.load.image('BG1.1', 'assets/img/Background/bg1/Sky.png');
@@ -23,7 +88,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('BG2.4', 'assets/img/Background/bg2/Foreground.png');
         this.load.image('BG2.5', 'assets/img/Background/bg2/Ground_01.png');
         this.load.image('BG2.6', 'assets/img/Background/bg2/Ground_02.png');
-        
+
         this.load.image('BG2.Snow', 'assets/img/Background/bg2/Snow.png');
 
         this.load.image('ground', 'assets/img/Sol/solNeige.png');
@@ -80,11 +145,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.add.text(20, 20, "Loading Game...");
-
-        console.log('%c%s', 'color: #8400ff', "Loading game");
         this.scene.start("Title");
-
-
     }
 }
