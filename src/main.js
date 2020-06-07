@@ -11,8 +11,8 @@ const config = {
         width: 1000,
         height: 600
     },
-    type: Phaser.AUTO,
-   //type: Phaser.CANVAS,
+    //type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,HomeScene,LutinShopScene,GuiScene],
     physics: {
         default: 'arcade',
