@@ -47,7 +47,6 @@ class LoadScene extends Phaser.Scene {
         this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
         this.load.image('santa', 'assets/img/Object/pereNoel.png');
 
-        this.load.image('dialogueBox', 'assets/img/Object/DialogueBox.png');
         this.load.image('window', 'assets/img/Gui/Window.png');
         this.load.image('starLvl', 'assets/img/Gui/Star.png');
         this.load.image('starCoin', 'assets/img/Gui/starCoin.png');
