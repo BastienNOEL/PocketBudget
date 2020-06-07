@@ -8,8 +8,6 @@ class LoadScene extends Phaser.Scene {
 
     preload() {
 
-
-        this.load.image('bgTitre', 'assets/img/Background/bgTitre.png');
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
 
         this.load.image('BG1.1', 'assets/img/Background/bg1/Sky.png');
