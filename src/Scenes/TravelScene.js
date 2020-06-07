@@ -18,22 +18,22 @@ class TravelScene extends Phaser.Scene {
         this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.1");
         this.bg1.setOrigin(0, 0);
         this.bg1.setScrollFactor(0);
-        this.bg1.setScale(0.6, 0.6);
+        this.bg1.setScale(0.5, 0.5);
 
-        this.bg2 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.2");
+        this.bg2 = this.add.tileSprite(0, -40, game.config.width * 2, game.config.height * 2, "BG1.2");
         this.bg2.setOrigin(0, 0);
         this.bg2.setScrollFactor(0);
-        this.bg2.setScale(0.6, 0.6);
+        this.bg2.setScale(0.5, 0.5);
 
-        this.bg3 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.3");
+        this.bg3 = this.add.tileSprite(0, -20, game.config.width * 2, game.config.height * 2, "BG1.3");
         this.bg3.setOrigin(0, 0);
         this.bg3.setScrollFactor(0);
-        this.bg3.setScale(0.6, 0.6);
+        this.bg3.setScale(0.5, 0.5);
 
-        this.bg4 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG1.4");
+        this.bg4 = this.add.tileSprite(0, 20, game.config.width * 2, game.config.height * 2, "BG1.4");
         this.bg4.setOrigin(0, 0);
         this.bg4.setScrollFactor(0);
-        this.bg4.setScale(0.63, 0.63);
+        this.bg4.setScale(0.53, 0.53);
 
 
         this.ground = this.add.tileSprite(0, 0, game.config.width * 3, 125, "ground");
@@ -179,10 +179,10 @@ class TravelScene extends Phaser.Scene {
     }
 
     scrollBackground() {
-        this.bg1.tilePositionX = this.myCam.scrollX * .2;
-        this.bg2.tilePositionX = this.myCam.scrollX * .4;
-        this.bg3.tilePositionX = this.myCam.scrollX * .6;
-        this.bg4.tilePositionX = this.myCam.scrollX * .8;
+        this.bg1.tilePositionX = this.myCam.scrollX * 0.2;
+        this.bg2.tilePositionX = this.myCam.scrollX * 0.4;
+        this.bg3.tilePositionX = this.myCam.scrollX * 0.6;
+        this.bg4.tilePositionX = this.myCam.scrollX * 0.8;
 
         this.ground.tilePositionX = this.myCam.scrollX;
     }
