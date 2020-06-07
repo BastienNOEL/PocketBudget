@@ -20,10 +20,20 @@ class TitleScene extends Phaser.Scene {
         this.bg2.setScrollFactor(0);
         this.bg2.setScale(0.5, 0.5);
 
+        this.snow1 = this.add.tileSprite(0, -50, game.config.width * 2, game.config.height * 2, "BG2.Snow");
+        this.snow1.setOrigin(0, 0);
+        this.snow1.setScrollFactor(0);
+        this.snow1.setScale(0.33, 0.33);
+
         this.bg3 = this.add.tileSprite(0, -10, game.config.width * 2, game.config.height * 2, "BG2.3");
         this.bg3.setOrigin(0, 0);
         this.bg3.setScrollFactor(0);
         this.bg3.setScale(0.5, 0.5);
+
+        this.snow2 = this.add.tileSprite(0, -100, game.config.width * 2, game.config.height * 2, "BG2.Snow");
+        this.snow2.setOrigin(0, 0);
+        this.snow2.setScrollFactor(0);
+        this.snow2.setScale(0.43, 0.43);
 
         this.bg4 = this.add.tileSprite(0, -10, game.config.width * 2, game.config.height * 2, "BG2.4");
         this.bg4.setOrigin(0, 0);
@@ -35,10 +45,10 @@ class TitleScene extends Phaser.Scene {
         this.bg5.setScrollFactor(0);
         this.bg5.setScale(0.58, 0.58);
 
-        this.snow = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG2.Snow");
-        this.snow.setOrigin(0, 0);
-        this.snow.setScrollFactor(0);
-        this.snow.setScale(0.53, 0.53);
+        this.snow3 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG2.Snow");
+        this.snow3.setOrigin(0, 0);
+        this.snow3.setScrollFactor(0);
+        this.snow3.setScale(0.53, 0.53);
 
         this.bg6 = this.add.tileSprite(0, -25, game.config.width * 2, game.config.height * 2, "BG2.6");
         this.bg6.setOrigin(0, 0);
@@ -83,9 +93,15 @@ class TitleScene extends Phaser.Scene {
         this.bg5.tilePositionX -= 1.2;
         this.bg6.tilePositionX -= 1.5;
 
-        this.snow.tilePositionY -= 1.2;
-        this.snow.tilePositionX -= 2.4;
+        this.snow1.tilePositionY -= 0.8;
+        this.snow1.tilePositionX -= 1.6;
 
+        this.snow2.tilePositionY -= 1;
+        this.snow2.tilePositionX -= 2;
+
+        this.snow3.tilePositionY -= 1.2;
+        this.snow3.tilePositionX -= 2.4;
+        
     }
 
 }
