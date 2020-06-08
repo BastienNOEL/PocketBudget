@@ -56,10 +56,11 @@ class Mission extends DonneesMission {
 
         if (localStorage.getItem("nbTentatives") < 3) {
             this.gainStarCoins();
+        }
             this.lvlValue = parseInt(localStorage.getItem("lvPlayer"));
             localStorage.setItem('lvPlayer', this.lvlValue + 1);
             localStorage.setItem('nbTentatives', 1);
-        }
+        
     }
 
     gainStarCoins() {
@@ -69,13 +70,13 @@ class Mission extends DonneesMission {
         console.log('%c%s', 'color: #8c0038', lvPlayer);
         var gain;
 
-        if (lvPlayer < 2) {
+        if (lvPlayer < 5) {
             gain = 1;
-        } else if (lvPlayer < 3) {
+        } else if (lvPlayer < 10) {
             gain = 2;
-        } else if (lvPlayer < 4) {
+        } else if (lvPlayer < 15) {
             gain = 3;
-        } else if (lvPlayer < 5) {
+        } else if (lvPlayer < 20) {
             gain = 4;
         } else {
             gain = 5;
