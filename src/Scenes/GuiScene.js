@@ -12,7 +12,9 @@ class GuiScene extends Phaser.Scene {
         this.boolMovingLeft = false;
         this.boolInputInterctif = false;
 
-        this.maxY;
+        this.minX;
+        this.maxX;
+        
 
 
         this.zoneLvl = this.add.container(930, 60);
@@ -93,31 +95,38 @@ class GuiScene extends Phaser.Scene {
         if (this.scene.isActive('Travel') == true) {
             this.sceneEnCours = this.scene.get('Travel').player;
             this.nameSceneActive = "Travel";
-            this.maxY = game.config.width * 3;
+            this.maxX = game.config.width * 3;
+            this.minX = 0;
         } else if (this.scene.isActive('PereNoel') == true) {
             this.sceneEnCours = this.scene.get('PereNoel').player;
             this.nameSceneActive = "PereNoel";
+            this.minX = 0;
         } else if (this.scene.isActive('Home') == true) {
             this.sceneEnCours = this.scene.get('Home').player;
             this.nameSceneActive = "Home";
-            this.maxY = game.config.width * 2;
+            this.maxX = game.config.width * 2;
+            this.minX = 100;
         }
     }
 
 
     mooving() {
-        if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxY ) {
-            if(this.scene.isActive('Travel') == true){
-                this.sceneEnCours.setVelocityX(300);
-            } else {
+        if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxX ) {
+            if(this.scene.isActive('PereNoel') == true){
                 this.sceneEnCours.setVelocityX(500);
+            } else if(this.scene.isActive('Home') == true){
+                this.sceneEnCours.setVelocityX(400);
+            } else {
+                this.sceneEnCours.setVelocityX(300);
             }
             this.sceneEnCours.anims.play('right', true);
-        } else if (this.boolMovingLeft == true && this.sceneEnCours.x > 0) {
-            if(this.scene.isActive('Travel') == true){
-                this.sceneEnCours.setVelocityX(-300);
-            } else {
+        } else if (this.boolMovingLeft == true && this.sceneEnCours.x > this.minX) {
+            if(this.scene.isActive('PereNoel') == true){
                 this.sceneEnCours.setVelocityX(-500);
+            } else if(this.scene.isActive('Home') == true){
+                this.sceneEnCours.setVelocityX(-400);
+            }else {
+                this.sceneEnCours.setVelocityX(-300);
             }
             this.sceneEnCours.anims.play('left', true);
 

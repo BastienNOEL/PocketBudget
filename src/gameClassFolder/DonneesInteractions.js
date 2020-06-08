@@ -225,7 +225,7 @@ class DonneesInteractions {
     remplirArrayMessagesHome(numCase){
         switch (numCase) {
             case 0:
-                this.arrayMessagesHome[numCase] = [25, 325 , this.messageInteraction];
+                this.arrayMessagesHome[numCase] = [65, 200 , this.messageInteraction];
                 break;
         }
     }

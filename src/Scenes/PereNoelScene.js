@@ -33,6 +33,10 @@ class PereNoelScene extends Phaser.Scene {
         this.sapinNoel = this.add.image(200, 315, 'sapinNoel');
         this.sapinNoel.setScale(0.4, 0.4);
 
+        
+        this.tableau = this.add.image(500, 150, 'tableauSantaNight');
+        this.tableau.setScale(0.3, 0.3);
+
         this.santa = this.physics.add.sprite(900, 407, 'santa');
         this.santa.setScale(0.5, 0.5);
         this.physics.add.collider(this.santa, platforms);

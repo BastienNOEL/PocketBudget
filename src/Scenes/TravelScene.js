@@ -62,6 +62,9 @@ class TravelScene extends Phaser.Scene {
         this.maisonSanta = this.add.image(200, 307, 'maison');
         this.maisonSanta.setScale(0.3, 0.3);
 
+        this.couronne = this.add.image(207, 300, "couronne");
+        this.couronne.setScale(0.1, 0.1);
+
         this.containerPanneauSanta = this.add.container(430, 453);
         this.panneauSanta = this.add.image(0, 0, 'panneau');
         this.textePanneauSanta = this.add.text(0, 0, "Père\nNoël", {
