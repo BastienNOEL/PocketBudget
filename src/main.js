@@ -2,7 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
-localStorage.clear(); // permet de faire des tests, a supprimer plus tard
+//localStorage.clear(); // permet de faire des tests, a supprimer plus tard
 
 const config = {
     scale: {
@@ -13,7 +13,7 @@ const config = {
     },
     //type: Phaser.AUTO,
     type: Phaser.CANVAS,
-    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen,HomeScene,LutinShopScene,GuiScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, LutinShopScene, GuiScene],
     physics: {
         default: 'arcade',
         arcade: {
@@ -43,3 +43,38 @@ var mission = new Mission();
 var dataShop = new DonneesLutinShop();
 var dataInteractions = new DonneesInteractions();
 
+/// Exporter sa sauvegarde
+
+function saveData() {
+    var save = JSON.stringify(localStorage);
+
+    var vLink = document.createElement('a'),
+        vBlob = new Blob([save], {
+            type: "octet/stream"
+        }),
+        vName = 'savePocketBudget.json',
+        vUrl = window.URL.createObjectURL(vBlob);
+    vLink.setAttribute('href', vUrl);
+    vLink.setAttribute('download', vName);
+    vLink.click();
+}
+
+// importer sa sauvegarde
+
+importSave.addEventListener("change", importFun, false);
+
+function importFun(e) {
+    var files = e.target.files,
+        reader = new FileReader();
+    reader.onload = _imp;
+    reader.readAsText(files[0]);
+}
+
+function _imp() {
+
+    var data = JSON.parse(this.result );
+    Object.keys(data).forEach(function (k) {
+        localStorage.setItem(k, data[k]);
+    });
+    importSave.value = '';  //efface la valeur input apres chaque import
+}

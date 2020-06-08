@@ -19,3 +19,8 @@ h1 {
     clear: both;
     margin-bottom: unset;
 }
+
+div {
+    padding: 20px;
+    margin-left: 110px;
+}

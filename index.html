@@ -20,17 +20,18 @@
     <script type="text/javascript" src="./src/Scenes/HomeScene.js"> </script>
     <script type="text/javascript" src="./src/Scenes/LutinShopScene.js"> </script>
 
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesMission.js"> </script> 
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesLutinShop.js"> </script> 
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesInteractions.js"> </script> 
+    <script type="text/javascript" src="./src/gameClassFolder/DonneesMission.js"> </script>
+    <script type="text/javascript" src="./src/gameClassFolder/DonneesLutinShop.js"> </script>
+    <script type="text/javascript" src="./src/gameClassFolder/DonneesInteractions.js"> </script>
 
 
     <script type="text/javascript" src="./src/gameClassFolder/Mission.js"> </script>
 
     <script type="text/javascript" src="./src/Scenes/MissionScreen.js"> </script>
 
+    <input type="file" id="importSave" accept=".json" style="display:none" />
 
-    <script src="./src/main.js"></script>
+
     <title>PocketBudget</title>
 
 </head>
@@ -38,7 +39,15 @@
 <body>
 
     <h1>PocketBudget</h1>
-    
+    <script src="./src/main.js"></script>
+
+
+    <div class="sauvegarde">
+        <input id="save" type="button" value="Sauvegarder" onclick="saveData();" />
+
+        <input id="importData" type="button" value="Importer une Sauvegarde" onclick="importSave.click();" />
+    </div>
+
 </body>
 
 </html>
