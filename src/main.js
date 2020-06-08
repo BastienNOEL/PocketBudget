@@ -61,16 +61,17 @@ function saveData() {
 
 // importer sa sauvegarde
 
-importSave.addEventListener("change", importFun, false);
+importSave.addEventListener("change", importDatas, false);
 
-function importFun(e) {
+function importDatas(e) {
     var files = e.target.files,
         reader = new FileReader();
-    reader.onload = _imp;
+    reader.onload = parseDatas;
     reader.readAsText(files[0]);
+    location.reload();
 }
 
-function _imp() {
+function parseDatas() {
 
     var data = JSON.parse(this.result );
     Object.keys(data).forEach(function (k) {
