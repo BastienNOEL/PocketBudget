@@ -5,7 +5,7 @@ class LocalStorageSave {
 
 
         //localStorage.setItem('lvPlayer', 2); // permet de faire des tests, mais doit etre supprimé 
-        //localStorage.setItem('nbStarCoin', 3);
+        localStorage.setItem('nbStarCoin', 3);
 
         if ((localStorage.getItem('lvPlayer') == null)) {
             localStorage.setItem('lvPlayer', 1);

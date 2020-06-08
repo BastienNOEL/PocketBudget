@@ -169,14 +169,14 @@ class LutinShopScene extends Phaser.Scene {
             this.arrayPages[this.indexPage - 1][0][j].visible = true;
         }
 
-        this.num =0;
+        this.num = 0;
         for (var i = 0; i < this.arrayPages.length; i++) {
 
-            for(var j = 0; j < this.arrayPages[i][0].length; j++){
-                if(localStorage.getItem(dataShop.arrayObjetDeco[this.num][0]) == "VENDU"){
+            for (var j = 0; j < this.arrayPages[i][0].length; j++) {
+                if (localStorage.getItem(dataShop.arrayObjetDeco[this.num][0]) == "VENDU") {
                     this.arrayPages[i][0][j].setTint(0xFBFF00);
                 }
-                this.num ++;
+                this.num++;
             }
         }
 
@@ -192,7 +192,7 @@ class LutinShopScene extends Phaser.Scene {
         this.arrayLocalTxtBouton = [];
 
 
-        for (var i = 0; i < 8 ; i++) {
+        for (var i = 0; i < 8; i++) {
 
             this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
                 fill: "black",

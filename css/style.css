@@ -20,7 +20,17 @@ h1 {
     margin-bottom: unset;
 }
 
-div {
-    padding: 20px;
-    margin-left: 110px;
+.sauvegarde {
+
+    position: absolute;
+    width: 410px;
+    height: 200px;
+    left: 37%;
+    margin: 50px 0px 0px 0px;
+    text-align:  center;
+} 
+
+.save {
+    height:50px;
+    width:200px;
 }
