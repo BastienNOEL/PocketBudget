@@ -6,11 +6,13 @@ class GuiScene extends Phaser.Scene {
 
     create() {
 
-        this.searchScenActive();
+        this.searchSceneActive();
 
         this.boolMovingRight = false;
         this.boolMovingLeft = false;
         this.boolInputInterctif = false;
+
+        this.maxY;
 
 
         this.zoneLvl = this.add.container(930, 60);
@@ -83,7 +85,7 @@ class GuiScene extends Phaser.Scene {
         this.mooving();
     }
 
-    searchScenActive() {
+    searchSceneActive() {
 
         this.sceneEnCours;
         this.nameSceneActive;
@@ -91,18 +93,20 @@ class GuiScene extends Phaser.Scene {
         if (this.scene.isActive('Travel') == true) {
             this.sceneEnCours = this.scene.get('Travel').player;
             this.nameSceneActive = "Travel";
+            this.maxY = game.config.width * 3;
         } else if (this.scene.isActive('PereNoel') == true) {
             this.sceneEnCours = this.scene.get('PereNoel').player;
             this.nameSceneActive = "PereNoel";
         } else if (this.scene.isActive('Home') == true) {
             this.sceneEnCours = this.scene.get('Home').player;
             this.nameSceneActive = "Home";
+            this.maxY = game.config.width * 2;
         }
     }
 
 
     mooving() {
-        if (this.boolMovingRight == true && this.sceneEnCours.x < game.config.width * 3 ) {
+        if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxY ) {
             if(this.scene.isActive('Travel') == true){
                 this.sceneEnCours.setVelocityX(300);
             } else {

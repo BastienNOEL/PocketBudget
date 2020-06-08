@@ -33,7 +33,7 @@ var posYTravel = 447.5;
 var posXpn = 100;
 var posYpn = 502;
 var posXHome = 100;
-var posYHome = 502;
+var posYHome = 426.5;
 
 
 console.log('%c%s', 'color: #ff4040', "main");

@@ -10,21 +10,10 @@ class PereNoelScene extends Phaser.Scene {
         this.boolInZoneInteraction1 = false;
         this.boolInZoneInteraction2 = false;
 
-
-        var i;
-        var j = 0;
-        for (i = 0; i < 3; i++) {
-            var murs = this.physics.add.staticGroup({
-                key: 'murBois',
-                repeat: 3,
-                setXY: {
-                    x: 150,
-                    y: 105 + j,
-                    stepX: 300
-                }
-            });
-            j = j + 195;
-        }
+        this.mur = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "murBois");
+        this.mur.setOrigin(0, 0);
+        this.mur.setScrollFactor(0);
+        this.mur.setScale(0.5, 2.5);
 
         var platforms = this.physics.add.staticGroup({
             key: 'ground',
@@ -115,7 +104,6 @@ class PereNoelScene extends Phaser.Scene {
         if (this.cursors.up.isDown && this.player.body.touching.down) {
             this.player.setVelocityY(-330);
         }
-
 
     }
 

@@ -8,41 +8,23 @@ class HomeScene extends Phaser.Scene {
         this.gui = this.scene.get('Gui');
         this.boolInZoneInteraction1 = false;
 
-        var i;
-        var j = 0;
-        for (i = 0; i < 3; i++) {
-            var murs = this.physics.add.staticGroup({
-                key: 'murBois',
-                repeat: 3,
-                setXY: {
-                    x: 150,
-                    y: 105 + j,
-                    stepX: 300
-                }
-            });
-            j = j + 195;
-        }
+        this.mur = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "murBois");
+        this.mur.setOrigin(0, 0);
+        this.mur.setScrollFactor(0);
+        this.mur.setScale(0.5, 2.5);
 
-        var platforms = this.physics.add.staticGroup({
-            key: 'ground',
-            repeat: 6,
-            setXY: {
-                x: 60,
-                y: 650,
-                stepX: 127
-            }
-        });
-
-        var sol = this.add.image(500, 575, 'solBois');
+        this.ground = this.add.tileSprite(0, 0, game.config.width * 2, 100, "planche");
+        this.ground.setOrigin(0, -0.5);
+        this.ground.setScrollFactor(0);
+        this.ground.y = 450;
+        this.physics.add.existing(this.ground, true);
+        this.ground.setScale(16, 1);
 
         this.player = this.physics.add.sprite(posXHome, posYHome, 'player');
         this.player.setBounce(0.2);
-        this.player.setScale(0.8, 0.8);
+        this.player.setScale(0.7, 0.7);
         this.player.body.setGravityY(300)
-        this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.player, platforms);
-        this.physics.add.collider(this.player, this.santa);
-
+        this.physics.add.collider(this.player, this.ground);
 
         this.anims.create({
             key: 'right',
@@ -72,8 +54,11 @@ class HomeScene extends Phaser.Scene {
 
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
-        this.scene.launch('Gui');
+        this.myCam = this.cameras.main;
+        this.myCam.setBounds(0, 0, game.config.width * 2, game.config.height);
+        this.myCam.startFollow(this.player);
 
+        this.scene.launch('Gui');
     }
 
 
@@ -81,14 +66,14 @@ class HomeScene extends Phaser.Scene {
         this.movePlayer();
         this.changeScene();
         this.checkInZoneInteraction();
-
+        this.scrollCam();
     }
 
     movePlayer() {
-        if (this.cursors.left.isDown) {
+        if (this.cursors.left.isDown && this.player.x > 0) {
             this.player.setVelocityX(-500);
             this.player.anims.play('left', true);
-        } else if (this.cursors.right.isDown) {
+        } else if (this.cursors.right.isDown && this.player.x < game.config.width * 2) {
             this.player.setVelocityX(500);
             this.player.anims.play('right', true);
         } else {
@@ -97,8 +82,6 @@ class HomeScene extends Phaser.Scene {
         if (this.cursors.up.isDown && this.player.body.touching.down) {
             this.player.setVelocityY(-330);
         }
-
-
     }
 
 
@@ -129,5 +112,10 @@ class HomeScene extends Phaser.Scene {
             this.gui.interactBtn.visible = false;
 
         }
+    }
+
+    scrollCam() {
+        this.ground.tilePositionX = this.myCam.scrollX * 0.0625;
+        this.mur.tilePositionX = this.myCam.scrollX;
     }
 }
