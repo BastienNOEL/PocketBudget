@@ -39,7 +39,7 @@ var posYHome = 426.5;
 console.log('%c%s', 'color: #ff4040', "main");
 
 var game = new Phaser.Game(config);
-var LoadDatas = new LocalStorageSave();
+var LoadDatas = new LocalStorageSaveInit();
 var mission = new Mission();
 var dataShop = new DonneesLutinShop();
 var dataInteractions = new DonneesInteractions();

@@ -26,6 +26,11 @@ class DonneesMission {
             this.arrayParamMission = new Array(7);
 
             this.arrayArgentRecu = new Array(7);
+
+            for(var n=0 ; n<this.arrayArgentRecu.length ;  n++){
+                this.arrayArgentRecu[n] = this.arrayOfArrayArgentRecu[i][n];
+            }
+/*
             this.arrayArgentRecu[0] = this.arrayOfArrayArgentRecu[i][0];
             this.arrayArgentRecu[1] = this.arrayOfArrayArgentRecu[i][1];
             this.arrayArgentRecu[2] = this.arrayOfArrayArgentRecu[i][2];
@@ -33,7 +38,7 @@ class DonneesMission {
             this.arrayArgentRecu[4] = this.arrayOfArrayArgentRecu[i][4];
             this.arrayArgentRecu[5] = this.arrayOfArrayArgentRecu[i][5];
             this.arrayArgentRecu[6] = this.arrayOfArrayArgentRecu[i][6];
-
+*/
             this.arrayParamMission[0] = this.arrayArgentRecu;
             this.arrayParamMission[1] = this.arrayPrixAffiche[i];
             this.arrayParamMission[2] = this.arrayConsigne[i];
