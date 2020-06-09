@@ -69,20 +69,65 @@ class DonneesLutinShop {
 
     remplirArrayNomObjet(numCase) {
 
-        this.arrayNomObjet[numCase] = "Objet" + numCase;
-        /*
-                switch (numCase) {
-                    case 0:
-                        this.arrayNomObjet[numCase] = "Objet" + numCase;
-                        break;
-                    case 1:
-                        this.arrayNomObjet[numCase] = "Objet" + numCase;
-                        break;
+        //this.arrayNomObjet[numCase] = "Objet" + numCase;
 
-                    default:
-                        console.log("ERREUR remplirArrayNomObje(" + numCase + ")");
-                }
-                */
+        switch (numCase) {
+            case 0:
+                this.arrayNomObjet[numCase] = "Maison";
+                break;
+            case 1:
+                this.arrayNomObjet[numCase] = "Sapin";
+                break;
+            case 2:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 3:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 4:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 5:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 6:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 7:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 8:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 9:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 10:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 11:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 12:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 13:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 14:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 15:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+            case 16:
+                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                break;
+
+            default:
+                console.log("ERREUR remplirArrayNomObje(" + numCase + ")");
+        }
+
 
     }
 

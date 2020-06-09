@@ -5,27 +5,10 @@ class DataSave {
 
         this.arrayDatasInit = {
 
-            'lvPlayer' : 1,
-            'nbStarCoin': 0,
-            'nbTentatives' : 1,
-            'P1': 0,
-            'P2': 0,
-            'B5': 0,
-            'B10': 0,
-            'B20': 0,
-            'B50': 0,
-            'B100': 0,
-            'MissionEnCours': false,
-            'RetourMission': false,
-            'lastMissionIsDone': false,
-            'BoutiqueTexte': "Va voir le père noel pour avoir de l'argent.",
-            'prixMissionAffiche': -1,
-            'prixMissionAttendu': -1,
-            'indexPage': 1,
 
             // VENTE OBJETS
-            'Objet0': "Objet0",
-            'Objet1': "Objet1",
+            'Maison': "Maison",
+            'Sapin': "Sapin",
             'Objet2': "Objet2",
             'Objet3': "Objet3",
             'Objet4': "Objet4",
@@ -42,12 +25,28 @@ class DataSave {
             'Objet15': "Objet15",
             'Objet16': "Objet16",
 
+
+            //Autres paramètres
+            'lvPlayer': 1,
+            'nbStarCoin': 0,
+            'nbTentatives': 1,
+            'P1': 0,
+            'P2': 0,
+            'B5': 0,
+            'B10': 0,
+            'B20': 0,
+            'B50': 0,
+            'B100': 0,
+            'MissionEnCours': false,
+            'RetourMission': false,
+            'lastMissionIsDone': false,
+            'BoutiqueTexte': "Va voir le père noel pour avoir de l'argent.",
+            'prixMissionAffiche': -1,
+            'prixMissionAttendu': -1,
+            'indexPage': 1,
+
+
+
         }
-
-        
-
-
-
     }
-
 }

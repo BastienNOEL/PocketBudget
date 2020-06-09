@@ -43,6 +43,8 @@ var LoadDatas = new LocalStorageSaveInit();
 var mission = new Mission();
 var dataShop = new DonneesLutinShop();
 var dataInteractions = new DonneesInteractions();
+var dataDeco = new DataDeco();
+
 
 /// Exporter sa sauvegarde
 
