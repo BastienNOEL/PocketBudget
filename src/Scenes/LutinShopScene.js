@@ -165,9 +165,14 @@ class LutinShopScene extends Phaser.Scene {
 
         this.arrayPages.push(this.arrayOnePage);
 
-        for (var j = 0; j < this.arrayPages[this.indexPage - 1][0].length; j++) {
-            this.arrayPages[this.indexPage - 1][0][j].visible = true;
+        if (localStorage.getItem('Maison') == "VENDU") {
+            for (var j = 0; j < this.arrayPages[this.indexPage - 1][0].length; j++) {
+                this.arrayPages[this.indexPage - 1][0][j].visible = true;
+            }
+        } else {
+            this.arrayPages[this.indexPage - 1][0][0].visible = true;
         }
+
 
         this.num = 0;
         for (var i = 0; i < this.arrayPages.length; i++) {
@@ -191,63 +196,81 @@ class LutinShopScene extends Phaser.Scene {
 
         this.arrayLocalTxtBouton = [];
 
+        if (localStorage.getItem('Maison') == "VENDU") {
+            for (var i = 0; i < 8; i++) {
 
-        for (var i = 0; i < 8; i++) {
+                this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
+                    fill: "black",
+                    font: '20px Arial'
+                });
+                this.txtBouton.setOrigin(0.5, 0.5);
+                this.arrayLocalTxtBouton.push(this.txtBouton);
 
-            this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
+                switch (i) {
+                    case 0:
+                        this.txtContainerB0.add(this.txtBouton);
+                        break;
+                    case 1:
+                        this.txtContainerB1.add(this.txtBouton);
+                        break;
+                    case 2:
+                        this.txtContainerB2.add(this.txtBouton);
+                        break;
+                    case 3:
+                        this.txtContainerB3.add(this.txtBouton);
+                        break;
+                    case 4:
+                        this.txtContainerB4.add(this.txtBouton);
+                        break;
+                    case 5:
+                        this.txtContainerB5.add(this.txtBouton);
+                        break;
+                    case 6:
+                        this.txtContainerB6.add(this.txtBouton);
+                        break;
+                    case 7:
+                        this.txtContainerB7.add(this.txtBouton);
+                        break;
+
+                    default:
+                        console.log("ERREUR remplissage de txtContainer" + i);
+                }
+            }
+        } else {
+            this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][0]), {
                 fill: "black",
                 font: '20px Arial'
             });
             this.txtBouton.setOrigin(0.5, 0.5);
             this.arrayLocalTxtBouton.push(this.txtBouton);
+            this.txtContainerB0.add(this.txtBouton);
 
-            switch (i) {
-                case 0:
-                    this.txtContainerB0.add(this.txtBouton);
-                    break;
-                case 1:
-                    this.txtContainerB1.add(this.txtBouton);
-                    break;
-                case 2:
-                    this.txtContainerB2.add(this.txtBouton);
-                    break;
-                case 3:
-                    this.txtContainerB3.add(this.txtBouton);
-                    break;
-                case 4:
-                    this.txtContainerB4.add(this.txtBouton);
-                    break;
-                case 5:
-                    this.txtContainerB5.add(this.txtBouton);
-                    break;
-                case 6:
-                    this.txtContainerB6.add(this.txtBouton);
-                    break;
-                case 7:
-                    this.txtContainerB7.add(this.txtBouton);
-                    break;
-
-                default:
-                    console.log("ERREUR remplissage de txtContainer" + i);
-            }
         }
 
 
-        if (dataShop.arrayObjetDeco.length <= 8) {
+        if (localStorage.getItem('Maison') == "VENDU") {
+            if (dataShop.arrayObjetDeco.length <= 8) {
+                this.boutonSuivant.visible = false;
+                this.txtIndexPage.visible = false;
+            }
+
+            if (this.indexPage > 1) {
+                this.boutonPrecedent.visible = true;
+            } else {
+                this.boutonPrecedent.visible = false;
+            }
+
+            if (this.indexPage < this.arrayPages[this.indexPage - 1][0].length) {
+                this.boutonSuivant.visible = true;
+            } else {
+                this.boutonSuivant.visible = false;
+            }
+        } else {
+            this.boutonPrecedent.visible = false;
             this.boutonSuivant.visible = false;
             this.txtIndexPage.visible = false;
         }
 
-        if (this.indexPage > 1) {
-            this.boutonPrecedent.visible = true;
-        } else {
-            this.boutonPrecedent.visible = false;
-        }
-        if (this.indexPage < this.arrayPages[this.indexPage - 1][0].length) {
-            this.boutonSuivant.visible = true;
-        } else {
-            this.boutonSuivant.visible = false;
-        }
 
         // zone bleu
         this.MyStarCoin = this.add.image(0, 0, 'starCoin');

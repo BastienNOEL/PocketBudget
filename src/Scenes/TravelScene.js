@@ -82,10 +82,18 @@ class TravelScene extends Phaser.Scene {
         this.containerPanneauMaMaison = this.add.container(1300, 300);
         this.panneauMaMaison = this.add.image(0, 0, 'panneauEntree');
         this.panneauMaMaison.setScale(0.5, 0.5);
-        this.textePanneauMaMaison = this.add.text(0, 0, "Chez Moi!", {
-            fill: "#000000",
-            font: "20px Arial",
-        });
+        if (localStorage.getItem('Maison') == "VENDU") {
+            this.textePanneauMaMaison = this.add.text(0, 0, "Chez Moi!", {
+                fill: "#000000",
+                font: "20px Arial",
+            });
+        } else {
+            this.textePanneauMaMaison = this.add.text(0, 0, "A VENDRE", {
+                fill: "#000000",
+                font: "20px Arial",
+            });
+        }
+
         this.textePanneauMaMaison.setOrigin(0.5, 0.5);
 
         this.containerPanneauMaMaison.add(this.panneauMaMaison);
@@ -225,21 +233,23 @@ class TravelScene extends Phaser.Scene {
 
         }
 
-        if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][2][0][1]) && this.player.y > 423) {
+        if (localStorage.getItem('Maison') == "VENDU") {
+            if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][2][0][1]) && this.player.y > 423) {
 
-            this.txtInteractionMaMaison.visible = true;
-            this.boolInZoneInteraction3 = true;
+                this.txtInteractionMaMaison.visible = true;
+                this.boolInZoneInteraction3 = true;
 
-            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
-                this.scene.start("Home");
-                posYTravel = this.player.y;
-                posXTravel = this.player.x;
-                this.scene.stop('Gui');
+                if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
+                    this.scene.start("Home");
+                    posYTravel = this.player.y;
+                    posXTravel = this.player.x;
+                    this.scene.stop('Gui');
+                }
+            } else {
+                this.txtInteractionMaMaison.visible = false;
+                this.boolInZoneInteraction3 = false;
+
             }
-        } else {
-            this.txtInteractionMaMaison.visible = false;
-            this.boolInZoneInteraction3 = false;
-
         }
 
         if ((this.player.x > dataInteractions.arrayScenes[0][3][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1]) && this.player.y > 423) {
@@ -269,8 +279,8 @@ class TravelScene extends Phaser.Scene {
         }
     }
 
-    lutinOrientation(){
-        if(this.player.x < this.lutinMarchand.x){
+    lutinOrientation() {
+        if (this.player.x < this.lutinMarchand.x) {
             this.lutinMarchand.visible = true;
             this.lutinMarchand2.visible = false;
         } else {

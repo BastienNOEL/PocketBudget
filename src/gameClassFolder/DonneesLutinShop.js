@@ -69,8 +69,6 @@ class DonneesLutinShop {
 
     remplirArrayNomObjet(numCase) {
 
-        //this.arrayNomObjet[numCase] = "Objet" + numCase;
-
         switch (numCase) {
             case 0:
                 this.arrayNomObjet[numCase] = "Maison";
