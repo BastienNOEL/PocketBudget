@@ -35,7 +35,7 @@ class HomeScene extends Phaser.Scene {
         //deco deja en place
         this.porteBlanche = this.add.image(150, 368, "porteBlanche");
         this.porteBlanche.setScale(0.1, 0.1);
-      
+
         this.porteVitree = this.add.image(1550, 368, "porteVitree");
         this.porteVitree.setScale(0.1, 0.1);
 
@@ -141,11 +141,17 @@ class HomeScene extends Phaser.Scene {
 
     makeVisible() {
 
+        this.arrayOfImages = new Array();
+        var i = 0;
+        for (i; i < dataDeco.arrayRooms[0][0].length; i++) {
 
-        for (var i = 0; i < dataDeco.arrayRooms[0][0].length; i++) {
+            var nameKey = dataDeco.arrayRooms[0][0][i][2];
 
             this.objetDeco = this.add.image(dataDeco.arrayRooms[0][0][i][0], dataDeco.arrayRooms[0][0][i][1], dataDeco.arrayRooms[0][0][i][2]);
             this.objetDeco.setScale(dataDeco.arrayRooms[0][0][i][3], dataDeco.arrayRooms[0][0][i][4]);
+            this.objetDeco.visible =false;
+            this.arrayOfImages[i] = [nameKey, this.objetDeco];
+
         }
 
         this.player = this.physics.add.sprite(posXHome, posYHome, 'player');
@@ -154,21 +160,28 @@ class HomeScene extends Phaser.Scene {
         this.player.body.setGravityY(300)
         this.physics.add.collider(this.player, this.ground);
 
-        for (var i = 0; i < dataDeco.arrayRooms[0][1].length; i++) {
+        for (var j = 0; j < dataDeco.arrayRooms[0][1].length; j++) {
 
-            this.objetDeco = this.add.image(dataDeco.arrayRooms[0][1][i][0], dataDeco.arrayRooms[0][1][i][1], dataDeco.arrayRooms[0][1][i][2]);
-            this.objetDeco.setScale(dataDeco.arrayRooms[0][1][i][3], dataDeco.arrayRooms[0][1][i][4]);
+            var nameKey = dataDeco.arrayRooms[0][1][j][2];
+
+            this.objetDeco = this.add.image(dataDeco.arrayRooms[0][1][j][0], dataDeco.arrayRooms[0][1][j][1], dataDeco.arrayRooms[0][1][j][2]);
+            this.objetDeco.setScale(dataDeco.arrayRooms[0][1][j][3], dataDeco.arrayRooms[0][1][j][4]);
+            this.objetDeco.visible =false;
+            this.arrayOfImages[i + j] = [nameKey, this.objetDeco];
+
         }
 
-        /*
-        for (var key in dataShop.arrayKey) {
+        for (var key in LoadDatas.arrayKey) {
 
+            if (localStorage.getItem(LoadDatas.arrayKey[key]) == "VENDU") {
 
+                for (var n = 0; n < this.arrayOfImages.length; n++) {
 
-            if (localStorage.getItem(dataShop.arrayKey[key]) == "VENDU") {
-            
-                
+                    if (this.arrayOfImages[n][0] == LoadDatas.arrayKey[key]) {
+                        this.arrayOfImages[n][1].visible = true;
+                    }
+                }
             }
-        }*/
+        }
     }
 }

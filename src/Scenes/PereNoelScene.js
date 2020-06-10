@@ -27,10 +27,10 @@ class PereNoelScene extends Phaser.Scene {
 
         var sol = this.add.image(500, 575, 'solBois');
 
-        this.cheminee = this.add.image(500, 425, 'cheminee');
+        this.cheminee = this.add.image(500, 425, 'Cheminée');
         this.cheminee.setScale(0.1, 0.1);
 
-        this.sapinNoel = this.add.image(200, 315, 'sapinNoel');
+        this.sapinNoel = this.add.image(200, 315, 'Sapin de noël');
         this.sapinNoel.setScale(0.4, 0.4);
 
         

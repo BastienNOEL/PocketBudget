@@ -76,34 +76,34 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Maison";
                 break;
             case 1:
-                this.arrayNomObjet[numCase] = "Sapin";
+                this.arrayNomObjet[numCase] = "Sapin de noël";
                 break;
             case 2:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Couronne De Noël";
                 break;
             case 3:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Cloches";
                 break;
             case 4:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Tableau du Village";
                 break;
             case 5:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Cheminée";
                 break;
             case 6:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Fenêtre" ;
                 break;
             case 7:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Canapé";
                 break;
             case 8:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Tableau de famille";
                 break;
             case 9:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Chaussette de noël";
                 break;
             case 10:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Sucre d\'orge";
                 break;
             case 11:
                 this.arrayNomObjet[numCase] = "Objet" + numCase;

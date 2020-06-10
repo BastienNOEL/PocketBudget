@@ -12,21 +12,21 @@ class DataDeco {
 
         this.arrayDecoRdcDerriere = [
 
-            [150, 120, "couronne",0.3, 0.3],
-            [325, 200, "cloches",0.3, 0.3],
-            [790, 150, 'tableau',0.25, 0.25],
-            [800, 395, 'cheminee',0.1, 0.1],
-            [1200, 225, 'fenetre',0.25, 0.25],
-            [1200, 443, 'canape',0.35, 0.25],
-            [1550, 125, "tableauSnowMen",0.3, 0.3],
-            [1780, 300, "chaussette",0.15, 0.15],
-            [1850, 200, "sucre",0.1, 0.1],
+            [150, 120, "Couronne De Noël",0.3, 0.3],
+            [325, 200, "Cloches",0.3, 0.3],
+            [790, 150, 'Tableau du Village',0.25, 0.25],
+            [800, 395, 'Cheminée',0.1, 0.1],
+            [1200, 225, 'Fenêtre',0.25, 0.25],
+            [1200, 443, 'Canapé',0.35, 0.25],
+            [1550, 125, "Tableau de famille",0.3, 0.3],
+            [1780, 300, "Chaussette de noël",0.15, 0.15],
+            [1850, 200, "Sucre d\'orge",0.1, 0.1],
 
         ];
 
 
         this.arrayDecoRdcDevant = [
-            [500, 310, 'sapinNoel',0.4, 0.4],
+            [500, 310, 'Sapin de noël',0.4, 0.4],
         ];
 
         this.arrayDecoRDC = [this.arrayDecoRdcDerriere , this.arrayDecoRdcDevant];

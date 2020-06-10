@@ -108,24 +108,26 @@ class LoadScene extends Phaser.Scene {
 
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
         this.load.image('solBois', 'assets/img/Object/solEnBois.png');
-        this.load.image('cheminee', 'assets/img/Object/cheminee.png');
-        this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
+        this.load.image('Cheminée', 'assets/img/Object/cheminee.png');
+        //this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
+        this.load.image('Sapin de noël', 'assets/img/Object/sapinDeNoel.png');
+
         this.load.image('santa', 'assets/img/Object/pereNoel.png');
         this.load.image('planche', 'assets/img/Sol/planche.png');
         this.load.image('tronc', 'assets/img/Object/troncArbre.png');
         this.load.image('porteBlanche', 'assets/img/Object/doorWhite.png');
         this.load.image('porteNoir', 'assets/img/Object/doorBlack.png');
         this.load.image('porteVitree', 'assets/img/Object/door.png');
-        this.load.image('couronne', 'assets/img/Object/couronneNoel.png');
-        this.load.image('fenetre', 'assets/img/Object/fenetreVueVillage.png');
-        this.load.image('canape', 'assets/img/Object/canape.png');
-        this.load.image('tableau', 'assets/img/Object/tableau.png');
-        this.load.image('tableauSnowMen', 'assets/img/Object/snowManTableau.png');
+        this.load.image('Couronne De Noël', 'assets/img/Object/couronneNoel.png');
+        this.load.image('Fenêtre', 'assets/img/Object/fenetreVueVillage.png');
+        this.load.image('Canapé', 'assets/img/Object/canape.png');
+        this.load.image('Tableau du Village', 'assets/img/Object/tableau.png');
+        this.load.image('Tableau de famille', 'assets/img/Object/snowManTableau.png');
         this.load.image('tableauSantaNight', 'assets/img/Object/tableauSanta.png');
         this.load.image('escaliers', 'assets/img/Object/escaliers.png');
-        this.load.image('sucre', 'assets/img/Object/sucreOrge.png');
-        this.load.image('chaussette', 'assets/img/Object/chaussetteNoel.png');
-        this.load.image('cloches', 'assets/img/Object/clochesMurales.png');
+        this.load.image('Sucre d\'orge', 'assets/img/Object/sucreOrge.png');
+        this.load.image('Chaussette de noël', 'assets/img/Object/chaussetteNoel.png');
+        this.load.image('Cloches', 'assets/img/Object/clochesMurales.png');
 
 
         this.load.image('window', 'assets/img/Gui/Window.png');
@@ -161,6 +163,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("Home");
+        this.scene.start("Title");
     }
 }

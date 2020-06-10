@@ -196,7 +196,7 @@ class LutinShopScene extends Phaser.Scene {
 
             this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
                 fill: "black",
-                font: '25px Arial'
+                font: '20px Arial'
             });
             this.txtBouton.setOrigin(0.5, 0.5);
             this.arrayLocalTxtBouton.push(this.txtBouton);
