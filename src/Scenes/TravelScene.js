@@ -88,7 +88,7 @@ class TravelScene extends Phaser.Scene {
                 font: "20px Arial",
             });
         } else {
-            this.textePanneauMaMaison = this.add.text(0, 0, "A VENDRE", {
+            this.textePanneauMaMaison = this.add.text(0, 0, "A Vendre", {
                 fill: "#000000",
                 font: "20px Arial",
             });
@@ -103,6 +103,18 @@ class TravelScene extends Phaser.Scene {
         this.lutinMarchand.setScale(0.15, 0.15);
         this.lutinMarchand2 = this.add.image(1650, 430, 'lutinMarchand2');
         this.lutinMarchand2.setScale(0.15, 0.15);
+
+        this.countainerDialogueLutin = this.add.container(1750,300);
+        this.bulle = this.add.image(0,0,'bulleDialogueGauche');
+        this.bulle.setScale(0.05,0.05);
+        this.txtLutinVente = this.add.text(0, 0, "          Salut toi!\nJe vends une maison,\nça t'interesses?", {
+            fill: "black",
+            font: "17px Arial",
+        });
+        this.txtLutinVente.setOrigin(0.5,0.9);
+        this.countainerDialogueLutin.add(this.bulle);
+        this.countainerDialogueLutin.add(this.txtLutinVente);
+        this.countainerDialogueLutin.visible = false;
 
 
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
@@ -268,6 +280,15 @@ class TravelScene extends Phaser.Scene {
             this.boolInZoneInteraction4 = false;
 
         }
+
+        if(localStorage.getItem('Maison') != "VENDU"){
+            if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1] + 200) && this.player.y > 423) {
+                this.countainerDialogueLutin.visible = true;
+            } else {
+                this.countainerDialogueLutin.visible = false;
+            }
+        }
+        
     }
 
     checkInZoneInteraction() {

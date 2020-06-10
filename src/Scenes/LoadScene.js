@@ -104,6 +104,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('panneauEntree', 'assets/img/Object/panneauEntree2.png');
         this.load.image('lutinMarchand', 'assets/img/Object/lutinMarchand.png');
         this.load.image('lutinMarchand2', 'assets/img/Object/lutinMarchand2.png');
+        this.load.image('bulleDialogueGauche', 'assets/img/Object/bulleDialogueGauche.png');
 
 
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
@@ -163,6 +164,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("Title");
+        this.scene.start("Travel");
     }
 }

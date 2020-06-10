@@ -141,7 +141,7 @@ class DonneesInteractions {
                 this.arrayMessagesTravel[numCase] = [1250, 327 , this.messageInteraction];
                 break;
             case 3:
-                this.arrayMessagesTravel[numCase] = [1550, 327 , this.messageInteraction];
+                this.arrayMessagesTravel[numCase] = [1550, 332 , this.messageInteraction];
                 break;
         }
     }
