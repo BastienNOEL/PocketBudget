@@ -89,8 +89,6 @@ class LutinShopScene extends Phaser.Scene {
         this.boutonSuivant.setScale(0.2, 0.2);
         this.boutonSuivant.on('pointerdown', this.pageSuivante, this);
 
-
-
         this.txtContainerIndexPage = this.add.container(500, 500);
 
         this.txtIndexPage = this.add.text(0, 0, this.indexPage, {
@@ -199,13 +197,22 @@ class LutinShopScene extends Phaser.Scene {
         if (localStorage.getItem('Maison') == "VENDU") {
             for (var i = 0; i < 8; i++) {
 
+                if(localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]) != "VENDU"){
+
                 this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
                     fill: "black",
                     font: '20px Arial'
                 });
                 this.txtBouton.setOrigin(0.5, 0.5);
                 this.arrayLocalTxtBouton.push(this.txtBouton);
-
+           } else {
+                this.txtBouton = this.add.text(0, 0, localStorage.getItem(this.arrayPages[this.indexPage - 1][1][i]), {
+                    fill: "white",
+                    font: '40px Arial'
+                });
+                this.txtBouton.setOrigin(0.5, 0.5);
+                this.arrayLocalTxtBouton.push(this.txtBouton);
+            }
                 switch (i) {
                     case 0:
                         this.txtContainerB0.add(this.txtBouton);
@@ -260,7 +267,7 @@ class LutinShopScene extends Phaser.Scene {
                 this.boutonPrecedent.visible = false;
             }
 
-            if (this.indexPage < this.arrayPages[this.indexPage - 1][0].length) {
+            if (this.indexPage < this.arrayPages.length) {
                 this.boutonSuivant.visible = true;
             } else {
                 this.boutonSuivant.visible = false;
@@ -340,7 +347,15 @@ class LutinShopScene extends Phaser.Scene {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
             this.arrayPages[this.indexPage - 1][0][i].visible = false;
-            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage][1][i]); //this.arrayPages[this.indexPage][1][i];
+            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage][1][i]); 
+
+           if(localStorage.getItem(this.arrayPages[this.indexPage][1][i]) == "VENDU"){
+                this.arrayLocalTxtBouton[i].setColor("white") ;         
+                this.arrayLocalTxtBouton[i].setFont("50px Arial"); //= "50px Arial"; 
+            } else {
+                this.arrayLocalTxtBouton[i].setColor("black") ;         
+                this.arrayLocalTxtBouton[i].setFont("20px Arial"); //= "20px Arial"; 
+            }
         }
 
         for (var i = 0; i < this.arrayPages[this.indexPage][0].length; i++) {
@@ -366,7 +381,15 @@ class LutinShopScene extends Phaser.Scene {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 2][0].length; i++) {
             this.arrayPages[this.indexPage - 2][0][i].visible = true;
-            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage - 2][1][i]); //this.arrayPages[this.indexPage - 2][1][i];
+            this.arrayLocalTxtBouton[i].text = localStorage.getItem(this.arrayPages[this.indexPage - 2][1][i]);
+
+            if(localStorage.getItem(this.arrayPages[this.indexPage-2][1][i]) == "VENDU"){
+                this.arrayLocalTxtBouton[i].setColor("white") ;         
+                this.arrayLocalTxtBouton[i].setFont("50px Arial"); //= "50px Arial"; 
+            } else {
+                this.arrayLocalTxtBouton[i].setColor("black") ;         
+                this.arrayLocalTxtBouton[i].setFont("20px Arial"); //= "20px Arial"; 
+            }
         }
 
         this.indexPage--;
