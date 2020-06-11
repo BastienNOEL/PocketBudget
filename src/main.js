@@ -2,7 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
-localStorage.clear(); // permet de faire des tests, a supprimer plus tard
+//localStorage.clear(); // permet de faire des tests, a supprimer plus tard
 
 const config = {
     scale: {
@@ -34,9 +34,6 @@ var posXpn = 100;
 var posYpn = 502;
 var posXHome = 100;
 var posYHome = 426.5;
-
-
-console.log('%c%s', 'color: #ff4040', "main");
 
 var game = new Phaser.Game(config);
 var LoadDatas = new LocalStorageSaveInit();

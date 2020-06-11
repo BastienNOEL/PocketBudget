@@ -6,8 +6,7 @@ class BoutiqueScene extends Phaser.Scene {
 
     create() {
 
-        console.log('%c%s', 'color: #8400ff', "Boutique");
-        //permet de faire des tests mais doit etre supprimé
+    //permet de faire des tests mais doit etre supprimé
         /*
                 localStorage.setItem('B5', 5);
                 localStorage.setItem('B10', 10);
@@ -264,7 +263,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.p1.setScale(0.3, 0.3);
                 this.p1.on('pointerdown', function (pointer) {
-                    console.log('click sur piece 1');
+                    console.log('clique sur piece 1');
                     this.comptoirP1.visible = true;
                     this.nbPieceComptoir1++;
                     this.txtCountPiece1.visible = true;
@@ -298,7 +297,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.p2.setScale(0.3, 0.3);
                 this.p2.on('pointerdown', function (pointer) {
-                    console.log('click sur piece 1');
+                    console.log('clique sur piece 1');
                     this.comptoirP2.visible = true;
                     this.nbPieceComptoir2++;
                     this.txtCountPiece2.visible = true;
@@ -335,7 +334,7 @@ class BoutiqueScene extends Phaser.Scene {
 
                 this.b5.setScale(0.055, 0.055);
                 this.b5.on('pointerdown', function (pointer) {
-                    console.log('click sur billet 5');
+                    console.log('clique sur billet 5');
                     this.comptoirB5.visible = true;
                     this.nbBilletComptoir5++;
                     this.txtCountBill5.visible = true;
@@ -369,7 +368,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.b10.setScale(0.05, 0.05);
                 this.b10.on('pointerdown', function (pointer) {
-                    console.log('click sur billet 10');
+                    console.log('clique sur billet 10');
                     this.comptoirB10.visible = true;
                     this.nbBilletComptoir10++;
                     this.txtCountBill10.visible = true;
@@ -403,7 +402,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.b20.setScale(0.05, 0.05);
                 this.b20.on('pointerdown', function (pointer) {
-                    console.log('click sur billet 20');
+                    console.log('clique sur billet 20');
                     this.comptoirB20.visible = true;
                     this.nbBilletComptoir20++;
                     this.txtCountBill20.visible = true;
@@ -437,7 +436,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.b50.setScale(0.05, 0.05);
                 this.b50.on('pointerdown', function (pointer) {
-                    console.log('click sur billet 50');
+                    console.log('clique sur billet 50');
                     this.comptoirB50.visible = true;
                     this.nbBilletComptoir50++;
                     this.txtCountBill50.visible = true;
@@ -471,7 +470,7 @@ class BoutiqueScene extends Phaser.Scene {
                 });
                 this.b100.setScale(0.027, 0.027);
                 this.b100.on('pointerdown', function (pointer) {
-                    console.log('click sur billet 100');
+                    console.log('clique sur billet 100');
                     this.comptoirB100.visible = true;
                     this.nbBilletComptoir100++;
                     this.txtCountBill100.visible = true;

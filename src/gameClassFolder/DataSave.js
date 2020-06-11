@@ -1,8 +1,6 @@
 class DataSave {
     constructor() {
 
-        console.log('%c%s', 'color: #2b10c5', "DataSave");
-
         this.arrayDatasInit = {
 
 

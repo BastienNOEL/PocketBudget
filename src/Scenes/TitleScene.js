@@ -8,8 +8,6 @@ class TitleScene extends Phaser.Scene {
 
     create() {
 
-        console.log('%c%s', 'color: #8400ff', "Title scene");
-
         this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG2-1");
         this.bg1.setOrigin(0, 0);
         this.bg1.setScrollFactor(0);
