@@ -18,7 +18,7 @@ class TitleScene extends Phaser.Scene {
         this.bg2.setScrollFactor(0);
         this.bg2.setScale(0.5, 0.5);
 
-        this.snow1 = this.add.tileSprite(0, -50, game.config.width * 2, game.config.height * 2, "BG2-Snow");
+        this.snow1 = this.add.tileSprite(0, -50, game.config.width * 3.5, game.config.height * 2, "BG2-Snow");
         this.snow1.setOrigin(0, 0);
         this.snow1.setScrollFactor(0);
         this.snow1.setScale(0.33, 0.33);
@@ -28,7 +28,7 @@ class TitleScene extends Phaser.Scene {
         this.bg3.setScrollFactor(0);
         this.bg3.setScale(0.5, 0.5);
 
-        this.snow2 = this.add.tileSprite(0, -100, game.config.width * 2, game.config.height * 2, "BG2-Snow");
+        this.snow2 = this.add.tileSprite(0, -100, game.config.width * 3, game.config.height * 2, "BG2-Snow");
         this.snow2.setOrigin(0, 0);
         this.snow2.setScrollFactor(0);
         this.snow2.setScale(0.43, 0.43);
