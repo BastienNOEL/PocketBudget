@@ -12,7 +12,7 @@ class DataDeco {
 
         this.arrayDecoRdcDerriere = [
 
-            [150, 120, "Couronne De Noël",0.3, 0.3],
+            [150, 120, "Couronne de Noël",0.3, 0.3],
             [325, 200, "Cloches",0.3, 0.3],
             [790, 150, 'Tableau du Village',0.25, 0.25],
             [800, 395, 'Cheminée',0.1, 0.1],

@@ -61,6 +61,10 @@ class BoutiqueScene extends Phaser.Scene {
         this.rectBleu = this.add.image(0, 0, 'recBleu');
         this.rectJaune = this.add.image(0, 0, 'recJaune');
 
+        this.lutin = this.add.image(950, 100, 'LutinFace');
+        this.lutin.setScale(0.15,0.15);
+
+
         this.boutonRetour = new Button({
             'scene': this,
             'key': 'flecheGauche',

@@ -110,7 +110,6 @@ class LoadScene extends Phaser.Scene {
         this.load.image('murBois', 'assets/img/Object/woodenWall.png');
         this.load.image('solBois', 'assets/img/Object/solEnBois.png');
         this.load.image('Cheminée', 'assets/img/Object/cheminee.png');
-        //this.load.image('sapinNoel', 'assets/img/Object/sapinDeNoel.png');
         this.load.image('Sapin de noël', 'assets/img/Object/sapinDeNoel.png');
 
         this.load.image('santa', 'assets/img/Object/pereNoel.png');
@@ -119,7 +118,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('porteBlanche', 'assets/img/Object/doorWhite.png');
         this.load.image('porteNoir', 'assets/img/Object/doorBlack.png');
         this.load.image('porteVitree', 'assets/img/Object/door.png');
-        this.load.image('Couronne De Noël', 'assets/img/Object/couronneNoel.png');
+        this.load.image('Couronne de Noël', 'assets/img/Object/couronneNoel.png');
         this.load.image('Fenêtre', 'assets/img/Object/fenetreVueVillage.png');
         this.load.image('Canapé', 'assets/img/Object/canape.png');
         this.load.image('Tableau du Village', 'assets/img/Object/tableau.png');
@@ -134,6 +133,8 @@ class LoadScene extends Phaser.Scene {
         this.load.image('window', 'assets/img/Gui/Window.png');
         this.load.image('starLvl', 'assets/img/Gui/Star.png');
         this.load.image('starCoin', 'assets/img/Gui/starCoin.png');
+        this.load.image('LutinFace', 'assets/img/Gui/LutinFace.png');
+        this.load.image('LutinMarchandFace', 'assets/img/Gui/FaceLutinMarchand.png');
 
 
         this.load.image('recBleu', 'assets/img/ZonesCouleur/rectangleBleu.png');
@@ -164,6 +165,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("Travel");
+        this.scene.start("Title");
     }
 }

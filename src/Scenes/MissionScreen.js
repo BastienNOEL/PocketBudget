@@ -15,7 +15,7 @@ class MissionScreen extends Phaser.Scene {
         });
         this.texteDialogueBox.setOrigin(0.5, 0.5);
 
-        this.txtSpace = this.add.text(-100,200,"Appuyez sur ESPACE",{
+        this.txtSpace = this.add.text(-100,200,"ESPACE pour quitter",{
             fill: 'black',
             font : '20px Arial'
         });

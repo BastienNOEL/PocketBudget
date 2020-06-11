@@ -317,6 +317,11 @@ class LutinShopScene extends Phaser.Scene {
         this.zoneTexte.add(this.txtDescriptionObjet);
         this.txtDescriptionObjet.visible = false;
 
+
+        this.lutinFace = this.add.image(960, 70, 'LutinMarchandFace');
+        this.lutinFace.setScale(0.2,0.2);
+        this.lutinFace.visible = false;
+
     }
 
     update() {

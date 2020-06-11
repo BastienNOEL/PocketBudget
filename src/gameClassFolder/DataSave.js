@@ -9,7 +9,7 @@ class DataSave {
             // VENTE OBJETS
             'Maison': "Maison",
             'Sapin de noël': "Sapin de noël",
-            'Couronne De Noël': "Couronne De Noel",
+            'Couronne de Noël': "Couronne de Noel",
             'Cloches': "Cloches",
             'Tableau du Village': "Tableau du Village",
             'Cheminée': "Cheminée",

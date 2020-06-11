@@ -2,7 +2,8 @@ class DonneesInteractions {
 
     constructor() {
 
-        this.messageInteraction  = "Appuyez sur ESPACE";
+        //this.messageInteraction = "Appuyez sur ESPACE pour ";
+        this.messageInteraction = "ESPACE pour ";
 
         this.arrayScenes = new Array();
 
@@ -14,10 +15,6 @@ class DonneesInteractions {
         this.arrayTailleZoneInterractionSanta = [];
         this.arrayTailleZoneInterractionHome = [];
 
-       // this.arrayFonctionsInteractionTravel = [];
-        //this.arrayFonctionsInteractionSanta = [];
-        //this.arrayFonctionsInteractionHome = [];
-
         this.arrayMessagesTravel = [];
         this.arrayMessagesSanta = [];
         this.arrayMessagesHome = [];
@@ -26,9 +23,6 @@ class DonneesInteractions {
         this.initTableaux();
         this.createDatas();
 
-
-        //console.log('%c%s', 'color: #e50000', this.arrayScenes);
-
     }
 
     initTableaux() {
@@ -36,29 +30,26 @@ class DonneesInteractions {
         for (var i = 0; i < this.arrayInteractionsTravel.length; i++) {
 
             this.remplirArrayTailleZoneInterractionTravel(i);
-            //this.remplirArrayFonctionsInteractionTravel(i);
             this.remplirArrayMessagesTravel(i);
 
-            this.arrayInteractionsTravel[i] = [this.arrayTailleZoneInterractionTravel[i]/*, this.arrayFonctionsInteractionTravel[i]*/, this.arrayMessagesTravel[i]]
+            this.arrayInteractionsTravel[i] = [this.arrayTailleZoneInterractionTravel[i], this.arrayMessagesTravel[i]]
         }
 
         for (var i = 0; i < this.arrayInteractionsSanta.length; i++) {
 
             this.remplirArrayTailleZoneInterractionSanta(i);
-            //this.remplirArrayFonctionsInteractionSanta(i);
             this.remplirArrayMessagesSanta(i);
 
-            this.arrayInteractionsSanta[i] = [this.arrayTailleZoneInterractionSanta[i], /*this.arrayFonctionsInteractionSanta[i],*/ this.arrayMessagesSanta[i]]
+            this.arrayInteractionsSanta[i] = [this.arrayTailleZoneInterractionSanta[i], this.arrayMessagesSanta[i]]
 
         }
 
         for (var i = 0; i < this.arrayInteractionsHome.length; i++) {
 
             this.remplirArrayTailleZoneInterractionHome(i);
-            //this.remplirArrayFonctionsInteractionHome(i);
             this.remplirArrayMessagesHome(i);
 
-            this.arrayInteractionsHome[i] = [this.arrayTailleZoneInterractionHome[i], /*this.arrayFonctionsInteractionHome[i], */this.arrayMessagesHome[i]]
+            this.arrayInteractionsHome[i] = [this.arrayTailleZoneInterractionHome[i], this.arrayMessagesHome[i]]
 
         }
     }
@@ -91,57 +82,21 @@ class DonneesInteractions {
         }
     }
 
-    /*remplirArrayFonctionsInteractionTravel(numCase) {
 
+
+    remplirArrayMessagesTravel(numCase) {
         switch (numCase) {
             case 0:
-                this.arrayFonctionsInteractionTravel[numCase] = [function () {
-                    this.scene.start("PereNoel");
-                    posYTravel = this.player.y;
-                    posXTravel = this.player.x;
-                    this.scene.stop('Gui');
-                }];
+                this.arrayMessagesTravel[numCase] = [150, 327, this.messageInteraction + "entrer"];
                 break;
             case 1:
-                this.arrayFonctionsInteractionTravel[numCase] = [function () {
-                    this.scene.start("Boutique");
-                    posYTravel = this.player.y;
-                    posXTravel = this.player.x;
-                    this.scene.stop('Gui');
-                }];
+                this.arrayMessagesTravel[numCase] = [800, 348, this.messageInteraction + "entrer"];
                 break;
             case 2:
-                this.arrayFonctionsInteractionTravel[numCase] = [function () {
-                    this.scene.start("Home");
-                    posYTravel = this.player.y;
-                    posXTravel = this.player.x;
-                    this.scene.stop('Gui');
-                }];
+                this.arrayMessagesTravel[numCase] = [1250, 327, this.messageInteraction + "entrer"];
                 break;
             case 3:
-                this.arrayFonctionsInteractionTravel[numCase] = [function () {
-                    this.scene.start("LutinShop");
-                    posYTravel = this.player.y;
-                    posXTravel = this.player.x;
-                    this.scene.stop('Gui');
-                }];
-                break;
-        }
-    }*/
-
-    remplirArrayMessagesTravel(numCase){
-        switch (numCase) {
-            case 0:
-                this.arrayMessagesTravel[numCase] = [150, 327 , this.messageInteraction];
-                break;
-            case 1:
-                this.arrayMessagesTravel[numCase] = [800, 348 , this.messageInteraction];
-                break;
-            case 2:
-                this.arrayMessagesTravel[numCase] = [1250, 327 , this.messageInteraction];
-                break;
-            case 3:
-                this.arrayMessagesTravel[numCase] = [1550, 332 , this.messageInteraction];
+                this.arrayMessagesTravel[numCase] = [1550, 332, this.messageInteraction + "parler"];
                 break;
         }
     }
@@ -162,36 +117,15 @@ class DonneesInteractions {
         }
     }
 
-    /*remplirArrayFonctionsInteractionSanta(numCase) {
 
+
+    remplirArrayMessagesSanta(numCase) {
         switch (numCase) {
             case 0:
-                this.arrayFonctionsInteractionSanta[numCase] = [function () {
-                    posXpn = this.player.x;
-                    posYpn = this.player.y;
-                    this.scene.start("Travel");
-                }];
+                this.arrayMessagesSanta[numCase] = [25, 325, this.messageInteraction + "sortir"];
                 break;
             case 1:
-                this.arrayFonctionsInteractionSanta[numCase] = [function () {
-                    mission.newMission();
-                    posXpn = this.player.x;
-                    posYpn = this.player.y;
-                    this.scene.start("MissionScreen")
-                    this.scene.stop('Gui');
-                }];
-                break;
-
-        }
-    }*/
-
-    remplirArrayMessagesSanta(numCase){
-        switch (numCase) {
-            case 0:
-                this.arrayMessagesSanta[numCase] = [25, 325 , this.messageInteraction];
-                break;
-            case 1:
-                this.arrayMessagesSanta[numCase] = [450, 275 , this.messageInteraction];
+                this.arrayMessagesSanta[numCase] = [450, 275, this.messageInteraction + "parler"];
                 break;
 
         }
@@ -209,23 +143,10 @@ class DonneesInteractions {
         }
     }
 
-   /* remplirArrayFonctionsInteractionHome(numCase) {
-
+    remplirArrayMessagesHome(numCase) {
         switch (numCase) {
             case 0:
-                this.arrayFonctionsInteractionHome[numCase] = [function () {
-                    posXHome = this.player.x;
-                    posYHome = this.player.y;
-                    this.scene.start("Travel");
-                }];
-                break;
-        }
-    }*/
-
-    remplirArrayMessagesHome(numCase){
-        switch (numCase) {
-            case 0:
-                this.arrayMessagesHome[numCase] = [65, 200 , this.messageInteraction];
+                this.arrayMessagesHome[numCase] = [65, 200, this.messageInteraction + "sortir"];
                 break;
         }
     }
