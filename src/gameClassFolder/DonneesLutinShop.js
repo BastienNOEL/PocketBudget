@@ -197,7 +197,7 @@ class DonneesLutinShop {
 
         switch (numCase) {
             case 0:
-                this.arrayDescriptionObjet[numCase] = "Tu es nouveau par ici? Dans ce cas cette maison est faite pour toi! Son prix\nest affiché dans la zone rouge, et ton argent est dans la zone bleu. Si tu as\nassez, valide avec le  bouton rouge et cette maison sera tienne!";
+                this.arrayDescriptionObjet[numCase] = "Tu es nouveau par ici? Dans ce cas cette maison est faite pour toi! Son prix\nest affiché dans la zone rouge, et ton argent est dans la zone bleu. Si tu as\nassez, valide avec le bouton rouge et cette maison sera tienne!";
                 break;
             case 1:
                 this.arrayDescriptionObjet[numCase] = "Un sapin de Noël pour une maison du village du Père Noël?\nIndispensable, tout simplement.";

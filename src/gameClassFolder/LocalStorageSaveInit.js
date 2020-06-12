@@ -2,8 +2,8 @@ class LocalStorageSaveInit extends DataSave {
     constructor() {
         super();
 
-        //localStorage.setItem('lvPlayer', 2); // permet de faire des tests, mais doit etre supprimé 
-        //localStorage.setItem('nbStarCoin', 3);
+        //localStorage.setItem('lvPlayer', 5); // permet de faire des tests, mais doit etre supprimé 
+        localStorage.setItem('nbStarCoin', 99);
 
         this.arrayKey = Object.getOwnPropertyNames(this.arrayDatasInit);
 

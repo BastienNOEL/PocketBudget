@@ -128,6 +128,17 @@ class LoadScene extends Phaser.Scene {
         this.load.image('Sucre d\'orge', 'assets/img/Object/sucreOrge.png');
         this.load.image('Chaussette de noël', 'assets/img/Object/chaussetteNoel.png');
         this.load.image('Cloches', 'assets/img/Object/clochesMurales.png');
+       
+        this.load.image('Fenêtre Ronde', 'assets/img/Object/circleWindow.png');   
+        this.load.image('Lit', 'assets/img/Object/Bed.png');
+        this.load.image('Livres', 'assets/img/Object/livres.png');
+        this.load.image('Tapis de chambre', 'assets/img/Object/tapisRouge.png');
+        this.load.image('Contrebasse', 'assets/img/Object/contrebasse.png');
+        this.load.image('Chaise à bascule', 'assets/img/Object/chaiseBascule.png');
+        this.load.image('Chaise à bascule', 'assets/img/Object/chaiseBascule.png');
+        this.load.image('Plante en pot', 'assets/img/Object/plante.png');   
+        this.load.image('Poster de Noël', 'assets/img/Object/posterSantaAndSnowman.jpg');   
+        this.load.image('Lampe Murale', 'assets/img/Object/lampeMurale.png');   
 
 
         this.load.image('window', 'assets/img/Gui/Window.png');

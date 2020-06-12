@@ -8,6 +8,7 @@ class HomeScene extends Phaser.Scene {
 
         this.gui = this.scene.get('Gui');
         this.boolInZoneInteraction1 = false;
+        this.boolInZoneInteraction2 = false;
 
         //arriere plan
         this.murs = this.physics.add.staticGroup({
@@ -73,6 +74,11 @@ class HomeScene extends Phaser.Scene {
         });
         this.textSortie.visible = false;
 
+        this.textEtage = this.add.text(dataInteractions.arrayScenes[2][1][1][0], dataInteractions.arrayScenes[2][1][1][1], dataInteractions.arrayScenes[2][1][1][2], {
+            fill: "white"
+        });
+        this.textEtage.visible = false;
+
         this.clavSpace = this.input.keyboard.addKey('SPACE');
 
         this.myCam = this.cameras.main;
@@ -124,15 +130,34 @@ class HomeScene extends Phaser.Scene {
             this.boolInZoneInteraction1 = false;
 
         }
+
+        // etage
+        if ((this.player.x > dataInteractions.arrayScenes[2][1][0][0] && this.player.x < dataInteractions.arrayScenes[2][1][0][1]) && this.player.y > 423) {
+            this.textEtage.visible = true;
+            this.boolInZoneInteraction2 = true;
+
+            if (this.clavSpace.isDown || this.gui.boolInputInterctif == true) {
+
+                posXHome = this.player.x;
+                posYHome = this.player.y;
+                this.scene.start("Bedroom");
+
+            }
+        } else {
+            this.textEtage.visible = false;
+            this.boolInZoneInteraction2 = false;
+
+        }
     }
 
     checkInZoneInteraction() {
-        if (this.boolInZoneInteraction1 == true) {
+        if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2) {
             this.gui.interactBtn.visible = true;
         } else {
             this.gui.interactBtn.visible = false;
 
         }
+
     }
 
     scrollCam() {

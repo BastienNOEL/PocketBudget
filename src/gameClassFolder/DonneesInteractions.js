@@ -2,22 +2,25 @@ class DonneesInteractions {
 
     constructor() {
 
-        //this.messageInteraction = "Appuyez sur ESPACE pour ";
+        //this.messageInteraction = "Appuyez sur ESPACE";
         this.messageInteraction = "ESPACE pour ";
 
         this.arrayScenes = new Array();
 
         this.arrayInteractionsTravel = new Array(4);
         this.arrayInteractionsSanta = new Array(2);
-        this.arrayInteractionsHome = new Array(1);
+        this.arrayInteractionsHome = new Array(2);
+        this.arrayInteractionsBedroom = new Array(1);
 
         this.arrayTailleZoneInterractionTravel = [];
         this.arrayTailleZoneInterractionSanta = [];
         this.arrayTailleZoneInterractionHome = [];
+        this.arrayTailleZoneInterractionBedroom = [];
 
         this.arrayMessagesTravel = [];
         this.arrayMessagesSanta = [];
         this.arrayMessagesHome = [];
+        this.arrayMessagesBedroom = [];
 
 
         this.initTableaux();
@@ -52,6 +55,15 @@ class DonneesInteractions {
             this.arrayInteractionsHome[i] = [this.arrayTailleZoneInterractionHome[i], this.arrayMessagesHome[i]]
 
         }
+
+        for (var i = 0; i < this.arrayInteractionsBedroom.length; i++) {
+
+            this.remplirArrayTailleZoneInterractionBedroom(i);
+            this.remplirArrayMessagesBedroom(i);
+
+            this.arrayInteractionsBedroom[i] = [this.arrayTailleZoneInterractionBedroom[i], this.arrayMessagesBedroom[i]]
+
+        }
     }
 
     createDatas() {
@@ -59,6 +71,7 @@ class DonneesInteractions {
         this.arrayScenes[0] = this.arrayInteractionsTravel;
         this.arrayScenes[1] = this.arrayInteractionsSanta;
         this.arrayScenes[2] = this.arrayInteractionsHome;
+        this.arrayScenes[3] = this.arrayInteractionsBedroom;
 
     }
 
@@ -122,7 +135,7 @@ class DonneesInteractions {
     remplirArrayMessagesSanta(numCase) {
         switch (numCase) {
             case 0:
-                this.arrayMessagesSanta[numCase] = [25, 325, this.messageInteraction + "sortir"];
+                this.arrayMessagesSanta[numCase] = [25, 350, this.messageInteraction + "sortir"];
                 break;
             case 1:
                 this.arrayMessagesSanta[numCase] = [450, 275, this.messageInteraction + "parler"];
@@ -140,6 +153,10 @@ class DonneesInteractions {
                 this.arrayTailleZoneInterractionHome[numCase] = [0, 300];
                 break;
 
+            case 1:
+                this.arrayTailleZoneInterractionHome[numCase] = [1775, 2000];
+                break;
+
         }
     }
 
@@ -147,6 +164,29 @@ class DonneesInteractions {
         switch (numCase) {
             case 0:
                 this.arrayMessagesHome[numCase] = [65, 200, this.messageInteraction + "sortir"];
+                break;
+            case 1:
+                this.arrayMessagesHome[numCase] = [1750, 290, this.messageInteraction + "monter"];
+                break;
+        }
+    }
+
+    /// POUR BEDROOM
+
+    remplirArrayTailleZoneInterractionBedroom(numCase) {
+
+        switch (numCase) {
+            case 0:
+                this.arrayTailleZoneInterractionBedroom[numCase] = [0, 150];
+                break;
+
+        }
+    }
+
+    remplirArrayMessagesBedroom(numCase) {
+        switch (numCase) {
+            case 0:
+                this.arrayMessagesBedroom[numCase] = [170, 335, this.messageInteraction + "descendre"];
                 break;
         }
     }
