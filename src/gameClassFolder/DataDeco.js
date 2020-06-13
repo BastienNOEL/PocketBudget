@@ -5,6 +5,7 @@ class DataDeco {
         this.arrayRooms =new Array();
 
         this.initDecoRdc();
+        this.initDecoBedroom();
     }
 
 
@@ -32,5 +33,31 @@ class DataDeco {
         this.arrayDecoRDC = [this.arrayDecoRdcDerriere , this.arrayDecoRdcDevant];
 
         this.arrayRooms[0] = this.arrayDecoRDC;
+    }
+
+    initDecoBedroom(){
+
+        this.arrayDecoBedroomDerriere = [
+
+            [500, 200, "Fenêtre Ronde",0.25, 0.25],
+            [500, 562, "Tapis de chambre",1.65, 0.6],
+            [500, 480, "Lit",0.8, 0.8],
+            [275, 300, "Livres",0.1, 0.1],
+            [725, 225, "Poster de Noël",0.1, 0.1],
+            [225, 435, "Plante en pot",0.4, 0.4],
+            [275, 200, "Lampe Murale",0.25, 0.25],
+            [750, 430, "Contrebasse",0.3, 0.3],
+            [880, 470, "Chaise à bascule",0.5, 0.5],
+
+
+        ];
+
+
+        this.arrayDecoBedroomDevant = [];
+
+        this.arrayDecoBedroom = [this.arrayDecoBedroomDerriere , this.arrayDecoBedroomDevant];
+
+        this.arrayRooms[1] = this.arrayDecoBedroom;
+
     }
 }

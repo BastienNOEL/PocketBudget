@@ -2,7 +2,7 @@ class DonneesLutinShop {
 
     constructor() {
 
-        this.arrayObjetDeco = new Array(11); //dispo = 17
+        this.arrayObjetDeco = new Array(20); //dispo = 17
 
         this.arrayNomObjet = new Array(this.arrayObjetDeco.length);
         this.arrayParamBoutonObjet = new Array(this.arrayObjetDeco.length);
@@ -92,7 +92,7 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Cheminée";
                 break;
             case 6:
-                this.arrayNomObjet[numCase] = "Fenêtre" ;
+                this.arrayNomObjet[numCase] = "Fenêtre";
                 break;
             case 7:
                 this.arrayNomObjet[numCase] = "Canapé";
@@ -107,22 +107,31 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Sucre d\'orge";
                 break;
             case 11:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Lit";
                 break;
             case 12:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Fenêtre Ronde" ;
                 break;
             case 13:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Tapis de chambre" ;
                 break;
             case 14:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Livres" ;
                 break;
             case 15:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Poster de Noël" ;
                 break;
             case 16:
-                this.arrayNomObjet[numCase] = "Objet" + numCase;
+                this.arrayNomObjet[numCase] = "Plante en pot" ;
+                break;
+            case 17:
+                this.arrayNomObjet[numCase] = "Lampe Murale" ;
+                break;
+            case 18:
+                this.arrayNomObjet[numCase] = "Contrebasse" ;
+                break;
+            case 19:
+                this.arrayNomObjet[numCase] = "Chaise à bascule" ;
                 break;
 
             default:
@@ -186,6 +195,15 @@ class DonneesLutinShop {
             case 16:
                 this.arrayPrixObjet[numCase] = 1;
                 break;
+            case 17:
+                this.arrayPrixObjet[numCase] = 1;
+                break;
+            case 18:
+                this.arrayPrixObjet[numCase] = 1;
+                break;
+            case 19:
+                this.arrayPrixObjet[numCase] = 1;
+                break;
 
             default:
                 console.log("ERREUR remplirArrayPrixObjet(" + numCase + ")");
@@ -230,22 +248,31 @@ class DonneesLutinShop {
                 this.arrayDescriptionObjet[numCase] = "Un sucre d'orge XXL, ça ne se refuse pas.";
                 break;
             case 11:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "Ce n'est pas parce que les bonhommes de neige dorment debout qu'il ne\nte faut pas de lit. Une chambre sans lit n'est pas une chambre, voyons!" ;
                 break;
             case 12:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "Une fenêtre, mais ronde. Très apprécié d'un ami singe qui porte le même\nnom qu'un célèbre empereur romain." ;
                 break;
             case 13:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "Avec ce tapis, fini les échardes sur le parquet! Je me dois néanmoins\nd'informer mon aimable clientèle que ce modèle ne vole pas." ;
                 break;
             case 14:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "En tant que fin lecteur, je t'ai selectionné quelques-uns de mes ouvrages\nfavoris. Et en plus, l'étagère est offerte!" ;
                 break;
             case 15:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "Un poster, c'est cool. Et comme c'est cool, il t'en faut un.\nEt comme il t'en faut un, tu es venu me voir. Et ça tombe bien, j'en ai\njustement un en stock. Et tu sais quoi? Il est cool." ;
                 break;
             case 16:
-                this.arrayDescriptionObjet[numCase] = "description objet" + numCase;
+                this.arrayDescriptionObjet[numCase] = "Une touche de verdure dans toute cette blancheur, ça fait du bien." ;
+                break;
+            case 17:
+                this.arrayDescriptionObjet[numCase] = "Que la lumière soit!" ;
+                break;
+            case 18:
+                this.arrayDescriptionObjet[numCase] = "Une contrebasse à ce prix là, ça vaudrait le coup de te fabriquer des mains\npour en jouer!" ;
+                break;
+            case 19:
+                this.arrayDescriptionObjet[numCase] = "Tout chalet qui se respecte se doit de posséder une chaise à bascule.\nEt preuve de son authenticité, je me suis assuré qu'elle grinçait!" ;
                 break;
 
             default:

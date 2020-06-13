@@ -16,12 +16,16 @@ class DataSave {
             'Tableau de famille': "Tableau de famille",
             'Chaussette de noël': "Chaussette de noël",
             'Sucre d\'orge': "Sucre d\'orge",
-            'Objet11': "Objet11",
-            'Objet12': "Objet12",
-            'Objet13': "Objet13",
-            'Objet14': "Objet14",
-            'Objet15': "Objet15",
-            'Objet16': "Objet16",
+
+            'Fenêtre Ronde': "Fenêtre Ronde",
+            'Tapis de chambre': "Tapis de chambre",
+            'Lit': "Lit",
+            'Livres': "Livres",
+            'Poster de Noël': "Poster de Noël",
+            'Plante en pot': "Plante en pot",
+            'Lampe Murale': "Lampe Murale",
+            'Contrebasse': "Contrebasse",
+            'Chaise à bascule': "Chaise à bascule",
 
 
             //Autres paramètres

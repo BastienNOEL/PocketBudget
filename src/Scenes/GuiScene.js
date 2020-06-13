@@ -109,7 +109,13 @@ class GuiScene extends Phaser.Scene {
         } else if (this.scene.isActive('Bedroom') == true) {
             this.sceneEnCours = this.scene.get('Bedroom').player;
             this.nameSceneActive = "Bedroom";
-            this.maxX = game.config.width;
+            if(localStorage.getItem("Lit") == "VENDU"){
+            this.maxX = 245;
+
+            } else {
+                this.maxX = game.config.width;
+
+            }
             this.minX = 0;
         }
     }
@@ -119,7 +125,9 @@ class GuiScene extends Phaser.Scene {
         if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxX ) {
             if(this.scene.isActive('PereNoel') == true){
                 this.sceneEnCours.setVelocityX(500);
-            } else if((this.scene.isActive('Home') == true) || (this.scene.isActive('Bedroom') == true)){
+            } else if(this.scene.isActive('Home') == true){
+                this.sceneEnCours.setVelocityX(400);
+            }else if(this.scene.isActive('Bedroom') == true){
                 this.sceneEnCours.setVelocityX(400);
             } else {
                 this.sceneEnCours.setVelocityX(300);

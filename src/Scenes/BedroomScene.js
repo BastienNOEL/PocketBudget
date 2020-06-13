@@ -7,6 +7,14 @@ class BedroomScene extends Phaser.Scene {
 
         console.log('%c%s', 'color: #99614d', "BEDROOM");
 
+
+        if(localStorage.getItem('Lit') == "VENDU"){
+            this.maxXBedroom = 245;
+        } else {
+            this.maxXBedroom = 1000;
+
+        }
+
         this.gui = this.scene.get('Gui');
         this.boolInZoneInteraction1 = false;
 
@@ -15,7 +23,7 @@ class BedroomScene extends Phaser.Scene {
         this.mur.setScrollFactor(0);
         this.mur.setScale(0.5, 2.5);
 
-        var platforms = this.physics.add.staticGroup({
+        this.platforms = this.physics.add.staticGroup({
             key: 'ground',
             repeat: 11,
             setXY: {
@@ -33,40 +41,7 @@ class BedroomScene extends Phaser.Scene {
         this.murGaucheBack = this.add.image(145, 238, "tronc");
         this.murGaucheBack.setScale(0.2, 0.64);
 
-        this.fenetre = this.add.image(500, 200, "Fenêtre Ronde");
-        this.fenetre.setScale(0.25, 0.25);
-
-        this.tapis = this.add.image(500, 562, "Tapis de chambre");
-        this.tapis.setScale(1.65, 0.6);
-
-        this.lit = this.add.image(500, 480, "Lit");
-        this.lit.setScale(0.8, 0.8);
-
-        this.livres = this.add.image(275, 300, "Livres");
-        this.livres.setScale(0.1, 0.1);
-
-        this.plante = this.add.image(225, 435, "Plante en pot");
-        this.plante.setScale(0.4, 0.4);
-
-        this.poster = this.add.image(725, 225, "Poster de Noël");
-        this.poster.setScale(0.1, 0.1);
-
-        this.lampe = this.add.image(275, 200, "Lampe Murale");
-        this.lampe.setScale(0.25, 0.25);
-
-        this.contrebasse = this.add.image(750, 430, "Contrebasse");
-        this.contrebasse.setScale(0.3, 0.3);
-
-        this.chaise = this.add.image(880, 470, "Chaise à bascule");
-        this.chaise.setScale(0.5, 0.5);
-
-        this.player = this.physics.add.sprite(posXBedroom, posYBedroom, 'player');
-        this.player.setBounce(0.2);
-        this.player.setScale(0.7, 0.7);
-        this.player.body.setGravityY(300)
-        this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.player, platforms);
-        this.physics.add.collider(this.player, this.santa);
+        this.makeVisible();
 
         this.anims.create({
             key: 'right',
@@ -127,15 +102,16 @@ class BedroomScene extends Phaser.Scene {
     update() {
         this.movePlayer();
         this.changeScene();
-        this.checkInZoneInteraction();
+        this.checkInZoneInteraction();    
     }
 
 
     movePlayer() {
+
         if (this.cursors.left.isDown) {
             this.player.setVelocityX(-500);
             this.player.anims.play('left', true);
-        } else if (this.cursors.right.isDown) {
+        } else if (this.cursors.right.isDown && this.player.x < this.maxXBedroom) {
             this.player.setVelocityX(500);
             this.player.anims.play('right', true);
         } else {
@@ -173,6 +149,45 @@ class BedroomScene extends Phaser.Scene {
         } else {
             this.gui.interactBtn.visible = false;
 
+        }
+    }
+
+
+
+    makeVisible() {
+
+        this.arrayOfImages = new Array();
+        var i = 0;
+        for (i; i < dataDeco.arrayRooms[1][0].length; i++) {
+
+            var nameKey = dataDeco.arrayRooms[1][0][i][2];
+
+            this.objetDeco = this.add.image(dataDeco.arrayRooms[1][0][i][0], dataDeco.arrayRooms[1][0][i][1], dataDeco.arrayRooms[1][0][i][2]);
+            this.objetDeco.setScale(dataDeco.arrayRooms[1][0][i][3], dataDeco.arrayRooms[1][0][i][4]);
+            this.objetDeco.visible = false;
+            this.arrayOfImages[i] = [nameKey, this.objetDeco];
+
+        }
+
+        this.player = this.physics.add.sprite(posXBedroom, posYBedroom, 'player');
+        this.player.setBounce(0.2);
+        this.player.setScale(0.7, 0.7);
+        this.player.body.setGravityY(300)
+        this.player.setCollideWorldBounds(true);
+        this.physics.add.collider(this.player, this.platforms);
+
+        
+        for (var key in LoadDatas.arrayKey) {
+
+            if (localStorage.getItem(LoadDatas.arrayKey[key]) == "VENDU") {
+
+                for (var n = 0; n < this.arrayOfImages.length; n++) {
+
+                    if (this.arrayOfImages[n][0] == LoadDatas.arrayKey[key]) {
+                        this.arrayOfImages[n][1].visible = true;
+                    }
+                }
+            }
         }
     }
 }
