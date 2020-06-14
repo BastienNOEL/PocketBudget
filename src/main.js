@@ -14,7 +14,7 @@ const config = {
     //type: Phaser.AUTO,
     type: Phaser.CANVAS,
     parent: 'GameWindow',
-    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, BedroomScene, LutinShopScene, GuiScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, BedroomScene, DinnerRoom,LutinShopScene, GuiScene],
     physics: {
         default: 'arcade',
         arcade: {
@@ -36,7 +36,8 @@ var posXHome = 100;
 var posYHome = 426.5;
 var posXBedroom = 100;
 var posYBedroom = 491;
-
+var posXpr = 200;
+var posYpr = 491;
 
 var game = new Phaser.Game(config);
 var LoadDatas = new LocalStorageSaveInit();

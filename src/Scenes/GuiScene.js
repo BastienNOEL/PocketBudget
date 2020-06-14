@@ -14,7 +14,7 @@ class GuiScene extends Phaser.Scene {
 
         this.minX;
         this.maxX;
-        
+
 
 
         this.zoneLvl = this.add.container(930, 60);
@@ -55,7 +55,7 @@ class GuiScene extends Phaser.Scene {
             'x': 930,
             'y': 550
         });
-        this.goRight.setScale(0.7,0.7);
+        this.goRight.setScale(0.7, 0.7);
         this.goRight.on('pointerdown', this.goRightFunction, this);
         this.goRight.on('pointerup', this.endGoRightFunction, this);
 
@@ -65,7 +65,7 @@ class GuiScene extends Phaser.Scene {
             'x': 70,
             'y': 550
         });
-        this.goLeft.setScale(0.7,0.7);
+        this.goLeft.setScale(0.7, 0.7);
         this.goLeft.on('pointerdown', this.goLeftFunction, this);
         this.goLeft.on('pointerup', this.endGoLeftFunction, this);
 
@@ -75,7 +75,7 @@ class GuiScene extends Phaser.Scene {
             'x': 830,
             'y': 550
         });
-        this.interactBtn.setScale(0.7,0.7);
+        this.interactBtn.setScale(0.7, 0.7);
         this.interactBtn.on('pointerdown', this.interact, this);
         this.interactBtn.on('pointerup', this.endInteract, this);
         this.interactBtn.visible = false;
@@ -106,11 +106,16 @@ class GuiScene extends Phaser.Scene {
             this.nameSceneActive = "Home";
             this.maxX = game.config.width * 2;
             this.minX = 100;
+        } else if (this.scene.isActive('DinnerRoom') == true) {
+            this.sceneEnCours = this.scene.get('DinnerRoom').player;
+            this.nameSceneActive = "DinnerRoom";
+            this.maxX = game.config.width;
+            this.minX = 100;
         } else if (this.scene.isActive('Bedroom') == true) {
             this.sceneEnCours = this.scene.get('Bedroom').player;
             this.nameSceneActive = "Bedroom";
-            if(localStorage.getItem("Lit") == "VENDU"){
-            this.maxX = 245;
+            if (localStorage.getItem("Lit") == "VENDU") {
+                this.maxX = 245;
 
             } else {
                 this.maxX = game.config.width;
@@ -122,23 +127,21 @@ class GuiScene extends Phaser.Scene {
 
 
     mooving() {
-        if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxX ) {
-            if(this.scene.isActive('PereNoel') == true){
+        if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxX) {
+            if (this.scene.isActive('PereNoel') == true) {
                 this.sceneEnCours.setVelocityX(500);
-            } else if(this.scene.isActive('Home') == true){
-                this.sceneEnCours.setVelocityX(400);
-            }else if(this.scene.isActive('Bedroom') == true){
+            } else if ((this.scene.isActive('Home') == true) || (this.scene.isActive('Bedroom') == true) || (this.scene.isActive('DinnerRoom') == true)) {
                 this.sceneEnCours.setVelocityX(400);
             } else {
                 this.sceneEnCours.setVelocityX(300);
             }
             this.sceneEnCours.anims.play('right', true);
         } else if (this.boolMovingLeft == true && this.sceneEnCours.x > this.minX) {
-            if(this.scene.isActive('PereNoel') == true){
+            if (this.scene.isActive('PereNoel') == true) {
                 this.sceneEnCours.setVelocityX(-500);
-            } else if((this.scene.isActive('Home') == true) || (this.scene.isActive('Bedroom') == true)){
+            } else if ((this.scene.isActive('Home') == true) || (this.scene.isActive('Bedroom') == true) || (this.scene.isActive('DinnerRoom') == true)) {
                 this.sceneEnCours.setVelocityX(-400);
-            }else {
+            } else {
                 this.sceneEnCours.setVelocityX(-300);
             }
             this.sceneEnCours.anims.play('left', true);
@@ -162,14 +165,14 @@ class GuiScene extends Phaser.Scene {
         this.boolMovingLeft = false;
     }
 
-    interact(){
+    interact() {
 
-        this.boolInputInterctif = true ;
+        this.boolInputInterctif = true;
         console.log('%c%s', 'color: #aa00ff', "vous appuyez sur le bouton d'interaction");
 
     }
 
-    endInteract(){
-        this.boolInputInterctif = false ;
+    endInteract() {
+        this.boolInputInterctif = false;
     }
 }

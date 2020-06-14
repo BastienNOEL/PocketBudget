@@ -9,18 +9,21 @@ class DonneesInteractions {
 
         this.arrayInteractionsTravel = new Array(4);
         this.arrayInteractionsSanta = new Array(2);
-        this.arrayInteractionsHome = new Array(2);
+        this.arrayInteractionsHome = new Array(3);
         this.arrayInteractionsBedroom = new Array(1);
+        this.arrayInteractionsDinnerRoom = new Array(1);
 
         this.arrayTailleZoneInterractionTravel = [];
         this.arrayTailleZoneInterractionSanta = [];
         this.arrayTailleZoneInterractionHome = [];
         this.arrayTailleZoneInterractionBedroom = [];
+        this.arrayTailleZoneInterractionDinnerRoom = [];
 
         this.arrayMessagesTravel = [];
         this.arrayMessagesSanta = [];
         this.arrayMessagesHome = [];
         this.arrayMessagesBedroom = [];
+        this.arrayMessagesDinnerRoom = [];
 
 
         this.initTableaux();
@@ -64,6 +67,15 @@ class DonneesInteractions {
             this.arrayInteractionsBedroom[i] = [this.arrayTailleZoneInterractionBedroom[i], this.arrayMessagesBedroom[i]]
 
         }
+
+        for (var i = 0; i < this.arrayInteractionsDinnerRoom.length; i++) {
+
+            this.remplirArrayTailleZoneInterractionDinnerRoom(i);
+            this.remplirArrayMessagesDinnerRoom(i);
+
+            this.arrayInteractionsDinnerRoom[i] = [this.arrayTailleZoneInterractionDinnerRoom[i], this.arrayMessagesDinnerRoom[i]]
+
+        }
     }
 
     createDatas() {
@@ -72,6 +84,7 @@ class DonneesInteractions {
         this.arrayScenes[1] = this.arrayInteractionsSanta;
         this.arrayScenes[2] = this.arrayInteractionsHome;
         this.arrayScenes[3] = this.arrayInteractionsBedroom;
+        this.arrayScenes[4] = this.arrayInteractionsDinnerRoom;
 
     }
 
@@ -157,6 +170,10 @@ class DonneesInteractions {
                 this.arrayTailleZoneInterractionHome[numCase] = [1775, 2000];
                 break;
 
+            case 2:
+                this.arrayTailleZoneInterractionHome[numCase] = [1480, 1680];
+                break;
+
         }
     }
 
@@ -167,6 +184,9 @@ class DonneesInteractions {
                 break;
             case 1:
                 this.arrayMessagesHome[numCase] = [1750, 290, this.messageInteraction + "monter"];
+                break;
+            case 2:
+                this.arrayMessagesHome[numCase] = [1465, 210, this.messageInteraction + "entrer"];
                 break;
         }
     }
@@ -187,6 +207,26 @@ class DonneesInteractions {
         switch (numCase) {
             case 0:
                 this.arrayMessagesBedroom[numCase] = [170, 335, this.messageInteraction + "descendre"];
+                break;
+        }
+    }
+
+    /// POUR DinnerRoom
+
+    remplirArrayTailleZoneInterractionDinnerRoom(numCase) {
+
+        switch (numCase) {
+            case 0:
+                this.arrayTailleZoneInterractionDinnerRoom[numCase] = [150, 350];
+                break;
+
+        }
+    }
+
+    remplirArrayMessagesDinnerRoom(numCase) {
+        switch (numCase) {
+            case 0:
+                this.arrayMessagesDinnerRoom[numCase] = [165, 255, this.messageInteraction + "ouvrir"];
                 break;
         }
     }

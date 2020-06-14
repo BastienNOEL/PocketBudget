@@ -140,6 +140,17 @@ class LoadScene extends Phaser.Scene {
         this.load.image('Poster de Noël', 'assets/img/Object/posterSantaAndSnowman.jpg');   
         this.load.image('Lampe Murale', 'assets/img/Object/lampeMurale.png');   
 
+        this.load.image('Table', 'assets/img/Object/table.png');   
+        this.load.image('Lustre', 'assets/img/Object/lustre.png');   
+        this.load.image('Tapis Blanc', 'assets/img/Object/tapisBlanc.png');   
+        this.load.image('Bibliothèque', 'assets/img/Object/bibliotheque.webp');   
+        this.load.image('Tourne Disque', 'assets/img/Object/tourneDisque.png');   
+        this.load.image('Table Basse', 'assets/img/Object/tableBasse.png');   
+        this.load.image('Plante Grimpante', 'assets/img/Object/planteGrimpante.png');   
+        this.load.image('Vieille Horloge', 'assets/img/Object/oldClock.png');   
+        this.load.image('Cadre Aurore Boréale', 'assets/img/Object/tableauBoreal.png');   
+        this.load.image('Cadre Lac Enneigé', 'assets/img/Object/tableauLac.png');   
+
 
         this.load.image('window', 'assets/img/Gui/Window.png');
         this.load.image('starLvl', 'assets/img/Gui/Star.png');
@@ -176,6 +187,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("Title");
+        this.scene.start("DinnerRoom");
     }
 }
