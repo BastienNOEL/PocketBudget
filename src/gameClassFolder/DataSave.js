@@ -27,6 +27,16 @@ class DataSave {
             'Contrebasse': "Contrebasse",
             'Chaise à bascule': "Chaise à bascule",
 
+            'Plante Grimpante': "Plante Grimpante",
+            'Tapis Blanc': "Tapis Blanc",
+            'Bibliothèque': "Bibliothèque",
+            'Tourne Disque': "Tourne Disque",
+            'Vieille Horloge': "Vieille Horloge",
+            'Cadre Lac Enneigé': "Cadre Lac Enneigé",
+            'Cadre Aurore Boréale': "Cadre Aurore Boréale",
+            'Lustre': "Lustre",
+            'Table': "Table",
+            
 
             //Autres paramètres
             'lvPlayer': 1,

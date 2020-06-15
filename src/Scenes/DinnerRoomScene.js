@@ -14,7 +14,7 @@ class DinnerRoom extends Phaser.Scene {
         this.mur.setScrollFactor(0);
         this.mur.setScale(0.5, 2.5);
 
-        var platforms = this.physics.add.staticGroup({
+        this.platforms = this.physics.add.staticGroup({
             key: 'ground',
             repeat: 11,
             setXY: {
@@ -34,57 +34,7 @@ class DinnerRoom extends Phaser.Scene {
         this.porteVitree = this.add.image(225, 401, "porteVitree");
         this.porteVitree.setScale(0.09, 0.09);
 
-
-
-        ///////////
-        this.plante1 = this.add.image(875, 400, "Plante Grimpante");
-        this.plante1.setScale(0.15, 0.3);
-
-        this.plante2 = this.add.image(875, 225, "Plante Grimpante");
-        this.plante2.setScale(0.15, 0.3);
-
-        this.plante3 = this.add.image(110, 425, "Plante Grimpante");
-        this.plante3.setScale(0.15, 0.3);
-
-        this.plante4 = this.add.image(110, 225, "Plante Grimpante");
-        this.plante4.setScale(0.15, 0.3);
-
-        this.sol = this.add.image(500, 575, 'solBois');
-
-
-        this.tapis = this.add.image(570, 580, "Tapis Blanc");
-        this.tapis.setScale(0.15, 0.1);
-
-        this.bibli = this.add.image(550, 335, "Bibliothèque");
-        this.bibli.setScale(0.5, 0.3);
-
-        this.tableBasse = this.add.image(900, 505, "Table Basse");
-        this.tableBasse.setScale(0.1, 0.15);
-
-        this.tourneDisque = this.add.image(875, 420, "Tourne Disque");
-        this.tourneDisque.setScale(0.25, 0.25);
-
-        this.horloge = this.add.image(135, 345, "Vieille Horloge");
-        this.horloge.setScale(0.23, 0.23);
-
-        this.cadreLac = this.add.image(725, 180, "Cadre Lac Enneigé");
-        this.cadreLac.setScale(0.2, 0.2);
-
-        this.cadreBoreal = this.add.image(285, 175, "Cadre Aurore Boréale");
-        this.cadreBoreal.setScale(0.2, 0.18);
-
-        this.lustre = this.add.image(500, 145, "Lustre");
-        this.lustre.setScale(0.8, 0.8);
-
-
-        ////////////
-
-        this.player = this.physics.add.sprite(posXpr, posYpr, 'player');
-        this.player.setBounce(0.2);
-        this.player.setScale(0.7, 0.7);
-        this.player.body.setGravityY(300)
-        this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.player, platforms);
+        this.makeVisible();
 
         this.anims.create({
             key: 'right',
@@ -104,17 +54,6 @@ class DinnerRoom extends Phaser.Scene {
             }],
             frameRate: 10,
         });
-
-
-        /////
-
-
-        this.table = this.add.image(600, 580, "Table");
-        this.table.setScale(0.75, 0.75);
-
-
-        //////
-
 
         this.buchePlafond = this.add.image(500, 9, "tronc");
         this.buchePlafond.setScale(0.2, 1.2);
@@ -193,6 +132,72 @@ class DinnerRoom extends Phaser.Scene {
         } else {
             this.gui.interactBtn.visible = false;
 
+        }
+    }
+
+    makeVisible() {
+
+        if (localStorage.getItem('Plante Grimpante') == 'VENDU') {
+            this.plante2 = this.add.image(875, 225, "Plante Grimpante");
+            this.plante2.setScale(0.15, 0.3);
+
+            this.plante3 = this.add.image(110, 425, "Plante Grimpante");
+            this.plante3.setScale(0.15, 0.3);
+
+            this.plante4 = this.add.image(110, 225, "Plante Grimpante");
+            this.plante4.setScale(0.15, 0.3);
+        }
+
+        this.arrayOfImages = new Array();
+        var i = 0;
+        for (i; i < dataDeco.arrayRooms[2][0].length; i++) {
+
+            var nameKey = dataDeco.arrayRooms[2][0][i][2];
+
+            if (i == 1) {
+                this.sol = this.add.image(500, 575, 'solBois');
+                if (localStorage.getItem('Tourne Disque') == 'VENDU') {
+                    this.tableBasse = this.add.image(900, 505, "Table Basse");
+                    this.tableBasse.setScale(0.1, 0.15);
+                }
+            }
+
+            this.objetDeco = this.add.image(dataDeco.arrayRooms[2][0][i][0], dataDeco.arrayRooms[2][0][i][1], dataDeco.arrayRooms[2][0][i][2]);
+            this.objetDeco.setScale(dataDeco.arrayRooms[2][0][i][3], dataDeco.arrayRooms[2][0][i][4]);
+            this.objetDeco.visible = false;
+            this.arrayOfImages[i] = [nameKey, this.objetDeco];
+
+        }
+
+        this.player = this.physics.add.sprite(posXpr, posYpr, 'player');
+        this.player.setBounce(0.2);
+        this.player.setScale(0.7, 0.7);
+        this.player.body.setGravityY(300)
+        this.player.setCollideWorldBounds(true);
+        this.physics.add.collider(this.player, this.platforms);
+
+        for (var j = 0; j < dataDeco.arrayRooms[2][1].length; j++) {
+
+            var nameKey = dataDeco.arrayRooms[2][1][j][2];
+
+            this.objetDeco = this.add.image(dataDeco.arrayRooms[2][1][j][0], dataDeco.arrayRooms[2][1][j][1], dataDeco.arrayRooms[2][1][j][2]);
+            this.objetDeco.setScale(dataDeco.arrayRooms[2][1][j][3], dataDeco.arrayRooms[2][1][j][4]);
+            this.objetDeco.visible = false;
+            this.arrayOfImages[i + j] = [nameKey, this.objetDeco];
+
+        }
+
+        for (var key in LoadDatas.arrayKey) {
+
+            if (localStorage.getItem(LoadDatas.arrayKey[key]) == "VENDU") {
+
+                for (var n = 0; n < this.arrayOfImages.length; n++) {
+
+                    if (this.arrayOfImages[n][0] == LoadDatas.arrayKey[key]) {
+                        this.arrayOfImages[n][1].visible = true;
+                    }
+                }
+            }
         }
     }
 }

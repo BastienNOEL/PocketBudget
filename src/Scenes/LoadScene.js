@@ -187,6 +187,6 @@ class LoadScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start("DinnerRoom");
+        this.scene.start("Title");
     }
 }

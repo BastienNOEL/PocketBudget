@@ -6,6 +6,8 @@ class DataDeco {
 
         this.initDecoRdc();
         this.initDecoBedroom();
+        this.initDecoDinnerRoom();
+
     }
 
 
@@ -58,6 +60,31 @@ class DataDeco {
         this.arrayDecoBedroom = [this.arrayDecoBedroomDerriere , this.arrayDecoBedroomDevant];
 
         this.arrayRooms[1] = this.arrayDecoBedroom;
+
+    }
+
+    initDecoDinnerRoom(){
+
+        this.arrayDecoDinnerRoomDerriere = [
+
+            [875, 400, "Plante Grimpante",0.15, 0.3],
+            [875, 420, "Tourne Disque",0.25, 0.25],
+            [570, 580, "Tapis Blanc",0.15, 0.1],
+            [550, 335, "Bibliothèque",0.5, 0.3],
+            [135, 345, "Vieille Horloge",0.23, 0.23],
+            [725, 180, "Cadre Lac Enneigé",0.2, 0.2],
+            [285, 175, "Cadre Aurore Boréale",0.14, 0.14],
+            [500, 145, "Lustre",0.8, 0.8],
+        ];
+
+
+        this.arrayDecoDinnerRoomDevant = [
+            [600, 580, "Table",0.75, 0.75],
+        ];
+
+        this.arrayDecoDinnerRoom = [this.arrayDecoDinnerRoomDerriere , this.arrayDecoDinnerRoomDevant];
+
+        this.arrayRooms[2] = this.arrayDecoDinnerRoom;
 
     }
 }
