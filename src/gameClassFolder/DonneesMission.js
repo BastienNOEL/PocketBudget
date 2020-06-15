@@ -136,7 +136,7 @@ class DonneesMission {
 
         switch (numCase) {
             case 0:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide! Je suis sûre que l'on va bien s'entendre tous les deux!\n\nSans transition, j'aurai bien besoin que tu ailles me chercher une\nclochette magique, celle qui était sur mon traineau s'est cassé...\nTiens, voici un peu d'argent.";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide! Je suis sûre que l'on va bien s'entendre tous les deux!\n\nSans transition, j'aurai bien besoin que tu ailles me chercher une\nclochette magique, celle qui était sur mon traîneau s'est cassée...\nTiens, voici un peu d'argent.";
                 break;
             case 1:
                 this.arrayTxtSantaFinishMission[numCase] = "Merci pour cette clochette!\nMon traîneau retrouve sa splendeur!\n\nDis-moi, aurais-tu vu mon marteau par hasard? Non?\nBon et bien il va falloir que j'en achète un nouveau. Tu t'en charge?";

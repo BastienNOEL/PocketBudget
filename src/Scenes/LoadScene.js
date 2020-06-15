@@ -74,6 +74,8 @@ class LoadScene extends Phaser.Scene {
 
         ////
         this.load.image("buttonPlay", "assets/img/Buttons/boutonJouer.png");
+        this.load.image("buttonSave", "assets/img/Buttons/save.png");
+        this.load.image("buttonImportSave", "assets/img/Buttons/importSave.png");
 
         this.load.image('BG1-1', 'assets/img/Background/bg1/Sky.png');
         this.load.image('BG1-2', 'assets/img/Background/bg1/background.png');
