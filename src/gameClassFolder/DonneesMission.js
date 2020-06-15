@@ -8,7 +8,6 @@ class DonneesMission {
         this.arrayPrixAffiche = [this.arrayMissions.length];
         this.arrayPrixAttendu = [this.arrayMissions.length];
         this.arrayConsigne = [this.arrayMissions.length];
-        this.arrayTxtSantaGiveMission = [this.arrayMissions.length];
         this.arrayTxtSantaFinishMission = [this.arrayMissions.length];
         this.arrayTxtSantaInMission = [this.arrayMissions.length];
 
@@ -34,7 +33,6 @@ class DonneesMission {
             this.arrayParamMission[0] = this.arrayArgentRecu;
             this.arrayParamMission[1] = this.arrayPrixAffiche[i];
             this.arrayParamMission[2] = this.arrayConsigne[i];
-            this.arrayParamMission[3] = this.arrayTxtSantaGiveMission[i];
             this.arrayParamMission[4] = this.arrayTxtSantaFinishMission[i];
             this.arrayParamMission[5] = this.arrayTxtSantaInMission[i];
             this.arrayParamMission[6] = this.arrayPrixAttendu[i];
@@ -42,6 +40,7 @@ class DonneesMission {
             this.arrayMissions[i] = this.arrayParamMission;
 
         }
+            this.arrayMissions[0][3] = "Salut toi! Tu es nouveau par ici? J'aurais bien besoin de ton aide.\n\nJe suis débordé de travail, et je n'ai pas le temps pour aller chercher\nles outils et matériaux dont j'ai besoin pour fabriquer les objets\ndes enfants.\nTu voudrais bien m'aider?\n\nSi tu travaille bien, je te donnerais même des pièces étoile!\n\nTiens, voici un peu d'argent, peux-tu aller me chercher une boite\nde tournevis dans la boutique? C'est l'igloo qui est à droite de ma maison.";
 
     }
 
@@ -52,7 +51,6 @@ class DonneesMission {
             this.remplirArrayOfArrayArgentRecu(i);
             this.remplirArrayPrixAffiche(i);
             this.remplirArrayConsigne(i);
-            this.remplirArrayTxtSantaGiveMission(i);
             this.remplirArrayTxtSantaFinishMission(i);
             this.remplirArrayTxtSantaInMission(i);
             this.remplirArrayPrixAttendu(i);
@@ -119,7 +117,6 @@ class DonneesMission {
             case 1:
                 this.arrayConsigne[numCase] = "Seulement 25€ pour cette clochette magique, ça c'est une affaire!";
                 break;
-
             case 2:
                 this.arrayConsigne[numCase] = "Je vois que tu as ramené des pièces aujourd'hui!";
                 break;
@@ -129,36 +126,9 @@ class DonneesMission {
             case 4:
                 this.arrayConsigne[numCase] = "80 se dit \"quatre-vingts\" en France et en Belgique, mais \"huitante\" ou\n\"octante\" en Suisse. Pourtant tous ces pays parlent français!\nBref, 80€ s'il vous plaît."
                 break;
-
             default:
                 console.log("ERREUR remplirArrayConsigne " + numCase);
         }
-
-    }
-
-    remplirArrayTxtSantaGiveMission(numCase) {
-
-        switch (numCase) {
-            case 0:
-                this.arrayTxtSantaGiveMission[numCase] = "Salut toi! J'aurais bien besoin de ton aide. Je suis débordé de travail,\net je n'ai pas le temps pour aller chercher un colis à la boutique.\nVoici un peu d'argent, tu peux aller t'en charger?";
-                break;
-            case 1:
-                this.arrayTxtSantaGiveMission[numCase] = "Ouf, te revoila, j'ai justement besoin de toi.\nUne des clochettes de mon traîneau est cassée, peux-tu aller en\nacheter une autre? Si tu y arrives sans te tromper, je te donnerai même\nune pièce étoile!";
-                break;
-            case 2:
-                this.arrayTxtSantaGiveMission[numCase] = "Tu dois bien aimer les pièces étoiles pour revenir me voir!\nEt ça tombe bien j'ai encore besoin de toi!\nJ'aimerais que tu ailles m'acheter un marteau cette fois s'il te plait.";
-                break;
-            case 3:
-                this.arrayTxtSantaGiveMission[numCase] = "J'aurais bien besoin de piles pour ma prochaine création.\nTu peux t'en charger?";
-                break;
-            case 4:
-                this.arrayTxtSantaGiveMission[numCase] = "Mon ami Rudolphe, le renne au nez rouge, m'a demandé si je\npouvais lui apporter des carottes pour lui et les autres rennes.\nTu peux aller me les chercher?";
-                break;
-
-            default:
-                console.log("ERREUR remplirArrayTxtSantaGiveMission " + numCase);
-        }
-
 
     }
 
@@ -166,16 +136,16 @@ class DonneesMission {
 
         switch (numCase) {
             case 0:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide! Reviens me voir quand tu peut!";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide! Je suis sûre que l'on va bien s'entendre tous les deux!\n\nSans transition, j'aurai bien besoin que tu ailles me chercher une\nclochette magique, celle qui était sur mon traineau s'est cassé...\nTiens, voici un peu d'argent.";
                 break;
             case 1:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci pour cette clochette!\nMon traîneau retrouve sa splendeur!\nReviens me voir quand tu peux!";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci pour cette clochette!\nMon traîneau retrouve sa splendeur!\n\nDis-moi, aurais-tu vu mon marteau par hasard? Non?\nBon et bien il va falloir que j'en achète un nouveau. Tu t'en charge?";
                 break;
             case 2:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci!\n\nAu fait, il parait qu'un certain lutin aime beaucoup les pièces étoiles...\nTu devrais aller lui rendre visite à l'occasion!";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci!\n\nAu fait, il parait qu'un certain lutin aime beaucoup les pièces étoiles...\nTu devrais aller lui rendre visite à l'occasion!\n\nPeux-tu aller me chercher des piles?\nJ'en ai besoin pour faire rouler cette voiture électrique.";
                 break;
             case 3:
-                this.arrayTxtSantaFinishMission[numCase] = "Je ne t'avais pas dit que j'avais déjà payé une partie des piles?\nEn tous cas merci de t'en être occupé!";
+                this.arrayTxtSantaFinishMission[numCase] = "Je ne t'avais pas dit que j'avais déjà payé une partie des piles?\nEn tous cas merci de t'en être occupé!\n\nEs-tu allé voir le lutin marchand?\nJe suis sur que tu veut avoir pleins de pièces étoiles maintenant!\n\nMon ami Rudolphe, le renne au nez rouge, m'a demandé si je\npouvais lui apporter des carottes pour lui et les autres rennes.\nTu peux aller me les chercher?";
                 break;
             case 4:
                 this.arrayTxtSantaFinishMission[numCase] = "On dirait que cette fois je t'avais donné l'appoint!";
@@ -194,7 +164,7 @@ class DonneesMission {
                 this.arrayTxtSantaInMission[numCase] = "La boutique se trouve dans l'igloo.";
                 break;
             case 1:
-                this.arrayTxtSantaInMission[numCase] = "Va voir dans l'igloo pour acheter la clochette.";
+                this.arrayTxtSantaInMission[numCase] = "L'igloo dans lequel se trouve la boutique est magique,\nil parait petit vu de l'extérieur, mais il est très grand à l'intérieur!";
                 break;
             case 2:
                 this.arrayTxtSantaInMission[numCase] = "Avec tout ce travail, heureusement que tu es là pour m'aider!";

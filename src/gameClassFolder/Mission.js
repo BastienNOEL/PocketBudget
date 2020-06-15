@@ -11,10 +11,10 @@ class Mission extends DonneesMission {
 
             this.stateMission = this.checkStateMission();
 
+
             switch (this.stateMission) {
                 case 1:
-                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][3];
-                    this.mission(lvPlayer);
+                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][5];
                     break;
 
                 case 2:
@@ -24,12 +24,14 @@ class Mission extends DonneesMission {
 
                     if (lvPlayer == this.arrayMissions.length) {
                         localStorage.setItem('lastMissionIsDone', true);
+                    } else{
+                        this.mission(localStorage.getItem('lvPlayer'));
                     }
-
                     break;
 
                 case 3:
-                    this.paroleSanta = this.arrayMissions[lvPlayer - 1][5];
+                    this.paroleSanta = this.arrayMissions[0][3];
+                    this.mission(lvPlayer);
                     break;
 
                 default:
@@ -57,10 +59,10 @@ class Mission extends DonneesMission {
         if (localStorage.getItem("nbTentatives") < 3) {
             this.gainStarCoins();
         }
-            this.lvlValue = parseInt(localStorage.getItem("lvPlayer"));
-            localStorage.setItem('lvPlayer', this.lvlValue + 1);
-            localStorage.setItem('nbTentatives', 1);
-        
+        this.lvlValue = parseInt(localStorage.getItem("lvPlayer"));
+        localStorage.setItem('lvPlayer', this.lvlValue + 1);
+        localStorage.setItem('nbTentatives', 1);
+
     }
 
     gainStarCoins() {
@@ -68,30 +70,32 @@ class Mission extends DonneesMission {
         this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
 
         var gain = 3; // à changer
-/*
-        if (lvPlayer < 5) {
-            gain = 1;
-        } else if (lvPlayer < 10) {
-            gain = 2;
-        } else if (lvPlayer < 15) {
-            gain = 3;
-        } else if (lvPlayer < 20) {
-            gain = 4;
-        } else {
-            gain = 5;
-        }
-*/
+        /*
+                if (lvPlayer < 5) {
+                    gain = 1;
+                } else if (lvPlayer < 10) {
+                    gain = 2;
+                } else if (lvPlayer < 15) {
+                    gain = 3;
+                } else if (lvPlayer < 20) {
+                    gain = 4;
+                } else {
+                    gain = 5;
+                }
+        */
         localStorage.setItem('nbStarCoin', this.coinValue + gain);
     }
 
     checkStateMission() {
 
-        if (localStorage.getItem('MissionEnCours') == "false" && localStorage.getItem('RetourMission') == "false") {
-            return 1;
-        } else if (localStorage.getItem('MissionEnCours') == "false" && localStorage.getItem('RetourMission') == "true") {
-            return 2;
-        } else {
+        if (localStorage.getItem('FirstMission') == "true") {
             return 3;
+        } else {
+            if (localStorage.getItem('MissionEnCours') == "true") {
+                return 1;
+            } else if (localStorage.getItem('MissionEnCours') == "false") {
+                return 2;
+            }
         }
 
     }

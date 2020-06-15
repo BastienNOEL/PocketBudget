@@ -770,8 +770,10 @@ class BoutiqueScene extends Phaser.Scene {
             this.txtBoutique.setText("Tu as réussi!\nTu peut sortir en cliquant sur la flèche en bas à gauche,\nou en appuyant sur la touche \"échap\" de ton clavier.")
 
             localStorage.setItem('MissionEnCours', false);
+            if(localStorage.getItem('FirstMission') == "true"){
+                localStorage.setItem('FirstMission' , false);
+            }
             localStorage.setItem('RetourMission', true);
-
 
         } else {
 
