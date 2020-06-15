@@ -71,7 +71,10 @@ class TitleScene extends Phaser.Scene {
             'x': 50,
             'y': 550
         });
-        this.btnSave.on('pointerdown', this.savingData, this);
+        this.btnSave.on('pointerdown', function(){
+            saveData();
+
+        }, this);
         this.btnSave.setScale(0.3,0.3);
 
 
@@ -81,7 +84,10 @@ class TitleScene extends Phaser.Scene {
             'x': 125,
             'y': 550
         });
-        this.btnImportSave.on('pointerdown', this.importingData, this);
+        this.btnImportSave.on('pointerdown', function(){
+        importSave.click();
+            
+        }, this);
         this.btnImportSave.setScale(0.5,0.5);
 
         this.keyObj = this.input.keyboard.addKey('Enter');
@@ -100,14 +106,6 @@ class TitleScene extends Phaser.Scene {
 
     onPressed() {
         this.scene.start("Travel");
-    }
-
-    savingData(){
-        saveData();
-    }
-
-    importingData(){
-        importSave.click();
     }
 
     scrollBackground() {

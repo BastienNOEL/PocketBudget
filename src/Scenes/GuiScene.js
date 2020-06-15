@@ -12,6 +12,8 @@ class GuiScene extends Phaser.Scene {
         this.boolMovingLeft = false;
         this.boolInputInterctif = false;
 
+        this.boolPause = false;
+
         this.minX;
         this.maxX;
 
@@ -47,6 +49,27 @@ class GuiScene extends Phaser.Scene {
             this.zoneCoin.add(this.starCoin);
             this.zoneCoin.add(this.txtCoin);
         }
+
+
+        this.btnPause = new Button({
+            'scene': this,
+            'key': 'buttonPause',
+            'x': 50,
+            'y': 50
+        });
+        this.btnPause.on('pointerdown', function () {
+            if(this.boolPause == false){
+                this.scene.pause(this.nameSceneActive);
+                this.scene.launch('Pause');
+                this.boolPause = true;
+            } else {
+                this.scene.resume(this.nameSceneActive);
+                this.scene.stop('Pause');
+                this.boolPause = false;
+            }
+
+        }, this);
+        this.btnPause.setScale(0.5, 0.5);
 
 
         this.goRight = new Button({

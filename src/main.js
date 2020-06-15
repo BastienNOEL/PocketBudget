@@ -14,7 +14,7 @@ const config = {
     //type: Phaser.AUTO,
     type: Phaser.CANVAS,
     parent: 'GameWindow',
-    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, BedroomScene, DinnerRoom,LutinShopScene, GuiScene],
+    scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, BedroomScene, DinnerRoom,LutinShopScene, GuiScene,PauseScene],
     physics: {
         default: 'arcade',
         arcade: {

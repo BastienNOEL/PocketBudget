@@ -104,14 +104,14 @@ class TravelScene extends Phaser.Scene {
         this.lutinMarchand2 = this.add.image(1650, 430, 'lutinMarchand2');
         this.lutinMarchand2.setScale(0.15, 0.15);
 
-        this.countainerDialogueLutin = this.add.container(1750,300);
-        this.bulle = this.add.image(0,0,'bulleDialogueGauche');
-        this.bulle.setScale(0.05,0.05);
+        this.countainerDialogueLutin = this.add.container(1750, 300);
+        this.bulle = this.add.image(0, 0, 'bulleDialogueGauche');
+        this.bulle.setScale(0.05, 0.05);
         this.txtLutinVente = this.add.text(0, 0, "          Salut toi!\nJe vends une maison,\nça t'interesses?", {
             fill: "black",
             font: "17px Arial",
         });
-        this.txtLutinVente.setOrigin(0.5,0.9);
+        this.txtLutinVente.setOrigin(0.5, 0.9);
         this.countainerDialogueLutin.add(this.bulle);
         this.countainerDialogueLutin.add(this.txtLutinVente);
         this.countainerDialogueLutin.visible = false;
@@ -171,6 +171,9 @@ class TravelScene extends Phaser.Scene {
         this.myCam.setBounds(0, 0, game.config.width * 3, game.config.height);
 
         this.myCam.startFollow(this.player);
+
+        
+
 
         this.scene.launch('Gui');
 
@@ -281,14 +284,14 @@ class TravelScene extends Phaser.Scene {
 
         }
 
-        if(localStorage.getItem('Maison') != "VENDU"){
+        if (localStorage.getItem('Maison') != "VENDU") {
             if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1] + 200) && this.player.y > 423) {
                 this.countainerDialogueLutin.visible = true;
             } else {
                 this.countainerDialogueLutin.visible = false;
             }
         }
-        
+
     }
 
     checkInZoneInteraction() {
