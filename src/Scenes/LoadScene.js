@@ -122,7 +122,6 @@ class LoadScene extends Phaser.Scene {
         this.load.image('planche', 'assets/img/Sol/planche.png');
         this.load.image('tronc', 'assets/img/Object/troncArbre.png');
         this.load.image('porteBlanche', 'assets/img/Object/doorWhite.png');
-        this.load.image('porteNoir', 'assets/img/Object/doorBlack.png');
         this.load.image('porteVitree', 'assets/img/Object/door.png');
         this.load.image('Couronne de Noël', 'assets/img/Object/couronneNoel.png');
         this.load.image('Fenêtre', 'assets/img/Object/fenetreVueVillage.png');
@@ -149,7 +148,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('Table', 'assets/img/Object/table.png');   
         this.load.image('Lustre', 'assets/img/Object/lustre.png');   
         this.load.image('Tapis Blanc', 'assets/img/Object/tapisBlanc.png');   
-        this.load.image('Bibliothèque', 'assets/img/Object/bibliotheque.webp');   
+        this.load.image('Bibliothèque', 'assets/img/Object/bibliotheque.png');   
         this.load.image('Tourne Disque', 'assets/img/Object/tourneDisque.png');   
         this.load.image('Table Basse', 'assets/img/Object/tableBasse.png');   
         this.load.image('Plante Grimpante', 'assets/img/Object/planteGrimpante.png');   

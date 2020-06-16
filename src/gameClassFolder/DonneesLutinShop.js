@@ -336,7 +336,7 @@ class DonneesLutinShop {
                 this.arrayDescriptionObjet[numCase] = "Un joli tapis blanc. Un conseil : ne fait pas tomber de la sauce tomate\ndessus.";
                 break;
             case 22:
-                this.arrayDescriptionObjet[numCase] = "Des livre, encore des livre, toujours plus de livres !";
+                this.arrayDescriptionObjet[numCase] = "Des livres, encore des livres, toujours plus de livres !";
                 break;
             case 23:
                 this.arrayDescriptionObjet[numCase] = "Cette plante à fortement tendance à s'enrouler autour des buches\nqui soutiennent le plafond.";
