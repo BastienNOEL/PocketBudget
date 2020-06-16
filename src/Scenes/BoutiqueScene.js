@@ -82,7 +82,7 @@ class BoutiqueScene extends Phaser.Scene {
         if (localStorage.getItem('nbTentatives') > 1 && localStorage.getItem('RetourMission') == "false") {
             this.txtBoutique.setText(localStorage.getItem('BoutiqueTexte') + this.txtBoutiqueErreur);
         } else if (localStorage.getItem('RetourMission') == "true") {
-            this.txtBoutique.setText("Va voir le père noel pour avoir de l'argent.");
+            this.txtBoutique.setText("Va voir le Père Noël pour avoir de l'argent.");
         }
 
         this.maBourse.add(this.rectBleu);
@@ -542,7 +542,7 @@ class BoutiqueScene extends Phaser.Scene {
 
     backTravel() {
         if (this.valeurDepose == this.prixMissionAffiche) {
-            localStorage.setItem('BoutiqueTexte', "Va voir le père noel pour avoir de l'argent.");
+            localStorage.setItem('BoutiqueTexte', "Va voir le Père Noël pour avoir de l'argent.");
         }
         this.scene.start("Travel");
     }

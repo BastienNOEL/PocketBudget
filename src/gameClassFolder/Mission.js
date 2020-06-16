@@ -39,6 +39,7 @@ class Mission extends DonneesMission {
             }
         } else {
             this.paroleSanta = "Tu as fait toutes les missions disponibles."
+            localStorage.setItem('RetourMission', true);
         }
 
     }

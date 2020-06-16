@@ -12,8 +12,6 @@ class GuiScene extends Phaser.Scene {
         this.boolMovingLeft = false;
         this.boolInputInterctif = false;
 
-        this.boolPause = false;
-
         this.minX;
         this.maxX;
 
@@ -58,19 +56,45 @@ class GuiScene extends Phaser.Scene {
             'y': 50
         });
         this.btnPause.on('pointerdown', function () {
-            if(this.boolPause == false){
-                this.scene.pause(this.nameSceneActive);
-                this.scene.launch('Pause');
-                this.boolPause = true;
-            } else {
-                this.scene.resume(this.nameSceneActive);
-                this.scene.stop('Pause');
-                this.boolPause = false;
-            }
-
+            this.scene.pause(this.nameSceneActive);
+            this.scene.launch('Pause');
+            this.btnPause.visible = false;
+            this.btnPlay.visible = true;
+            this.btnCross.visible = true;
         }, this);
         this.btnPause.setScale(0.5, 0.5);
 
+
+        this.btnPlay = new Button({
+            'scene': this,
+            'key': 'buttonReplay',
+            'x': 50,
+            'y': 50
+        });
+        this.btnPlay.on('pointerdown', function () {
+            this.scene.resume(this.nameSceneActive);
+            this.scene.stop('Pause');
+            this.btnPlay.visible = false;
+            this.btnPause.visible = true;
+            this.btnCross.visible = false;
+        }, this);
+        this.btnPlay.setScale(0.5, 0.5);
+        this.btnPlay.visible = false;
+
+        this.btnCross = new Button({
+            'scene': this,
+            'key': 'redCross',
+            'x': 500,
+            'y': 80
+        });
+        this.btnCross.on('pointerdown', function () {
+            this.scene.resume(this.nameSceneActive);
+            this.scene.stop('Pause');
+            this.btnPlay.visible = false;
+            this.btnPause.visible = true;
+            this.btnCross.visible = false;
+        }, this);
+        this.btnCross.visible = false;
 
         this.goRight = new Button({
             'scene': this,
@@ -123,6 +147,7 @@ class GuiScene extends Phaser.Scene {
         } else if (this.scene.isActive('PereNoel') == true) {
             this.sceneEnCours = this.scene.get('PereNoel').player;
             this.nameSceneActive = "PereNoel";
+            this.maxX = game.config.width;
             this.minX = 0;
         } else if (this.scene.isActive('Home') == true) {
             this.sceneEnCours = this.scene.get('Home').player;

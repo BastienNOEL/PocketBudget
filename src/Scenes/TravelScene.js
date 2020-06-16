@@ -83,7 +83,7 @@ class TravelScene extends Phaser.Scene {
         this.panneauMaMaison = this.add.image(0, 0, 'panneauEntree');
         this.panneauMaMaison.setScale(0.5, 0.5);
         if (localStorage.getItem('Maison') == "VENDU") {
-            this.textePanneauMaMaison = this.add.text(0, 0, "Chez Moi!", {
+            this.textePanneauMaMaison = this.add.text(0, 0, "Chez Moi !", {
                 fill: "#000000",
                 font: "20px Arial",
             });
@@ -107,7 +107,7 @@ class TravelScene extends Phaser.Scene {
         this.countainerDialogueLutin = this.add.container(1750, 300);
         this.bulle = this.add.image(0, 0, 'bulleDialogueGauche');
         this.bulle.setScale(0.05, 0.05);
-        this.txtLutinVente = this.add.text(0, 0, "          Salut toi!\nJe vends une maison,\nça t'interesses?", {
+        this.txtLutinVente = this.add.text(0, 0, "          Salut toi !\nJe vends une maison,\n     ça t'interesses ?", {
             fill: "black",
             font: "17px Arial",
         });
