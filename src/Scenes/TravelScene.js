@@ -44,10 +44,10 @@ class TravelScene extends Phaser.Scene {
 
 
 
-        this.igloo1 = this.add.image(870, 450, 'igloo1');
-        this.igloo1.setScale(0.5, 0.5);
+        this.igloo1 = this.add.image(890, 420, 'igloo1');
+        this.igloo1.setScale(0.8, 0.8);
 
-        this.containerPanneauBoutique = this.add.container(680, 453);
+        this.containerPanneauBoutique = this.add.container(640, 453);
         this.panneauBoutique = this.add.image(0, 0, 'panneau');
         this.textePanneauBoutique = this.add.text(0, 0, "Boutique", {
             fill: "black",
@@ -62,8 +62,20 @@ class TravelScene extends Phaser.Scene {
         this.maisonSanta = this.add.image(200, 307, 'maison');
         this.maisonSanta.setScale(0.3, 0.3);
 
-        this.couronne = this.add.image(207, 300, "Couronne de Noël");
-        this.couronne.setScale(0.1, 0.1);
+        this.couronne1 = this.add.image(100, 300, "Couronne de Noël");
+        this.couronne1.setScale(0.1, 0.1);
+
+        this.couronne2 = this.add.image(150, 300, "Couronne de Noël");
+        this.couronne2.setScale(0.1, 0.1);
+
+        this.couronne3 = this.add.image(200, 300, "Couronne de Noël");
+        this.couronne3.setScale(0.1, 0.1);
+
+        this.couronne4 = this.add.image(250, 300, "Couronne de Noël");
+        this.couronne4.setScale(0.1, 0.1);
+
+        this.couronne5 = this.add.image(300, 300, "Couronne de Noël");
+        this.couronne5.setScale(0.1, 0.1);
 
         this.containerPanneauSanta = this.add.container(430, 453);
         this.panneauSanta = this.add.image(0, 0, 'panneau');

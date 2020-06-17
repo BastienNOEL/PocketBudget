@@ -2,7 +2,7 @@ class DonneesMission {
 
     constructor() {
 
-        this.arrayMissions = new Array(11);
+        this.arrayMissions = new Array(21);
 
         this.arrayOfArrayArgentRecu = [this.arrayMissions.length];
         this.arrayPrixAffiche = [this.arrayMissions.length];
@@ -94,6 +94,36 @@ class DonneesMission {
             case 10:
                 this.arrayPrixAttendu[numCase] = 93;
                 break;
+            case 11:
+                this.arrayPrixAttendu[numCase] = 42;
+                break;
+            case 12:
+                this.arrayPrixAttendu[numCase] = 77;
+                break;
+            case 13:
+                this.arrayPrixAttendu[numCase] = 30;
+                break;
+            case 14:
+                this.arrayPrixAttendu[numCase] = 89;
+                break;
+            case 15:
+                this.arrayPrixAttendu[numCase] = 103;
+                break;
+            case 16:
+                this.arrayPrixAttendu[numCase] = 50;
+                break;
+            case 17:
+                this.arrayPrixAttendu[numCase] = 10;
+                break;
+            case 18:
+                this.arrayPrixAttendu[numCase] = 2;
+                break;
+            case 19:
+                this.arrayPrixAttendu[numCase] = 123;
+                break;
+            case 20:
+                this.arrayPrixAttendu[numCase] = 394;
+                break;
             default:
                 console.log("ERREUR remplirArrayPrixAttendu " + numCase);
         }
@@ -134,6 +164,36 @@ class DonneesMission {
                 this.arrayPrixAffiche[numCase] = "?";
                 break;
             case 10:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 11:
+                this.arrayPrixAffiche[numCase] = "3x14€";
+                break;
+            case 12:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 13:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 14:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 15:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 16:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 17:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 18:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 19:
+                this.arrayPrixAffiche[numCase] = "?";
+                break;
+            case 20:
                 this.arrayPrixAffiche[numCase] = "?";
                 break;
             default:
@@ -178,6 +238,36 @@ class DonneesMission {
             case 10:
                 this.arrayOfArrayArgentRecu[numCase] = [4, 6, 3, 5, 2, 0, 1];
                 break;
+            case 11:
+                this.arrayOfArrayArgentRecu[numCase] = [0, 10, 10, 0, 0, 1, 0];
+                break;
+            case 12:
+                this.arrayOfArrayArgentRecu[numCase] = [5, 5, 5, 5, 5, 0, 0];
+                break;
+            case 13:
+                this.arrayOfArrayArgentRecu[numCase] = [5, 0, 8, 2, 0, 0, 0];
+                break;
+            case 14:
+                this.arrayOfArrayArgentRecu[numCase] = [7, 0, 4, 5, 2, 0, 1];
+                break;
+            case 15:
+                this.arrayOfArrayArgentRecu[numCase] = [20, 0, 0, 0, 0, 0, 1];
+                break;
+            case 16:
+                this.arrayOfArrayArgentRecu[numCase] = [1, 1, 1, 1, 1, 1, 0];
+                break;
+            case 17:
+                this.arrayOfArrayArgentRecu[numCase] = [5, 0, 1, 2, 0, 0, 0];
+                break;
+            case 18:
+                this.arrayOfArrayArgentRecu[numCase] = [10, 0, 0, 0, 0, 0, 0];
+                break;
+            case 19:
+                this.arrayOfArrayArgentRecu[numCase] = [5, 0, 2, 4, 3, 1, 2];
+                break;
+            case 20:
+                this.arrayOfArrayArgentRecu[numCase] = [10, 10, 10, 10, 10, 10, 10];
+                break;
             default:
                 console.log("ERREUR remplirArrayOfArrayArgentRecu " + numCase);
         }
@@ -207,10 +297,10 @@ class DonneesMission {
                 this.arrayConsigne[numCase] = "Tu viens souvent par ici ces derniers temps !\nLe Père Noël t'a embauché ?"
                 break;
             case 6:
-                this.arrayConsigne[numCase] = "7€ l'unité. Tu en prends 5 ? Dans ce cas 5 x 7€ S'il te plaît."
+                this.arrayConsigne[numCase] = "7€ l'unité. Tu en prends 5 ? Dans ce cas 5 x 7€ s'il te plaît."
                 break;
             case 7:
-                this.arrayConsigne[numCase] = "27€ l'unité. Tu en prends 2 ? Dans ce cas 2 x 27€ S'il te plaît."
+                this.arrayConsigne[numCase] = "27€ l'unité. Tu en prends 2 ? Dans ce cas 2 x 27€ s'il te plaît."
                 break;
             case 8:
                 this.arrayConsigne[numCase] = "On m'a déjà donné 23€ pour cet objet qui coûte 35€.\nCombien dois-tu me donner pour finaliser cet achat ?"
@@ -220,6 +310,36 @@ class DonneesMission {
                 break;
             case 10:
                 this.arrayConsigne[numCase] = "On m'a déjà donné 25€ pour cet objet qui coûte 118€.\nCombien dois-tu me donner pour finaliser cet achat ?"
+                break;
+            case 11:
+                this.arrayConsigne[numCase] = "14€ l'unité. Tu en prends 3 ? Dans ce cas 3 x 14€ s'il te plaît."
+                break;
+            case 12:
+                this.arrayConsigne[numCase] = "Voyons voir cette liste...\nCela fera un total de 5€ + 19€ + 25€ + 28€ s'il te plaît."
+                break;
+            case 13:
+                this.arrayConsigne[numCase] = "Pour 2 achetés, le 3ième est à moitié prix. Tu en prends 3?\nCet objet coûte 12€ l'unité, combien vaut le total?"
+                break;
+            case 14:
+                this.arrayConsigne[numCase] = "6€ l'unité. Tu en prends 14 ? Et tu prends aussi cet objet à 5€ ?\nDans ce cas 14 x 6€ + 5€ s'il te plaît."
+                break;
+            case 15:
+                this.arrayConsigne[numCase] = "11€ l'unité. Tu en prends 10 ? Il y a une réduction de 7€.\nDans ce cas 10 x 11€ - 7€ s'il te plaît."
+                break;
+            case 16:
+                this.arrayConsigne[numCase] = "Voyons voir cette liste... Tu as le droit à une réduction.\nCela fera un total de 53€ + 29€ - 32€ s'il te plaît."
+                break;
+            case 17:
+                this.arrayConsigne[numCase] = "Cet objet coûte 20€, mais il y a une réduction de 50%.\n20€ - 50% s'il te plaît."
+                break;
+            case 18:
+                this.arrayConsigne[numCase] = "Cet objet coûte 10€, mais il y a une réduction de 80%.\n10€ - 80% s'il te plaît."
+                break;
+            case 19:
+                this.arrayConsigne[numCase] = "Voyons voir cette liste...\nCela fera un total de 37€ + 42€ + 19€ + 25€ s'il te plaît."
+                break;
+            case 20:
+                this.arrayConsigne[numCase] = "Le chiffre des centaines est égal au chiffre des unités -1.\nLe chiffre des dizaines est égal à 3 fois celui des centaines.\nLe chiffre des unités est égal à 5x2-6. Bon courage !"
                 break;
             default:
                 console.log("ERREUR remplirArrayConsigne " + numCase);
@@ -263,6 +383,36 @@ class DonneesMission {
             case 10:
                 this.arrayTxtSantaFinishMission[numCase] = "Tu veut savoir comment s'appelle notre ami?\nTout le monde l'appelle \"La petite souris\", parcequ'il n'est pas grand\net que c'est... une souris.";
                 break;
+            case 11:
+                this.arrayTxtSantaFinishMission[numCase] = "La mère Noël est rentrée tout à l'heure en utilisant\nun des passages secret de la petite souris.\nIl connaît énormément de raccourcis pour voyager à travers le monde!";
+                break;
+            case 12:
+                this.arrayTxtSantaFinishMission[numCase] = "Généralement, j'attends que les enfants dorment avant de venir\ndéposer des cadeaux chez eux. Néanmoins, j'apprécie quand ils laissent\nun petit verre de lait, ou une carotte pour les rennes !";
+                break;
+            case 13:
+                this.arrayTxtSantaFinishMission[numCase] = "Il y a quelques années, j'avais ouvert une ligne de train\nqui emmenait quelques enfants ici pour que je les rencontre.\nCette ligne s'appelait \"Le Pôle Express\" !";
+                break;
+            case 14:
+                this.arrayTxtSantaFinishMission[numCase] = "\"Scintille, scintille, mon étoile ;\nqu'aucun nuage ne te voile.\"\n Oh, tu es là ! Tu veut chanter avec moi ?";
+                break;
+            case 15:
+                this.arrayTxtSantaFinishMission[numCase] = "J'ai vu une très joli maison juste à coté de la boutique.\nC'est la tienne ?";
+                break;
+            case 16:
+                this.arrayTxtSantaFinishMission[numCase] = "L'autre jour, j'ai croisé un autre bonhomme de neige.\nJe crois qu'il s'appelait Olaf.\nC'est un ami à toi ?";
+                break;
+            case 17:
+                this.arrayTxtSantaFinishMission[numCase] = "Les amis c'est important. D'ailleurs, j'ai reçu une carte postale\nce matin d'un ami lapin qui adore distribuer des oeufs en chocolat\nau printemps.";
+                break;
+            case 18:
+                this.arrayTxtSantaFinishMission[numCase] = "Je t'aurai bien proposé de boire un chocolat chaud avec moi,\nmais après reflexion je ne suis pas certain que cela soit une bonne idée.\nJe ne veux pas te voir fondre !";
+                break;
+            case 19:
+                this.arrayTxtSantaFinishMission[numCase] = "Certains pensent que je ne travail qu'un jour par an.\nC'est faux ! Je travail toute l'année pour fabriquer les jouets !";
+                break;
+            case 20:
+                this.arrayTxtSantaFinishMission[numCase] = "Le vendeur de la boutique t'as fait une énigme ? Quel farceur !\nIl doit bien taimer pour jouer avec toi !";
+                break;
             default:
                 console.log("ERREUR remplirArrayTxtSantaFinishMission " + numCase);
         }
@@ -304,6 +454,36 @@ class DonneesMission {
                 break;
             case 10:
                 this.arrayTxtSantaInMission[numCase] = "Je me suis souvent demandé pourquoi notre ami aimait à ce point\nle gruyère.";
+                break;
+            case 11:
+                this.arrayTxtSantaInMission[numCase] = "La petite souris aime échanger les dents des enfants\ncontre des cadeaux. Chacun sa passion !";
+                break;
+            case 12:
+                this.arrayTxtSantaInMission[numCase] = "Cela me fascinera toujours, tous ces passages secrets\nqu'a creusé la petite souris à travers le monde !";
+                break;
+            case 13:
+                this.arrayTxtSantaInMission[numCase] = "J'aime aussi quand on me laisse un cookie avec le verre de lait !";
+                break;
+            case 14:
+                this.arrayTxtSantaInMission[numCase] = "As-tu déjà pris le train ?";
+                break;
+            case 15:
+                this.arrayTxtSantaInMission[numCase] = "Tous en coeur !\n\"Vive le vent, vive le vent, vive le vent d'hiver !\"";
+                break;
+            case 16:
+                this.arrayTxtSantaInMission[numCase] = "Le lutin marchand a beaucoup d'amis tout autour du monde.\nJe me demande même parfois s'il ne connait pas plus de monde que moi !";
+                break;
+            case 17:
+                this.arrayTxtSantaInMission[numCase] = "Au fait, d'où viens-tu?";
+                break;
+            case 18:
+                this.arrayTxtSantaInMission[numCase] = "Le lutin marchand est aussi ami avec ce cher lapin !";
+                break;
+            case 19:
+                this.arrayTxtSantaInMission[numCase] = "Le village est caché par de la magie, comme ça personne ne vient\nnous déranger pendant notre travail.";
+                break;
+            case 20:
+                this.arrayTxtSantaInMission[numCase] = "Le travail c'est important.\nExiste-t-il une école pour les bonhommes de neige ?";
                 break;
             default:
                 console.log("ERREUR remplirArrayTxtSantaInMission " + numCase);

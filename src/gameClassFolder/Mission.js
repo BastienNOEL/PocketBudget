@@ -38,7 +38,7 @@ class Mission extends DonneesMission {
                     console.log("erreur mission");
             }
         } else {
-            this.paroleSanta = "Tu as fait toutes les missions disponibles."
+            this.paroleSanta = "Tu as fait du bon travail ! Je n'ai plus rien à te demander !\nMerci beaucoup pour ton aide !"
             localStorage.setItem('RetourMission', true);
         }
 

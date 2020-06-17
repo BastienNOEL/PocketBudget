@@ -97,7 +97,7 @@ class DonneesInteractions {
                 this.arrayTailleZoneInterractionTravel[numCase] = [200, 350];
                 break;
             case 1:
-                this.arrayTailleZoneInterractionTravel[numCase] = [725, 845];
+                this.arrayTailleZoneInterractionTravel[numCase] = [650, 815];
                 break;
             case 2:
                 this.arrayTailleZoneInterractionTravel[numCase] = [1300, 1450];
@@ -116,7 +116,7 @@ class DonneesInteractions {
                 this.arrayMessagesTravel[numCase] = [150, 327, this.messageInteraction + "entrer"];
                 break;
             case 1:
-                this.arrayMessagesTravel[numCase] = [800, 348, this.messageInteraction + "entrer"];
+                this.arrayMessagesTravel[numCase] = [850, 410, this.messageInteraction + "entrer"];
                 break;
             case 2:
                 this.arrayMessagesTravel[numCase] = [1250, 327, this.messageInteraction + "entrer"];

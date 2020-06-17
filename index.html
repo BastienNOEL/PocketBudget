@@ -38,29 +38,16 @@
 
     <input type="file" id="importSave" accept=".json" style="display:none" />
 
-
-    <!-- SCRIPT ANTI CLIQUE DROIT-->
-    <body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..onMouseOver clique droit .. '; return true;" ></body>
 </head>
 
-<body>
-
+<body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..onMouseOver clique droit .. '; return true;">
+    
    <!-- <h1>PocketBudget</h1> -->
 
     <div id="GameWindow">
         <script src="./src/main.js"></script>
     </div>
-<!--
-    <div class="saveContainer">
-        <div class="sauvegarde">
 
-            <input class="save" type="button" value="Sauvegarder" onclick="saveData();" />
-
-            <input class="save" type="button" value="Importer une Sauvegarde" onclick="importSave.click();" />
-
-        </div>
-    </div>
--->
 </body>
 
 </html>
