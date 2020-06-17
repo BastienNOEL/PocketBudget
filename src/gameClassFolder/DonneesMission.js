@@ -40,7 +40,7 @@ class DonneesMission {
             this.arrayMissions[i] = this.arrayParamMission;
 
         }
-        this.arrayMissions[0][3] = "Salut toi ! Tu es nouveau par ici ? J'aurais bien besoin de ton aide.\n\nJe suis débordé de travail, et je n'ai pas le temps pour aller chercher\nles outils et matériaux dont j'ai besoin pour fabriquer les objets\ndes enfants.\nTu voudrais bien m'aider ?\n\nSi tu travaille bien, je te donnerais même des pièces étoile !\n\nTiens, voici un peu d'argent, peux-tu aller me chercher une boite\nde tournevis dans la boutique ? C'est l'igloo qui est à droite de ma maison.";
+        this.arrayMissions[0][3] = "Salut toi ! Tu es nouveau par ici ? J'aurais bien besoin de ton aide.\n\nJe suis débordé de travail, et je n'ai pas le temps pour aller chercher\nles outils et matériaux dont j'ai besoin pour fabriquer les objets\ndes enfants.\nTu voudrais bien m'aider ?\n\nSi tu travailles bien, je te donnerai même des pièces étoiles !\n\nTiens, voici un peu d'argent, peux-tu aller me chercher une boite\nde tournevis dans la boutique ? C'est l'igloo qui est à droite de ma maison.";
 
     }
 
@@ -279,7 +279,7 @@ class DonneesMission {
 
         switch (numCase) {
             case 0:
-                this.arrayConsigne[numCase] = "Clique sur un billet de la zone bleu pour le mettre dans la zone jaune.\nQuand tu penses avoir mis le bon nombre de billets, valide avec\nle bouton rouge. Clique sur les flèches pour revenir en arrière.";
+                this.arrayConsigne[numCase] = "Clique sur un billet de la zone bleue pour le mettre dans la zone jaune.\nQuand tu penses avoir mis le bon nombre de billets, valide avec\nle bouton rouge. Clique sur les flèches pour revenir en arrière.";
                 break;
             case 1:
                 this.arrayConsigne[numCase] = "Seulement 25€ pour cette clochette magique, ça c'est une affaire !";
@@ -306,7 +306,7 @@ class DonneesMission {
                 this.arrayConsigne[numCase] = "On m'a déjà donné 23€ pour cet objet qui coûte 35€.\nCombien dois-tu me donner pour finaliser cet achat ?"
                 break;
             case 9:
-                this.arrayConsigne[numCase] = "Il y a une promotion sur cette objet ! Il est à moitié prix !\nAvant, il coûtait 66€, combien coûte-t-il maintenant ?"
+                this.arrayConsigne[numCase] = "Il y a une promotion sur cet objet ! Il est à moitié prix !\nAvant, il coûtait 66€, combien coûte-t-il maintenant ?"
                 break;
             case 10:
                 this.arrayConsigne[numCase] = "On m'a déjà donné 25€ pour cet objet qui coûte 118€.\nCombien dois-tu me donner pour finaliser cet achat ?"
@@ -351,37 +351,37 @@ class DonneesMission {
 
         switch (numCase) {
             case 0:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide ! Je suis sûre que l'on va bien s'entendre tous les deux !\n\nSans transition, j'aurai bien besoin que tu ailles me chercher une\nclochette magique, celle qui était sur mon traîneau s'est cassée...\nTiens, voici un peu d'argent.";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci pour ton aide ! Je suis sûr que l'on va bien s'entendre tous les deux !\n\nAllez, j'aurai bien besoin que tu ailles me chercher une\nclochette magique, celle qui était sur mon traîneau s'est cassée...\nTiens, voici un peu d'argent.";
                 break;
             case 1:
-                this.arrayTxtSantaFinishMission[numCase] = "Merci pour cette clochette !\nMon traîneau retrouve sa splendeur !\n\nDis-moi, aurais-tu vu mon marteau par hasard ? Non ?\nBon et bien il va falloir que j'en achète un nouveau. Tu t'en charge ?";
+                this.arrayTxtSantaFinishMission[numCase] = "Merci pour cette clochette !\nMon traîneau retrouve sa splendeur !\n\nDis-moi, aurais-tu vu mon marteau par hasard ? Non ?\nBon et bien il va falloir que j'en achète un nouveau. Tu t'en charges ?";
                 break;
             case 2:
                 this.arrayTxtSantaFinishMission[numCase] = "Merci !\n\nAu fait, il parait qu'un certain lutin aime beaucoup les pièces étoiles...\nTu devrais aller lui rendre visite à l'occasion !\n\nPeux-tu aller me chercher des piles ?\nJ'en ai besoin pour faire rouler cette voiture électrique.";
                 break;
             case 3:
-                this.arrayTxtSantaFinishMission[numCase] = "Je ne t'avais pas dit que j'avais déjà payé une partie des piles ?\nEn tous cas merci de t'en être occupé !\n\nEs-tu allé voir le lutin marchand ?\nJe suis sûre que tu veut avoir pleins de pièces étoiles maintenant !\n\nMon ami Rudolphe, le renne au nez rouge, m'a demandé si je\npouvais lui apporter des carottes pour lui et les autres rennes.\nTu peux aller me les chercher ?";
+                this.arrayTxtSantaFinishMission[numCase] = "Je ne t'avais pas dit que j'avais déjà payé une partie des piles ?\nEn tous cas ,merci de t'en être occupé !\n\nEs-tu allé voir le lutin marchand ?\nJe suis sûr que tu veux avoir plein de pièces étoiles maintenant !\n\nMon ami Rudolphe, le renne au nez rouge, m'a demandé si je\npouvais lui apporter des carottes pour lui et les autres rennes.\nTu peux aller me les chercher ?";
                 break;
             case 4:
                 this.arrayTxtSantaFinishMission[numCase] = "On dirait que cette fois je t'avais donné l'appoint !\nLe hasard fait parfois bien les choses !\n\nVoici l'argent de ta prochaine mission, mais n'hésite pas à faire une pause\nde temps en temps ! Passe donc voir le lutin marchand par exemple !";
                 break;
             case 5:
-                this.arrayTxtSantaFinishMission[numCase] = "Que dirais-tu d'un contrat à plein temps ?\nCa ne serait qu'une formalité au vu de toute l'aide que\ntu m'a déjà fourni, mais tu serai le coursier officiel du Père Noël !\n\nC'est vrai tu veux bien ? OH OH OH ! J'en étais sûre !";
+                this.arrayTxtSantaFinishMission[numCase] = "Que dirais-tu d'un contrat à plein temps ?\nCa ne serait qu'une formalité au vu de toute l'aide que\ntu m'as déjà fourni, mais tu seras le coursier officiel du Père Noël !\n\nC'est vrai tu veux bien ? OH OH OH ! J'en étais sûr !";
                 break;
             case 6:
-                this.arrayTxtSantaFinishMission[numCase] = "Voilà comment nous allons procéder désormais :\nlorsque tu viendra me voir, je te passerai la liste de ce dont j'ai besoin.\nComme ça, tu saura tout de suite ce qu'il faudra acheter !\nEt on pourra discuter d'autre chose entre amis !\nTiens, voici ta première liste officielle.";
+                this.arrayTxtSantaFinishMission[numCase] = "Voilà comment nous allons procéder désormais :\nlorsque tu viendras me voir, je te donnerai la liste de ce dont j'ai besoin.\nComme ça, tu sauras tout de suite ce qu'il faudra acheter !\nEt on pourra discuter d'autres choses entre amis !\nTiens, voici ta première liste officielle.";
                 break;
             case 7:
                 this.arrayTxtSantaFinishMission[numCase] = "Hmmmmmm... Oh  ! Je ne t'avais pas vu arriver  !\nJ'étais perdu dans mes pensées. Ma femme, la mère Noël,\nest partie ce matin pour quelques jours, pour aider un ami dans son travail.\n\nEt toi, comment vas-tu aujourd'hui  ? Prêt pour une nouvelle mission ?";
                 break;
             case 8:
-                this.arrayTxtSantaFinishMission[numCase] = "J'ai reçu une lettre de la mère Noël, elle est bien arrivé chez\nnotre ami ! Il y a très longtemps, c'était un dentiste,\nmais aujourd'hui il a changé de métier.";
+                this.arrayTxtSantaFinishMission[numCase] = "J'ai reçu une lettre de la mère Noël, elle est bien arrivée chez\nnotre ami ! Il y a très longtemps, c'était un dentiste,\nmais aujourd'hui il a changé de métier.";
                 break;
             case 9:
                 this.arrayTxtSantaFinishMission[numCase] = "J'avais préparé du gruyère pour notre ami, j'espère qu'il l'appréciera.\nIl adore le gruyère !";
                 break;
             case 10:
-                this.arrayTxtSantaFinishMission[numCase] = "Tu veut savoir comment s'appelle notre ami?\nTout le monde l'appelle \"La petite souris\", parcequ'il n'est pas grand\net que c'est... une souris.";
+                this.arrayTxtSantaFinishMission[numCase] = "Tu veux savoir comment s'appelle notre ami?\nTout le monde l'appelle \"La petite souris\", parcequ'il n'est pas grand\net que c'est... une souris.";
                 break;
             case 11:
                 this.arrayTxtSantaFinishMission[numCase] = "La mère Noël est rentrée tout à l'heure en utilisant\nun des passages secret de la petite souris.\nIl connaît énormément de raccourcis pour voyager à travers le monde!";
@@ -393,10 +393,10 @@ class DonneesMission {
                 this.arrayTxtSantaFinishMission[numCase] = "Il y a quelques années, j'avais ouvert une ligne de train\nqui emmenait quelques enfants ici pour que je les rencontre.\nCette ligne s'appelait \"Le Pôle Express\" !";
                 break;
             case 14:
-                this.arrayTxtSantaFinishMission[numCase] = "\"Scintille, scintille, mon étoile ;\nqu'aucun nuage ne te voile.\"\n Oh, tu es là ! Tu veut chanter avec moi ?";
+                this.arrayTxtSantaFinishMission[numCase] = "\"Scintille, scintille, mon étoile ;\nqu'aucun nuage ne te voile.\"\n Oh, tu es là ! Tu veux chanter avec moi ?";
                 break;
             case 15:
-                this.arrayTxtSantaFinishMission[numCase] = "J'ai vu une très joli maison juste à coté de la boutique.\nC'est la tienne ?";
+                this.arrayTxtSantaFinishMission[numCase] = "J'ai vu une très jolie maison juste à coté de la boutique.\nC'est la tienne ?";
                 break;
             case 16:
                 this.arrayTxtSantaFinishMission[numCase] = "L'autre jour, j'ai croisé un autre bonhomme de neige.\nJe crois qu'il s'appelait Olaf.\nC'est un ami à toi ?";
@@ -408,7 +408,7 @@ class DonneesMission {
                 this.arrayTxtSantaFinishMission[numCase] = "Je t'aurai bien proposé de boire un chocolat chaud avec moi,\nmais après reflexion je ne suis pas certain que cela soit une bonne idée.\nJe ne veux pas te voir fondre !";
                 break;
             case 19:
-                this.arrayTxtSantaFinishMission[numCase] = "Certains pensent que je ne travail qu'un jour par an.\nC'est faux ! Je travail toute l'année pour fabriquer les jouets !";
+                this.arrayTxtSantaFinishMission[numCase] = "Certains pensent que je ne travaille qu'un jour par an.\nC'est faux ! Je travaille toute l'année pour fabriquer les jouets !";
                 break;
             case 20:
                 this.arrayTxtSantaFinishMission[numCase] = "Le vendeur de la boutique t'as fait une énigme ? Quel farceur !\nIl doit bien taimer pour jouer avec toi !";
@@ -438,10 +438,10 @@ class DonneesMission {
                 this.arrayTxtSantaInMission[numCase] = "Rudolphe adore les carottes bio. Il a bien raison !";
                 break;
             case 5:
-                this.arrayTxtSantaInMission[numCase] = "Je prends ma pause repas. Tu veut manger avec moi ?\nJe serai très heureux si un jour tu souhaitai m'inviter manger chez toi,\non pourrait faire la fête avec les autres lutin !\nAu fait, tu as une maison ?";
+                this.arrayTxtSantaInMission[numCase] = "Je prends ma pause repas. Tu veux manger avec moi ?\nJe serai très heureux si un jour tu souhaitais m'inviter manger chez toi,\non pourrait faire la fête avec les autres lutins !\nAu fait, tu as une maison ?";
                 break;
             case 6:
-                this.arrayTxtSantaInMission[numCase] = "J'ai de nombreuses histoires et anecdotes à raconter.\nN'hésite pas à venir me voir régulièrement si tu veut que je te les raconte !";
+                this.arrayTxtSantaInMission[numCase] = "J'ai de nombreuses histoires et anecdotes à raconter.\nN'hésite pas à venir me voir régulièrement si tu veux que je te les raconte !";
                 break;
             case 7:
                 this.arrayTxtSantaInMission[numCase] = "Si tu n'arrives pas à lire quelque chose sur la liste que je t'ai donné,\nn'hésite pas à me le dire.\nC'est important d'écrire de façon lisible  !";
@@ -459,7 +459,7 @@ class DonneesMission {
                 this.arrayTxtSantaInMission[numCase] = "La petite souris aime échanger les dents des enfants\ncontre des cadeaux. Chacun sa passion !";
                 break;
             case 12:
-                this.arrayTxtSantaInMission[numCase] = "Cela me fascinera toujours, tous ces passages secrets\nqu'a creusé la petite souris à travers le monde !";
+                this.arrayTxtSantaInMission[numCase] = "Cela me fascinera toujours, tous ces passages secrets\nqu'a creusés la petite souris à travers le monde !";
                 break;
             case 13:
                 this.arrayTxtSantaInMission[numCase] = "J'aime aussi quand on me laisse un cookie avec le verre de lait !";

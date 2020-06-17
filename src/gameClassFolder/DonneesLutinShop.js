@@ -270,7 +270,7 @@ class DonneesLutinShop {
 
         switch (numCase) {
             case 0:
-                this.arrayDescriptionObjet[numCase] = "Tu es nouveau par ici ? Dans ce cas cette maison est faite pour toi ! Son prix\nest affiché dans la zone rouge, et ton argent est dans la zone bleu. Si tu as\nassez, valide avec le bouton rouge et cette maison sera tienne !";
+                this.arrayDescriptionObjet[numCase] = "Tu es nouveau par ici ? Dans ce cas cette maison est faite pour toi ! Son prix\nest affiché dans la zone rouge, et ton argent est dans la zone bleue. Si tu as\nassez, valide avec le bouton rouge et cette maison sera tienne !";
                 break;
             case 1:
                 this.arrayDescriptionObjet[numCase] = "Un sapin de Noël pour une maison du village du Père Noël ?\nIndispensable, tout simplement.";
@@ -303,10 +303,10 @@ class DonneesLutinShop {
                 this.arrayDescriptionObjet[numCase] = "Un sucre d'orge XXL, ça ne se refuse pas.";
                 break;
             case 11:
-                this.arrayDescriptionObjet[numCase] = "Ce n'est pas parce que les bonhommes de neige dorment debout qu'il ne\nte faut pas de lit. Une chambre sans lit n'est pas une chambre, voyons !";
+                this.arrayDescriptionObjet[numCase] = "Ce n'est pas parce que les bonhommes de neige dorment debout qu'ils ne\nte faut pas de lit. Une chambre sans lit n'est pas une chambre, voyons !";
                 break;
             case 12:
-                this.arrayDescriptionObjet[numCase] = "Une fenêtre, mais ronde. Très apprécié d'un ami singe qui porte le même\nnom qu'un célèbre empereur romain.";
+                this.arrayDescriptionObjet[numCase] = "Une fenêtre, mais ronde. Très appréciée d'un ami singe qui porte le même\nnom qu'un célèbre empereur romain.";
                 break;
             case 13:
                 this.arrayDescriptionObjet[numCase] = "Avec ce tapis, fini les échardes sur le parquet ! Je me dois néanmoins\nd'informer mon aimable clientèle que ce modèle ne vole pas.";
@@ -339,16 +339,16 @@ class DonneesLutinShop {
                 this.arrayDescriptionObjet[numCase] = "Des livres, encore des livres, toujours plus de livres !";
                 break;
             case 23:
-                this.arrayDescriptionObjet[numCase] = "Cette plante à fortement tendance à s'enrouler autour des buches\nqui soutiennent le plafond.";
+                this.arrayDescriptionObjet[numCase] = "Cette plante à fortement tendance à s'enrouler autour des bûches\nqui soutiennent le plafond.";
                 break;
             case 24:
-                this.arrayDescriptionObjet[numCase] = "Un bon ami m'a dit un jour : \"Sans la musique, la vie serait une erreur\".\nMet une ambiance musicale chez toi avec ce tourne disque !";
+                this.arrayDescriptionObjet[numCase] = "Un bon ami m'a dit un jour : \"Sans la musique, la vie serait une erreur\".\nMets une ambiance musicale chez toi avec ce tourne-disque !";
                 break;
             case 25:
                 this.arrayDescriptionObjet[numCase] = "En voulant étudier le mécanisme de cette magnifique horloge, je l'ai\nmalencontreusement cassé...\nDu coup, je te la vends aussi à prix cassé.";
                 break;
             case 26:
-                this.arrayDescriptionObjet[numCase] = "Fais-moi confiance, je m'assurerais personnellement que ce magnifique\nlustre restera solidement cloué au plafond.";
+                this.arrayDescriptionObjet[numCase] = "Fais-moi confiance, je m'assurerai personnellement que ce magnifique\nlustre restera solidement cloué au plafond.";
                 break;
             case 27:
                 this.arrayDescriptionObjet[numCase] = "J'ai encadré une photo que j'ai prise d'une aurore boréale,\nun rayon de lumière coloré qui éclaire le ciel la nuit !";
