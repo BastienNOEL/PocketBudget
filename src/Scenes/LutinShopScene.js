@@ -316,18 +316,18 @@ class LutinShopScene extends Phaser.Scene {
         this.zonePrixStarCoin.visible = false;
 
         //zone verte
-        this.txtDescriptionObjet = this.add.text(0, 0, "description objet selectionne.", {
+        this.txtDescriptionObjet = this.add.text(0, 0, "Clique sur un objet pour avoir des informations dessus.", {
             fill: "black",
             font: "25px Arial",
         })
         this.txtDescriptionObjet.setOrigin(0.5, 0.5);
         this.zoneTexte.add(this.txtDescriptionObjet);
-        this.txtDescriptionObjet.visible = false;
+        this.txtDescriptionObjet.visible = true;
 
 
         this.lutinFace = this.add.image(960, 70, 'LutinMarchandFace');
         this.lutinFace.setScale(0.2,0.2);
-        this.lutinFace.visible = false;
+        this.lutinFace.visible = true;
 
     }
 

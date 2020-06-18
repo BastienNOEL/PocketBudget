@@ -52,18 +52,14 @@ class DonneesLutinShop {
             this.txtCoinPrice.text = this.arrayPriceObject[numCase];
             this.txtDescriptionObjet.text = this.arrayDescriptionObject[numCase];
 
-            if (localStorage.getItem(dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0])  != "VENDU") {
+            if (localStorage.getItem(dataShop.arrayObjetDeco[localStorage.getItem("indexObjetSelectionne")][0]) != "VENDU") {
 
                 this.zonePrixTxt.visible = true;
                 this.zonePrixStarCoin.visible = true;
-                this.txtDescriptionObjet.visible = true;
-                this.lutinFace.visible = true;
             } else {
                 this.zonePrixTxt.visible = false;
                 this.zonePrixStarCoin.visible = false;
-                this.txtDescriptionObjet.visible = false;
-                this.lutinFace.visible = false;
-
+                this.txtDescriptionObjet.text = "Tu as déjà acheté cet objet !";
             }
 
         }];
