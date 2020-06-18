@@ -519,16 +519,16 @@ class DonneesMission {
                 this.arrayTxtSantaFinishMission[numCase] = "Passe le bonjour au lutin marchand de ma part la prochaine fois !";
                 break;
             case 24:
-                this.arrayTxtSantaFinishMission[numCase] = "Au fait, comment as-tu trouvé village du Père Noël ?\nIl est censé être caché par de la magie !\nAurais-tu des pouvoirs magique ?";
+                this.arrayTxtSantaFinishMission[numCase] = "Au fait, comment as-tu trouvé le village du Père Noël ?\nIl est censé être caché par de la magie !\nAurais-tu des pouvoirs magiques ?";
                 break;
             case 25:
-                this.arrayTxtSantaFinishMission[numCase] = "N'hésites pas à inviter le reste de ta famille ici quand tu veux !";
+                this.arrayTxtSantaFinishMission[numCase] = "N'hésite pas à inviter le reste de ta famille ici quand tu veux !";
                 break;
             case 26:
-                this.arrayTxtSantaFinishMission[numCase] = "As-tu été dépenser tes pièces étoile chez le lutin marchand?";
+                this.arrayTxtSantaFinishMission[numCase] = "As-tu dépensé tes pièces étoiles chez le lutin marchand?";
                 break;
             case 27:
-                this.arrayTxtSantaFinishMission[numCase] = "Avec toute l'aide que tu m'apporte, je vais réussir à\nfabriquer encore plus de jouets cette année !";
+                this.arrayTxtSantaFinishMission[numCase] = "Avec toute l'aide que tu m'apportes, je vais réussir à\nfabriquer encore plus de jouets cette année !";
                 break;
             case 28:
                 this.arrayTxtSantaFinishMission[numCase] = "Grâce à toi, de nombreux enfants seront heureux à Noël !";
@@ -609,10 +609,10 @@ class DonneesMission {
                 this.arrayTxtSantaInMission[numCase] = "J'adore les énigmes !";
                 break;
             case 22:
-                this.arrayTxtSantaInMission[numCase] = "Parfois, je réponds avec plaisir aux lettres que m'envoient les enfant !";
+                this.arrayTxtSantaInMission[numCase] = "Parfois, je réponds avec plaisir aux lettres que m'envoient les enfants !";
                 break;
             case 23:
-                this.arrayTxtSantaInMission[numCase] = "Sacré Rudolphe ! Il m'a promit de ne pas toucher à ton nez.";
+                this.arrayTxtSantaInMission[numCase] = "Sacré Rudolphe ! Il m'a promis de ne pas toucher à ton nez.";
                 break;
             case 24:
                 this.arrayTxtSantaInMission[numCase] = "Le lutin marchand est un lutin particulier, il voyage beaucoup !";
@@ -627,7 +627,7 @@ class DonneesMission {
                 this.arrayTxtSantaInMission[numCase] = "Au fait, comment t'appelles-tu ?";
                 break;
             case 28:
-                this.arrayTxtSantaInMission[numCase] = "Je ne sais pas comment te remercier de toute l'aide que tu m'apporte !";
+                this.arrayTxtSantaInMission[numCase] = "Je ne sais pas comment te remercier de toute l'aide que tu m'apportes !";
                 break;
             default:
                 console.log("ERREUR remplirArrayTxtSantaInMission " + numCase);

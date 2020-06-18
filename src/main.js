@@ -2,7 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
-localStorage.clear(); // permet de faire des tests, a supprimer plus tard
+//localStorage.clear(); // permet de faire des tests, a supprimer plus tard
 
 const config = {
     scale: {
@@ -11,7 +11,6 @@ const config = {
         width: 1000,
         height: 600
     },
-    //type: Phaser.AUTO,
     type: Phaser.CANVAS,
     parent: 'GameWindow',
     scene: [LoadScene, TitleScene, TravelScene, BoutiqueScene, PereNoelScene, MissionScreen, HomeScene, BedroomScene, DinnerRoom,LutinShopScene,PauseScene, GuiScene],

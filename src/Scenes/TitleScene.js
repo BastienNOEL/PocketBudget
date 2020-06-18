@@ -5,7 +5,6 @@ class TitleScene extends Phaser.Scene {
         super("Title");
     }
 
-
     create() {
 
         this.bg1 = this.add.tileSprite(0, 0, game.config.width * 2, game.config.height * 2, "BG2-1");
@@ -54,9 +53,6 @@ class TitleScene extends Phaser.Scene {
         this.bg6.setScale(0.58, 0.58);
 
 
-
-
-
         var button = new Button({
             'scene': this,
             'key': 'buttonPlay',
@@ -99,9 +95,7 @@ class TitleScene extends Phaser.Scene {
         if (this.keyObj.isDown) {
             this.scene.start("Travel");
         }
-
         this.scrollBackground();
-
     }
 
     onPressed() {
@@ -123,8 +117,6 @@ class TitleScene extends Phaser.Scene {
         this.snow2.tilePositionX -= 2;
 
         this.snow3.tilePositionY -= 1.2;
-        this.snow3.tilePositionX -= 2.4;
-        
+        this.snow3.tilePositionX -= 2.4;   
     }
-
 }

@@ -3,7 +3,6 @@ class DinnerRoom extends Phaser.Scene {
         super("DinnerRoom");
     }
 
-
     create() {
 
         this.gui = this.scene.get('Gui');

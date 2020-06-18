@@ -3,8 +3,30 @@ class DataSave {
 
         this.arrayDatasInit = {
 
+            //Paramètres Divers //
+            'lvPlayer': 1,
+            'nbStarCoin': 0,
+            'nbTentatives': 1,
+            'P1': 0,
+            'P2': 0,
+            'B5': 0,
+            'B10': 0,
+            'B20': 0,
+            'B50': 0,
+            'B100': 0,
+            'MissionEnCours': false,
+            'RetourMission': false,
+            'FirstMission': true,
+            'lastMissionIsDone': false,
+            'BoutiqueTexte': "Va voir le père noel pour avoir de l'argent.",
+            'prixMissionAffiche': -1,
+            'prixMissionAttendu': -1,
+            'indexPage': 1,
 
-            // VENTE OBJETS
+
+            // VENTE OBJETS //
+
+            //Salon
             'Maison': "Maison",
             'Sapin de noël': "Sapin de noël",
             'Couronne de Noël': "Couronne de Noel",
@@ -17,6 +39,7 @@ class DataSave {
             'Chaussette de noël': "Chaussette de noël",
             'Sucre d\'orge': "Sucre d\'orge",
 
+            //Chambre
             'Fenêtre Ronde': "Fenêtre Ronde",
             'Tapis de chambre': "Tapis de chambre",
             'Lit': "Lit",
@@ -27,6 +50,7 @@ class DataSave {
             'Contrebasse': "Contrebasse",
             'Chaise à bascule': "Chaise à bascule",
 
+            //Salle à manger
             'Plante Grimpante': "Plante Grimpante",
             'Tapis Blanc': "Tapis Blanc",
             'Bibliothèque': "Bibliothèque",
@@ -36,29 +60,6 @@ class DataSave {
             'Cadre Aurore Boréale': "Cadre Aurore Boréale",
             'Lustre': "Lustre",
             'Table': "Table",
-            
-
-            //Autres paramètres
-            'lvPlayer': 1,
-            'nbStarCoin': 0,
-            'nbTentatives': 1,
-            'P1': 0,
-            'P2': 0,
-            'B5': 0,
-            'B10': 0,
-            'B20': 0,
-            'B50': 0,
-            'B100': 0,
-            'MissionEnCours': false,
-             'RetourMission': false,
-            'FirstMission' : true,
-            'lastMissionIsDone': false,
-            'BoutiqueTexte': "Va voir le père noel pour avoir de l'argent.",
-            'prixMissionAffiche': -1,
-            'prixMissionAttendu': -1,
-            'indexPage': 1,
-
-
 
         }
     }

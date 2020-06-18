@@ -2,7 +2,6 @@ class DonneesInteractions {
 
     constructor() {
 
-        //this.messageInteraction = "Appuyez sur ESPACE";
         this.messageInteraction = "ESPACE pour ";
 
         this.arrayScenes = new Array();

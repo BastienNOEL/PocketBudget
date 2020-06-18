@@ -6,22 +6,6 @@ class BoutiqueScene extends Phaser.Scene {
 
     create() {
 
-    //permet de faire des tests mais doit etre supprimé
-        /*
-                localStorage.setItem('B5', 5);
-                localStorage.setItem('B10', 10);
-                localStorage.setItem('B20', 20);
-                localStorage.setItem('B50', 50);
-                localStorage.setItem('B100', 100);
-                localStorage.setItem('P1', 1);
-                localStorage.setItem('P2', 2);
-
-                localStorage.setItem('PrixMission', 15);
-                localStorage.setItem('MissionEnCours', true);
-                //   localStorage.setItem('nbTentatives', 1);
-
-        */
-
         this.pileAction = new Array();
 
         this.nbPieceComptoir1 = 0;
@@ -40,7 +24,6 @@ class BoutiqueScene extends Phaser.Scene {
         this.nbBilletBourse20 = localStorage.getItem('B20');
         this.nbBilletBourse50 = localStorage.getItem('B50');
         this.nbBilletBourse100 = localStorage.getItem('B100');
-
 
 
 

@@ -197,8 +197,6 @@ class TravelScene extends Phaser.Scene {
         this.scrollBackground();
         this.checkInZoneInteraction();
         this.lutinOrientation();
-
-
     }
 
     movePlayer() {
@@ -275,7 +273,6 @@ class TravelScene extends Phaser.Scene {
             } else {
                 this.txtInteractionMaMaison.visible = false;
                 this.boolInZoneInteraction3 = false;
-
             }
         }
 
@@ -323,9 +320,5 @@ class TravelScene extends Phaser.Scene {
             this.lutinMarchand.visible = false;
             this.lutinMarchand2.visible = true;
         }
-
-
     }
-
-
 }
