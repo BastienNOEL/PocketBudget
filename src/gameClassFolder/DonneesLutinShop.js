@@ -146,7 +146,7 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Plante Grimpante";
                 break;
             case 24:
-                this.arrayNomObjet[numCase] = "Tourne Disque";
+                this.arrayNomObjet[numCase] = "Tourne-Disque";
                 break;
             case 25:
                 this.arrayNomObjet[numCase] = "Vieille Horloge";
@@ -173,91 +173,91 @@ class DonneesLutinShop {
 
         switch (numCase) {
             case 0:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //maison
                 break;
             case 1:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //sapin
                 break;
             case 2:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //couronne
                 break;
             case 3:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //cloche
                 break;
             case 4:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //tableau village
                 break;
             case 5:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //cheminée
                 break;
             case 6:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //fenetre
                 break;
             case 7:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //canapé
                 break;
             case 8:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //tableau de famille
                 break;
             case 9:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //chausette
                 break;
             case 10:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //sucre 
                 break;
             case 11:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //lit
                 break;
             case 12:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //fenetre ronde
                 break;
             case 13:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //tapis rouge
                 break;
             case 14:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //livres
                 break;
             case 15:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //poster
                 break;
             case 16:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //plante en pot
                 break;
             case 17:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //lampe
                 break;
             case 18:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //contrebasse
                 break;
             case 19:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //chaise à bascule
                 break;
             case 20:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //table
                 break;
             case 21:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //tapis blanc
                 break;
             case 22:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //bibliotheque
                 break;
             case 23:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //plante grimpante
                 break;
             case 24:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //tourne-disque
                 break;
             case 25:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 2; //horloge
                 break;
             case 26:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //lustre
                 break;
             case 27:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //aurore boreale
                 break;
             case 28:
-                this.arrayPrixObjet[numCase] = 1;
+                this.arrayPrixObjet[numCase] = 3; //lac
                 break;
 
             default:

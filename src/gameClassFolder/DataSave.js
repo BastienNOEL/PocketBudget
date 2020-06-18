@@ -30,7 +30,7 @@ class DataSave {
             'Plante Grimpante': "Plante Grimpante",
             'Tapis Blanc': "Tapis Blanc",
             'Bibliothèque': "Bibliothèque",
-            'Tourne Disque': "Tourne Disque",
+            'Tourne-Disque': "Tourne-Disque",
             'Vieille Horloge': "Vieille Horloge",
             'Cadre Lac Enneigé': "Cadre Lac Enneigé",
             'Cadre Aurore Boréale': "Cadre Aurore Boréale",

@@ -70,8 +70,8 @@ class Mission extends DonneesMission {
         var lvPlayer = localStorage.getItem('lvPlayer');
         this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
 
-        var gain = 3; // à changer
-        /*
+        var gain ;//= 3; // à changer
+        
                 if (lvPlayer < 5) {
                     gain = 1;
                 } else if (lvPlayer < 10) {
@@ -83,7 +83,7 @@ class Mission extends DonneesMission {
                 } else {
                     gain = 5;
                 }
-        */
+        
         localStorage.setItem('nbStarCoin', this.coinValue + gain);
     }
 

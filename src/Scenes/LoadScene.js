@@ -149,7 +149,7 @@ class LoadScene extends Phaser.Scene {
         this.load.image('Lustre', 'assets/img/Object/lustre.png');   
         this.load.image('Tapis Blanc', 'assets/img/Object/tapisBlanc.png');   
         this.load.image('Bibliothèque', 'assets/img/Object/bibliotheque.png');   
-        this.load.image('Tourne Disque', 'assets/img/Object/tourneDisque.png');   
+        this.load.image('Tourne-Disque', 'assets/img/Object/tourneDisque.png');   
         this.load.image('Table Basse', 'assets/img/Object/tableBasse.png');   
         this.load.image('Plante Grimpante', 'assets/img/Object/planteGrimpante.png');   
         this.load.image('Vieille Horloge', 'assets/img/Object/oldClock.png');   

@@ -156,7 +156,7 @@ class DinnerRoom extends Phaser.Scene {
 
             if (i == 1) {
                 this.sol = this.add.image(500, 575, 'solBois');
-                if (localStorage.getItem('Tourne Disque') == 'VENDU') {
+                if (localStorage.getItem('Tourne-Disque') == 'VENDU') {
                     this.tableBasse = this.add.image(900, 505, "Table Basse");
                     this.tableBasse.setScale(0.1, 0.15);
                 }
