@@ -167,7 +167,7 @@ class DonneesMission {
                 this.arrayPrixAffiche[numCase] = "18€";
                 break;
             case 3:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 4:
                 this.arrayPrixAffiche[numCase] = "4x20€";
@@ -182,67 +182,67 @@ class DonneesMission {
                 this.arrayPrixAffiche[numCase] = "2x27€";
                 break;
             case 8:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 9:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 10:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 11:
                 this.arrayPrixAffiche[numCase] = "3x14€";
                 break;
             case 12:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 13:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 14:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 15:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 16:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 17:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 18:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 19:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 20:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 21:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 22:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 23:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 24:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 25:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 26:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 27:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             case 28:
-                this.arrayPrixAffiche[numCase] = "?";
+                this.arrayPrixAffiche[numCase] = "   ?";
                 break;
             default:
                 console.log("ERREUR remplirArrayPrixAffiche " + numCase);
