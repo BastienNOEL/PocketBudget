@@ -2,7 +2,7 @@ class LocalStorageSaveInit extends DataSave {
     constructor() {
         super();
 
-       // localStorage.setItem('lvPlayer', 21); // permet de faire des tests, mais doit etre supprimé (max = 21)
+        //localStorage.setItem('lvPlayer', 29); // permet de faire des tests, mais doit etre supprimé (max = 29)
         //localStorage.setItem('FirstMission', false);
         
         localStorage.setItem('nbStarCoin', 99);

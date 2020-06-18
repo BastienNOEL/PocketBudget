@@ -60,7 +60,7 @@ class BoutiqueScene extends Phaser.Scene {
         this.rectBleu = this.add.image(0, 0, 'recBleu');
         this.rectJaune = this.add.image(0, 0, 'recJaune');
 
-        this.lutin = this.add.image(950, 100, 'LutinFace');
+        this.lutin = this.add.image(950, 103, 'LutinFace');
         this.lutin.setScale(0.15,0.15);
 
 
@@ -73,7 +73,7 @@ class BoutiqueScene extends Phaser.Scene {
         this.boutonRetour.setScale(0.5, 0.5);
         this.boutonRetour.on('pointerdown', this.backTravel, this);
 
-        this.txtBoutique = this.add.text(-390, -60, localStorage.getItem('BoutiqueTexte'), {
+        this.txtBoutique = this.add.text(-390, -70, localStorage.getItem('BoutiqueTexte'), {
             fill: "black",
             font: '25px Arial',
         });
