@@ -142,7 +142,7 @@ class GuiScene extends Phaser.Scene {
         if (this.scene.isActive('Travel') == true) {
             this.sceneEnCours = this.scene.get('Travel').player;
             this.nameSceneActive = "Travel";
-            this.maxX = game.config.width * 3;
+            this.maxX = game.config.width * 2.7;
             this.minX = 0;
         } else if (this.scene.isActive('PereNoel') == true) {
             this.sceneEnCours = this.scene.get('PereNoel').player;

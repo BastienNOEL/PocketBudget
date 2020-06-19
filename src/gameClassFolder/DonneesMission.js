@@ -113,10 +113,10 @@ class DonneesMission {
                 this.arrayPrixAttendu[numCase] = 50;
                 break;
             case 17:
-                this.arrayPrixAttendu[numCase] = 10;
+                this.arrayPrixAttendu[numCase] = 39;
                 break;
             case 18:
-                this.arrayPrixAttendu[numCase] = 2;
+                this.arrayPrixAttendu[numCase] = 75;
                 break;
             case 19:
                 this.arrayPrixAttendu[numCase] = 123;
@@ -305,10 +305,10 @@ class DonneesMission {
                 this.arrayOfArrayArgentRecu[numCase] = [1, 1, 1, 1, 1, 1, 0];
                 break;
             case 17:
-                this.arrayOfArrayArgentRecu[numCase] = [5, 0, 1, 2, 0, 0, 0];
+                this.arrayOfArrayArgentRecu[numCase] = [10, 5, 3, 8, 0, 0, 0];
                 break;
             case 18:
-                this.arrayOfArrayArgentRecu[numCase] = [10, 0, 0, 0, 0, 0, 0];
+                this.arrayOfArrayArgentRecu[numCase] = [0, 0, 5, 8, 1, 0, 0];
                 break;
             case 19:
                 this.arrayOfArrayArgentRecu[numCase] = [5, 0, 2, 4, 3, 1, 2];
@@ -402,10 +402,10 @@ class DonneesMission {
                 this.arrayConsigne[numCase] = "Voyons voir cette liste... Tu as le droit à une réduction.\nCela fera un total de 53€ + 29€ - 32€ s'il te plaît."
                 break;
             case 17:
-                this.arrayConsigne[numCase] = "Cet objet coûte 20€, mais il y a une réduction de 50%.\n20€ - 50% s'il te plaît."
+                this.arrayConsigne[numCase] = "Cet objet coûte 78€, mais il y a une réduction de la moitié du prix total.\nLa moitié de 78€ s'il te plaît."
                 break;
             case 18:
-                this.arrayConsigne[numCase] = "Cet objet coûte 10€, mais il y a une réduction de 80%.\n10€ - 80% s'il te plaît."
+                this.arrayConsigne[numCase] = "Cet objet coûte 100€, mais il y a une réduction du quart du prix total.\nTrois quarts de 100€ s'il te plaît."
                 break;
             case 19:
                 this.arrayConsigne[numCase] = "Voyons voir cette liste...\nCela fera un total de 37€ + 42€ + 19€ + 25€ s'il te plaît."
@@ -417,7 +417,7 @@ class DonneesMission {
                 this.arrayConsigne[numCase] = "Le chiffre des centaines est égal au double du chiffre des unités moins\nle chiffre des dizaines.\nLe chiffre des dizaines est égal à 1+2x3.\nLe chiffre des unités est égal à 14 moins le chiffre des dizaines."
                 break;
             case 22:
-                this.arrayConsigne[numCase] = "Cet objet coûte 40€, mais il y a une réduction de 25%.\n40€ - 25% s'il te plaît."
+                this.arrayConsigne[numCase] = "Cet objet coûte 40€, mais il y a une réduction du quart du prix total.\nTrois quarts de 40€ s'il te plaît."
                 break;
             case 23:
                 this.arrayConsigne[numCase] = "Le prix de cet objet est égal à 80 ÷ 20"
@@ -435,7 +435,7 @@ class DonneesMission {
                 this.arrayConsigne[numCase] = "Le chiffre des centaines est égal à 3x3 moins le chiffre des unités.\nLe chiffre des dizaines est égal à la moitié du chiffre des centaines +2.\nLe chiffre des unités est égal à 30÷30. Bon courage!"
                 break;
             case 28:
-                this.arrayConsigne[numCase] = "16€ l'unité. Tu en prends 5 ? Il y a une réduction de 25% sur le total.\nDans ce cas ( 5 x 16€ ) - 25% s'il te plaît."
+                this.arrayConsigne[numCase] = "16€ l'unité. Tu en prends 5 ? Il y a une réduction du quart du prix total.\nDans ce cas, trois quarts de 5 x 16€ s'il te plaît."
                 break;
             default:
                 console.log("ERREUR remplirArrayConsigne " + numCase);

@@ -2,7 +2,7 @@
 
 /** @type {import("../typings/phaser")} */
 
-//localStorage.clear(); // permet de faire des tests, a supprimer plus tard
+localStorage.clear(); // permet de faire des tests, a supprimer plus tard
 
 const config = {
     scale: {
@@ -27,7 +27,7 @@ const config = {
 }
 
 
-var posXTravel = 500;
+var posXTravel = 535;
 var posYTravel = 447.5;
 var posXpn = 100;
 var posYpn = 502;

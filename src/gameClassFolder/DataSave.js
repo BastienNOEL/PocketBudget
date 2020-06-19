@@ -5,7 +5,7 @@ class DataSave {
 
             //Paramètres Divers //
             'lvPlayer': 1,
-            'nbStarCoin': 0,
+            'nbStarCoin': 7,
             'nbTentatives': 1,
             'P1': 0,
             'P2': 0,
@@ -60,6 +60,9 @@ class DataSave {
             'Cadre Aurore Boréale': "Cadre Aurore Boréale",
             'Lustre': "Lustre",
             'Table': "Table",
+
+            //Endgame
+            '???':"???",
 
         }
     }

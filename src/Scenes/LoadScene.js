@@ -148,6 +148,15 @@ class LoadScene extends Phaser.Scene {
         this.load.image('lutinMarchand', 'assets/img/Object/lutinMarchand.png');
         this.load.image('lutinMarchand2', 'assets/img/Object/lutinMarchand2.png');
         this.load.image('bulleDialogueGauche', 'assets/img/Object/bulleDialogueGauche.png');
+        this.load.image('cristal', 'assets/img/Object/Crystal.png');
+
+        this.load.image('snowmanA', 'assets/img/Object/snowmanA.png');
+        this.load.image('snowmanB', 'assets/img/Object/snowmanB.png');
+        this.load.image('snowmanC', 'assets/img/Object/snowmanC.png');
+
+        this.load.image('snowmanAReverse', 'assets/img/Object/snowmanAReverse.png');
+        this.load.image('snowmanBReverse', 'assets/img/Object/snowmanBReverse.png');
+        this.load.image('snowmanCReverse', 'assets/img/Object/snowmanCReverse.png');
 
         //Interieurs (santa + maison)
         this.load.image('santa', 'assets/img/Object/pereNoel.png');

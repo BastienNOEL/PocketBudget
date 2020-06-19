@@ -2,7 +2,7 @@ class DonneesLutinShop {
 
     constructor() {
 
-        this.arrayObjetDeco = new Array(29);
+        this.arrayObjetDeco = new Array(30);
 
         this.arrayNomObjet = new Array(this.arrayObjetDeco.length);
         this.arrayParamBoutonObjet = new Array(this.arrayObjetDeco.length);
@@ -156,6 +156,9 @@ class DonneesLutinShop {
             case 28:
                 this.arrayNomObjet[numCase] = "Cadre Lac Enneigé";
                 break;
+            case 29:
+                this.arrayNomObjet[numCase] = "???";
+                break;
 
 
             default:
@@ -169,7 +172,7 @@ class DonneesLutinShop {
 
         switch (numCase) {
             case 0:
-                this.arrayPrixObjet[numCase] = 3; //maison
+                this.arrayPrixObjet[numCase] = 10; //maison
                 break;
             case 1:
                 this.arrayPrixObjet[numCase] = 3; //sapin
@@ -254,6 +257,9 @@ class DonneesLutinShop {
                 break;
             case 28:
                 this.arrayPrixObjet[numCase] = 3; //lac
+                break;
+            case 29:
+                this.arrayPrixObjet[numCase] = 24; //snowman family
                 break;
 
             default:
@@ -351,6 +357,9 @@ class DonneesLutinShop {
                 break;
             case 28:
                 this.arrayDescriptionObjet[numCase] = "J'ai mis sous cadre cette superbe photo d'un lac enneigé.\nLes rayons du soleil se reflètent sur la surface de l'eau !";
+                break;
+            case 29:
+                this.arrayDescriptionObjet[numCase] = "Par ma barbe, mais qui vois-je là ?";
                 break;
 
 

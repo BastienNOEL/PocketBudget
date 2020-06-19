@@ -35,13 +35,44 @@ class TravelScene extends Phaser.Scene {
         this.bg4.setScrollFactor(0);
         this.bg4.setScale(0.53, 0.53);
 
+        if (localStorage.getItem('???') == "VENDU") {
+            this.cristals = this.physics.add.staticGroup({
+                key: 'cristal',
+                repeat: 11,
+                setXY: {
+                    x: 1850,
+                    y: 463,
+                    stepX: 75
+                }
+            });
+
+
+            this.snowmanB = this.add.image(1950, 420, "snowmanB");
+            this.snowmanB.setScale(0.3, 0.3);
+
+            this.snowmanC = this.add.image(2100, 420, "snowmanC");
+            this.snowmanC.setScale(0.35, 0.35);
+
+            this.snowmanA = this.add.image(2400, 353, "snowmanA");
+            this.snowmanA.setScale(0.5, 0.5);
+
+
+            this.snowmanBReverse = this.add.image(1950, 420, "snowmanBReverse");
+            this.snowmanBReverse.setScale(0.3, 0.3);
+
+            this.snowmanCReverse = this.add.image(2100, 420, "snowmanCReverse");
+            this.snowmanCReverse.setScale(0.35, 0.35);
+
+            this.snowmanAReverse = this.add.image(2555, 353, "snowmanAReverse");
+            this.snowmanAReverse.setScale(0.5, 0.5);
+
+        }
 
         this.ground = this.add.tileSprite(0, 0, game.config.width * 3, 125, "ground");
         this.ground.setOrigin(0, 0);
         this.ground.setScrollFactor(0);
         this.ground.y = 500;
         this.physics.add.existing(this.ground, true);
-
 
 
         this.igloo1 = this.add.image(890, 420, 'igloo1');
@@ -129,6 +160,9 @@ class TravelScene extends Phaser.Scene {
         this.countainerDialogueLutin.visible = false;
 
 
+
+
+
         this.player = this.physics.add.sprite(posXTravel, posYTravel, 'player');
         this.player.setBounce(0.2);
         this.player.setScale(0.5, 0.5);
@@ -180,11 +214,11 @@ class TravelScene extends Phaser.Scene {
         this.txtInteractionLutinMarchand.visible = false;
 
         this.myCam = this.cameras.main;
-        this.myCam.setBounds(0, 0, game.config.width * 3, game.config.height);
+        this.myCam.setBounds(0, 0, game.config.width * 2.75, game.config.height);
 
         this.myCam.startFollow(this.player);
 
-        
+
 
 
         this.scene.launch('Gui');
@@ -196,14 +230,14 @@ class TravelScene extends Phaser.Scene {
         this.changeScene();
         this.scrollBackground();
         this.checkInZoneInteraction();
-        this.lutinOrientation();
+        this.pnjOrientation();
     }
 
     movePlayer() {
         if (this.cursors.left.isDown && this.player.x > 0) {
             this.player.setVelocityX(-300);
             this.player.anims.play('left', true);
-        } else if (this.cursors.right.isDown && this.player.x < game.config.width * 3) {
+        } else if (this.cursors.right.isDown && this.player.x < game.config.width * 2.7) {
             this.player.setVelocityX(300);
             this.player.anims.play('right', true);
         } else {
@@ -293,11 +327,22 @@ class TravelScene extends Phaser.Scene {
 
         }
 
-        if (localStorage.getItem('Maison') != "VENDU") {
+        if ((localStorage.getItem('Maison') != "VENDU")) {
             if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1] + 200) && this.player.y > 423) {
                 this.countainerDialogueLutin.visible = true;
             } else {
                 this.countainerDialogueLutin.visible = false;
+            }
+        }
+
+        if ((localStorage.getItem('Maison') == "VENDU")) {
+            if ((localStorage.getItem('???') != "VENDU") && (parseInt(localStorage.getItem('lvPlayer')) > 29)) {
+                if ((this.player.x > dataInteractions.arrayScenes[0][2][0][0] && this.player.x < dataInteractions.arrayScenes[0][3][0][1] + 200) && this.player.y > 423) {
+                    this.txtLutinVente.text = "       Par ma barbe !\n          Viens voir !\nJ'ai une offre spéciale !";
+                    this.countainerDialogueLutin.visible = true;
+                } else {
+                    this.countainerDialogueLutin.visible = false;
+                }
             }
         }
 
@@ -312,13 +357,41 @@ class TravelScene extends Phaser.Scene {
         }
     }
 
-    lutinOrientation() {
+    pnjOrientation() {
         if (this.player.x < this.lutinMarchand.x) {
             this.lutinMarchand.visible = true;
             this.lutinMarchand2.visible = false;
         } else {
             this.lutinMarchand.visible = false;
             this.lutinMarchand2.visible = true;
+        }
+
+
+        if (localStorage.getItem('???') == "VENDU") {
+
+            if (this.player.x < this.snowmanA.x + 100) {
+                this.snowmanA.visible = true;
+                this.snowmanAReverse.visible = false;
+            } else {
+                this.snowmanA.visible = false;
+                this.snowmanAReverse.visible = true;
+            }
+
+            if (this.player.x < this.snowmanB.x) {
+                this.snowmanB.visible = false;
+                this.snowmanBReverse.visible = true;
+            } else {
+                this.snowmanB.visible = true;
+                this.snowmanBReverse.visible = false;
+            }
+
+            if (this.player.x < this.snowmanC.x) {
+                this.snowmanC.visible = false;
+                this.snowmanCReverse.visible = true;
+            } else {
+                this.snowmanC.visible = true;
+                this.snowmanCReverse.visible = false;
+            }
         }
     }
 }
