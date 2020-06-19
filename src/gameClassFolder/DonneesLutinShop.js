@@ -11,7 +11,6 @@ class DonneesLutinShop {
 
         this.initTableaux();
         this.createDatas();
-
     }
 
     createDatas() {

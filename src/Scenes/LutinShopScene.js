@@ -325,10 +325,18 @@ class LutinShopScene extends Phaser.Scene {
         this.zonePrixStarCoin.visible = false;
 
         //zone verte
-        this.txtDescriptionObjet = this.add.text(0, 0, "Clique sur un objet pour avoir des informations dessus.", {
+        this.txtDescriptionObjet = this.add.text(0, 0, "", {
             fill: "black",
             font: "25px Arial",
         })
+        if (localStorage.getItem('Maison') != "VENDU") {
+            this.txtDescriptionObjet.text = "Bien le bonjour ! Je vends une sympathique maison, si tu veux plus\nd'informations n'hésite pas à cliquer sur le bouton bleu !";
+        } else if ((localStorage.getItem('???') != "VENDU") && (parseInt(localStorage.getItem('lvPlayer')) > 29)) {
+            this.txtDescriptionObjet.text = "J'ai une offre très spéciale aujourd'hui !\nSeuls les meilleurs coursiers du Père Noël peuvent y accéder !"
+        } else {
+            this.txtDescriptionObjet.text = "Quoi de neuf aujourd'hui ?"
+
+        }
         this.txtDescriptionObjet.setOrigin(0.5, 0.5);
         this.zoneTexte.add(this.txtDescriptionObjet);
         this.txtDescriptionObjet.visible = true;
@@ -436,6 +444,8 @@ class LutinShopScene extends Phaser.Scene {
                 console.log('%c%s', 'color: #4507f1', "achat reussi");
             } else {
                 console.log('%c%s', 'color: #cc0036', "achat impossible, pas assez de pieces ");
+                this.txtDescriptionObjet.text = "Tu n'as pas assez de pièces étoiles pour faire cet achat !"
+
             }
         } else {
             console.log('%c%s', 'color: #cc0036', "achat impossible, deja acheté");
