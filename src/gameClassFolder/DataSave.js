@@ -18,7 +18,7 @@ class DataSave {
             'RetourMission': false,
             'FirstMission': true,
             'lastMissionIsDone': false,
-            'BoutiqueTexte': "Va voir le père noel pour avoir de l'argent.",
+            'BoutiqueTexte': "Salut toi ! Tu es nouveau par ici ? Tu devrais aller voir le Père Noël !",
             'prixMissionAffiche': -1,
             'prixMissionAttendu': -1,
             'indexPage': 1,

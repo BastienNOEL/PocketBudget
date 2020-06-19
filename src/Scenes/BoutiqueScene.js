@@ -44,7 +44,7 @@ class BoutiqueScene extends Phaser.Scene {
         this.rectJaune = this.add.image(0, 0, 'recJaune');
 
         this.lutin = this.add.image(950, 103, 'LutinFace');
-        this.lutin.setScale(0.15,0.15);
+        this.lutin.setScale(0.15, 0.15);
 
 
         this.boutonRetour = new Button({
@@ -65,7 +65,7 @@ class BoutiqueScene extends Phaser.Scene {
         if (localStorage.getItem('nbTentatives') > 1 && localStorage.getItem('RetourMission') == "false") {
             this.txtBoutique.setText(localStorage.getItem('BoutiqueTexte') + this.txtBoutiqueErreur);
         } else if (localStorage.getItem('RetourMission') == "true") {
-            this.txtBoutique.setText("Va voir le Père Noël pour avoir de l'argent.");
+            this.txtBoutique.setText("Salut ! Tu vas bien ? \nVa voir le Père Noël pour savoir ce qu'il te faut !");
         }
 
         this.maBourse.add(this.rectBleu);
@@ -525,7 +525,7 @@ class BoutiqueScene extends Phaser.Scene {
 
     backTravel() {
         if (this.valeurDepose == this.prixMissionAffiche) {
-            localStorage.setItem('BoutiqueTexte', "Va voir le Père Noël pour avoir de l'argent.");
+            localStorage.setItem('BoutiqueTexte', "Salut ! Tu vas bien ? \nVa voir le Père Noël pour savoir ce qu'il te faut !");
         }
         this.scene.start("Travel");
     }
@@ -753,8 +753,8 @@ class BoutiqueScene extends Phaser.Scene {
             this.txtBoutique.setText("Tu as réussi!\nTu peut sortir en cliquant sur la flèche en bas à gauche,\nou en appuyant sur la touche \"échap\" de ton clavier.")
 
             localStorage.setItem('MissionEnCours', false);
-            if(localStorage.getItem('FirstMission') == "true"){
-                localStorage.setItem('FirstMission' , false);
+            if (localStorage.getItem('FirstMission') == "true") {
+                localStorage.setItem('FirstMission', false);
             }
             localStorage.setItem('RetourMission', true);
 

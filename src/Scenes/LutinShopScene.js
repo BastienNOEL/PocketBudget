@@ -335,7 +335,6 @@ class LutinShopScene extends Phaser.Scene {
             this.txtDescriptionObjet.text = "J'ai une offre très spéciale aujourd'hui !\nSeuls les meilleurs coursiers du Père Noël peuvent y accéder !"
         } else {
             this.txtDescriptionObjet.text = "Quoi de neuf aujourd'hui ?"
-
         }
         this.txtDescriptionObjet.setOrigin(0.5, 0.5);
         this.zoneTexte.add(this.txtDescriptionObjet);
