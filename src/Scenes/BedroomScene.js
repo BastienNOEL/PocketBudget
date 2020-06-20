@@ -1,3 +1,5 @@
+//cette scene correspond à la chambre du joueur
+
 class BedroomScene extends Phaser.Scene {
     constructor() {
         super("Bedroom");
@@ -106,6 +108,7 @@ class BedroomScene extends Phaser.Scene {
     }
 
 
+    /* gere les deplacements du joueur */
     movePlayer() {
 
         if (this.cursors.left.isDown) {
@@ -123,6 +126,7 @@ class BedroomScene extends Phaser.Scene {
 
     }
 
+    /* permet de changer de pièce de la maison */
     changeScene() {
 
         if (this.player.x < dataInteractions.arrayScenes[3][0][0][1] && this.player.y > 423) {
@@ -143,6 +147,7 @@ class BedroomScene extends Phaser.Scene {
         }
     }
 
+    /* affiche le bouton d'interaction si necessaire */
     checkInZoneInteraction() {
         if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2) {
             this.gui.interactBtn.visible = true;
@@ -154,6 +159,7 @@ class BedroomScene extends Phaser.Scene {
 
 
 
+    /* rend visible tous les objets acheté par le joueur */
     makeVisible() {
 
         this.arrayOfImages = new Array();

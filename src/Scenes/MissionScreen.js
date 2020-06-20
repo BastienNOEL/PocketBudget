@@ -1,3 +1,5 @@
+//Cette scene sert à afficher le message du pere noel en fonction de la mission en cours 
+
 class MissionScreen extends Phaser.Scene {
     constructor() {
         super("MissionScreen");

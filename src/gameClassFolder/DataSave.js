@@ -1,3 +1,5 @@
+// cette classe stock toutes les données relatives à la sauvegarde lors de la première utilisation du jeu
+
 class DataSave {
     constructor() {
 

@@ -1,3 +1,5 @@
+// cette classe stock toutes les données relatives aux parametres de chaque mission
+
 class DonneesMission {
 
     constructor() {

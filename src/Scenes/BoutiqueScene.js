@@ -1,3 +1,5 @@
+//Cette scene correspond a la boutique 
+
 class BoutiqueScene extends Phaser.Scene {
     constructor() {
         super("Boutique");
@@ -523,6 +525,8 @@ class BoutiqueScene extends Phaser.Scene {
         }
     }
 
+
+    /* permet de sortir de la boutique */
     backTravel() {
         if (this.valeurDepose == this.prixMissionAffiche) {
             localStorage.setItem('BoutiqueTexte', "Salut ! Tu vas bien ? \nVa voir le Père Noël pour savoir ce qu'il te faut !");
@@ -530,6 +534,7 @@ class BoutiqueScene extends Phaser.Scene {
         this.scene.start("Travel");
     }
 
+    /* permet de revenir une action en arrière lors d'une transaction (sans pénalité pour le joueur) */
     cancelAction() {
 
         if (this.pileAction.length > 0) {
@@ -687,6 +692,7 @@ class BoutiqueScene extends Phaser.Scene {
         }
     }
 
+    /* verifi si la reponse émise par le joueur est correct ou non */
     testValidite() {
 
         if (this.valeurDepose == this.prixMissionAttendu) {

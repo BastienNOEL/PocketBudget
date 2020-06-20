@@ -1,3 +1,5 @@
+// cette classe initialise tous les parametres par defaut lors de la premiere utilisation du jeu
+
 class LocalStorageSaveInit extends DataSave {
     constructor() {
         super();

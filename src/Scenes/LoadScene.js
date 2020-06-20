@@ -1,4 +1,4 @@
-//cette scene servira a précharger des éléments
+//cette scene servira a précharger des éléments au lancement du jeu
 
 class LoadScene extends Phaser.Scene {
     constructor() {

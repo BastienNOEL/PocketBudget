@@ -1,3 +1,5 @@
+//cette scene represente la salle a manger de la maison du joueur
+
 class DinnerRoom extends Phaser.Scene {
     constructor() {
         super("DinnerRoom");
@@ -87,6 +89,7 @@ class DinnerRoom extends Phaser.Scene {
 
     }
 
+    /* gère les deplacements du joueur */
     movePlayer() {
         if (this.cursors.left.isDown) {
             this.player.setVelocityX(-500);
@@ -104,6 +107,7 @@ class DinnerRoom extends Phaser.Scene {
     }
 
 
+    /* permet de changer de pièce */
     changeScene() {
 
         if (this.player.x > dataInteractions.arrayScenes[4][0][0][0] && this.player.x < dataInteractions.arrayScenes[4][0][0][1] && this.player.y > 423) {
@@ -125,6 +129,7 @@ class DinnerRoom extends Phaser.Scene {
 
 
 
+    /*verifi la zone d'interaction et affiche le bouton d'interaction en consequence */
     checkInZoneInteraction() {
         if (this.boolInZoneInteraction1 == true) {
             this.gui.interactBtn.visible = true;
@@ -134,6 +139,7 @@ class DinnerRoom extends Phaser.Scene {
         }
     }
 
+    /*rend visibles tous les objets acheté par le joueur */
     makeVisible() {
 
         if (localStorage.getItem('Plante Grimpante') == 'VENDU') {

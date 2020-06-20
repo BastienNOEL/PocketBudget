@@ -1,3 +1,5 @@
+//Cette scene se superpose aux autre pour afficherle niveau, le nombre de pièces, le bouton pause et les bouton de déplacement et d'interaction
+
 class GuiScene extends Phaser.Scene {
     constructor() {
         super("Gui");
@@ -134,6 +136,8 @@ class GuiScene extends Phaser.Scene {
         this.mooving();
     }
 
+
+    /* cherche le nom de la scene active et applique les paramatres necessaire en fonction */
     searchSceneActive() {
 
         this.sceneEnCours;
@@ -174,6 +178,7 @@ class GuiScene extends Phaser.Scene {
     }
 
 
+    /*deplace le joueur en appuyant sur les boutons de deplacement */
     mooving() {
         if (this.boolMovingRight == true && this.sceneEnCours.x < this.maxX) {
             if (this.scene.isActive('PereNoel') == true) {
@@ -197,22 +202,26 @@ class GuiScene extends Phaser.Scene {
         }
     }
 
+    // deplacement a droite
     goRightFunction() {
         this.boolMovingRight = true;
     }
-
+    //fin deplacement droite
     endGoRightFunction() {
         this.boolMovingRight = false;
     }
 
+    //deplacement à gauche
     goLeftFunction() {
         this.boolMovingLeft = true;
     }
 
+    //fin deplacement à gauche
     endGoLeftFunction() {
         this.boolMovingLeft = false;
     }
 
+    /* detecte quand le bouton d'intercation est utilisé */
     interact() {
 
         this.boolInputInterctif = true;
@@ -220,6 +229,7 @@ class GuiScene extends Phaser.Scene {
 
     }
 
+    /* detecte quand le bouton d'intercation n'est pas utilisé */
     endInteract() {
         this.boolInputInterctif = false;
     }

@@ -1,9 +1,12 @@
+//cette classe gère les missions
+
 class Mission extends DonneesMission {
     constructor() {
         super();
         this.paroleSanta = "ce message ne doit pas apparaitre";
     }
 
+    /* verifi l'etat de la mission en cours et initialise la suivante si necessaire */
     newMission() {
 
         if (localStorage.getItem('lastMissionIsDone') != "true") {
@@ -44,6 +47,7 @@ class Mission extends DonneesMission {
 
     }
 
+    /*attribue l'argent de la prochaine mission au joueur */
     gainMoney(nb1, nb2, nb5, nb10, nb20, nb50, nb100) {
 
         localStorage.setItem('P1', nb1);
@@ -55,6 +59,7 @@ class Mission extends DonneesMission {
         localStorage.setItem('B100', nb100);
     }
 
+    /*permet de monter en niveau et gagner des pièces etoiles si le nombre de tentative n'est pas trop elevé */
     lvlUp() {
 
         if (localStorage.getItem("nbTentatives") < 4) {
@@ -66,6 +71,7 @@ class Mission extends DonneesMission {
 
     }
 
+    /* verifi le niveau du joueur et atribue le bon nombre de pieces en consequence */
     gainStarCoins() {
         var lvPlayer = localStorage.getItem('lvPlayer');
         this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
@@ -87,6 +93,7 @@ class Mission extends DonneesMission {
         localStorage.setItem('nbStarCoin', this.coinValue + gain);
     }
 
+    /*verifi l'etat d'une mission (en cours ou terminé) */
     checkStateMission() {
 
         if (localStorage.getItem('FirstMission') == "true") {
@@ -101,6 +108,7 @@ class Mission extends DonneesMission {
 
     }
 
+    /*applique les bons parametres pourla mission en cour */
     mission(lvPlayer) {
 
         var numMission = lvPlayer - 1;

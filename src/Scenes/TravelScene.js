@@ -1,4 +1,4 @@
-//cette scene fait le lien entre le magasin et le pere noel
+//cette scene fait le lien entre toutes les scenes 
 
 class TravelScene extends Phaser.Scene {
     constructor() {
@@ -233,6 +233,7 @@ class TravelScene extends Phaser.Scene {
         this.pnjOrientation();
     }
 
+    /* permet les déplacements du joueur */
     movePlayer() {
         if (this.cursors.left.isDown && this.player.x > 0) {
             this.player.setVelocityX(-300);
@@ -248,6 +249,7 @@ class TravelScene extends Phaser.Scene {
         }
     }
 
+    /* permet de faire bouger le background avec le joueur */
     scrollBackground() {
         this.bg1.tilePositionX = this.myCam.scrollX * 0.2;
         this.bg2.tilePositionX = this.myCam.scrollX * 0.4;
@@ -257,9 +259,8 @@ class TravelScene extends Phaser.Scene {
         this.ground.tilePositionX = this.myCam.scrollX;
     }
 
+    /* Définit toutes les zones d'interaction qui modifieront la scene en cours */
     changeScene() {
-
-
         if ((this.player.x > dataInteractions.arrayScenes[0][0][0][0] && this.player.x < dataInteractions.arrayScenes[0][0][0][1]) && this.player.y > 423) {
             this.txtInteractionMaisonSanta.visible = true;
             this.boolInZoneInteraction1 = true;
@@ -348,6 +349,7 @@ class TravelScene extends Phaser.Scene {
 
     }
 
+    /*recherche les interactions pour faire apparaitre le bouton d'interaction tactile*/
     checkInZoneInteraction() {
         if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true || this.boolInZoneInteraction3 == true || this.boolInZoneInteraction4 == true) {
             this.gui.interactBtn.visible = true;
@@ -357,6 +359,7 @@ class TravelScene extends Phaser.Scene {
         }
     }
 
+    /* definit l'orientation des pnj en fonction de la position du joueur */
     pnjOrientation() {
         if (this.player.x < this.lutinMarchand.x) {
             this.lutinMarchand.visible = true;

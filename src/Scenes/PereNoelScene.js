@@ -1,3 +1,5 @@
+//Cette scene reprensente l'interieur de la maison du pere noel
+
 class PereNoelScene extends Phaser.Scene {
     constructor() {
         super("PereNoel");
@@ -92,6 +94,7 @@ class PereNoelScene extends Phaser.Scene {
         this.checkInZoneInteraction();
     }
 
+    /* permet de deplacer le joueur */
     movePlayer() {
         if (this.cursors.left.isDown) {
             this.player.setVelocityX(-500);
@@ -107,7 +110,7 @@ class PereNoelScene extends Phaser.Scene {
         }
     }
 
-
+    /* permet de sortir de la maison du pere noel*/
     changeScene() {
 
         if (this.player.x < dataInteractions.arrayScenes[1][0][0][1] && this.player.y > 423) {
@@ -125,6 +128,7 @@ class PereNoelScene extends Phaser.Scene {
         }
     }
 
+    /* permet de parler au pere noel */
     talkSanta() {
 
         if (this.player.x > dataInteractions.arrayScenes[1][1][0][0] && this.player.y > 423) {
@@ -148,6 +152,7 @@ class PereNoelScene extends Phaser.Scene {
 
     }
 
+    /*recherche les interactions pour faire apparaitre le bouton d'interaction tactile*/
     checkInZoneInteraction() {
         if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true) {
             this.gui.interactBtn.visible = true;

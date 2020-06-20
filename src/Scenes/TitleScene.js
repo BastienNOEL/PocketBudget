@@ -1,4 +1,4 @@
-// Cette classe servira pour faire l'écran titre
+// Cette classe est l'écran titre
 
 class TitleScene extends Phaser.Scene {
     constructor() {
@@ -98,10 +98,12 @@ class TitleScene extends Phaser.Scene {
         this.scrollBackground();
     }
 
+    /* bouton jouer */
     onPressed() {
         this.scene.start("Travel");
     }
 
+    /* anime l'ecran titre */
     scrollBackground() {
         this.bg1.tilePositionX -= 0.2;
         this.bg2.tilePositionX -= 0.4;

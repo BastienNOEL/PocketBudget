@@ -1,3 +1,5 @@
+// cette classe stock toutes les données relatives aux décorations
+
 class DataDeco {
     constructor() {
 

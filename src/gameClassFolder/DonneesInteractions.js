@@ -1,3 +1,5 @@
+// cette classe stock toutes les données relatives aux interactions
+
 class DonneesInteractions {
 
     constructor() {

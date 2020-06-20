@@ -1,3 +1,5 @@
+// Cette scene represente l'interieur de la maison du joueur (la première piece)
+
 class HomeScene extends Phaser.Scene {
     constructor() {
         super("Home");
@@ -101,6 +103,7 @@ class HomeScene extends Phaser.Scene {
         this.scrollCam();
     }
 
+    /* permet les déplacements du joueur */
     movePlayer() {
         if (this.cursors.left.isDown && this.player.x > 100) {
             this.player.setVelocityX(-400);
@@ -116,7 +119,7 @@ class HomeScene extends Phaser.Scene {
         }
     }
 
-
+    /* verifi les interactions possible et change de scene si le joueur en fait le choix */
     changeScene() {
 
         if (this.player.x < dataInteractions.arrayScenes[2][0][0][1] && this.player.y > 423) {
@@ -173,6 +176,7 @@ class HomeScene extends Phaser.Scene {
         }
     }
 
+    /* permet de faire apparaitre le bouton d'interaction pour ecran tactile */
     checkInZoneInteraction() {
         if (this.boolInZoneInteraction1 == true || this.boolInZoneInteraction2 == true || this.boolInZoneInteraction3 == true) {
             this.gui.interactBtn.visible = true;
@@ -180,13 +184,14 @@ class HomeScene extends Phaser.Scene {
             this.gui.interactBtn.visible = false;
 
         }
-
     }
 
+    /*permet de generer le plancher en meme temps que le joueur se deplace */
     scrollCam() {
         this.ground.tilePositionX = this.myCam.scrollX * 0.0625;
     }
 
+    /* rend visibles toutes les decorations achetées par le joueur */
     makeVisible() {
 
         this.arrayOfImages = new Array();

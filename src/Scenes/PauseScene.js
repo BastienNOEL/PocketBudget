@@ -1,3 +1,5 @@
+//Cette scene est l'écran de pause, qui permet de gerer l'import/export de la sauvegarde et de revenir à l'ecran titre
+
 class PauseScene extends Phaser.Scene {
     constructor() {
         super("Pause");
@@ -47,9 +49,8 @@ class PauseScene extends Phaser.Scene {
         this.container.add(this.window);
     }
 
+    /* retourne à l'ecran titre */
     goTitle(){
         location.reload();
-
-
     }
 }

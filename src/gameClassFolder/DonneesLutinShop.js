@@ -1,3 +1,5 @@
+// cette classe stock toutes les données relatives aux objets vendus par le lutin marchand
+
 class DonneesLutinShop {
 
     constructor() {

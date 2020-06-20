@@ -1,3 +1,5 @@
+//cette classe permet de créer des boutons plus facilement
+
 class Button extends Phaser.GameObjects.Sprite {
     constructor(config) {
         

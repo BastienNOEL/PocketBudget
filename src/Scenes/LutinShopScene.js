@@ -1,3 +1,5 @@
+//Cette scene represente l'écran des échange de décorations avec le lutin marchand
+
 class LutinShopScene extends Phaser.Scene {
     constructor() {
         super("LutinShop");
@@ -354,11 +356,10 @@ class LutinShopScene extends Phaser.Scene {
         if (1 < this.indexPage && this.indexPage < this.arrayPages.length) {
             this.boutonSuivant.visible = true;
             this.boutonPrecedent.visible = true;
-
         }
     }
 
-
+    /* permet de changer de page dans le catalogue des objets */
     pageSuivante() {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
@@ -392,6 +393,7 @@ class LutinShopScene extends Phaser.Scene {
         }
     }
 
+    /* permet de revenir en arriere dans le catalogue des objets */
     pagePrecedente() {
 
         for (var i = 0; i < this.arrayPages[this.indexPage - 1][0].length; i++) {
@@ -427,6 +429,7 @@ class LutinShopScene extends Phaser.Scene {
         }
     }
 
+    /* verifie si une trasction est possible, et si c'est le cas l'effectue lorsque le joueur clique sur le bouton de validation */
     validerTransaction() {
 
         console.log("vous appuyez sur le bouton de validation");
@@ -451,6 +454,7 @@ class LutinShopScene extends Phaser.Scene {
         }
     }
 
+    /* revien a la scene "Travel" */
     backTravel() {
         localStorage.setItem('indexPage', 1);
         this.scene.start("Travel");
