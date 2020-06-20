@@ -6,46 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="./lib/phaser.min.js"></script>
 
-
-    <script type="text/javascript" src="./src/Prefabs/Button.js"> </script>
-
-    <script type="text/javascript" src="./src/gameClassFolder/DataSave.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/LocalStorageSaveInit.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesMission.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesLutinShop.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/DonneesInteractions.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/DataDeco.js"> </script>
-    <script type="text/javascript" src="./src/gameClassFolder/Mission.js"> </script>
-
-    <script type="text/javascript" src="./src/Scenes/LoadScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/TitleScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/TravelScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/BoutiqueScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/PereNoelScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/GuiScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/PauseScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/HomeScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/BedroomScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/DinnerRoomScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/LutinShopScene.js"> </script>
-    <script type="text/javascript" src="./src/Scenes/MissionScreen.js"> </script>
-
-    <title>PocketBudget</title>
-
-    <input type="file" id="importSave" accept=".json" style="display:none" />
+    <title>PocketBudget : Accueil</title>
 
 </head>
 
-<body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..onMouseOver clique droit .. '; return true;">
-    
-   <!-- <h1>PocketBudget</h1> -->
+<body>
+    <header>
+        <h1>PocketBudget</h1>
+    </header>
 
-    <div id="GameWindow">
-        <script src="./src/main.js"></script>
-    </div>
+    <main>
+
+        <h2>Qu'est ce que PocketBudget ?</h2>
+
+        <p>PocketBudget est un petit jeu à but pédagogique proposant à un public d'enfants de niveau primaire de
+            pratiquer des exercices de calculs mathématiques de façon amusante et ludique. Ce jeu est jouable à la fois
+            sur ordinateur et sur smartphone.</p>
+        <div class="boutonContainer">
+            <p>Pour jouer, cliquez sur le bouton ci-dessous :</p>
+
+            <div class=boutonPlay>
+                <a href="./playGame.html" target="_blank"><input class="play" type="button" value="Jouer"></a>
+
+            </div>
+        </div>
+
+        <h2>But du jeu</h2>
+        <p>Vous incarnez un petit bonhomme de neige qui vient d'arriver dans le village du Père Noël. Le principe du jeu
+            est simple : le Père Noël va vous demander de l'aider dans son travail, il a besoin de vous pour aller
+            acheter divers materiaux et outils à la boutique pour fabriquer les jouets des enfants.</p>
+        <p>Si vous réussissez à effectuer les transactions sans faire trop d'erreurs, le Père Noël vous récompensera
+            avec des pièces étoiles. Ces pièces sont très apprécié d'un certain lutin qui vous les échangera volontier
+            contre divers décorations pour votre maison. Collectionnez les toutes!</p>
+
+        <h2>Déplacements et interactions</h2>
+        <p>Si vous jouez sur un ordinateur, vous pouvez utiliser les touches directionnelles pour vous déplacer. Pour
+            interagir avec quelqu'un ou entrer dans un bâtiment, appuyez sur la touche ESPACE de votre clavier (une
+            notification apparaitra à l'écran à chaque fois que cela sera possible).</p>
+        <p>Si vous jouez sur smartphone ou sur n'importe quel écran tactile, vous pouvez utiliser les flèches vertes de
+            direction en bas de l'écran pour vous déplacer. Lorsqu'une interaction sera possible, un bouton
+            supplémentaire apparaitra en bas de votre l'écran.</p>
+        <p>Les joueurs sur ordinateurs peuvent également utiliser les boutons prévu pour smartphone s'ils le souhaitent.
+        </p>
+
+        <h2>Comment sauvegarder sa progression ?</h2>
+        <p>Ce jeu sauvegarde automatiquement votre progression tant que vous restez sur le même navigateur. Cependant,
+            il est recommandé de sauvegarder sa progression sur un fichier externe. Cela permet dans un premier temps de
+            garder un trace de votre sauvegarde, et dans un second temps de récupérer votre progression si vous changez
+            d'ordinateur par exemple.</p>
+        <p>Pour créer un fichier de sauvegarde, il vous suffit de cliquer sur l'icône de disquette visible en bas de
+            l'écran titre ou dans le menu pause. Un fichier de sauvegarde sera automatiquement créé et téléchargé.
+            Cherchez dans vos téléchargements pour retrouver ce fichier.</p>
+        <p>Pour charger une sauvegarde, il vous suffit de cliquer sur l'icône de flèche descendante visible sur l'écran titre ou dans le menu pause. Il vous faudra ensuite retrouver le fichier de sauvegarde créé précédement et double-cliquer dessus.</p>
+
+
+
+
+
+    </main>
+
+
+    <footer>
+
+    </footer>
 
 </body>
+
 
 </html>
