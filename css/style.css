@@ -37,8 +37,6 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 .boutonContainer {
     text-align: center;
     font-weight: bold;
@@ -52,4 +50,9 @@ p {
 .play {
     height: 50px;
     width: 200px;
+}
+
+.divImg{
+    text-align: center;
+
 }
