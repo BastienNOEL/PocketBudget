@@ -1,8 +1,8 @@
-#PocketBudget
+# PocketBudget
 
 ![Capture d'écran](/assets/img/screens/screenPresentation.PNG?raw=true)
 
-###Présentation du jeu
+### Présentation du jeu
 
 PocketBudget est un petit jeu à but pédagogique proposant à un public d'enfants de niveau primaire de pratiquer des exercices de calculs mathématiques de façon amusante et ludique. 
 
@@ -10,12 +10,12 @@ Vous incarnez un petit bonhomme de neige qui vient d'arriver dans le village du 
 
 Si vous réussissez à effectuer les transactions sans faire trop d'erreurs, le Père Noël vous récompensera avec des pièces étoiles. Ces pièces sont très appréciées d'un certain lutin qui vous les échangera volontier contre divers décorations pour votre maison. Collectionnez les toutes!
 
-###Liens
+### Liens
 
 - Pour jouer : **[Jeu en ligne](https://bastiennoel.github.io/PocketBudget/)**
 - [Code source](https://github.com/BastienNOEL/PocketBudget)
 
-###Licence
+### Licence
 
 Le code est sous licence libre  [GNU GPL v3](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html)
 En l'état du projet, toutes les ressources multimédia ne sont pas forcement libres, ce qui peut rendre problématique sa distribution.
