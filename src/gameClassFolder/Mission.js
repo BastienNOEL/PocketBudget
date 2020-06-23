@@ -71,7 +71,7 @@ class Mission extends DonneesMission {
 
     }
 
-    /* verifi le niveau du joueur et atribue le bon nombre de pieces en consequence */
+    /* verifie le niveau du joueur et atribue le bon nombre de pieces en consequence */
     gainStarCoins() {
         var lvPlayer = localStorage.getItem('lvPlayer');
         this.coinValue = parseInt(localStorage.getItem("nbStarCoin"));
@@ -93,7 +93,7 @@ class Mission extends DonneesMission {
         localStorage.setItem('nbStarCoin', this.coinValue + gain);
     }
 
-    /*verifi l'etat d'une mission (en cours ou terminé) */
+    /*verifie l'etat d'une mission (en cours ou terminé) */
     checkStateMission() {
 
         if (localStorage.getItem('FirstMission') == "true") {

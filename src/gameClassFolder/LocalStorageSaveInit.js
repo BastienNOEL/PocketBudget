@@ -7,7 +7,7 @@ class LocalStorageSaveInit extends DataSave {
         //localStorage.setItem('lvPlayer', 29); // permet de faire des tests, mais doit etre supprimé (max = 29)
         //localStorage.setItem('FirstMission', false);
         
-        //localStorage.setItem('nbStarCoin', 15);
+        //localStorage.setItem('nbStarCoin', 9999);
 
         this.arrayKey = Object.getOwnPropertyNames(this.arrayDatasInit);
 
