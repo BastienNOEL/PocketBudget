@@ -12,10 +12,14 @@ Si vous réussissez à effectuer les transactions sans faire trop d'erreurs, le 
 
 ### Liens
 
-- Pour jouer : **[Jeu en ligne](https://bastiennoel.github.io/PocketBudget/)**
+- **[Jouer](https://bastiennoel.github.io/PocketBudget/)**
 - [Code source](https://github.com/BastienNOEL/PocketBudget)
 
 ### Licence
 
-Le code est sous licence libre  [GNU GPL v3](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html)
+Le code est sous licence libre  [GNU GPL v3](https://www.gnu.org/licenses/quick-guide-gplv3.fr.html).
 En l'état du projet, toutes les ressources multimédia ne sont pas forcement libres, ce qui peut rendre problématique sa distribution.
+
+### Auteur
+
+Ce jeu a initialement été réalisé dans le cadre d'un projet universitaire par Bastien NOEL, sous la tutelle de M. Nicolas POURCELOT. 
