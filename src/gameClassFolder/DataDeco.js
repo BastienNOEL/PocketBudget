@@ -24,14 +24,14 @@ class DataDeco {
             [1200, 225, 'Fenêtre',0.25, 0.25],
             [1200, 443, 'Canapé',0.35, 0.25],
             [1550, 125, "Tableau de famille",0.3, 0.3],
-            [1780, 300, "Chaussette de noël",0.15, 0.15],
+            [1780, 300, "Chaussette de Noël",0.15, 0.15],
             [1850, 200, "Sucre d\'orge",0.1, 0.1],
 
         ];
 
 
         this.arrayDecoRdcDevant = [
-            [500, 310, 'Sapin de noël',0.4, 0.4],
+            [500, 310, 'Sapin de Noël',0.4, 0.4],
         ];
 
         this.arrayDecoRDC = [this.arrayDecoRdcDerriere , this.arrayDecoRdcDevant];

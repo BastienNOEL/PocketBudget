@@ -74,7 +74,7 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Maison";
                 break;
             case 1:
-                this.arrayNomObjet[numCase] = "Sapin de noël";
+                this.arrayNomObjet[numCase] = "Sapin de Noël";
                 break;
             case 2:
                 this.arrayNomObjet[numCase] = "Couronne de Noël";
@@ -98,7 +98,7 @@ class DonneesLutinShop {
                 this.arrayNomObjet[numCase] = "Tableau de famille";
                 break;
             case 9:
-                this.arrayNomObjet[numCase] = "Chaussette de noël";
+                this.arrayNomObjet[numCase] = "Chaussette de Noël";
                 break;
             case 10:
                 this.arrayNomObjet[numCase] = "Sucre d\'orge";

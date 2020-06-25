@@ -30,15 +30,15 @@ class DataSave {
 
             //Salon
             'Maison': "Maison",
-            'Sapin de noël': "Sapin de noël",
-            'Couronne de Noël': "Couronne de Noel",
+            'Sapin de Noël': "Sapin de Noël",
+            'Couronne de Noël': "Couronne de Noël",
             'Cloches': "Cloches",
             'Tableau du Village': "Tableau du Village",
             'Cheminée': "Cheminée",
             'Fenêtre': "Fenêtre",
             'Canapé': "Canapé",
             'Tableau de famille': "Tableau de famille",
-            'Chaussette de noël': "Chaussette de noël",
+            'Chaussette de Noël': "Chaussette de Noël",
             'Sucre d\'orge': "Sucre d\'orge",
 
             //Chambre

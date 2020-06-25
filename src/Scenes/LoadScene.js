@@ -173,14 +173,14 @@ class LoadScene extends Phaser.Scene {
 
         //salon
         this.load.image('Cheminée', 'assets/img/Object/cheminee.png');
-        this.load.image('Sapin de noël', 'assets/img/Object/sapinDeNoel.png');
+        this.load.image('Sapin de Noël', 'assets/img/Object/sapinDeNoel.png');
         this.load.image('Couronne de Noël', 'assets/img/Object/couronneNoel.png');
         this.load.image('Fenêtre', 'assets/img/Object/fenetreVueVillage.png');
         this.load.image('Canapé', 'assets/img/Object/canape.png');
         this.load.image('Tableau du Village', 'assets/img/Object/tableau.png');
         this.load.image('Tableau de famille', 'assets/img/Object/snowManTableau.png');
         this.load.image('Sucre d\'orge', 'assets/img/Object/sucreOrge.png');
-        this.load.image('Chaussette de noël', 'assets/img/Object/chaussetteNoel.png');
+        this.load.image('Chaussette de Noël', 'assets/img/Object/chaussetteNoel.png');
         this.load.image('Cloches', 'assets/img/Object/clochesMurales.png');
        
         //chambre
